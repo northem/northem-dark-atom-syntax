@@ -1,0 +1,154 @@
+.source.js {
+
+  .meta {
+    &.delimiter {
+      &.method {
+        &.period {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.object {
+        &.comma {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.brace {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  .keyword {
+    &.operator {
+      color: @color-syntax-operator;
+
+      &.new {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.control {
+      color: @color-syntax-keyword;
+
+      &.anchor {
+        &.regexp {
+          color: @color-syntax-regexp;
+        }
+      }
+    }
+  }
+
+  .storage {
+    &.modifier {
+      color: @color-syntax-keyword;
+    }
+    &.type {
+      &.function {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  .support {
+    &.function {
+      color: @color-syntax-function;
+
+      &.firebug {
+        font-style: italic;
+      }
+    }
+    &.constant {
+      color: @color-syntax-constant;
+      font-weight: normal;
+
+      &.dom {
+        color: @color-syntax-class;
+        font-style: italic;
+      }
+    }
+    &.class {
+      color: @color-syntax-class;
+    }
+  }
+
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.language {
+      color: @color-syntax-constant;
+      font-weight: normal;
+
+      &.boolean {
+        &.true, &.false {
+          color: @color-syntax-keyword;
+        }
+      }
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-escape;
+      }
+    }
+  }
+
+  .punctuation {
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.parameters {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.terminator {
+        &.statement {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+
+  .entity {
+    &.name {
+      &.type {
+        &.object {
+          color: @color-syntax-class;
+
+          &.firebug {
+            font-style: italic;
+          }
+        }
+        &.instance {
+          color: @color-syntax-javascript-instance;
+        }
+      }
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .variable {
+    &.language {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  .string {
+    &.quoted {
+      &.single {
+        color: @color-syntax-string;
+      }
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+}

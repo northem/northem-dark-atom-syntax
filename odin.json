@@ -1,0 +1,41 @@
+{
+  "name": "Northem Dark Atom Syntax",
+  "id": "northem-dark-atom-syntax",
+  "version": "0.0.0",
+  "date": {
+   "created": "2015-03-15 20:17 +0100 UTC",
+   "updated": "2015-05-23 22:25 +0100 UTC"
+  },
+  "access": "public",
+  "description": "Northem is a north-bluish dark theme based on the same named color palette designed by Arctic Ice Studio.This is a darker and more blue-tinged variation.",
+  "developer": {
+    "name": "Arctic Ice Studio",
+    "email": "development@arcticicestudio.com",
+    "website": "http://arcticicestudio.com",
+    "github": "https://github.com/arcticicestudio",
+    "twitter": "https://twitter.com/arcticicestudio"
+  },
+  "homepage": "http://arcticicestudio.com/Northem",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcticicestudio/northem-dark-atom-syntax"
+  },
+  "bugs": {
+    "url": "https://github.com/arcticicestudio/northem-dark-atom-syntax/issues",
+    "email": "bugs@arcticicestudio.com"
+  },
+  "legal": "Copyright (C) 2015 Arctic Ice Studio",
+  "license": {
+    "name": "GPL3",
+    "file": "LICENSE.md"
+  },
+  "sublicense": {
+    "name": "CC-BY-NC-SA-4.0",
+    "file": "res/image/CC-BY-NC-SA-4.0.svg"
+  },
+  "tags": ["northem","bluish","dark","syntax"],
+  "engines": {
+    "odin": ">=1.0.0",
+    "arcver": ">=0.1.0"
+  }
+}

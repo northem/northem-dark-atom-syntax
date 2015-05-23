@@ -1,0 +1,143 @@
+.source.coffee {
+
+  .punctuation {
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.character-class {
+        &.regexp {
+          color: @color-syntax-keyword;
+        }
+      }
+      &.group {
+        &.regexp {
+          color: @color-syntax-keyword;
+        }
+      }
+    }
+    &.section {
+      &.embedded {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.terminator, &.seperator {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+    }
+    &.other {
+      &.inherited-class {
+        color: @color-syntax-class;
+      }
+    }
+  }
+
+  .storage {
+    &.type {
+      &.function, &.class {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-regexp;
+      }
+    }
+    &.other {
+      &.character-class {
+        &.set {
+          &.regexp {
+            color: @color-syntax-regexp;
+          }
+        }
+      }
+    }
+  }
+
+  .support {
+    &.class {
+      color: @color-syntax-class;
+    }
+    &.function {
+      color: @color-syntax-function;
+    }
+  }
+
+  .variable {
+    &.assignment {
+      color: @color-syntax-variable;
+    }
+    &.parameter {
+      &.function {
+        color: @color-syntax-variable;
+      }
+    }
+    &.other {
+      &.readwrite {
+        &.instance {
+          color: @color-syntax-javascript-instance;
+        }
+      }
+    }
+  }
+
+  .string {
+    &.quoted {
+      color: @color-syntax-string;
+    }
+  }
+
+  .meta {
+    &.brace {
+      &.round, &.curly {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.delimeter {
+      &.object {
+        &.comma {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.group {
+      &.regexp {
+        color: @color-syntax-regexp;
+      }
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+}

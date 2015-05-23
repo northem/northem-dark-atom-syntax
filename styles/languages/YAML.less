@@ -1,0 +1,45 @@
+.source.yaml {
+
+  .punctuation {
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.entry {
+        color: @color-syntax-keyword;
+      }
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.separator {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  .entity {
+    &.name {
+      &.tag {
+        color: @color-syntax-tag;
+      }
+    }
+  }
+
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+
+  .string {
+    &.unquoted {
+      color: @color-syntax-string;
+    }
+  }
+}

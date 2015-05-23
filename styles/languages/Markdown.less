@@ -1,0 +1,76 @@
+.source.gfm {
+  color: @color-editor-text;
+  -webkit-font-smoothing: auto;
+
+  .comment {
+    &.quote {
+      color: @color-editor-text;
+      font-style: italic;
+    }
+    &.hr {
+      color: @color-syntax-class;
+    }
+  }
+
+  .markup {
+    &.heading {
+      color: @color-syntax-keyword;
+      font-weight: bold;
+    }
+    &.underline {
+      text-decoration: underline;
+
+      &.link {
+        color: @color-syntax-markdown-link;
+      }
+    }
+    &.bold {
+      color: @color-syntax-string;
+    }
+    &.italic {
+      color: @color-syntax-string;
+    }
+    &.raw {
+      color: @color-syntax-keyword;
+      font-style: italic;
+    }
+    &.changed {
+      color: @color-git-diff-modified;
+    }
+    &.deleted {
+      color: @color-git-diff-removed;
+    }
+  }
+
+  .support {
+    color: @color-syntax-markdown-code;
+
+    &.quote {
+      color: @color-syntax-class;
+    }
+  }
+
+  .entity {
+    color: @color-syntax-keyword;
+  }
+
+  .variable {
+    &.unordered.list {
+      color: @color-syntax-class;
+    }
+    &.ordered.list {
+      color: @color-syntax-class;
+    }
+  }
+
+  .punctation {
+    &.definition {
+      &.begin, &.end {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.seperator {
+      color: @color-syntax-symbol;
+    }
+  }
+}

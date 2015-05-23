@@ -1,0 +1,58 @@
+.xml {
+
+  .punctuation {
+    &.definition {
+      &.tag {
+        color: @color-syntax-xml-tag;
+      }
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.comment {
+        color: @color-syntax-comment;
+      }
+    }
+  }
+
+  .entity {
+    &.name.tag {
+      color: @color-syntax-doctype;
+      &.localname {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.other{
+      &.attribute-name {
+        color: @color-syntax-xml-attribute;
+        &.localname {
+          color: @color-syntax-xml-attribute;
+        }
+      }
+    }
+  }
+
+  .text {
+    color: @color-editor-text;
+  }
+
+  .comment {
+    &.block {
+      color: @color-syntax-comment;
+    }
+  }
+
+  .string {
+    &.quoted {
+      &.double {
+        color: @color-syntax-string;
+      }
+    }
+    &.unquoted {
+      &.cdata {
+        color: @color-syntax-xml-cdata;
+      }
+    }
+  }
+}

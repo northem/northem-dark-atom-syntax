@@ -1,0 +1,115 @@
+.html.php {
+  .punctuation {
+    &.embedded {
+      &.section {
+        &.begin, &.end {
+          color: @color-syntax-doctype;
+        }
+      }
+    }
+  }
+}
+
+.source.php {
+
+  .storage {
+    &.type {
+      &.class {
+        color: @color-syntax-keyword;
+      }
+      &.function {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  .entity {
+    &.name {
+      &.type {
+        &.class {
+          color: @color-syntax-class;
+        }
+      }
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+
+  .punctuation {
+    &.definition {
+      &.parameters {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.variable {
+        color: @color-syntax-keyword;
+      }
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.commment {
+        color: @color-syntax-comment;
+      }
+    }
+    &.terminator {
+      color: @color-syntax-symbol;
+    }
+    &.section {
+      &.array {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.scope {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+
+  .variable {
+    color: @color-syntax-variable;
+
+    &.other {
+      &.global {
+        &.safer {
+          color: @color-syntax-keyword;
+          font-weight: bold;
+          font-style: italic;
+        }
+      }
+    }
+  }
+
+  .meta {
+    &.string-contents {
+      &.quoted {
+        color: @color-syntax-string;
+      }
+    }
+  }
+
+  .support {
+    &.function {
+      color: @color-syntax-function;
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+}

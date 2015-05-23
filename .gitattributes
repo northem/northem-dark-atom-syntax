@@ -1,0 +1,120 @@
+#***************************************************************#
+#      gitattribute template for Arctic Ice Studio projects     #
+#---------------------------------------------------------------#
+#                        .gitattributes                         #
+#                         version 0.1.0                         #
+#                                                               #
+#                       Arctic Ice Studio                       #
+#                    Copyright (c) 2014-2015                    #
+#                development@arcticicestudio.com                #
+#                                                               #
+#              Created : 2014-02-15 10:25 +0100 UTC             #
+#              Modified: 2015-05-23 15:35 +0100 UTC             #
+#***************************************************************#
+
+#=====================================================================
+# COMMON TEMPLATE SECTION                                          [0]
+#=====================================================================
+
+# +-------------+
+# + PREFERENCES +
+# +-------------+
+# Automatically perform LF normalization for files detected as text and leave all files detected as binary untouched.
+* text=auto
+
+# +-----+
+# + GIT +
+# +-----+
+.gitattributes text
+.gitignore text
+
+# +------+
+# + TEXT +
+# +------+
+*.md text
+*.json text
+*.text text
+*.txt text
+*.csv text
+*.tab text
+*.sql text
+
+# Set diff behavior for common document formats
+# Note: Convert binary formats to text before diffing them!
+#*.pdf diff=astextplain
+#*.doc diff=astextplain
+#*.docx diff=astextplain
+#*.dot diff=astextplain
+#*.rtf diff=astextplain
+
+# +-------+
+# + MEDIA +
+# +-------+
+# [Audio]
+*.mp3 binary
+*.wav binary
+
+# [Image]
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+
+# [Video]
+*.mp4 binary
+*.flv binary
+*.mov binary
+
+# +---------+
+# + ARCHIVE +
+# +---------+
+# [Compressed]
+*.gz binary
+*.bzip binary
+*.bz2 binary
+*.zip binary
+*.lzma binary
+*.xz binary
+*.7z binary
+*.rar binary
+
+# [Spliced]
+*.tar binary
+*.iso binary
+*.bin binary
+*.img binary
+
+# [Packages]
+*.xpi binary
+*.gem binary
+*.egg binary
+*.deb binary
+*.rpm binary
+*.msm binary
+*.msp binary
+
+# [Languges]
+# Java
+*.jar binary
+*.war binary
+*.ear binary
+
+# +------------+
+# + EXECUTABLE +
+# +------------+
+# [Windows]
+*.exe binary
+*.msi binary
+
+# [OSX]
+*.dmg binary
+
+#==================================================================[0]
+
+
+#=====================================================================
+# PROJECT SPECIFIC SECTION                                         [1]
+#=====================================================================
+
+#==================================================================[1]

@@ -1,0 +1,98 @@
+.source.ruby {
+  
+  &.symbol > .punctuation {
+    color: inherit;
+  }
+
+  .support {
+    &.class {
+      color: @color-syntax-class;
+    }
+    &.function {
+      &.kernel {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-keyword;
+    }
+    &.other {
+      &.special-method {
+        color: @color-syntax-ruby-special-method;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .punctuation {
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.string {
+        color: @color-syntax-symbol;
+      }
+      &.variable {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.seperator {
+      color: @color-syntax-symbol;
+    }
+    &.section {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  .variable {
+    color: @color-syntax-variable;
+
+    &.other {
+      &.constant {
+        color: @color-syntax-constant;
+      }
+      &.readwrite.instance {
+        color: @color-syntax-ruby-instance;
+      }
+    }
+    &.language {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.escape {
+      color: @color-syntax-escape;
+    }
+    &.language {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  .string {
+    &.quoted {
+      color: @color-syntax-string;
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+}

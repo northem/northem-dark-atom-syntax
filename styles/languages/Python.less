@@ -1,0 +1,116 @@
+.source.python {
+
+  .storage {
+    &.type {
+      &.function {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .keyword {
+    &.other {
+      color: @color-syntax-keyword;
+    }
+    &.control {
+      &.import {
+        color: @color-syntax-import;
+      }
+      &.statement {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  .support {
+    &.type {
+      color: @color-syntax-keyword;
+    }
+    &.function {
+      color: @color-syntax-function;
+    }
+  }
+
+  .punctuation {
+    &.definition {
+      &.string {
+        color: @color-syntax-symbol;
+      }
+      &.parameters {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.arguments {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.list {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.comment {
+        color: @color-syntax-comment;
+      }
+    }
+    &.seperator {
+      color: @color-syntax-symbol;
+    }
+    &.section {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  .variable {
+    &.parameter {
+      &.function {
+        color: @color-syntax-variable;
+      }
+    }
+  }
+
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+
+  .string {
+    &.quoted {
+      color: @color-syntax-string;
+    }
+  }
+
+  .meta {
+    &.function-call {
+      color: @color-syntax-function;
+
+      &.arguments {
+        color: @color-syntax-variable;
+      }
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+}

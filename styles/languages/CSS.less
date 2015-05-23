@@ -1,0 +1,155 @@
+.source.css {
+
+  .meta {
+    &.selector {
+      color: @color-syntax-css-selector;
+    }
+    &.at-rule {
+      &.media {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.property-value {
+      color: @color-editor-text;
+    }
+  }
+
+  .constant {
+    color: @color-syntax-constant;
+    font-weight: bold;
+
+    &.numeric {
+      color: @color-syntax-number;
+      font-weight: normal;
+    }
+    &.other {
+      &.color {
+        &.rgb-value {
+          color: @color-syntax-number;
+          font-weight: normal;
+        }
+      }
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-escape;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .punctuation {
+    &.terminator {
+      color: @color-syntax-symbol;
+    }
+    &.separator {
+      color: @color-syntax-symbol;
+    }
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.keyword {
+        color: @color-syntax-keyword;
+      }
+
+      &.entity {
+        color: @color-syntax-symbol;
+      }
+      &.string {
+        color: @color-syntax-symbol;
+      }
+      &.constant {
+        color: @color-syntax-number;
+        font-weight: normal;
+      }
+    }
+    &.section {
+      color: @color-syntax-symbol;
+
+      &.property-list {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+
+  .entity {
+    &.name.tag {
+      color: @color-syntax-class;
+    }
+    &.other {
+      &.attribute-name {
+        &.attribute {
+          color: @color-syntax-css-attribute;
+        }
+        &.pseudo-class, &.pseudo-element {
+          color: @color-syntax-css-class-pseudo;
+        }
+        &.class {
+          color: @color-syntax-class;
+        }
+        &.id {
+          color: @color-syntax-css-id;
+        }
+      }
+    }
+  }
+
+  .keyword {
+    &.operator {
+      color: @color-syntax-operator;
+    }
+    &.control {
+      &.at-rule {
+        &.font-face, &.import, &.page, &.media {
+          color: @color-syntax-css-at-rule;
+        }
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+      &.unit {
+        color: @color-syntax-keyword;
+      }
+      &.important {
+        color: @color-syntax-css-important;
+      }
+    }
+  }
+
+  .support {
+    &.type {
+      &.property-name {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.function {
+      color: @color-syntax-function;
+    }
+    &.constant {
+      &.property-value {
+        color: @color-syntax-css-property;
+        font-weight: normal;
+      }
+      &.media {
+        color: @color-syntax-css-media;
+      }
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  .variable {
+    color: @color-syntax-variable;
+
+    &.parameter.misc {
+      color: @color-syntax-class;
+    }
+  }
+
+  .string {
+    color: @color-syntax-string;
+  }
+}

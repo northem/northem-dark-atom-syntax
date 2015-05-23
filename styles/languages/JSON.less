@@ -1,0 +1,77 @@
+.source.json {
+
+  .constant {
+    &.language {
+      color: @color-syntax-constant;
+      font-weight: bold;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+
+  .meta.structure.dictionary.json {
+
+    .string.quoted.json {
+      color: @color-syntax-keyword;
+
+      .punctuation.definition.string {
+        color: @color-syntax-symbol;
+      }
+    }
+
+    .punctuation {
+      &.definition {
+        &.dictionary {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+
+    .meta.structure.dictionary.value.json {
+
+      .string.quoted.json {
+        color: @color-syntax-string;
+
+        .punctuation.definition.string {
+          color: @color-syntax-symbol;
+        }
+      }
+
+      .meta.structure.dictionary.json {
+
+        .string.quoted.json {
+          color: @color-syntax-keyword;
+
+          .punctuation.definition.string {
+            color: @color-syntax-symbol;
+          }
+        }
+
+        .meta.structure.dictionary.value.json {
+
+            .string.quoted.json {
+              color: @color-syntax-string;
+
+              .punctuation.definition.string {
+                color: @color-syntax-symbol;
+              }
+            }
+        }
+      }
+    }
+
+    .meta.structure.array {
+
+      .punctuation {
+        &.definition {
+          &.array {
+            &.begin, &.end {
+              color: @color-syntax-symbol;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,138 @@
+.source.less {
+
+  .constant {
+    color: @color-syntax-constant;
+    font-weight: bold;
+
+    &.numeric {
+      color: @color-syntax-number;
+      font-weight: normal;
+    }
+    &.other {
+      &.rgb-value {
+        color: @color-syntax-number;
+        font-weight: normal;
+      }
+    }
+  }
+
+  .punctuation {
+    &.terminator {
+      color: @color-syntax-symbol;
+    }
+    &.seperator {
+      color: @color-syntax-symbol;
+    }
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.keyword {
+        color: @color-syntax-keyword;
+        font-weight: normal;
+      }
+
+      &.entity {
+        color: @color-syntax-symbol;
+      }
+      &.string {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.section {
+      &.property-list {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+
+  .entity {
+    &.other {
+      &.attribute-name {
+        &.class {
+          color: @color-syntax-class;
+        }
+        &.id {
+          color: @color-syntax-class;
+        }
+      }
+    }
+  }
+
+  .keyword {
+    &.operator {
+      color: @color-syntax-operator;
+    }
+    &.control {
+      color: @color-syntax-function;
+
+      &.at-rule {
+        &.fontface, &.import, &.page, &.media {
+          color: @color-syntax-css-at-rule;
+          font-weight: bold;
+        }
+      }
+      &.logical {
+        &.operator {
+          color: @color-syntax-operator;
+        }
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+      &.unit {
+        color: @color-syntax-unit;
+      }
+    }
+  }
+
+  .support {
+    &.type {
+      &.property-name {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.function {
+      color: @color-syntax-function;
+
+      &.any-method {
+        &.builtin {
+          color: @color-syntax-function;
+        }
+      }
+    }
+    &.constant {
+      &.color {
+        &.w3c-standard-color-name {
+          color: @color-syntax-constant;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  .meta {
+    &.property-list {
+      color: @color-syntax-keyword;
+    }
+    &.brace {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  .variable {
+    color: @color-syntax-variable;
+
+    &.other {
+      color: @color-syntax-variable;
+    }
+  }
+
+  .string {
+    color: @color-syntax-string;
+  }
+}

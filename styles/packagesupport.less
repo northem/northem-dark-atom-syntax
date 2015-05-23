@@ -1,0 +1,43 @@
+/*
+********************************************************
+* package:    bracket-matcher                          *
+* author:     atom                                     *
+* home:       https://atom.io/packages/bracket-matcher *
+* version:    0.71.0                                   *
+********************************************************
+*/
+.bracket-matcher.region {
+  border-bottom: 2px solid @color-marker-result-border;
+  border-radius: 1px;
+  /*
+   * FIXME: Unreadable on similar font colors
+   *
+  opacity: 0.45;
+  background-color: @color-marker-result-border;
+   *
+   */
+}
+
+/*
+***********************************************************
+* package:    hightlight-selected                         *
+* author:     richrace                                    *
+* home:       https://atom.io/packages/highlight-selected *
+* version:    0.9.1                                       *
+***********************************************************
+*/
+.highlight-selected .region {
+  border-color: @color-marker-result-border !important;
+}
+
+/*
+*******************************************************************
+* package:    minimap-highlight-selected                          *
+* author:     atom-minimap                                        *
+* home:       https://atom.io/packages/minimap-highlight-selected *
+* version:    4.2.0                                               *
+*******************************************************************
+*/
+.minimap .highlight-selected {
+  background: @color-marker-result-border;
+}

@@ -1,0 +1,32 @@
+.mustache {
+
+  .meta.tag.template {
+    color: @color-syntax-variable;
+
+    .entity.name {
+      &.tag {
+        color: @color-syntax-mustache-tag;
+        font-weight: bold;
+      }
+      &.function {
+        color: @color-syntax-variable;
+      }
+    }
+
+    .punctuation {
+      &.definition {
+        &.block {
+          &.begin, &.end {
+            color: @color-syntax-operator;
+          }
+        }
+      }
+    }
+  }
+
+  .comment {
+    &.block {
+      color: @color-syntax-comment;
+    }
+  }
+}

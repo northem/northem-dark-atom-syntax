@@ -1,0 +1,134 @@
+.atom-text-editor, :host {
+  background-color: @color-editor-background;
+  color: @color-editor-text;
+
+  /*
+   * ==========
+   * = CURSOR =
+   * ==========
+   */
+  .cursor {
+    color: @color-editor-cursor;
+  }
+
+  /*
+   * ==========
+   * = GUTTER =
+   * ==========
+   */
+  .gutter {
+    background-color: @color-gutter-background;
+    color: @color-gutter-text;
+
+    .line-number {
+      &.cursor-line {
+        background-color: @color-gutter-background-selected;
+        color: @color-gutter-text-selected;
+      }
+      &.cursor-line-no-selection {
+        color: @color-gutter-text-selected;
+      }
+      &.git-line-removed:before {
+        bottom: -3px;
+      }
+      &.git-line-removed:after {
+        content: "";
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        width: 25px;
+        border-bottom: 2px dotted fade(@color-git-diff-removed, 50%);
+        pointer-events: none;
+      }
+      &.folded {
+        .icon-right {
+          color: @color-gutter-icon-folded;
+        }
+        .icon-right:hover {
+          color: @color-gutter-icon-folded-hover;
+        }
+      }
+
+      .icon-right {
+        color: @color-gutter-icon;
+      }
+    }
+
+    .gutter .line-number.folded,
+    .gutter .line-number:after,
+    .fold-marker:after {
+      color: @color-gutter-text;
+    }
+  }
+
+  /*
+   * ================
+   * = INDENT-GUIDE =
+   * ================
+   */
+  .indent-guide {
+    color: @color-guides-indent-line;
+  }
+
+  /*
+   * ==============
+   * = INVISIBLES =
+   * ==============
+   */
+  .invisible {
+    color: @color-guides-invisibles;
+  }
+
+  .invisible-character {
+    color: @color-guides-invisibles;
+  }
+
+  /*
+   * ==========
+   * = LINE =
+   * ==========
+   */
+  .line.cursor-line {
+    background: @color-gutter-background-selected;
+  }
+
+  /*
+   * =============
+   * = SELECTION =
+   * =============
+   */
+  .selection .region {
+    background-color: @color-editor-background-selected;
+    color: @color-editor-text;
+  }
+
+  /*
+   * ==============
+   * = WRAP-GUIDE =
+   * ==============
+   */
+  .wrap-guide {
+    background-color: @color-guides-wrap;
+  }
+}
+
+atom-text-editor,
+atom-text-editor::shadow {
+  /*
+   * =================
+   * = RESULT MARKER =
+   * =================
+   */
+  .find-result .region {
+    border: 1px solid @color-marker-result-border !important;
+  }
+
+  .current-result .region {
+    border: 1px solid @color-marker-result-border !important;
+    background-color: transparent;
+  }
+
+  .gutter.drop-shadow {
+    -webkit-box-shadow: -2px 0 10px 2px @color-gutter-background;
+  }
+}

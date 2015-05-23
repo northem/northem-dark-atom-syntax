@@ -1,0 +1,104 @@
+.source.jade {
+
+  .entity {
+    &.name {
+      &.tag {
+        color: @color-syntax-tag;
+      }
+    }
+    &.other {
+      &.attribute-name {
+        &.tag {
+          color: @color-syntax-attribute;
+        }
+      }
+    }
+  }
+
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+
+  .constant {
+    &.name {
+      &.attribute {
+        &.tag {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.language {
+      &.boolean {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  .string {
+    &.quoted {
+      color: @color-syntax-string;
+    }
+  }
+
+  .meta {
+    &.brace {
+      &.round {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.curly {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  .storage {
+    &.modifier {
+      color: @color-syntax-keyword;
+    }
+    &.type {
+      &.function {
+        color: @color-syntax-keyword;
+      }
+      &.import {
+        &.include {
+          color: @color-syntax-import;
+        }
+      }
+    }
+  }
+
+  .variable {
+    &.control {
+      &.import {
+        &.include {
+          color: @color-syntax-jade-variable-include;
+        }
+      }
+    }
+  }
+
+  .text {
+    color: @color-editor-text;
+  }
+
+  .comment {
+    &.other {
+      &.doctype {
+        color: @color-syntax-doctype;
+      }
+    }
+    &.unbuffered {
+      &.block {
+        color: @color-syntax-comment;
+      }
+    }
+  }
+}

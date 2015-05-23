@@ -1,0 +1,75 @@
+.html {
+
+  .meta.tag.any {
+    color: @color-syntax-keyword;
+  }
+
+  .meta.tag.sgml.doctype {
+    color: @color-syntax-doctype;
+  }
+
+  .meta.toc-list.id {
+    color: @color-syntax-string;
+  }
+
+  .constant {
+    &.other {
+      &.inline-data {
+        color: @color-syntax-html-cdata;
+        font-style: italic;
+      }
+    }
+  }
+
+  .entity{
+    &.name.tag {
+      &.structure, &.script, &.style {
+        color: @color-syntax-html-tag;
+      }
+    }
+    &.other {
+      &.attribute-name {
+        color: @color-syntax-class;
+      }
+    }
+    &.script, &.style {
+      color: @color-syntax-function;
+    }
+  }
+
+  .punctuation{
+    &.separator.key-value {
+      color: @color-syntax-symbol;
+    }
+    &.definition {
+      &.string {
+        color: @color-syntax-string;
+
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.tag {
+        color: @color-syntax-keyword;
+      }
+      &.comment {
+        color: @color-syntax-comment;
+      }
+    }
+  }
+  .separator.key-value.html {
+    color: @color-syntax-symbol;
+  }
+
+  .string {
+    &.quoted.double {
+      color: @color-syntax-string;
+    }
+  }
+
+  .comment {
+    &.block {
+      color: @color-syntax-comment;
+    }
+  }
+}
