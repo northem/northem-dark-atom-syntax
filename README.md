@@ -6,9 +6,9 @@
 A north-bluish dark theme based on the same named [color palette](https://github.com/arcticicestudio/northem) designed by [Arctic Ice Studio](http://arcticicestudio.com).
 This is a darker and more blue-tinged variation.
 
-[![Northem](res/image/northem-dark.png)](http://arcticicestudio.com/Northem)
+[Northem Color Palette](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/res/image/northem-dark.png)
 
-[![Northem](res/image/preview-screenshot.png)](http://arcticicestudio.com/Northem)
+[Northem Preview Screenshot](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/res/image/preview-screenshot.png)
 
 ### Variations
 Also available as:
@@ -45,8 +45,7 @@ Syntax Highlighting actually includes:
   - [YAML](https://atom.io/packages/language-yaml)
 
 ### Version
-> Latest
-_stable_: [`0.1.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/tag/0.1.0)
+_stable_: [`0.2.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/tag/v0.2.0)  
 _snapshot_: [/](#)
 
 _status_: `ìndev`
@@ -54,8 +53,7 @@ _status_: `ìndev`
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
 
 ### Changelog
-> Latest
-[`0.1.0`](CHANGELOG.md)
+[`0.2.0`](CHANGELOG.md)
 
 Check out the `CHANGELOG.md` file or open via _Settings > Packages_ and filter for `northem-dark-atom-syntax`.
 All changelogs are available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
@@ -78,12 +76,12 @@ Activate it by going to the _Settings > Themes_ section and select `Northem Dark
 ### License
 Copyright (C) 2015 Arctic Ice Studio
 
-Northem code is licensed under [GPL3](http://www.gnu.org/licenses/gpl.txt).
+Northem code is licensed under [GPL3](http://www.gnu.org/licenses/gpl.txt).  
 Northem color palette itself is licensed under [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0).
 
 ---
 
 ### References
-[Atom API-Documentation](https://atom.io/docs/api/latest/Atom)
-[Atom Flight Manual](https://atom.io/docs)
+[Atom API-Documentation](https://atom.io/docs/api/latest/Atom)  
+[Atom Flight Manual](https://atom.io/docs)  
 [LESS](http://lesscss.org)
