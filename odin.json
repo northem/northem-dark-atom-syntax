@@ -35,7 +35,8 @@
   },
   "tags": ["northem","bluish","dark","syntax"],
   "engines": {
-    "odin": ">=1.0.0",
+    "northem-dark": ">=1.0.0",
+    "odin": ">=0.1.0",
     "arcver": ">=0.1.0"
   }
 }
