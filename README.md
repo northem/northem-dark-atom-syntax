@@ -15,7 +15,7 @@ Also available as:
   - [Northem Atom Syntax](https://github.com/arcticicestudio/northem-atom-syntax)
   - [Northem Light Atom Syntax](https://github.com/arcticicestudio/northem-light-atom-syntax)
 
-__Also make sure to check out [Northem Dark Atom UI](https://github.com/arcticicestudio/northem-dark-atom-ui)!__
+__Make sure to check out [Northem Dark Atom UI](https://github.com/arcticicestudio/northem-dark-atom-ui)!__
 
 ### Other Projects
   - ![Eclipse logo](https://eclipse.org/favicon.ico) [Northem Dark Eclipse Syntax](https://github.com/arcticicestudio/northem-dark-eclipse-syntax)
