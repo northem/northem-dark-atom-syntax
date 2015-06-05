@@ -1,0 +1,89 @@
+.source.julia {
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  .keyword {
+    &.other {
+      color: @color-syntax-keyword;
+    }
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      &.ternary {
+        color: @color-syntax-operator;
+      }
+      &.arithmetic {
+        color: @color-syntax-operator;
+      }
+      &.update {
+        color: @color-syntax-operator;
+      }
+    }
+  }
+
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .support {
+    &.function {
+      color: @color-syntax-function;
+
+      &.macro {
+        font-weight: bold;
+      }
+    }
+  }
+
+  .punctuation {
+    &.definition {
+      &.commment {
+        color: @color-syntax-comment;
+      }
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+
+  .storage {
+    &.type {
+      color: @color-syntax-type;
+    }
+  }
+
+  .bracket {
+    color: @color-syntax-symbol;
+  }
+
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-escape;
+      }
+    }
+    &.language {
+      color: @color-syntax-constant;
+    }
+  }
+
+  .string {
+    &.qouted {
+      &.souble {
+        color: @color-syntax-string;
+      }
+    }
+  }
+}
