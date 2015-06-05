@@ -1,6 +1,15 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.3.0 (2015-06-05)
+### Added
+  * Support for:  
+    * [Julia](https://atom.io/packages/language-julia)
+    * [Shell](https://atom.io/packages/language-shellscript)
+
+### Incidental
+  * Added link to recently released 'Northem Light Atom Syntax'
+
 ## 0.2.1 (2015-05-24)
 * Fix some cosmetics for package description on atom.io registry
 
