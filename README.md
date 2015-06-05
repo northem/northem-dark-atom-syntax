@@ -45,7 +45,7 @@ Syntax Highlighting actually includes:
   - [YAML](https://atom.io/packages/language-yaml)
 
 ### Version
-_stable_: [`0.2.1`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/tag/v0.2.1)  
+_stable_: [`0.2.1`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 _snapshot_: [/](#)
 
 _status_: `ìndev`
