@@ -13,7 +13,7 @@ This is a darker and more blue-tinged variation.
 ### Variations
 Also available as:
   - [Northem Atom Syntax](https://github.com/arcticicestudio/northem-atom-syntax)
-  - [Northem Light Atom Syntax](#) (in drafting)
+  - [Northem Light Atom Syntax](https://github.com/arcticicestudio/northem-light-atom-syntax)
 
 __Also make sure to check out [Northem Dark Atom UI](https://github.com/arcticicestudio/northem-dark-atom-ui)!__
 
