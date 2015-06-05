@@ -1,6 +1,11 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.3.1 (2015-06-05)
+### Bug Fixes
+  * Fixed missing `@color-syntax-type` (thanks to @xiaokekeT) and `@color-syntax-macro`
+  * Fixed missing changelog for version 0.3.0
+
 ## 0.3.0 (2015-06-05)
 ### Added
   * Support for:  
