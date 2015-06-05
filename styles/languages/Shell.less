@@ -1,0 +1,97 @@
+.source.shell {
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  .punctuation {
+    &.definition {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.subshell {
+        color: @color-syntax-symbol;
+      }
+      &.variable {
+        color: @color-syntax-type;
+      }
+      &.case-pattern {
+        color: @color-syntax-operator;
+      }
+      &.arguments {
+        color: @color-syntax-function;
+      }
+      &.logical-expression {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.terminator {
+      &.case-clause {
+        color: @color-syntax-operator;
+      }
+    }
+    &.separator {
+      &.pipe-sign {
+        color: @color-syntax-operator;
+      }
+    }
+  }
+
+  .string {
+    &.quoted {
+      &.double {
+        color: @color-syntax-string;
+      }
+      &.single {
+        color: @color-syntax-string;
+      }
+    }
+    &.interpolated {
+      &.dollar {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .variable {
+    &.other {
+      &.positional {
+        color: @color-syntax-type;
+      }
+    }
+  }
+
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .keyword {
+    &.operator {
+      &.list {
+        color: @color-syntax-operator;
+      }
+    }
+    &.control {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  .variable {
+    color: @color-syntax-variable;
+  }
+
+  .support {
+    &.function {
+      &.builtin {
+        color: @color-syntax-function;
+        font-style: italic;
+      }
+    }
+  }
+}
