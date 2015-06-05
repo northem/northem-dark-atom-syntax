@@ -46,7 +46,7 @@ Syntax Highlighting actually includes:
 
 ### Version
 _stable_: [`0.2.1`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
-_snapshot_: [/](#)
+_snapshot_: `/`
 
 _status_: `ìndev`
 
