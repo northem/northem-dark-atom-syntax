@@ -37,6 +37,6 @@
   "engines": {
     "northem-dark": ">=1.0.0",
     "odin": ">=0.1.0",
-    "arcver": ">=0.1.0"
+    "arcver": ">=0.4.0"
   }
 }
