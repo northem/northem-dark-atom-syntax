@@ -18,10 +18,10 @@ Also available as:
 __Make sure to check out [Northem Dark Atom UI](https://github.com/arcticicestudio/northem-dark-atom-ui)!__
 
 ### Other Projects
-  - ![Eclipse logo](https://eclipse.org/favicon.ico) [Northem Dark Eclipse Syntax](https://github.com/arcticicestudio/northem-dark-eclipse-syntax)
-  - ![gedit logo](https://static.gnome.org/wiki.gnome.org/gnome/css/favicon.png) [Northem Dark gedit](https://github.com/arcticicestudio/northem-dark-gedit)
-  - ![GTK logo](http://www.gtk.org/images/gtk-logo.ico) [Northem Dark GTK](#) (in drafting)
-  - ![Notepadd++ logo](http://notepad-plus-plus.org/assets/images/favicon.ico) [Northem Dark Notepad++](https://github.com/arcticicestudio/northem-dark-notepadplusplus) (Windows only)
+  - <a href="https://github.com/arcticicestudio/northem-dark-eclipse-syntax"><img src="https://eclipse.org/favicon.ico" alt="Eclipse logo" width=16 height=16> Northem Dark Eclipse Syntax</a>
+  - <a href="https://github.com/arcticicestudio/northem-dark-gedit"><img src="https://static.gnome.org/wiki.gnome.org/gnome/css/favicon.png" alt="gedit logo" width=16 height=16> Northem Dark gedit</a>
+  - <a href="#"><img src="http://www.gtk.org/images/gtk-logo.ico" alt="GTK logo"> Northem Dark GTK (in drafting)</a>
+  - <a href="https://github.com/arcticicestudio/northem-dark-notepadplusplus"><img src="http://notepad-plus-plus.org/assets/images/favicon.ico" alt="Notepadd++ logo" width=16 height=16> Northem Dark Notepad++ (Windows only)</a>
 
 Visit the [official homepage](http://arcticicestudio.com/Northem) (actually under construction) for more informations.
 
