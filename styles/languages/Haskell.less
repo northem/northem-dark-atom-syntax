@@ -28,5 +28,194 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
 */
 
 .source.haskell {
-  
+  /*
+   * ========
+   * = META =
+   * ========
+   */
+  .meta {
+    &.preprocessor {
+      color: @color-syntax-haskell-preprocessor;
+
+      .keyword {
+        &.other {
+          color: @color-syntax-keyword;
+        }
+      }
+    }
+    &.declaration {
+      &.exports {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.type-signature {
+      // TODO: Necessary to set parent color property?
+      /* color: transparent; */
+
+      .keyword {
+        &.operator {
+          color: @color-syntax-operator;
+        }
+      }
+    }
+    &.other {
+      &.constructor-list {
+        color: @color-syntax-variable;
+      }
+    }
+  }
+
+  /*
+   * ===========
+   * = COMMENT =
+   * ===========
+   */
+  .comment {
+    color: @color-syntax-comment;
+    font-weight: normal;
+  }
+
+  /*
+   * ===========
+   * = SUPPORT =
+   * ===========
+   */
+  .support {
+    &.other {
+      &.module {
+        color: @color-syntax-class;
+        font-weight: bold;
+      }
+    }
+    &.class {
+      &.prelude {
+        color: @color-syntax-class;
+      }
+    }
+    &.function {
+      &.prelude {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  /*
+   * ==========
+   * = ENTITY =
+   * ==========
+   */
+  .entity {
+    &.name {
+      &.type {
+        color: @color-syntax-class;
+      }
+      &.function {
+        color: @color-syntax-function;
+
+        &.infix {
+          color: @color-syntax-function;
+        }
+      }
+      &.tag {
+        color: @color-syntax-class;
+      }
+    }
+  }
+
+  /*
+   * ===========
+   * = KEYWORD =
+   * ===========
+   */
+  .keyword {
+    &.operator {
+      color: @color-syntax-operator;
+
+      &.assignment {
+        color: @color-syntax-operator;
+      }
+      &.function {
+        &.infix {
+          color: @color-syntax-function;
+        }
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+
+      &.arrow {
+        color: @color-syntax-operator;
+      }
+      &.double-colon {
+        color: @color-syntax-operator;
+      }
+    }
+
+    &.control {
+      &.import {
+        color: @color-syntax-haskell-preprocessor;
+        font-weight: bold;
+      }
+    }
+  }
+
+  /*
+   * ===========
+   * = STORAGE =
+   * ===========
+   */
+  .storage {
+    &.type {
+      &.data {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  /*
+   * ===============
+   * = PUNCTUATION =
+   * ===============
+   */
+  .punctuation {
+    &.separator {
+      &.comma {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.definition {
+      &.entity {
+        color: @color-syntax-symbol;
+      }
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+
+  /*
+   * ============
+   * = CONSTANT =
+   * ============
+   */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+
+  /*
+   * ==========
+   * = STRING =
+   * ==========
+   */
+  .string {
+    &.quoted {
+      &.single {
+        color: @color-syntax-string;
+      }
+    }
+  }
 }
