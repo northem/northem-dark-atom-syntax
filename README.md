@@ -65,6 +65,8 @@ Please report bugs and suggestions for improvement/language support [here](https
 This theme matches the Open Source font [Source Code Pro](https://typekit.com/fonts/source-code-pro).  
 Visit the [GitHub Repository](https://github.com/adobe-fonts/source-code-pro) for more informations.
 
+The colored file icons on the preview screenshot are provided by the [`file-icons`](https://atom.io/packages/file-icons) package.
+
 ### Installation
 Download and install the recommended font, read section [Recommendations](#Recommendations) for more informations.
 
