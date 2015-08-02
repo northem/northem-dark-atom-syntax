@@ -1,6 +1,20 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.4.0 (2015-08-02)
+### Added
+#### Languages
+  * Implemented support for language `Haskell`
+#### Essentials
+  * Now using `Apache Ant` for build automation and deploying
+### Bug Fixes
+#### Documentation
+  * Fixed favicon sizes in `README.md`
+  * Fixed missing notice for [`file-icons`](https://atom.io/packages/file-icons) package in [`README.md`](README.md)
+### Changed
+#### Dependencies
+  * Bumped `arcver`@`0.5.0`
+
 ## 0.3.1 (2015-06-05)
 ### Bug Fixes
   * Fixed missing `@color-syntax-type` (thanks to @xiaokekeT) and `@color-syntax-macro`
