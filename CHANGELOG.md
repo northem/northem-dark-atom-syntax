@@ -1,6 +1,11 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.5.0 (2015-08-08)
+### Added
+#### Languages
+  * Implemented support for language [`Java`](https://atom.io/packages/language-java)
+
 ## 0.4.0 (2015-08-02)
 ### Added
 #### Languages

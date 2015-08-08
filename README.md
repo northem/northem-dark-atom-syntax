@@ -33,6 +33,7 @@ Syntax Highlighting actually includes:
   - [Haskell](https://atom.io/packages/language-haskell)
   - [HTML](https://atom.io/packages/language-html)
   - [Jade](https://atom.io/packages/language-jade)
+  - [Java](https://atom.io/packages/language-java)
   - [JavaScript](https://atom.io/packages/language-javascript)
   - [JSON](https://atom.io/packages/language-json)
   - [LESS](https://atom.io/packages/language-lesss)
@@ -46,7 +47,7 @@ Syntax Highlighting actually includes:
   - [YAML](https://atom.io/packages/language-yaml)
 
 ### Version
-_stable_: [`0.4.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
+_stable_: [`0.5.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 _snapshot_: `/`
 
 _status_: `ìndev`
@@ -54,7 +55,7 @@ _status_: `ìndev`
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
 
 ### Changelog
-[`0.4.0`](CHANGELOG.md)
+[`0.5.0`](CHANGELOG.md)
 
 Check out the `CHANGELOG.md` file or open via _Settings > Packages_ and filter for `northem-dark-atom-syntax`.  
 All changelogs are available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
