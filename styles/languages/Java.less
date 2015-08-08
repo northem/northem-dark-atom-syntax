@@ -1,6 +1,6 @@
 /*
 #************************************************#
-#       Northem Atom Syntax - Language Java      #
+#     Northem Dark Atom Syntax - Language Java   #
 #------------------------------------------------#
 #                    Java.less                   #
 #        http://arcticicestudio.com/Northem      #
@@ -10,7 +10,7 @@
 #         development@arcticicestudio.com        #
 #                                                #
 #      Created : 2015-08-08 11:14 +0100 UTC      #
-#      Modified: 2015-08-08 12:48 +0100 UTC      #
+#      Modified: 2015-08-08 12:52 +0100 UTC      #
 #************************************************#
 
 [Description]
@@ -23,10 +23,108 @@ Syntax Highlighting based on the following packages:
 [License]
 Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
 
-Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+Northem Dark code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem Dark color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
 */
 
 .source.java {
-  
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  .keyword {
+    &.other {
+      &.package,
+      &.import {
+        color: @color-syntax-import;
+        font-weight: bold;
+      }
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+    &.control {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  .storage {
+    &.modifier {
+      color: @color-syntax-keyword;
+
+      &.package,
+      &.import {
+        color: @color-syntax-java-package;
+      }
+    }
+    &.type {
+      color: @color-syntax-class;
+
+      &.annotation {
+        color: @color-syntax-java-annotation;
+      }
+    }
+  }
+
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+      &.class {
+        color: @color-syntax-class;
+        font-weight: bold;
+      }
+    }
+  }
+
+  .meta {
+    &.method-call {
+      .meta {
+        &.method {
+          color: @color-syntax-function;
+        }
+      }
+    }
+  }
+
+  .constant {
+    &.variable,
+    &.other {
+      color: @color-syntax-constant;
+      font-weight: bold;
+      font-style: italic;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+
+  .punctuation {
+    &.definition {
+      &.string {
+        color: @color-syntax-symbol;
+      }
+      &.method-parameters {
+        color: @color-syntax-variable;
+      }
+    }
+    &.terminator {
+      color: @color-syntax-keyword;
+    }
+    &.section {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  .string {
+    color: @color-syntax-string;
+  }
+
+  .variable {
+    &.language {
+      color: @color-syntax-keyword;
+    }
+  }
 }
