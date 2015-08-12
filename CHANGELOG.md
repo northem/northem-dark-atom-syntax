@@ -1,6 +1,11 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.6.0 (2015-08-12)
+### Added
+#### Languages
+  * Implemented support for language [`HAML`](https://atom.io/packages/language-haml)
+
 ## 0.5.0 (2015-08-08)
 ### Added
 #### Languages
