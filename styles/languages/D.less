@@ -10,7 +10,7 @@
 #         development@arcticicestudio.com        #
 #                                                #
 #      Created : 2015-08-14 14:23 +0100 UTC      #
-#      Modified: 2015-08-16 21:23 +0100 UTC      #
+#      Modified: 2015-08-16 21:24 +0100 UTC      #
 #************************************************#
 
 [Description]
@@ -27,5 +27,216 @@ Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
 */
 .source.d {
+  color: @color-syntax-other;
 
+  /*
+   * ===========
+   * = KEYWORD =
+   * ===========
+   */
+  .keyword {
+    &.operator {
+      &.logical {
+        color: @color-syntax-operator;
+      }
+      &.dereference {
+        color: @color-syntax-symbol;
+      }
+      &.arithmetic {
+        color: @color-syntax-operator;
+      }
+      &.assignment {
+        color: @color-syntax-operator;
+      }
+      &.concatenation {
+        color: @color-syntax-operator;
+      }
+      &.bitwise {
+        color: @color-syntax-operator;
+      }
+      &.comparison {
+        color: @color-syntax-operator;
+      }
+    }
+    &.control {
+      color: @color-syntax-keyword;
+
+      &.loop{
+        color: @color-syntax-keyword;
+      }
+      &.branch {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+
+      &.import {
+        color: @color-syntax-import;
+        font-weight: bold;
+      }
+    }
+  }
+
+  /*
+   * ===========
+   * = STORAGE =
+   * ===========
+   */
+  .storage {
+    &.type {
+      &.return{
+        color: @color-syntax-keyword;
+      }
+      &.primitive {
+        color: @color-syntax-class;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+    }
+    &.modifier {
+      color: @color-syntax-keyword;
+
+      &.protection {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  /*
+   * ============
+   * = CONSTANT =
+   * ============
+   */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-escape;
+      }
+    }
+  }
+
+  /*
+   * ==========
+   * = ENTITY =
+   * ==========
+   */
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+      &.class {
+        color: @color-syntax-class;
+        font-weight: bold;
+      }
+    }
+  }
+
+  /*
+   * ============
+   * = VARIABLE =
+   * ============
+   */
+  .variable {
+    color: @color-syntax-variable;
+
+    &.language{
+      color: @color-syntax-keyword;
+    }
+    &.parameter {
+      color: @color-syntax-variable;
+    }
+  }
+
+  /*
+   * ===========
+   * = SUPPORT =
+   * ===========
+   */
+  .support {
+    &.other {
+      &.module {
+        color: @color-syntax-class;
+      }
+    }
+  }
+
+  /*
+   * ===============
+   * = PUNCTUATION =
+   * ===============
+   */
+  .punctuation {
+    &.separator {
+      color: @color-syntax-symbol;
+    }
+    &.terminator {
+      color: @color-syntax-keyword;
+    }
+    &.comma {
+      color: @color-syntax-symbol;
+    }
+    &.section {
+      &.block {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.definition {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+
+  /*
+   * ========
+   * = META =
+   * ========
+   */
+  .meta {
+    &.function {
+      &.parameters {
+        color: @color-syntax-variable;
+      }
+    }
+    /*
+    &.parentheses {
+      color: @color-syntax-other;
+    }
+    */
+    /*
+    &.class {
+      &.inheritance {
+        color: @color-syntax-other;
+      }
+    }
+    */
+  }
+
+  /*
+   * ==========
+   * = STRING =
+   * ==========
+   */
+  .string {
+    color: @color-syntax-string;
+  }
+
+  /*
+   * ===========
+   * = COMMENT =
+   * ===========
+   */
+  .comment {
+    color: @color-syntax-comment;
+  }
 }
