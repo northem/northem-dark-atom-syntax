@@ -1,6 +1,16 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.7.0 (2015-08-16)
+### Added
+#### Languages
+  * Implemented support for language [`GLSL`](https://atom.io/packages/language-glsl)
+  * Implemented support for language [R](https://atom.io/packages/language-r)
+
+### Bug Fixes
+### Documentation
+  * Fixed hyperlink of the Northem logo in `README.md`
+
 ## 0.6.0 (2015-08-12)
 ### Added
 #### Languages
