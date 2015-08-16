@@ -10,7 +10,7 @@
 #         development@arcticicestudio.com        #
 #                                                #
 #      Created : 2015-08-14 15:42 +0100 UTC      #
-#      Modified: 2015-08-16 12:40 +0100 UTC      #
+#      Modified: 2015-08-16 12:42 +0100 UTC      #
 #************************************************#
 
 [Description]
@@ -27,5 +27,82 @@ Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
 */
 .source.r {
-  
+  color: @color-syntax-other;
+
+  .keyword {
+    &.operator {
+      &.assignment {
+        color: @color-syntax-operator;
+      }
+      &.arithmetic {
+        color: @color-syntax-operator;
+      }
+      &.logical {
+        color: @color-syntax-operator;
+      }
+      &.comparison {
+        color: @color-syntax-operator;
+      }
+    }
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.other {
+      color: @color-syntax-operator;
+    }
+  }
+
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .variable {
+    &.other {
+      color: @color-syntax-variable;
+    }
+    &.parameter {
+      color: @color-syntax-variable;
+    }
+  }
+
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.language {
+      color: @color-syntax-constant;
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-regexp;
+      }
+    }
+  }
+
+  .punctuation {
+    &.definition {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-string;
+        }
+      }
+    }
+    &.section {
+      &.begin, &.end {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+
+  .string {
+    color: @color-syntax-string;
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
 }
