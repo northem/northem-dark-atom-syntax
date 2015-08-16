@@ -1,6 +1,6 @@
 # Northem Dark Atom Syntax
 
-[![Northem Logo](res/image/northem-logo.png)](http://arcticicestudio.com/Northem)
+[![Northem Logo](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/res/image/northem-logo.png)](http://arcticicestudio.com/Northem)
 
 ### Description
 A north-bluish dark theme based on the same named [color palette](https://github.com/arcticicestudio/northem) designed by [Arctic Ice Studio](http://arcticicestudio.com).  
