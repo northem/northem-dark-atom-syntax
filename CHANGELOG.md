@@ -1,6 +1,11 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.8.0 (2015-08-16)
+### Added
+#### Languages
+  * Implemented support for language [`D`](https://atom.io/packages/language-d)
+
 ## 0.7.0 (2015-08-16)
 ### Added
 #### Languages
