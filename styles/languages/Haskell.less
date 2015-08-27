@@ -73,6 +73,12 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
   .comment {
     color: @color-syntax-comment;
     font-weight: normal;
+
+    &.line {
+      &.shebang {
+        color: @color-syntax-haskell-preprocessor;
+      }
+    }
   }
 
   /*
