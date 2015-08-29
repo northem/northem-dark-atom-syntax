@@ -10,7 +10,7 @@
 #         development@arcticicestudio.com        #
 #                                                #
 #      Created : 2015-08-28 12:07 +0100 UTC      #
-#      Modified: 2015-08-29 15:55 +0100 UTC      #
+#      Modified: 2015-08-29 15:56 +0100 UTC      #
 #************************************************#
 
 [Description]
@@ -27,5 +27,114 @@ Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
 */
 .source.clojure {
-  
+  color: @color-syntax-other;
+
+  /*
+   * ========
+   * = META =
+   * ========
+   */
+  .meta {
+    &.symbol {
+      color: @color-syntax-class;
+    }
+    &.vector {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  /*
+   * ===========
+   * = KEYWORD =
+   * ===========
+   */
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  /*
+   * ===========
+   * = STORAGE =
+   * ===========
+   */
+  .storage {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  /*
+   * ==========
+   * = ENTITY =
+   * ==========
+   */
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+    &.global {
+      color: @color-syntax-class;
+    }
+  }
+
+  /*
+   * ============
+   * = CONSTANT =
+   * ============
+   */
+  .constant {
+    &.keyword {
+      color: @color-syntax-keyword;
+    }
+    &.language {
+      color: @color-syntax-keyword;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+
+  /*
+   * ===============
+   * = PUNCTUATION =
+   * ===============
+   */
+  .punctuation {
+    &.definition {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.section {
+      &.expression {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+
+  /*
+   * ===========
+   * = COMMENT =
+   * ===========
+   */
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  /*
+   * ==========
+   * = STRING =
+   * ==========
+   */
+  .string {
+    color: @color-syntax-string;
+  }
 }
