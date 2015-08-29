@@ -27,5 +27,182 @@ Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
 */
 .source.c {
-  
+  color: @color-syntax-other;
+
+  /*
+   * ========
+   * = META =
+   * ========
+   */
+  .meta {
+    &.preprocessor {
+      &.macro {
+        color: @color-syntax-other;
+      }
+      &.c {
+        &.include {
+          color: @color-syntax-keyword;
+        }
+      }
+    }
+    &.block {
+      color: @color-syntax-other;
+    }
+    &.parens {
+      color: @color-syntax-other;
+    }
+  }
+
+  /*
+   * ===========
+   * = KEYWORD =
+   * ===========
+   */
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+
+      &.import {
+        &.include {
+          color: @color-syntax-c-preprocessor;
+          font-weight: bold;
+        }
+        &.define {
+          color: @color-syntax-c-preprocessor;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+
+  /*
+   * ==========
+   * = ENTITY =
+   * ==========
+   */
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  /*
+   * ===========
+   * = SUPPORT =
+   * ===========
+   */
+  .support {
+    &.type {
+      &.sys-types {
+        color: @color-syntax-class;
+      }
+    }
+    &.function {
+      &.any-method {
+        color: @color-syntax-function;
+      }
+      &.C99 {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  /*
+   * ============
+   * = VARIABLE =
+   * ============
+   */
+  .variable {
+    &.parameter {
+      color: @color-syntax-variable;
+    }
+  }
+
+  /*
+   * ===========
+   * = STORAGE =
+   * ===========
+   */
+  .storage {
+    &.type {
+      color: @color-syntax-class;
+    }
+  }
+
+  /*
+   * ============
+   * = CONSTANT =
+   * ============
+   */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-escape;
+      }
+    }
+    &.language {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  /*
+   * ===============
+   * = PUNCTUATION =
+   * ===============
+   */
+  .punctuation {
+    &.definition {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.parameters {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.section {
+      &.block {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.parens {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.separator {
+      &.continuation {
+        color: @color-syntax-escape;
+      }
+      &.parameters {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+
+  /*
+   * ===========
+   * = COMMENT =
+   * ===========
+   */
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  /*
+   * ==========
+   * = STRING =
+   * ==========
+   */
+  .string {
+    color: @color-syntax-string;
+  }
 }
