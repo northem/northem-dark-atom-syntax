@@ -27,7 +27,10 @@ Visit the [official homepage](http://arcticicestudio.com/Northem) (actually unde
 
 ### Languages
 Syntax Highlighting actually includes:
+  - [C](https://atom.io/packages/language-c)
+  - [Clojure](https://atom.io/packages/language-clojure)
   - [CoffeeScript](https://atom.io/packages/language-coffee-script)
+  - [CS (C#)](https://atom.io/packages/language-csharp)
   - [CSS](https://atom.io/packages/language-css)
   - [D](https://atom.io/packages/language-d)
   - [GLSL](https://atom.io/packages/language-glsl)
@@ -51,7 +54,7 @@ Syntax Highlighting actually includes:
   - [YAML](https://atom.io/packages/language-yaml)
 
 ### Version
-_stable_: [`0.8.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
+_stable_: [`0.9.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 _snapshot_: `/`
 
 _status_: `ìndev`
@@ -59,7 +62,7 @@ _status_: `ìndev`
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
 
 ### Changelog
-[`0.8.0`](CHANGELOG.md)
+[`0.9.0`](CHANGELOG.md)
 
 Check out the `CHANGELOG.md` file or open via _Settings > Packages_ and filter for `northem-dark-atom-syntax`.  
 All changelogs are available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official homepage](http://arcticicestudio.com/Northem) (actually under construction).

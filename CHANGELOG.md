@@ -1,6 +1,18 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.9.0 (2015-08-29)
+### Added
+#### Languages
+  * Implemented support for language [`C`](https://atom.io/packages/language-c)
+  * Implemented support for language [`Clojure`](https://atom.io/packages/language-clojure)
+  * Implemented support for language [`CS` (`C#`)](https://atom.io/packages/language-csharp)
+
+### Updated
+#### Languages
+  * `language-haskell`@`1.4.0`:
+    * Now supports highlighting for _tags_ and `runhaskell`-shebang
+
 ## 0.8.0 (2015-08-16)
 ### Added
 #### Languages
