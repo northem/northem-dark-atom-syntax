@@ -1,6 +1,15 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.9.1 (2015-09-13)
+### Updated
+#### Languages
+  * `Jade` changes to better distinguish from `HTML` tags:
+    * Control Keywords (`if`, `each`, `unless` etc.) now highlighted in `dark-blue` instead of `blue`
+    * Embedded JavaScript block & line indicators (`- var`, `script.` etc.) now highlighted in `dark-blue` instead of `blue`
+    * Inline-Tags & Control-Flows (`#[]`, `#{}`) now highlighted in `dark-blue` instead of `blue`
+    * Preprocessor Keywords (`block`, `append`, `prepend`, `include` etc.) now highlighted in bolded `dark-blue` instead of `blue`
+
 ## 0.9.0 (2015-08-29)
 ### Added
 #### Languages
