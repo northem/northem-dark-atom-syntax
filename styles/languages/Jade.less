@@ -1,9 +1,45 @@
-.source.jade {
+/*
+#************************************************#
+#    Northem Dark Atom Syntax - Language Jade    #
+#------------------------------------------------#
+#                    Jade.less                   #
+#        http://arcticicestudio.com/Northem      #
+#                                                #
+#               Arctic Ice Studio                #
+#               Copyright (c) 2015               #
+#         development@arcticicestudio.com        #
+#                                                #
+#      Created : 2015-05-21 09:18 +0100 UTC      #
+#      Modified: 2015-09-13 00:30 +0100 UTC      #
+#************************************************#
 
+[Description]
+This file defines all language specific syntax highlighting classes for Jade.
+
+[Dependencies]
+Syntax Highlighting based on the following packages:
+  - "language-jade" (https://atom.io/packages/language-jade) by "devongovett" (https://atom.io/users/devongovett)
+
+[License]
+Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
+
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+*/
+.source.jade {
+  color: @color-syntax-other;
+  /*
+   * ==========
+   * = ENTITY =
+   * ==========
+   */
   .entity {
     &.name {
       &.tag {
         color: @color-syntax-tag;
+      }
+      &.function {
+        color: @color-syntax-jade-keyword;
       }
     }
     &.other {
@@ -15,6 +51,11 @@
     }
   }
 
+  /*
+   * ===========
+   * = KEYWORD =
+   * ===========
+   */
   .keyword {
     &.control {
       color: @color-syntax-keyword;
@@ -24,6 +65,11 @@
     }
   }
 
+  /*
+   * ============
+   * = CONSTANT =
+   * ============
+   */
   .constant {
     &.name {
       &.attribute {
@@ -42,12 +88,11 @@
     }
   }
 
-  .string {
-    &.quoted {
-      color: @color-syntax-string;
-    }
-  }
-
+  /*
+   * ========
+   * = META =
+   * ========
+   */
   .meta {
     &.brace {
       &.round {
@@ -57,24 +102,42 @@
     &.curly {
       color: @color-syntax-symbol;
     }
+    &.control {
+      &.flow {
+        color: @color-syntax-other;
+      }
+    }
   }
 
+  /*
+   * ===========
+   * = STORAGE =
+   * ===========
+   */
   .storage {
     &.modifier {
-      color: @color-syntax-keyword;
+      color: @color-syntax-jade-keyword;
+      font-style: italic;
     }
     &.type {
       &.function {
-        color: @color-syntax-keyword;
+        color: @color-syntax-jade-keyword;
+        font-style: italic;
       }
       &.import {
         &.include {
-          color: @color-syntax-import;
+          color: @color-syntax-jade-keyword;
+          font-weight: bold;
         }
       }
     }
   }
 
+  /*
+   * ============
+   * = VARIABLE =
+   * ============
+   */
   .variable {
     &.control {
       &.import {
@@ -85,14 +148,68 @@
     }
   }
 
+  /*
+   * ========
+   * = TEXT =
+   * ========
+   */
   .text {
     color: @color-editor-text;
   }
 
+  /*
+   * =======================
+   * = EMBEDDED JAVASCRIPT =
+   * =======================
+   */
+  .javascript.embedded {
+    color: @color-syntax-other;
+  }
+
+  /*
+   * ===============
+   * = PUNCTUATION =
+   * ===============
+   */
+  .punctuation {
+    &.defintion {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.terminator {
+      color: @color-syntax-symbol;
+    }
+  }
+
+  /*
+   * ==========
+   * = STRING =
+   * ==========
+   */
+  .string {
+    color: @color-syntax-string;
+
+    &.interpolated {
+      color: @color-syntax-jade-keyword;
+    }
+    &.comment {
+      color: @color-syntax-comment;
+    }
+  }
+
+  /*
+   * ===========
+   * = COMMENT =
+   * ===========
+   */
   .comment {
     &.other {
       &.doctype {
         color: @color-syntax-doctype;
+        font-weight: bold;
       }
     }
     &.unbuffered {
