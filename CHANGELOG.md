@@ -1,6 +1,23 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.10.0 (2015-09-24)
+### Added
+#### Languages
+  * Implemented support for language [Generic Config (dotfiles)](https://atom.io/packages/language-generic-config)
+    All files containing comments and/or non-comments without a particular structure like
+      * .gitignore
+      * .env
+  * Implemented support for language [git](https://atom.io/packages/language-git)
+    This includes:
+      * Git Commit Messages (`COMMIT_EDITMSG`,`MERGE_MSG`)
+      * Git Configuration `.gitconfig`,`.gitmodules`,`.git/config`,`/etc/gitconfig`)
+      * Git Rebase Messages
+  * Implemented support for language [PropertyList](https://atom.io/packages/language-property-list)
+    Formats:
+      * _ASCII_ (Old-Style)
+      * _XML_
+
 ## 0.9.1 (2015-09-13)
 ### Updated
 #### Languages
