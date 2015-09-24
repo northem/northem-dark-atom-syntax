@@ -33,6 +33,7 @@ Syntax Highlighting actually includes:
   - [CS (C#)](https://atom.io/packages/language-csharp)
   - [CSS](https://atom.io/packages/language-css)
   - [D](https://atom.io/packages/language-d)
+  - [Generic Config](https://atom.io/packages/language-generic-config)
   - [GLSL](https://atom.io/packages/language-glsl)
   - [diff](https://atom.io/packages/git-diff)
   - [HAML](https://atom.io/packages/language-haml)
