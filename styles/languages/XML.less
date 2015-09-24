@@ -1,5 +1,52 @@
-.xml {
+/*
+#*****************************************#
+# Northem Dark Atom Syntax - Language XML #
+#-----------------------------------------#
+#                 XML.less                #
+#    http://arcticicestudio.com/Northem   #
+#                                         #
+#            Arctic Ice Studio            #
+#            Copyright (c) 2015           #
+#     development@arcticicestudio.com     #
+#                                         #
+#   Created : 2015-03-19 08:14 +0100 UTC  #
+#   Modified: 2015-09-24 20:58 +0100 UTC  #
+#*****************************************#
 
+[Description]
+This file defines all language specific syntax highlighting classes for XML.
+
+[Index]
+  (1) XML+PropertyList XML
+    (1.0) Default / Fallback Color
+    (1.1) Punctuation
+    (1.2) Entity
+    (1.3) Text
+    (1.4) Comment
+    (1.5) String
+
+[Dependencies]
+Syntax Highlighting based on the following packages:
+  Core Packages:
+    - "language-xml" (https://atom.io/packages/language-xml) by "atom" (https://atom.io/users/atom)
+
+[License]
+Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
+
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+*/
+.text.xml,
+.text.xml.plist {
+/*+----------------------------------------------------------------------------+
+  + XML+PropertyList XML - Default / Fallback Color                      [1.0] +
+  +----------------------------------------------------------------------------+*/
+  color: @color-syntax-other;
+/*+----------------------------------------------------------------------[1.0]-+*/
+
+/*+----------------------------------------------------------------------------+
+  + XML+PropertyList XML - Punctuation                                   [1.1] +
+  +----------------------------------------------------------------------------+*/
   .punctuation {
     &.definition {
       &.tag {
@@ -15,7 +62,11 @@
       }
     }
   }
+/*+----------------------------------------------------------------------[1.1]-+*/
 
+/*+----------------------------------------------------------------------------+
+  + XML+PropertyList XML - Entity                                        [1.2] +
+  +----------------------------------------------------------------------------+*/
   .entity {
     &.name.tag {
       color: @color-syntax-doctype;
@@ -32,17 +83,29 @@
       }
     }
   }
+/*+----------------------------------------------------------------------[1.2]-+*/
 
+/*+----------------------------------------------------------------------------+
+  + XML+PropertyList XML - Text                                          [1.3] +
+  +----------------------------------------------------------------------------+*/
   .text {
     color: @color-editor-text;
   }
+/*+----------------------------------------------------------------------[1.3]-+*/
 
+/*+----------------------------------------------------------------------------+
+  + XML+PropertyList XML - Comment                                       [1.4] +
+  +----------------------------------------------------------------------------+*/
   .comment {
     &.block {
       color: @color-syntax-comment;
     }
   }
+/*+----------------------------------------------------------------------[1.4]-+*/
 
+/*+----------------------------------------------------------------------------+
+  + XML+PropertyList XML - String                                        [1.5] +
+  +----------------------------------------------------------------------------+*/
   .string {
     &.quoted {
       &.double {
@@ -55,4 +118,5 @@
       }
     }
   }
+/*+----------------------------------------------------------------------[1.5]-+*/
 }
