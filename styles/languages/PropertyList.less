@@ -1,0 +1,135 @@
+/*
+#***************************************************#
+# Northem Dark Atom Syntax - Language Property List #
+#---------------------------------------------------#
+#                  PropertyList.less                #
+#          http://arcticicestudio.com/Northem       #
+#                                                   #
+#                  Arctic Ice Studio                #
+#                  Copyright (c) 2015               #
+#           development@arcticicestudio.com         #
+#                                                   #
+#        Created : 2015-09-24 15:18 +0100 UTC       #
+#        Modified: 2015-09-24 20:57 +0100 UTC       #
+#***************************************************#
+
+[Description]
+This file defines all language specific syntax highlighting classes for Property Lists.
+
+[Index]
+  (1) Property List (Old-Style)
+    (1.0) Default / Fallback Color
+    (1.1) Punctuation
+  (2) Git Configuration
+    (2.0) Default / Fallback Color
+    (2.1) Meta
+    (2.2) Entity
+    (2.3) Support
+    (2.4) Constant
+
+[Dependencies]
+Syntax Highlighting based on the following packages:
+  Core Packages:
+    - "language-property-list" (https://atom.io/packages/language-property-list) by "atom" (https://atom.io/users/atom)
+
+[License]
+Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
+
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+*/
+.source.plist {
+/*+----------------------------------------------------------------------------+
+  + Property List (Old-Style) - Default / Fallback Color                 [1.0] +
+  +----------------------------------------------------------------------------+*/
+  color: @color-syntax-other;
+/*+----------------------------------------------------------------------[1.0]-+*/
+
+/*+----------------------------------------------------------------------------+
+  + Property List (Old-Style) - Punctuation                              [1.1] +
+  +----------------------------------------------------------------------------+*/
+  .punctuation {
+    &.definition {
+      &.dictionary {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.array {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.data {
+        color: @color-syntax-keyword;
+      }
+      &.comment {
+        &.begin, &.end {
+          color: @color-syntax-comment;
+        }
+      }
+    }
+    &.separator {
+      &.dictionary {
+        color: @color-syntax-keyword;
+      }
+      &.array {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+/*+----------------------------------------------------------------------[1.1]-+*/
+
+  .constant {
+    &.other {
+      &.key {
+        color: @color-syntax-variable;
+      }
+    }
+    &.numeric {
+      color: @color-syntax-number;
+
+      &.base64{
+        color: @color-syntax-propertylist-base64;
+        font-weight: bold;
+      }
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-escape;
+      }
+    }
+  }
+
+  .string {
+    color: @color-syntax-string;
+  }
+
+  .meta {
+    &.binary-data {
+      color: @color-syntax-keyword;
+    }
+    &.scope {
+      &.dictionary-item {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  .invalid {
+    &.illegal {
+      &.character-not-allowed-here {
+        color: @color-syntax-propertylist-illegal;
+      }
+    }
+  }
+}
