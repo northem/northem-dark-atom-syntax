@@ -48,6 +48,7 @@ Syntax Highlighting actually includes:
   - [Markdown](https://atom.io/packages/language-gfm)
   - [Mustache](https://atom.io/packages/language-mustache)
   - [PHP](https://atom.io/packages/language-php)
+  - [PropertyList](https://atom.io/packages/language-property-list)
   - [Python](https://atom.io/packages/language-python)
   - [R](https://atom.io/packages/language-r)
   - [Ruby](https://atom.io/packages/language-ruby)
