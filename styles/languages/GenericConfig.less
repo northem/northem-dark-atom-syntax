@@ -1,0 +1,68 @@
+/*
+#***************************************************************#
+# Northem Dark Atom Syntax - Language Generic Config (dotfiles) #
+#---------------------------------------------------------------#
+#                        GenericConfig.less                     #
+#                http://arcticicestudio.com/Northem             #
+#                                                               #
+#                        Arctic Ice Studio                      #
+#                        Copyright (c) 2015                     #
+#                  development@arcticicestudio.com              #
+#                                                               #
+#               Created : 2015-09-23 12:19 +0100 UTC            #
+#               Modified: 2015-09-23 14:33 +0100 UTC            #
+#***************************************************************#
+
+[Description]
+This file defines basic syntax highlighting for configuration files (dotfiles) containing comments and/or non-comments
+without a particular structure like
+  * .gitignore
+  * .gitconfig
+  * .env
+and so on.
+
+Supported comment symbols are based on the package this theme depends on.
+Actually highlights lines that begin with a "#" or ";".
+
+[Index]
+  (1.0) Default / Fallback Color
+  (2.0) Punctuation
+  (3.0) Comment
+
+[Dependencies]
+Syntax Highlighting based on the following packages:
+  - "language-generic-config" (https://atom.io/packages/language-generic-config) by "lee-dohm " (https://atom.io/users/lee-dohm)
+
+[License]
+Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
+
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+*/
+.text.generic-config {
+/*+----------------------------------------------------------------------------+
+  + Default / Fallback Color                                             [1.0] +
+  +----------------------------------------------------------------------------+*/
+  color: @color-syntax-other;
+/*+----------------------------------------------------------------------[1.0]-+*/
+
+/*+----------------------------------------------------------------------------+
+  + Punctuation                                                          [2.0] +
+  +----------------------------------------------------------------------------+*/
+  .punctuation {
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+    }
+  }
+/*+----------------------------------------------------------------------[2.0]-+*/
+
+/*+----------------------------------------------------------------------------+
+  + Comment                                                              [3.0] +
+  +----------------------------------------------------------------------------+*/
+  .comment {
+    color: @color-syntax-comment;
+  }
+/*+----------------------------------------------------------------------[2.0]-+*/
+}
