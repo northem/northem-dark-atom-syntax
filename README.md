@@ -34,6 +34,7 @@ Syntax Highlighting actually includes:
   - [CSS](https://atom.io/packages/language-css)
   - [D](https://atom.io/packages/language-d)
   - [Generic Config](https://atom.io/packages/language-generic-config)
+  - [git](https://atom.io/packages/language-git)
   - [GLSL](https://atom.io/packages/language-glsl)
   - [diff](https://atom.io/packages/git-diff)
   - [HAML](https://atom.io/packages/language-haml)
