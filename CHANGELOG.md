@@ -1,6 +1,10 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.10.1 (2015-09-24)
+### Bug Fixes
+  * Fixed basic color variable names caused a crash on theme loading
+
 ## 0.10.0 (2015-09-24)
 ### Added
 #### Languages
