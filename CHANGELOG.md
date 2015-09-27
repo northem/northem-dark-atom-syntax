@@ -1,6 +1,23 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.11.0 (2015-09-27)
+### Added
+#### Package Support
+  * Implemented support for [color-picker](https://atom.io/packages/color-picker)
+
+### Updated
+#### Documentation
+  * Added a list of supported packages and the corresponding version range
+
+### Changed
+#### Package Support
+  * Code elements are now colored `light-blue` in the preview of the [markdown-preview](https://atom.io/packages/markdown-preview) package
+
+### Bug Fixes
+#### Package Support
+  * Fixed the background color for code blocks of the [markdown-preview](https://atom.io/packages/markdown-preview) package
+
 ## 0.10.1 (2015-09-24)
 ### Bug Fixes
   * Fixed basic color variable names caused a crash on theme loading
