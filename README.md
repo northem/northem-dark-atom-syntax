@@ -1,4 +1,5 @@
-# Northem Dark Atom Syntax
+Northem Dark Atom Syntax
+========================
 
 [![Northem Logo](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/res/image/northem-logo.png)](http://arcticicestudio.com/Northem)
 
@@ -55,6 +56,13 @@ Syntax Highlighting actually includes:
   - [SASS](https://atom.io/packages/language-sass)
   - [XML](https://atom.io/packages/language-xml)
   - [YAML](https://atom.io/packages/language-yaml)
+
+### Package Support
+  - [bracket-matcher](https://atom.io/packages/bracket-matcher) @ `^0.76.0`
+  - [color-picker](https://atom.io/packages/color-picker) @ `^2.0.12`
+  - [highlight-selected](https://atom.io/packages/highlight-selected) @ `^0.10.1`
+  - [markdown-preview](https://atom.io/packages/markdown-preview) @ `^0.150.0`
+  - [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) @ `^4.3.1`
 
 ### Version
 _stable_: [`0.10.1`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
