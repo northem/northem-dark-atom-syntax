@@ -1,6 +1,11 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.11.1 (2015-10-01)
+### Bug Fixes
+#### Package Support
+  * Fixed deprecation warning of outdated `.editor` class
+
 ## 0.11.0 (2015-09-27)
 ### Added
 #### Package Support
