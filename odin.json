@@ -1,13 +1,13 @@
 {
   "name": "Northem Dark Atom Syntax",
   "id": "northem-dark-atom-syntax",
-  "version": "0.11.1",
+  "version": "0.11.2",
   "date": {
    "created": "2015-03-15 20:17 +0100 UTC",
-   "updated": "2015-10-01 19:40 +0100 UTC"
+   "updated": "2015-10-04 09:09 +0100 UTC"
   },
   "access": "public",
-  "description": "A north-bluish dark theme based on the same named color palette designed by Arctic Ice Studio.This is a darker and more blue-tinged variation.",
+  "description": "A north-bluish dark theme based on the same named color palette designed by Arctic Ice Studio. This is a darker and more blue-tinged variation.",
   "developer": {
     "name": "Arctic Ice Studio",
     "email": "development@arcticicestudio.com",

@@ -1,6 +1,11 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.11.2 (2015-10-04)
+### Bug Fixes
+#### Package Support
+  * Fixed background color for `markdown-preview` codeblocks
+
 ## 0.11.1 (2015-10-01)
 ### Bug Fixes
 #### Package Support
