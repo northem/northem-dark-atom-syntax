@@ -62,8 +62,23 @@
   }
 
   .string {
-    &.quoted.double {
-      color: @color-syntax-string;
+    color: @color-syntax-string;
+
+    .markup {
+      &.underline {
+        &.link {
+          &.https {
+            &.hyperlink {
+              color: @color-syntax-string;
+              text-decoration: none;
+
+              &:hover {
+                text-decoration: underline;
+              }
+            }
+          }
+        }
+      }
     }
   }
 
