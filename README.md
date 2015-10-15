@@ -65,10 +65,10 @@ Syntax Highlighting actually includes:
   - [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) @ `^4.3.1`
 
 ### Version
-_stable_: [`0.11.2`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
-_snapshot_: `/`
+stable: [`0.11.2`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
+snapshot: `/`
 
-_status_: `ìndev`
+status: `ìndev`
 
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
 
@@ -96,7 +96,7 @@ Alternatively open _Settings > Install_, set the filter to _Themes_ and search f
 Activate it by going to the _Settings > Themes_ section and select `Northem Dark` from the _Syntax Theme_ drop-down menu.
 
 ### License
-Copyright (C) 2015 Arctic Ice Studio
+Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
 
 Northem code is licensed under [GPL3](http://www.gnu.org/licenses/gpl.txt).  
 Northem color palette itself is licensed under [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0).
