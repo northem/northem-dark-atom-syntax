@@ -1,6 +1,10 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.12.0 (2016-01-24)
+### Features
+  - Implemented language support for [C++](https://atom.io/packages/language-c) (Related external issues: [northem-light-atom-syntax](https://github.com/arcticicestudio/northem-light-atom-syntax) [#2](https://github.com/arcticicestudio/northem-light-atom-syntax/issues/2))
+
 ## 0.11.2 (2015-10-04)
 ### Bug Fixes
 #### Package Support
