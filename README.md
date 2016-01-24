@@ -29,6 +29,7 @@ Visit the [official homepage](http://arcticicestudio.com/Northem) (actually unde
 ### Languages
 Syntax Highlighting actually includes:
   - [C](https://atom.io/packages/language-c)
+  - [C++](https://atom.io/packages/language-c)
   - [Clojure](https://atom.io/packages/language-clojure)
   - [CoffeeScript](https://atom.io/packages/language-coffee-script)
   - [CS (C#)](https://atom.io/packages/language-csharp)
@@ -104,6 +105,7 @@ Northem color palette itself is licensed under [CC BY-NC-SA 4.0](http://creative
 ---
 
 ### References
+[Northem Dark](https://github.com/arcticicestudio/northem-dark)
 [Atom API-Documentation](https://atom.io/docs/api/latest/Atom)  
 [Atom Flight Manual](https://atom.io/docs)  
 [LESS](http://lesscss.org)

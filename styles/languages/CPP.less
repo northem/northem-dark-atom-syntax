@@ -1,0 +1,252 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language C++ +
+project   northem-dark-atom-syntax                +
+file      CPP.less                                +
+version   0.11.2                                  +
+author    Arctic Ice Studio                       +
+email     development@arcticicestudio.com         +
+website   http://arcticicestudio.com              +
+copyright Copyright (C) 2015-2016                 +
+created   2016-01-24 16:45 UTC+0100               +
+modified  2016-01-24 16:46 UTC+0100               +
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for C++.
+
+[Index]
+  (1) Meta
+  (2) Keyword
+  (3) Entity
+  (4) Support
+  (5) Variable
+  (6) Storage
+  (7) Constant
+  (8) punctuation
+  (9) Comment
+  (10) String
+
+[Dependencies]
+Syntax Highlighting based on the following packages:
+  - language-c@0.47.0 (https://atom.io/packages/language-c) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Northem Dark
+  (https://github.com/arcticicestudio/northem-dark)
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.source.cpp {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [1] +
+     +----------------------------------------------------------------------------+ */
+    .meta {
+      &.preprocessor {
+        &.macro {
+          color: @color-syntax-other;
+        }
+        &.c {
+          &.include {
+            color: @color-syntax-keyword;
+          }
+        }
+      }
+      &.block {
+        color: @color-syntax-other;
+      }
+      &.parens {
+        color: @color-syntax-other;
+      }
+    }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [2] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+
+      &.import {
+        &.include {
+          color: @color-syntax-c-preprocessor;
+          font-weight: bold;
+        }
+        &.define {
+          color: @color-syntax-c-preprocessor;
+          font-weight: bold;
+        }
+      }
+    }
+    &.operator {
+      &.cast {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Entity                                                                 [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+      &.type {
+        color: @color-syntax-class;
+        font-weight: bold;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [4] +
+     +----------------------------------------------------------------------------+ */
+  .support {
+    &.type {
+      &.sys-types {
+        color: @color-syntax-class;
+      }
+      &.stdint {
+        color: @color-syntax-class;
+      }
+    }
+    &.function {
+      &.any-method {
+        color: @color-syntax-function;
+      }
+      &.C99 {
+        color: @color-syntax-function;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                               [5] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    &.parameter {
+      color: @color-syntax-variable;
+    }
+    &.other {
+      &.dot-access {
+        color: @color-syntax-class;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [6] +
+     +----------------------------------------------------------------------------+ */
+  .storage {
+    &.type {
+      color: @color-syntax-keyword;
+    }
+    &.modifier {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [7] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-escape;
+      }
+    }
+    &.language {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [8] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.definition {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.parameters {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.section {
+      &.block {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.parens {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.separator {
+      &.continuation {
+        color: @color-syntax-escape;
+      }
+      &.parameters {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [9] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                [10] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+  }
+}
+/* +-----------------------------------------------------------------------[10]-+ */
