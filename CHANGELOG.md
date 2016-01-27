@@ -1,6 +1,10 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.13.0 (2016-01-27)
+### Features
+  - Implemented language support for [SQL](https://atom.io/packages/language-sql)
+
 ## 0.12.0 (2016-01-24)
 ### Features
   - Implemented language support for [C++](https://atom.io/packages/language-c) (Related external issues: [northem-light-atom-syntax](https://github.com/arcticicestudio/northem-light-atom-syntax) [#2](https://github.com/arcticicestudio/northem-light-atom-syntax/issues/2))

@@ -1,10 +1,10 @@
 {
   "id": "northem-dark-atom-syntax",
   "name": "Northem Dark Atom Syntax",
-  "version": "0.12.0",
+  "version": "0.13.0",
   "date": {
    "created": "2015-03-15 20:17 UTC+0100",
-   "updated": "2016-01-24 17:01 UTC+0100"
+   "updated": "2016-01-27 21:54 UTC+0100"
   },
   "access": "public",
   "modularity": "subproject",

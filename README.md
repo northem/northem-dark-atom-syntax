@@ -66,7 +66,7 @@ Syntax Highlighting actually includes:
   - [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) @ `^4.3.1`
 
 ### Version
-stable: [`0.12.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
+stable: [`0.13.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 snapshot: `/`
 
 status: `ìndev`
@@ -74,7 +74,7 @@ status: `ìndev`
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
 
 ### Changelog
-[`0.12.0`](CHANGELOG.md)
+[`0.13.0`](CHANGELOG.md)
 
 Check out the `CHANGELOG.md` file or open via _Settings > Packages_ and filter for `northem-dark-atom-syntax`.  
 All changelogs are available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
