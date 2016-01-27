@@ -1,0 +1,136 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language SQL +
+project   northem-dark-atom-syntax                +
+file      SQL.less                                +
+version   0.12.0                                  +
+author    Arctic Ice Studio                       +
+email     development@arcticicestudio.com         +
+website   http://arcticicestudio.com              +
+copyright Copyright (C) 2016                      +
+created   2016-01-27 15:36 UTC+0100               +
+modified  2016-01-27 15:37 UTC+0100               +
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for SQL.
+
+[Index]
+  (1) Meta
+  (2) Keyword
+  (3) Entity
+  (4) Support
+  (5) Variable
+  (6) Storage
+  (7) Constant
+  (8) punctuation
+  (9) Comment
+  (10) String
+
+[Dependencies]
+Syntax Highlighting based on the following packages:
+  - language-sql@0.20.0 (https://atom.io/packages/language-sql) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.source.sql {
+  color: @color-syntax-other;
+
+  .keyword {
+    &.operator {
+      &.comparison,
+      &.math,
+      &.concatenator {
+        color: @color-syntax-operator;
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+
+      &.DML,
+      &.create {
+        color: @color-syntax-keyword;
+      }
+      &.DDL {
+        &.create {
+          &.II {
+            color: @color-syntax-keyword;
+            font-style: italic;
+          }
+        }
+      }
+    }
+  }
+
+  &.string {
+    &.quoted {
+      &.single,
+      &.double {
+        color: @color-syntax-string;
+      }
+    }
+  }
+
+  &.punctuation {
+    &.definition {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+
+  .storage {
+    &.type {
+      color: @color-syntax-class;
+    }
+    &.modifier {
+      color: @color-syntax-keyword;
+    }
+  }
+
+  .comment {
+    color: @color-syntax-comment;
+  }
+
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+}
