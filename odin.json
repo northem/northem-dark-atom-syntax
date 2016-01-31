@@ -36,7 +36,9 @@
   "dependencies": [
     {"id": "northem-dark","version": "1.0.0","manager": "odin"}
   ],
-  "devDependencies": [],
+  "devDependencies": [
+    {"id": "glacier-git","version": "0.8.0","manager": "odin"}
+  ],
   "contributors": [
     {"name": "Arctic Ice Studio","email": "development@arcticicestudio.com"}
   ],
