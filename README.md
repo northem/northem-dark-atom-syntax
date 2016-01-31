@@ -83,7 +83,8 @@ All changelogs are available at the [GitHub Repository](https://github.com/arcti
 Please report bugs and suggestions for improvement/language support [here](https://github.com/arcticicestudio/northem-dark-atom-syntax/issues).
 
 ### Development Dependencies
-  - [`glacier-git@0.8.0`]
+  - [`glacier-apache-ant@0.5.0`](https://github.com/arcticicestudio/glacier-apache-ant)
+  - [`glacier-git@0.8.0`](https://github.com/arcticicestudio/glacier-git)
 
 ### Recommendations
 This theme matches the Open Source font [Source Code Pro](https://typekit.com/fonts/source-code-pro).  
