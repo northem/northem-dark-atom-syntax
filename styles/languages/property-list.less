@@ -1,0 +1,148 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Property List +
+project   northem-dark-atom-syntax                          +
+file      property-list.less                                +
+version   0.13.0                                            +
+author    Arctic Ice Studio                                 +
+email     development@arcticicestudio.com                   +
+website   http://arcticicestudio.com                        +
+copyright Copyright (C) 2015-2016                           +
+created   2015-09-24 15:18 UTC+0200                         +
+modified  2016-01-31 23:30 UTC+0100                         +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for Property Lists.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Invalid
+  (4) Meta
+  (5) Punctuation
+  (6) String
+
+[Dependencies]
+  - language-property-list@^0.8.0 (https://atom.io/packages/language-property-list) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.source.plist {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.other.key {
+      color: @color-syntax-variable;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+
+      &.base64 {
+        color: @color-syntax-propertylist-base64;
+        font-weight: bold;
+      }
+    }
+    &.character.escape {
+      color: @color-syntax-escape;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Invalid                                                                [3] +
+     +----------------------------------------------------------------------------+ */
+  .invalid.illegal.character-not-allowed-here {
+    color: @color-syntax-propertylist-illegal;
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [4] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.binary-data,
+    &.scope.dictionary-item {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [5] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.definition {
+      &.dictionary,
+      &.array,
+      &.string {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.data {
+        color: @color-syntax-keyword;
+      }
+      &.comment {
+        &.begin,
+        &.end {
+          color: @color-syntax-comment;
+        }
+      }
+    }
+    &.separator {
+      &.dictionary {
+        color: @color-syntax-keyword;
+      }
+      &.array {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [6] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+}

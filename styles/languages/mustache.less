@@ -1,33 +1,26 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language Generic Config (dotfiles) +
-project   northem-dark-atom-syntax                                      +
-file      GenericConfig.less                                            +
-version   0.13.0                                                        +
-author    Arctic Ice Studio                                             +
-email     development@arcticicestudio.com                               +
-website   http://arcticicestudio.com                                    +
-copyright Copyright (C) 2015-2016                                       +
-created   2015-09-23 12:19 UTC+0200                                     +
-modified  2016-01-31 11:41 UTC+0100                                     +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Mustache +
+project   northem-dark-atom-syntax                     +
+file      mustache.less                                +
+version   0.13.0                                       +
+author    Arctic Ice Studio                            +
+email     development@arcticicestudio.com              +
+website   http://arcticicestudio.com                   +
+copyright Copyright (C) 2015-2016                      +
+created   2015-03-15 20:17 UTC+0100                    +
+modified  2016-01-31 23:25 UTC+0100                    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines basic syntax highlighting classes for configuration files (dotfiles) containing
-comments and/or non-comments  without a particular structure like
-  - ".gitignore"
-  - ".gitconfig"
-  - ".env"
-
-Supported comment symbols are based on the package this theme depends on.
-Actually highlights lines that begin with a '#' or ';'.
+This file defines all language specific syntax highlighting classes for Mustache.
 
 [Index]
   (1) Comment
-  (2) Punctuation
+  (2) Meta
 
 [Dependencies]
-  - language-generic-config@1.2.3 (https://atom.io/packages/language-generic-config) by "lee-dohm " (https://atom.io/users/lee-dohm)
+  - language-mustache@^0.13.0 (https://atom.io/packages/language-mustache) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -57,7 +50,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.text.generic-config {
+.text.html.mustache {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -68,10 +61,27 @@ LESSCSS
   /* +------------------------------------------------------------------------[1]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [2] +
+     + Meta                                                                   [2] +
      +----------------------------------------------------------------------------+ */
-  .punctuation.definition.comment {
-    color: @color-syntax-comment;
+  .meta.tag.template {
+    color: @color-syntax-variable;
+
+    .entity.name {
+      &.tag {
+        color: @color-syntax-mustache-tag;
+        font-weight: bold;
+      }
+      &.function {
+        color: @color-syntax-variable;
+      }
+    }
+
+    .punctuation.definition.block {
+      &.begin,
+      &.end {
+        color: @color-syntax-operator;
+      }
+    }
   }
   /* +------------------------------------------------------------------------[2]-+ */
 }

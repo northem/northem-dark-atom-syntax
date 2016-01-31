@@ -1,33 +1,33 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language Java +
-project   northem-dark-atom-syntax                 +
-file      Java.less                                +
-version   0.13.0                                   +
-author    Arctic Ice Studio                        +
-email     development@arcticicestudio.com          +
-website   http://arcticicestudio.com               +
-copyright Copyright (C) 2015-2016                  +
-created   2015-08-08 11:14 UTC+0200                +
-modified  2016-01-31 23:08 UTC+0100                +
-++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Julia +
+project   northem-dark-atom-syntax                  +
+file      julia.less                                +
+version   0.13.0                                    +
+author    Arctic Ice Studio                         +
+email     development@arcticicestudio.com           +
+website   http://arcticicestudio.com                +
+copyright Copyright (C) 2015-2016                   +
+created   2015-03-15 20:17 UTC+0100                 +
+modified  2016-01-31 23:19 UTC+0100                 +
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for Java.
+This file defines all language specific syntax highlighting classes for Julia.
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Entity
-  (4) Keyword
-  (5) Meta
+  (1) Bracket
+  (2) Comment
+  (3) Constant
+  (4) Entity
+  (5) Keyword
   (6) Punctuation
-  (7) Storage
-  (8) String
-  (9) Variable
+  (7) Support
+  (8) Storage
+  (9) String
 
 [Dependencies]
-  - language-java@^0.17.0 (https://atom.io/packages/language-java) by "atom" (https://atom.io/users/atom)
+  - language-julia@^0.5.0 (https://atom.io/packages/language-julia) by "JuliaLang" (https://atom.io/users/JuliaLang)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -57,72 +57,62 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.java {
+.source.julia {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
+     + Bracket                                                                [1] +
      +----------------------------------------------------------------------------+ */
-  .comment {
-    color: @color-syntax-comment;
+  .bracket {
+    color: @color-syntax-symbol;
   }
   /* +------------------------------------------------------------------------[1]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
+     + Comment                                                                [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.variable,
-    &.other {
-      color: @color-syntax-constant;
-      font-weight: bold;
-      font-style: italic;
-    }
-    &.numeric {
-      color: @color-syntax-number;
-    }
+  .comment {
+    color: @color-syntax-comment;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [3] +
+     + Constant                                                               [3] +
      +----------------------------------------------------------------------------+ */
-  .entity.name {
-    &.function {
-      color: @color-syntax-function;
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
     }
-    &.class {
-      color: @color-syntax-class;
-      font-weight: bold;
+    &.character.escape {
+    color: @color-syntax-escape;
+    }
+    &.language {
+      color: @color-syntax-constant;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
+     + Enity                                                                  [4] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.other {
-      &.package,
-      &.import {
-        color: @color-syntax-import;
-        font-weight: bold;
-      }
-    }
-    &.operator {
-      color: @color-syntax-operator;
-    }
-    &.control {
-      color: @color-syntax-keyword;
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [5] +
+     + Keyword                                                                [5] +
      +----------------------------------------------------------------------------+ */
-  .meta.method-call {
-    .meta.method {
-      color: @color-syntax-function;
+  .keyword {
+    &.other,
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      &.ternary,
+      &.arithmetic,
+      &.update {
+        color: @color-syntax-operator;
+      }
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
@@ -130,59 +120,47 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.string {
+  .punctuation.definition {
+    &.commment {
+      color: @color-syntax-comment;
+    }
+    &.string {
+      &.begin
+       &.end {
         color: @color-syntax-symbol;
       }
-      &.method-parameters {
-        color: @color-syntax-variable;
-      }
-    }
-    &.terminator {
-      color: @color-syntax-keyword;
-    }
-    &.section {
-      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Storage                                                                [7] +
+     + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.modifier {
-      color: @color-syntax-keyword;
+  .support.function {
+    color: @color-syntax-function;
 
-      &.package,
-      &.import {
-        color: @color-syntax-java-package;
-      }
-    }
-    &.type {
-      color: @color-syntax-class;
-
-      &.annotation {
-        color: @color-syntax-java-annotation;
-      }
+    &.macro {
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [8] +
+     + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    color: @color-syntax-string;
+  .storage.type {
+    color: @color-syntax-type;
   }
   /* +------------------------------------------------------------------------[8]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Variable                                                              [9] +
+     + String                                                                 [9] +
      +----------------------------------------------------------------------------+ */
-  .variable.language {
-    color: @color-syntax-keyword;
+  .string.qouted {
+    &.Double,
+    &.single {
+      color: @color-syntax-string;
+    }
   }
-  /* +----------------------------------------------------------------------.-[9]-+ */
+  /* +------------------------------------------------------------------------[9]-+ */
 }

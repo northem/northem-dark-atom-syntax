@@ -1,19 +1,19 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language C# (CSharp) +
-project   northem-dark-atom-syntax                        +
-file      CS.less                                         +
-version   0.13.0                                          +
-author    Arctic Ice Studio                               +
-email     development@arcticicestudio.com                 +
-website   http://arcticicestudio.com                      +
-copyright Copyright (C) 2015-2016                         +
-created   2015-08-28 11:42 UTC+0200                       +
-modified  2016-01-31 18:27 UTC+0100                       +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Java +
+project   northem-dark-atom-syntax                 +
+file      java.less                                +
+version   0.13.0                                   +
+author    Arctic Ice Studio                        +
+email     development@arcticicestudio.com          +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
+created   2015-08-08 11:14 UTC+0200                +
+modified  2016-01-31 23:08 UTC+0100                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for C# (CSharp).
+This file defines all language specific syntax highlighting classes for Java.
 
 [Index]
   (1) Comment
@@ -27,7 +27,7 @@ This file defines all language specific syntax highlighting classes for C# (CSha
   (9) Variable
 
 [Dependencies]
-  - language-csharp@^0.11.0 (https://atom.io/packages/language-csharp) by "atom" (https://atom.io/users/atom)
+  - language-java@^0.17.0 (https://atom.io/packages/language-java) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -57,7 +57,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.cs {
+.source.java {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -71,14 +71,14 @@ LESSCSS
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
   .constant {
-    &.language {
-      color: @color-syntax-keyword;
+    &.variable,
+    &.other {
+      color: @color-syntax-constant;
+      font-weight: bold;
+      font-style: italic;
     }
     &.numeric {
       color: @color-syntax-number;
-    }
-    &.character.escape {
-      color: @color-syntax-escape;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -86,23 +86,13 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.type.class {
-        color: @color-syntax-class;
-        font-weight: bold;
-      }
-      &.function {
-        color: @color-syntax-function;
-      }
-      &.tag.localname {
-        color: @color-syntax-cs-comment-tag;
-        font-style: italic;
-      }
+  .entity.name {
+    &.function {
+      color: @color-syntax-function;
     }
-    &.other.attribute-name.localname {
+    &.class {
       color: @color-syntax-class;
-      font-style: italic;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
@@ -111,14 +101,18 @@ LESSCSS
      + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
   .keyword {
-    &.operator,
-    &.control,
     &.other {
-      color: @color-syntax-keyword;
+      &.package,
+      &.import {
+        color: @color-syntax-import;
+        font-weight: bold;
+      }
     }
-    &.other.namespace {
-      color: @color-syntax-cs-preprocessor;
-      font-weight: bold;
+    &.operator {
+      color: @color-syntax-operator;
+    }
+    &.control {
+      color: @color-syntax-keyword;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
@@ -126,27 +120,9 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.method {
+  .meta.method-call {
+    .meta.method {
       color: @color-syntax-function;
-
-      &.body {
-        color: @color-syntax-other;
-      }
-      &.return-type {
-        color: @color-syntax-class;
-      }
-      &.identifier {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.method-call,
-    &.class.body,
-    &.preprocessor {
-      color: @color-syntax-other;
-    }
-    &.toc-list.region {
-      color: @color-syntax-cs-preprocessor;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
@@ -156,30 +132,18 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
-      &.comment {
-        color: @color-syntax-comment;
+      &.string {
+        color: @color-syntax-symbol;
       }
-      &.tag {
-        color: @color-syntax-keyword;
-      }
-      &.method-parameters,
-      &.string.begin,
-      &.string.end,
-      &.seperator,
-      &.separator {
-          color: @color-syntax-symbol;
+      &.method-parameters {
+        color: @color-syntax-variable;
       }
     }
+    &.terminator {
+      color: @color-syntax-keyword;
+    }
     &.section {
-      &.class,
-      &.namespace,
-      &.method,
-      &.block {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
+      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
@@ -190,13 +154,17 @@ LESSCSS
   .storage {
     &.modifier {
       color: @color-syntax-keyword;
+
+      &.package,
+      &.import {
+        color: @color-syntax-java-package;
+      }
     }
     &.type {
       color: @color-syntax-class;
 
-      &.generic {
-        color: @color-syntax-class;
-        font-weight: bold;
+      &.annotation {
+        color: @color-syntax-java-annotation;
       }
     }
   }
@@ -213,8 +181,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Variable                                                              [9] +
      +----------------------------------------------------------------------------+ */
-  .variable.parameter.function {
-    color: @color-syntax-variable;
+  .variable.language {
+    color: @color-syntax-keyword;
   }
-  /* +------------------------------------------------------------------------[9]-+ */
+  /* +----------------------------------------------------------------------.-[9]-+ */
 }

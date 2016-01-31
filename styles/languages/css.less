@@ -1,19 +1,19 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language LESSCSS +
-project   northem-dark-atom-syntax                    +
-file      LESSCSS.less                                +
-version   0.13.0                                      +
-author    Arctic Ice Studio                           +
-email     development@arcticicestudio.com             +
-website   http://arcticicestudio.com                  +
-copyright Copyright (C) 2015-2016                     +
-created   2015-03-15 20:17 UTC+0100                   +
-modified  2016-01-31 23:22 UTC+0100                   +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language CSS +
+project   northem-dark-atom-syntax                +
+file      css.less                                +
+version   0.13.0                                  +
+author    Arctic Ice Studio                       +
+email     development@arcticicestudio.com         +
+website   http://arcticicestudio.com              +
+copyright Copyright (C) 2015-2016                 +
+created   2015-03-15 20:17 UTC+0100               +
+modified  2016-01-31 18:30 UTC+0100               +
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for LESSCSS.
+This file defines all language specific syntax highlighting classes for CSS.
 
 [Index]
   (1) Comment
@@ -27,7 +27,7 @@ This file defines all language specific syntax highlighting classes for LESSCSS.
   (9) Variable
 
 [Dependencies]
-  - language-less@^0.29.0 (https://atom.io/packages/language-less) by "atom" (https://atom.io/users/atom)
+  - language-css@^0.36.0 (https://atom.io/packages/language-css) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -57,7 +57,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.less {
+.source.css {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -75,8 +75,12 @@ LESSCSS
     font-weight: bold;
 
     &.numeric,
-    &.other.rgb-value {
+    &.other.color.rgb-value {
       color: @color-syntax-number;
+      font-weight: normal;
+    }
+    &.character.escape {
+      color: @color-syntax-escape;
       font-weight: normal;
     }
   }
@@ -85,13 +89,26 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity.other.attribute-name {
-    &.class,
-    &.id {
+  .entity {
+    &.name.tag {
       color: @color-syntax-class;
     }
+    &.other.attribute-name {
+      &.attribute {
+        color: @color-syntax-css-attribute;
+      }
+      &.pseudo-class,
+      &.pseudo-element {
+        color: @color-syntax-css-class-pseudo;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+      &.id {
+        color: @color-syntax-css-id;
+      }
+    }
   }
-
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
@@ -101,27 +118,22 @@ LESSCSS
     &.operator {
       color: @color-syntax-operator;
     }
-    &.control {
-      color: @color-syntax-function;
-
-      &.at-rule {
-        &.fontface,
-        &.import,
-        &.page,
-        &.media {
-          color: @color-syntax-css-at-rule;
-          font-weight: bold;
-        }
-      }
-      &.logical.operator {
-        color: @color-syntax-operator;
+    &.control.at-rule {
+      &.font-face,
+      &.import,
+      &.page,
+      &.media {
+        color: @color-syntax-css-at-rule;
       }
     }
     &.other {
       color: @color-syntax-keyword;
 
       &.unit {
-        color: @color-syntax-unit;
+        color: @color-syntax-keyword;
+      }
+      &.important {
+        color: @color-syntax-css-important;
       }
     }
   }
@@ -131,11 +143,14 @@ LESSCSS
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
   .meta {
-    &.property-list {
+    &.selector {
+      color: @color-syntax-css-selector;
+    }
+    &.at-rule.media {
       color: @color-syntax-keyword;
     }
-    &.brace {
-      color: @color-syntax-symbol;
+    &.property-value {
+      color: @color-editor-text;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
@@ -145,8 +160,7 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .punctuation {
     &.terminator,
-    &.seperator,
-    &.section.property-list {
+    &.separator {
       color: @color-syntax-symbol;
     }
     &.definition {
@@ -155,10 +169,20 @@ LESSCSS
       }
       &.keyword {
         color: @color-syntax-keyword;
-        font-weight: normal;
       }
       &.entity,
       &.string {
+        color: @color-syntax-symbol;
+      }
+      &.constant {
+        color: @color-syntax-number;
+        font-weight: normal;
+      }
+    }
+    &.section {
+      color: @color-syntax-symbol;
+
+      &.property-list {
         color: @color-syntax-symbol;
       }
     }
@@ -174,14 +198,15 @@ LESSCSS
     }
     &.function {
       color: @color-syntax-function;
-
-      &.any-method.builtin {
-        color: @color-syntax-function;
-      }
     }
-    &.constant.color.w3c-standard-color-name {
-      color: @color-syntax-constant;
-      font-weight: bold;
+    &.constant {
+      &.property-value {
+        color: @color-syntax-css-property;
+        font-weight: normal;
+      }
+      &.media {
+        color: @color-syntax-css-media;
+      }
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */
@@ -200,8 +225,8 @@ LESSCSS
   .variable {
     color: @color-syntax-variable;
 
-    &.other {
-      color: @color-syntax-variable;
+    &.parameter.misc {
+      color: @color-syntax-class;
     }
   }
   /* +------------------------------------------------------------------------[9]-+ */

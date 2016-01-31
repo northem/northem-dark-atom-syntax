@@ -1,19 +1,19 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language HAML +
-project   northem-dark-atom-syntax                 +
-file      HAML.less                                +
-version   0.13.0                                   +
-author    Arctic Ice Studio                        +
-email     development@arcticicestudio.com          +
-website   http://arcticicestudio.com               +
-copyright Copyright (C) 2015-2016                  +
-created   2015-08-12 14:47 UTC+0200                +
-modified  2016-01-31 18:55 UTC+0100                +
-++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language C++ +
+project   northem-dark-atom-syntax                +
+file      cpp.less                                +
+version   0.13.0                                  +
+author    Arctic Ice Studio                       +
+email     development@arcticicestudio.com         +
+website   http://arcticicestudio.com              +
+copyright Copyright (C) 2015-2016                 +
+created   2016-01-24 16:45 UTC+0100               +
+modified  2016-01-31 18:21 UTC+0100               +
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for HAML.
+This file defines all language specific syntax highlighting classes for C++.
 
 [Index]
   (1) Comment
@@ -23,10 +23,12 @@ This file defines all language specific syntax highlighting classes for HAML.
   (5) Meta
   (6) Punctuation
   (7) Support
-  (8) String
+  (8) Storage
+  (9) String
+  (10) Variable
 
 [Dependencies]
-  - language-haml@^0.23.15 (https://atom.io/packages/language-haml) by "cannikin" (https://atom.io/users/cannikin)
+  - language-c@^0.51.1 (https://atom.io/packages/language-c) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -49,6 +51,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 [References]
+Northem Dark
+  (https://github.com/arcticicestudio/northem-dark)
 Atom API-Documentation
   (https://atom.io/docs/api/latest/Atom)
 Atom Flight Manual
@@ -56,8 +60,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.text.haml,
-.source.ruby.embedded.haml {
+.source.cpp {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -71,17 +74,14 @@ LESSCSS
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
   .constant {
-    &.other {
-      &.symbol {
-        color: @color-syntax-variable;
-
-        &.hashkey {
-          color: @color-syntax-constant;
-        }
-      }
-    }
     &.numeric {
       color: @color-syntax-number;
+    }
+    &.character.escape {
+      color: @color-syntax-escape;
+    }
+    &.language {
+      color: @color-syntax-keyword;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -89,11 +89,13 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity.name.tag {
-    color: @color-syntax-keyword;
-
-    &.class {
+  .entity.name {
+    &.function {
+      color: @color-syntax-function;
+    }
+    &.type {
       color: @color-syntax-class;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
@@ -101,20 +103,41 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
-  .keyword.control {
-    color: @color-syntax-keyword;
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+
+      &.import {
+        &.include,
+        &.define {
+          color: @color-syntax-c-preprocessor;
+          font-weight: bold;
+        }
+      }
+    }
+    &.operator.cast {
+      color: @color-syntax-keyword;
+    }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.line,
-    &.section.attributes {
-      color: @color-syntax-other;
+    .meta {
+      &.preprocessor {
+        &.macro {
+          color: @color-syntax-other;
+        }
+        &.c.include {
+          color: @color-syntax-keyword;
+        }
+      }
+      &.block,
+      &.parens {
+        color: @color-syntax-other;
+      }
     }
-  }
   /* +------------------------------------------------------------------------[5]-+ */
 
   /* +----------------------------------------------------------------------------+
@@ -122,29 +145,26 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
-      &.tag {
-        color: @color-syntax-keyword;
+      &.string.begin,
+      &.string.end,
+      &.parameters {
+        color: @color-syntax-symbol;
       }
-      &.string {
+    }
+    &.section {
+      &.block,
+      &.parens {
         &.begin,
         &.end {
           color: @color-syntax-symbol;
         }
       }
-      &.constant {
-        color: @color-syntax-operator;
-      }
-      &.prolog {
-        color: @color-syntax-doctype;
-        font-weight: bold;
-      }
     }
     &.separator {
-      &.key-value,
-      &.other {
-        color: @color-syntax-operator;
+      &.continuation {
+        color: @color-syntax-escape;
       }
-      &.object {
+      &.parameters {
         color: @color-syntax-symbol;
       }
     }
@@ -154,16 +174,51 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .support.function {
-    color: @color-syntax-function;
+  .support {
+    &.type {
+      &.sys-types,
+      &.stdint {
+        color: @color-syntax-class;
+      }
+    }
+    &.function {
+      &.any-method,
+      &.C99 {
+        color: @color-syntax-function;
+      }
+    }
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [8] +
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage {
+    &.type,
+    &.modifier {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
      +----------------------------------------------------------------------------+ */
   .string {
     color: @color-syntax-string;
   }
-  /* +------------------------------------------------------------------------[8]-+ */
+  /* +------------------------------------------------------------------------[9]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [10] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    &.parameter {
+      color: @color-syntax-variable;
+    }
+    &.other.dot-access {
+      color: @color-syntax-class;
+    }
+  }
+  /* +-----------------------------------------------------------------------[10]-+ */
 }

@@ -1,30 +1,32 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language Property List +
-project   northem-dark-atom-syntax                          +
-file      PropertyList.less                                 +
-version   0.13.0                                            +
-author    Arctic Ice Studio                                 +
-email     development@arcticicestudio.com                   +
-website   http://arcticicestudio.com                        +
-copyright Copyright (C) 2015-2016                           +
-created   2015-09-24 15:18 UTC+0200                         +
-modified  2016-01-31 23:30 UTC+0100                         +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language HAML +
+project   northem-dark-atom-syntax                 +
+file      haml.less                                +
+version   0.13.0                                   +
+author    Arctic Ice Studio                        +
+email     development@arcticicestudio.com          +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
+created   2015-08-12 14:47 UTC+0200                +
+modified  2016-01-31 18:55 UTC+0100                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for Property Lists.
+This file defines all language specific syntax highlighting classes for HAML.
 
 [Index]
   (1) Comment
   (2) Constant
-  (3) Invalid
-  (4) Meta
-  (5) Punctuation
-  (6) String
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) String
 
 [Dependencies]
-  - language-property-list@^0.8.0 (https://atom.io/packages/language-property-list) by "atom" (https://atom.io/users/atom)
+  - language-haml@^0.23.15 (https://atom.io/packages/language-haml) by "cannikin" (https://atom.io/users/cannikin)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -54,7 +56,8 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.plist {
+.text.haml,
+.source.ruby.embedded.haml {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -68,81 +71,99 @@ LESSCSS
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
   .constant {
-    &.other.key {
-      color: @color-syntax-variable;
+    &.other {
+      &.symbol {
+        color: @color-syntax-variable;
+
+        &.hashkey {
+          color: @color-syntax-constant;
+        }
+      }
     }
     &.numeric {
       color: @color-syntax-number;
-
-      &.base64 {
-        color: @color-syntax-propertylist-base64;
-        font-weight: bold;
-      }
-    }
-    &.character.escape {
-      color: @color-syntax-escape;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Invalid                                                                [3] +
+     + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .invalid.illegal.character-not-allowed-here {
-    color: @color-syntax-propertylist-illegal;
+  .entity.name.tag {
+    color: @color-syntax-keyword;
+
+    &.class {
+      color: @color-syntax-class;
+    }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [4] +
+     + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.binary-data,
-    &.scope.dictionary-item {
-      color: @color-syntax-keyword;
-    }
+  .keyword.control {
+    color: @color-syntax-keyword;
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [5] +
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.line,
+    &.section.attributes {
+      color: @color-syntax-other;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
-      &.dictionary,
-      &.array,
+      &.tag {
+        color: @color-syntax-keyword;
+      }
       &.string {
         &.begin,
         &.end {
           color: @color-syntax-symbol;
         }
       }
-      &.data {
-        color: @color-syntax-keyword;
+      &.constant {
+        color: @color-syntax-operator;
       }
-      &.comment {
-        &.begin,
-        &.end {
-          color: @color-syntax-comment;
-        }
+      &.prolog {
+        color: @color-syntax-doctype;
+        font-weight: bold;
       }
     }
     &.separator {
-      &.dictionary {
-        color: @color-syntax-keyword;
+      &.key-value,
+      &.other {
+        color: @color-syntax-operator;
       }
-      &.array {
+      &.object {
         color: @color-syntax-symbol;
       }
     }
   }
-  /* +------------------------------------------------------------------------[5]-+ */
+  /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [6] +
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
+  .support.function {
+    color: @color-syntax-function;
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [8] +
      +----------------------------------------------------------------------------+ */
   .string {
     color: @color-syntax-string;
   }
-  /* +------------------------------------------------------------------------[6]-+ */
+  /* +------------------------------------------------------------------------[8]-+ */
 }

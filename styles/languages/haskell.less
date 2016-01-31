@@ -1,31 +1,33 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language SQL +
-project   northem-dark-atom-syntax                +
-file      SQL.less                                +
-version   0.13.0                                  +
-author    Arctic Ice Studio                       +
-email     development@arcticicestudio.com         +
-website   http://arcticicestudio.com              +
-copyright Copyright (C) 2015-2016                 +
-created   2016-01-27 15:36 UTC+0100               +
-modified  2016-01-31 23:41 UTC+0100               +
-+++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Haskell +
+project   northem-dark-atom-syntax                    +
+file      haskell.less                                +
+version   0.13.0                                      +
+author    Arctic Ice Studio                           +
+email     development@arcticicestudio.com             +
+website   http://arcticicestudio.com                  +
+copyright Copyright (C) 2015-2016                     +
+created   2015-08-01 10:18 UTC+0200                   +
+modified  2016-01-31 18:59 UTC+0100                   +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for SQL.
+This file defines all language specific syntax highlighting classes for Haskell.
 
 [Index]
   (1) Comment
   (2) Constant
   (3) Entity
   (4) Keyword
-  (5) Punctuation
-  (6) Storage
-  (7) String
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) Storage
+  (9) String
 
 [Dependencies]
-  - language-sql@0.20.0 (https://atom.io/packages/language-sql) by "atom" (https://atom.io/users/atom)
+  - language-haskell@^1.5.2 (https://atom.io/packages/language-haskell) by "atom-haskell" (https://atom.io/users/atom-haskell)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -55,13 +57,18 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.sql {
+.source.haskell {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
      +----------------------------------------------------------------------------+ */
   .comment {
     color: @color-syntax-comment;
+    font-weight: normal;
+
+    &.line.shebang {
+      color: @color-syntax-haskell-preprocessor;
+    }
   }
   /* +------------------------------------------------------------------------[1]-+ */
 
@@ -76,8 +83,18 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity.name.function {
-    color: @color-syntax-function;
+  .entity.name {
+    &.type,
+    &.tag  {
+      color: @color-syntax-class;
+    }
+    &.function {
+      color: @color-syntax-function;
+
+      &.infix {
+        color: @color-syntax-function;
+      }
+    }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
@@ -86,59 +103,108 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .keyword {
     &.operator {
-      &.comparison,
-      &.math,
-      &.concatenator {
+      color: @color-syntax-operator;
+
+      &.assignment {
         color: @color-syntax-operator;
+      }
+      &.function.infix {
+        color: @color-syntax-function;
       }
     }
     &.other {
       color: @color-syntax-keyword;
 
-      &.DML,
-      &.create {
-        color: @color-syntax-keyword;
+      &.arrow,
+      &.double-colon {
+        color: @color-syntax-operator;
       }
-      &.DDL.create.II {
-        color: @color-syntax-keyword;
-        font-style: italic;
-      }
+    }
+
+    &.control.import {
+      color: @color-syntax-haskell-preprocessor;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [5] +
+     + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  &.punctuation.definition.string {
-    &.begin,
-    &.end {
+  .meta {
+    &.preprocessor {
+      color: @color-syntax-haskell-preprocessor;
+
+      .keyword.other {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.declaration.exports {
       color: @color-syntax-symbol;
+    }
+    &.type-signature {
+
+      .keyword.operator {
+        color: @color-syntax-operator;
+      }
+    }
+    &.other.constructor-list {
+      color: @color-syntax-variable;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Storage                                                                [6] +
+     + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.type {
-      color: @color-syntax-class;
-    }
-    &.modifier {
-      color: @color-syntax-keyword;
+  .punctuation {
+    &.separator.comma,
+    &.definition {
+      &.entity,
+      &.string.begin,
+      &.string.end {
+        color: @color-syntax-symbol;
+      }
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [7] +
+     + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  &.string.quoted {
+  .support {
+    &.other.module {
+      color: @color-syntax-class;
+      font-weight: bold;
+    }
+    &.class.prelude {
+      color: @color-syntax-class;
+    }
+    &.function.prelude {
+      color: @color-syntax-function;
+    }
+    &.tag {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage.type.data {
+    color: @color-syntax-keyword;
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
+  .string.quoted {
     &.single,
     &.double {
       color: @color-syntax-string;
     }
   }
-  /* +------------------------------------------------------------------------[7]-+ */
+  /* +------------------------------------------------------------------------[9]-+ */
 }

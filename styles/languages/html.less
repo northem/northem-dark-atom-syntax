@@ -1,33 +1,31 @@
 /*
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language Ruby +
+title     Northem Dark Atom Syntax - Language HTML +
 project   northem-dark-atom-syntax                 +
-file      Ruby.less                                +
+file      html.less                                +
 version   0.13.0                                   +
 author    Arctic Ice Studio                        +
 email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
 created   2015-03-15 20:17 UTC+0100                +
-modified  2016-01-31 23:37 UTC+0100                +
+modified  2016-01-31 22:59 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for Ruby.
+This file defines all language specific syntax highlighting classes for HTML.
 
 [Index]
   (1) Comment
   (2) Constant
   (3) Entity
-  (4) Keyword
+  (4) Meta
   (5) Punctuation
-  (6) Support
+  (6) Separator
   (7) String
-  (8) Symbol
-  (9) Variable
 
 [Dependencies]
-  - language-ruby@^0.65.0 (https://atom.io/packages/language-ruby) by "atom" (https://atom.io/users/atom)
+  - language-html@^0.43.1 (https://atom.io/packages/language-html) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -57,7 +55,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.ruby {
+.text.html.basic {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -70,39 +68,47 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-    &.escape {
-      color: @color-syntax-escape;
-    }
-    &.language {
-      color: @color-syntax-keyword;
-    }
+  .constant.other.inline-data {
+    color: @color-syntax-html-cdata;
+    font-style: italic;
   }
-
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity.name.function {
-    color: @color-syntax-function;
+  .entity {
+    &.name.tag {
+      &.structure,
+      &.script,
+      &.style {
+        color: @color-syntax-html-tag;
+      }
+    }
+    &.other.attribute-name {
+      color: @color-syntax-class;
+    }
+    &.script,
+    &.style {
+      color: @color-syntax-function;
+    }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
+     + Meta                                                                   [4] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.control,
-    &.operator {
-      color: @color-syntax-keyword;
+  .meta {
+    &.tag {
+      &.any {
+        color: @color-syntax-keyword;
+      }
+      &.sgml.doctype {
+        color: @color-syntax-doctype;
+      }
     }
-    &.other.special-method {
-      color: @color-syntax-ruby-special-method;
-      font-weight: bold;
+    &.toc-list.id {
+      color: @color-syntax-string;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
@@ -111,70 +117,50 @@ LESSCSS
      + Punctuation                                                            [5] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
+    &.separator.key-value {
+      color: @color-syntax-symbol;
+    }
     &.definition {
+      &.string {
+        color: @color-syntax-string;
+
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.tag {
+        color: @color-syntax-keyword;
+      }
       &.comment {
         color: @color-syntax-comment;
       }
-      &.string {
-        color: @color-syntax-symbol;
-      }
-      &.variable {
-        color: @color-syntax-keyword;
-      }
-    }
-    &.seperator,
-    &.section {
-      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Support                                                                [6] +
+     + Separator                                                              [6] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.class {
-      color: @color-syntax-class;
-    }
-    &.function.kernel {
-      color: @color-syntax-function;
-    }
+  .separator.key-value.html {
+    color: @color-syntax-symbol;
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
      + String                                                                 [7] +
      +----------------------------------------------------------------------------+ */
-  .string.quoted {
+  .string {
     color: @color-syntax-string;
+
+    .markup.underline.link.https.hyperlink {
+      color: @color-syntax-string;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
   /* +------------------------------------------------------------------------[7]-+ */
-
-  /* +----------------------------------------------------------------------------+
-     + Symbol                                                                 [8] +
-     +----------------------------------------------------------------------------+ */
-  &.symbol > .punctuation {
-    color: inherit;
-  }
-  /* +------------------------------------------------------------------------[8]-+ */
-
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                              [9] +
-     +----------------------------------------------------------------------------+ */
-  .variable {
-    color: @color-syntax-variable;
-
-    &.other {
-      &.constant {
-        color: @color-syntax-constant;
-      }
-      &.readwrite.instance {
-        color: @color-syntax-ruby-instance;
-      }
-    }
-    &.language {
-      color: @color-syntax-keyword;
-    }
-  }
-  /* +------------------------------------------------------------------------[9]-+ */
 }

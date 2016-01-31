@@ -1,19 +1,19 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language GLSL +
-project   northem-dark-atom-syntax                 +
-file      GLSL.less                                +
-version   0.13.0                                   +
-author    Arctic Ice Studio                        +
-email     development@arcticicestudio.com          +
-website   http://arcticicestudio.com               +
-copyright Copyright (C) 2015-2016                  +
-created   2015-08-14 15:12 UTC+0200                +
-modified  2016-01-31 18:52 UTC+0100                +
-++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language C# (CSharp) +
+project   northem-dark-atom-syntax                        +
+file      cs.less                                         +
+version   0.13.0                                          +
+author    Arctic Ice Studio                               +
+email     development@arcticicestudio.com                 +
+website   http://arcticicestudio.com                      +
+copyright Copyright (C) 2015-2016                         +
+created   2015-08-28 11:42 UTC+0200                       +
+modified  2016-01-31 18:27 UTC+0100                       +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for GLSL.
+This file defines all language specific syntax highlighting classes for C# (CSharp).
 
 [Index]
   (1) Comment
@@ -22,11 +22,12 @@ This file defines all language specific syntax highlighting classes for GLSL.
   (4) Keyword
   (5) Meta
   (6) Punctuation
-  (7) Support
-  (8) Storage
+  (7) Storage
+  (8) String
+  (9) Variable
 
 [Dependencies]
-  - language-glsl@^2.0.1 (https://atom.io/packages/language-glsl) by "hughsk " (https://atom.io/users/hughsk)
+  - language-csharp@^0.11.0 (https://atom.io/packages/language-csharp) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -56,7 +57,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.glsl {
+.source.cs {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -70,12 +71,14 @@ LESSCSS
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
   .constant {
-    &.numeric {
-      color: @color-syntax-number;
-      font-weight: normal;
-    }
     &.language {
       color: @color-syntax-keyword;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character.escape {
+      color: @color-syntax-escape;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -83,15 +86,23 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity.name {
-    &.function {
-      color: @color-syntax-function;
-
-      &.preprocessor {
-        color: @color-syntax-constant;
+  .entity {
+    &.name {
+      &.type.class {
+        color: @color-syntax-class;
         font-weight: bold;
+      }
+      &.function {
+        color: @color-syntax-function;
+      }
+      &.tag.localname {
+        color: @color-syntax-cs-comment-tag;
         font-style: italic;
       }
+    }
+    &.other.attribute-name.localname {
+      color: @color-syntax-class;
+      font-style: italic;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
@@ -100,12 +111,14 @@ LESSCSS
      + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
   .keyword {
-    &.control.import {
-      color: @color-syntax-import;
-      font-weight: bold;
+    &.operator,
+    &.control,
+    &.other {
+      color: @color-syntax-keyword;
     }
-    &.operator {
-      color: @color-syntax-operator;
+    &.other.namespace {
+      color: @color-syntax-cs-preprocessor;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
@@ -113,9 +126,28 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .meta.preprocessor {
-    color: @color-syntax-constant;
-    font-weight: bold;
+  .meta {
+    &.method {
+      color: @color-syntax-function;
+
+      &.body {
+        color: @color-syntax-other;
+      }
+      &.return-type {
+        color: @color-syntax-class;
+      }
+      &.identifier {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.method-call,
+    &.class.body,
+    &.preprocessor {
+      color: @color-syntax-other;
+    }
+    &.toc-list.region {
+      color: @color-syntax-cs-preprocessor;
+    }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
@@ -123,23 +155,37 @@ LESSCSS
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.definition.parameters,
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.tag {
+        color: @color-syntax-keyword;
+      }
+      &.method-parameters,
+      &.string.begin,
+      &.string.end,
+      &.seperator,
+      &.separator {
+          color: @color-syntax-symbol;
+      }
+    }
     &.section {
-      color: @color-syntax-symbol;
+      &.class,
+      &.namespace,
+      &.method,
+      &.block {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Support                                                                [7] +
-     +----------------------------------------------------------------------------+ */
-  .support.function {
-    color: @color-syntax-function;
-  }
-  /* +------------------------------------------------------------------------[7]-+ */
-
-  /* +----------------------------------------------------------------------------+
-     + Storage                                                                [8] +
+     + Storage                                                                [7] +
      +----------------------------------------------------------------------------+ */
   .storage {
     &.modifier {
@@ -147,7 +193,28 @@ LESSCSS
     }
     &.type {
       color: @color-syntax-class;
+
+      &.generic {
+        color: @color-syntax-class;
+        font-weight: bold;
+      }
     }
   }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [8] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+  }
   /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [9] +
+     +----------------------------------------------------------------------------+ */
+  .variable.parameter.function {
+    color: @color-syntax-variable;
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
 }
