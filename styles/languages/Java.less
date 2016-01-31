@@ -9,7 +9,7 @@ email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
 created   2015-08-08 11:14 UTC+0200                +
-modified  2016-01-31 16:30 UTC+0100                +
+modified  2016-01-31 23:08 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -86,15 +86,13 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-      &.class {
-        color: @color-syntax-class;
-        font-weight: bold;
-      }
+  .entity.name {
+    &.function {
+      color: @color-syntax-function;
+    }
+    &.class {
+      color: @color-syntax-class;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
@@ -122,13 +120,9 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.method-call {
-      .meta {
-        &.method {
-          color: @color-syntax-function;
-        }
-      }
+  .meta.method-call {
+    .meta.method {
+      color: @color-syntax-function;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
@@ -187,10 +181,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Variable                                                              [9] +
      +----------------------------------------------------------------------------+ */
-  .variable {
-    &.language {
-      color: @color-syntax-keyword;
-    }
+  .variable.language {
+    color: @color-syntax-keyword;
   }
   /* +----------------------------------------------------------------------.-[9]-+ */
 }

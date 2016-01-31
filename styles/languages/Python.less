@@ -9,7 +9,7 @@ email     development@arcticicestudio.com            +
 website   http://arcticicestudio.com                 +
 copyright Copyright (C) 2015-2016                    +
 created   2015-03-15 20:17 UTC+0100                  +
-modified  2016-01-31 17:05 UTC+0100                  +
+modified  2016-01-31 23:33 UTC+0100                  +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -71,22 +71,16 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
+  .constant.numeric {
+    color: @color-syntax-number;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
@@ -98,18 +92,14 @@ LESSCSS
       color: @color-syntax-keyword;
     }
     &.control {
+      color: @color-syntax-keyword;
+
       &.import {
         color: @color-syntax-import;
       }
       &.statement {
         color: @color-syntax-keyword;
       }
-    }
-  }
-
-  .keyword {
-    &.control {
-      color: @color-syntax-keyword;
     }
     &.operator {
       color: @color-syntax-operator;
@@ -139,18 +129,11 @@ LESSCSS
       &.string {
         color: @color-syntax-symbol;
       }
-      &.parameters {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.arguments {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
+      &.parameters,
+      &.arguments,
       &.list {
-        &.begin, &.end {
+        &.begin,
+        &.end {
           color: @color-syntax-symbol;
         }
       }
@@ -158,9 +141,7 @@ LESSCSS
         color: @color-syntax-comment;
       }
     }
-    &.seperator {
-      color: @color-syntax-symbol;
-    }
+    &.seperator,
     &.section {
       color: @color-syntax-symbol;
     }
@@ -183,34 +164,24 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.type {
-      &.function {
-        color: @color-syntax-keyword;
-      }
-    }
+  .storage.type.function {
+    color: @color-syntax-keyword;
   }
   /* +------------------------------------------------------------------------[8]-+ */
 
   /* +----------------------------------------------------------------------------+
      + String                                                                 [9] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.quoted {
-      color: @color-syntax-string;
-    }
+  .string.quoted {
+    color: @color-syntax-string;
   }
   /* +------------------------------------------------------------------------[9]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Variable                                                              [10] +
      +----------------------------------------------------------------------------+ */
-  .variable {
-    &.parameter {
-      &.function {
-        color: @color-syntax-variable;
-      }
-    }
+  .variable.parameter.function {
+    color: @color-syntax-variable;
   }
   /* +-----------------------------------------------------------------------[10]-+ */
 }

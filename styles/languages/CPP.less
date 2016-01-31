@@ -9,7 +9,7 @@ email     development@arcticicestudio.com         +
 website   http://arcticicestudio.com              +
 copyright Copyright (C) 2015-2016                 +
 created   2016-01-24 16:45 UTC+0100               +
-modified  2016-01-31 11:29 UTC+0100               +
+modified  2016-01-31 18:21 UTC+0100               +
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -77,10 +77,8 @@ LESSCSS
     &.numeric {
       color: @color-syntax-number;
     }
-    &.character {
-      &.escape {
-        color: @color-syntax-escape;
-      }
+    &.character.escape {
+      color: @color-syntax-escape;
     }
     &.language {
       color: @color-syntax-keyword;
@@ -91,15 +89,13 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-      &.type {
-        color: @color-syntax-class;
-        font-weight: bold;
-      }
+  .entity.name {
+    &.function {
+      color: @color-syntax-function;
+    }
+    &.type {
+      color: @color-syntax-class;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
@@ -112,20 +108,15 @@ LESSCSS
       color: @color-syntax-keyword;
 
       &.import {
-        &.include {
-          color: @color-syntax-c-preprocessor;
-          font-weight: bold;
-        }
+        &.include,
         &.define {
           color: @color-syntax-c-preprocessor;
           font-weight: bold;
         }
       }
     }
-    &.operator {
-      &.cast {
-        color: @color-syntax-keyword;
-      }
+    &.operator.cast {
+      color: @color-syntax-keyword;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
@@ -138,15 +129,11 @@ LESSCSS
         &.macro {
           color: @color-syntax-other;
         }
-        &.c {
-          &.include {
-            color: @color-syntax-keyword;
-          }
+        &.c.include {
+          color: @color-syntax-keyword;
         }
       }
-      &.block {
-        color: @color-syntax-other;
-      }
+      &.block,
       &.parens {
         color: @color-syntax-other;
       }
@@ -158,23 +145,17 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
+      &.string.begin,
+      &.string.end,
       &.parameters {
         color: @color-syntax-symbol;
       }
     }
     &.section {
-      &.block {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
+      &.block,
       &.parens {
-        &.begin, &.end {
+        &.begin,
+        &.end {
           color: @color-syntax-symbol;
         }
       }
@@ -195,17 +176,13 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .support {
     &.type {
-      &.sys-types {
-        color: @color-syntax-class;
-      }
+      &.sys-types,
       &.stdint {
         color: @color-syntax-class;
       }
     }
     &.function {
-      &.any-method {
-        color: @color-syntax-function;
-      }
+      &.any-method,
       &.C99 {
         color: @color-syntax-function;
       }
@@ -217,9 +194,7 @@ LESSCSS
      + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
   .storage {
-    &.type {
-      color: @color-syntax-keyword;
-    }
+    &.type,
     &.modifier {
       color: @color-syntax-keyword;
     }
@@ -241,10 +216,8 @@ LESSCSS
     &.parameter {
       color: @color-syntax-variable;
     }
-    &.other {
-      &.dot-access {
-        color: @color-syntax-class;
-      }
+    &.other.dot-access {
+      color: @color-syntax-class;
     }
   }
   /* +-----------------------------------------------------------------------[10]-+ */

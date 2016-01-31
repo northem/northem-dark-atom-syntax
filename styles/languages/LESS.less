@@ -9,7 +9,7 @@ email     development@arcticicestudio.com             +
 website   http://arcticicestudio.com                  +
 copyright Copyright (C) 2015-2016                     +
 created   2015-03-15 20:17 UTC+0100                   +
-modified  2016-01-31 16:44 UTC+0100                   +
+modified  2016-01-31 23:22 UTC+0100                   +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -74,15 +74,10 @@ LESSCSS
     color: @color-syntax-constant;
     font-weight: bold;
 
-    &.numeric {
+    &.numeric,
+    &.other.rgb-value {
       color: @color-syntax-number;
       font-weight: normal;
-    }
-    &.other {
-      &.rgb-value {
-        color: @color-syntax-number;
-        font-weight: normal;
-      }
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -90,16 +85,10 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.other {
-      &.attribute-name {
-        &.class {
-          color: @color-syntax-class;
-        }
-        &.id {
-          color: @color-syntax-class;
-        }
-      }
+  .entity.other.attribute-name {
+    &.class,
+    &.id {
+      color: @color-syntax-class;
     }
   }
 
@@ -116,19 +105,21 @@ LESSCSS
       color: @color-syntax-function;
 
       &.at-rule {
-        &.fontface, &.import, &.page, &.media {
+        &.fontface,
+        &.import,
+        &.page,
+        &.media {
           color: @color-syntax-css-at-rule;
           font-weight: bold;
         }
       }
-      &.logical {
-        &.operator {
-          color: @color-syntax-operator;
-        }
+      &.logical.operator {
+        color: @color-syntax-operator;
       }
     }
     &.other {
       color: @color-syntax-keyword;
+
       &.unit {
         color: @color-syntax-unit;
       }
@@ -153,10 +144,9 @@ LESSCSS
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.terminator {
-      color: @color-syntax-symbol;
-    }
-    &.seperator {
+    &.terminator,
+    &.seperator,
+    &.section.property-list {
       color: @color-syntax-symbol;
     }
     &.definition {
@@ -167,16 +157,8 @@ LESSCSS
         color: @color-syntax-keyword;
         font-weight: normal;
       }
-
-      &.entity {
-        color: @color-syntax-symbol;
-      }
+      &.entity,
       &.string {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.section {
-      &.property-list {
         color: @color-syntax-symbol;
       }
     }
@@ -187,27 +169,19 @@ LESSCSS
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
   .support {
-    &.type {
-      &.property-name {
-        color: @color-syntax-keyword;
-      }
+    &.type.property-name {
+      color: @color-syntax-keyword;
     }
     &.function {
       color: @color-syntax-function;
 
-      &.any-method {
-        &.builtin {
-          color: @color-syntax-function;
-        }
+      &.any-method.builtin {
+        color: @color-syntax-function;
       }
     }
-    &.constant {
-      &.color {
-        &.w3c-standard-color-name {
-          color: @color-syntax-constant;
-          font-weight: bold;
-        }
-      }
+    &.constant.color.w3c-standard-color-name {
+      color: @color-syntax-constant;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */

@@ -9,7 +9,7 @@ email     development@arcticicestudio.com           +
 website   http://arcticicestudio.com                +
 copyright Copyright (C) 2015-2016                   +
 created   2015-03-15 20:17 UTC+0100                 +
-modified  2016-01-31 16:41 UTC+0100                 +
+modified  2016-01-31 23:19 UTC+0100                 +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -82,10 +82,8 @@ LESSCSS
     &.numeric {
       color: @color-syntax-number;
     }
-    &.character {
-      &.escape {
-        color: @color-syntax-escape;
-      }
+    &.character.escape {
+    color: @color-syntax-escape;
     }
     &.language {
       color: @color-syntax-constant;
@@ -96,12 +94,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [4] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
@@ -109,19 +103,13 @@ LESSCSS
      + Keyword                                                                [5] +
      +----------------------------------------------------------------------------+ */
   .keyword {
-    &.other {
-      color: @color-syntax-keyword;
-    }
+    &.other,
     &.control {
       color: @color-syntax-keyword;
     }
     &.operator {
-      &.ternary {
-        color: @color-syntax-operator;
-      }
-      &.arithmetic {
-        color: @color-syntax-operator;
-      }
+      &.ternary,
+      &.arithmetic,
       &.update {
         color: @color-syntax-operator;
       }
@@ -132,15 +120,14 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.commment {
-        color: @color-syntax-comment;
-      }
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
+  .punctuation.definition {
+    &.commment {
+      color: @color-syntax-comment;
+    }
+    &.string {
+      &.begin
+       &.end {
+        color: @color-syntax-symbol;
       }
     }
   }
@@ -149,13 +136,11 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.function {
-      color: @color-syntax-function;
+  .support.function {
+    color: @color-syntax-function;
 
-      &.macro {
-        font-weight: bold;
-      }
+    &.macro {
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */
@@ -163,21 +148,18 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.type {
-      color: @color-syntax-type;
-    }
+  .storage.type {
+    color: @color-syntax-type;
   }
   /* +------------------------------------------------------------------------[8]-+ */
 
   /* +----------------------------------------------------------------------------+
      + String                                                                 [9] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.qouted {
-      &.souble {
-        color: @color-syntax-string;
-      }
+  .string.qouted {
+    &.Double,
+    &.single {
+      color: @color-syntax-string;
     }
   }
   /* +------------------------------------------------------------------------[9]-+ */

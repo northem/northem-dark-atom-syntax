@@ -9,7 +9,7 @@ email     development@arcticicestudio.com                +
 website   http://arcticicestudio.com                     +
 copyright Copyright (C) 2015-2016                        +
 created   2015-03-15 20:17 UTC+0100                      +
-modified  2016-01-31 16:33 UTC+0100                      +
+modified  2016-01-31 23:13 UTC+0100                      +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -80,15 +80,14 @@ LESSCSS
       font-weight: normal;
 
       &.boolean {
-        &.true, &.false {
+        &.true,
+        &.false {
           color: @color-syntax-keyword;
         }
       }
     }
-    &.character {
-      &.escape {
-        color: @color-syntax-escape;
-      }
+    &.character.escape {
+      color: @color-syntax-escape;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -96,23 +95,21 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.type {
-        &.object {
-          color: @color-syntax-class;
+  .entity.name {
+    &.type {
+      &.object {
+        color: @color-syntax-class;
 
-          &.firebug {
-            font-style: italic;
-          }
-        }
-        &.instance {
-          color: @color-syntax-javascript-instance;
+        &.firebug {
+          font-style: italic;
         }
       }
-      &.function {
-        color: @color-syntax-function;
+      &.instance {
+        color: @color-syntax-javascript-instance;
       }
+    }
+    &.function {
+      color: @color-syntax-function;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
@@ -131,10 +128,8 @@ LESSCSS
     &.control {
       color: @color-syntax-keyword;
 
-      &.anchor {
-        &.regexp {
-          color: @color-syntax-regexp;
-        }
+      &.anchor.regexp {
+        color: @color-syntax-regexp;
       }
     }
   }
@@ -145,15 +140,9 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .meta {
     &.delimiter {
-      &.method {
-        &.period {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.object {
-        &.comma {
-          color: @color-syntax-symbol;
-        }
+      &.method.period,
+      &.object.comma {
+        color: @color-syntax-symbol;
       }
     }
     &.brace {
@@ -165,26 +154,19 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.comment {
-        color: @color-syntax-comment;
+  .punctuation.definition {
+    &.comment {
+      color: @color-syntax-comment;
+    }
+    &.parameters,
+    &.string {
+      &.begin,
+      &.end {
+        color: @color-syntax-symbol;
       }
-      &.parameters {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.terminator {
-        &.statement {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
+    }
+    &.terminator.statement {
+      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
@@ -219,13 +201,9 @@ LESSCSS
      + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
   .storage {
-    &.modifier {
+    &.modifier,
+    &.type.function {
       color: @color-syntax-keyword;
-    }
-    &.type {
-      &.function {
-        color: @color-syntax-keyword;
-      }
     }
   }
   /* +------------------------------------------------------------------------[8]-+ */
@@ -233,11 +211,10 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + String                                                                 [9] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.quoted {
-      &.single {
-        color: @color-syntax-string;
-      }
+  .string.quoted {
+    &.single,
+    &.double {
+      color: @color-syntax-string;
     }
   }
   /* +------------------------------------------------------------------------[9]-+ */
@@ -245,10 +222,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Variable                                                              [10] +
      +----------------------------------------------------------------------------+ */
-  .variable {
-    &.language {
-      color: @color-syntax-keyword;
-    }
+  .variable.language {
+    color: @color-syntax-keyword;
   }
   /* +-----------------------------------------------------------------------[10]-+ */
 }

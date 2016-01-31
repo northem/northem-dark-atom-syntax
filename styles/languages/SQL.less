@@ -9,7 +9,7 @@ email     development@arcticicestudio.com         +
 website   http://arcticicestudio.com              +
 copyright Copyright (C) 2015-2016                 +
 created   2016-01-27 15:36 UTC+0100               +
-modified  2016-01-31 17:19 UTC+0100               +
+modified  2016-01-31 23:41 UTC+0100               +
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -68,22 +68,16 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
+  .constant.numeric {
+    color: @color-syntax-number;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
@@ -105,13 +99,9 @@ LESSCSS
       &.create {
         color: @color-syntax-keyword;
       }
-      &.DDL {
-        &.create {
-          &.II {
-            color: @color-syntax-keyword;
-            font-style: italic;
-          }
-        }
+      &.DDL.create.II {
+        color: @color-syntax-keyword;
+        font-style: italic;
       }
     }
   }
@@ -120,13 +110,10 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Punctuation                                                            [5] +
      +----------------------------------------------------------------------------+ */
-  &.punctuation {
-    &.definition {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
+  &.punctuation.definition.string {
+    &.begin,
+    &.end {
+      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
@@ -147,12 +134,10 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + String                                                                 [7] +
      +----------------------------------------------------------------------------+ */
-  &.string {
-    &.quoted {
-      &.single,
-      &.double {
-        color: @color-syntax-string;
-      }
+  &.string.quoted {
+    &.single,
+    &.double {
+      color: @color-syntax-string;
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */

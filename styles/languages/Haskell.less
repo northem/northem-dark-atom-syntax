@@ -9,7 +9,7 @@ email     development@arcticicestudio.com             +
 website   http://arcticicestudio.com                  +
 copyright Copyright (C) 2015-2016                     +
 created   2015-08-01 10:18 UTC+0200                   +
-modified  2016-01-31 16:16 UTC+0100                   +
+modified  2016-01-31 18:59 UTC+0100                   +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -66,10 +66,8 @@ LESSCSS
     color: @color-syntax-comment;
     font-weight: normal;
 
-    &.line {
-      &.shebang {
-        color: @color-syntax-haskell-preprocessor;
-      }
+    &.line.shebang {
+      color: @color-syntax-haskell-preprocessor;
     }
   }
   /* +------------------------------------------------------------------------[1]-+ */
@@ -77,30 +75,24 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
+  .constant.numeric {
+    color: @color-syntax-number;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.type {
-        color: @color-syntax-class;
-      }
-      &.function {
-        color: @color-syntax-function;
+  .entity.name {
+    &.type,
+    &.tag  {
+      color: @color-syntax-class;
+    }
+    &.function {
+      color: @color-syntax-function;
 
-        &.infix {
-          color: @color-syntax-function;
-        }
-      }
-      &.tag {
-        color: @color-syntax-class;
+      &.infix {
+        color: @color-syntax-function;
       }
     }
   }
@@ -116,28 +108,22 @@ LESSCSS
       &.assignment {
         color: @color-syntax-operator;
       }
-      &.function {
-        &.infix {
-          color: @color-syntax-function;
-        }
+      &.function.infix {
+        color: @color-syntax-function;
       }
     }
     &.other {
       color: @color-syntax-keyword;
 
-      &.arrow {
-        color: @color-syntax-operator;
-      }
+      &.arrow,
       &.double-colon {
         color: @color-syntax-operator;
       }
     }
 
-    &.control {
-      &.import {
-        color: @color-syntax-haskell-preprocessor;
-        font-weight: bold;
-      }
+    &.control.import {
+      color: @color-syntax-haskell-preprocessor;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
@@ -149,31 +135,21 @@ LESSCSS
     &.preprocessor {
       color: @color-syntax-haskell-preprocessor;
 
-      .keyword {
-        &.other {
-          color: @color-syntax-keyword;
-        }
+      .keyword.other {
+        color: @color-syntax-keyword;
       }
     }
-    &.declaration {
-      &.exports {
-        color: @color-syntax-symbol;
-      }
+    &.declaration.exports {
+      color: @color-syntax-symbol;
     }
     &.type-signature {
-      // TODO: Necessary to set parent color property?
-      /* color: transparent; */
 
-      .keyword {
-        &.operator {
-          color: @color-syntax-operator;
-        }
+      .keyword.operator {
+        color: @color-syntax-operator;
       }
     }
-    &.other {
-      &.constructor-list {
-        color: @color-syntax-variable;
-      }
+    &.other.constructor-list {
+      color: @color-syntax-variable;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
@@ -182,19 +158,12 @@ LESSCSS
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.separator {
-      &.comma {
-        color: @color-syntax-symbol;
-      }
-    }
+    &.separator.comma,
     &.definition {
-      &.entity {
+      &.entity,
+      &.string.begin,
+      &.string.end {
         color: @color-syntax-symbol;
-      }
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
       }
     }
   }
@@ -204,21 +173,15 @@ LESSCSS
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
   .support {
-    &.other {
-      &.module {
-        color: @color-syntax-class;
-        font-weight: bold;
-      }
+    &.other.module {
+      color: @color-syntax-class;
+      font-weight: bold;
     }
-    &.class {
-      &.prelude {
-        color: @color-syntax-class;
-      }
+    &.class.prelude {
+      color: @color-syntax-class;
     }
-    &.function {
-      &.prelude {
-        color: @color-syntax-function;
-      }
+    &.function.prelude {
+      color: @color-syntax-function;
     }
     &.tag {
       color: @color-syntax-keyword;
@@ -229,23 +192,18 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.type {
-      &.data {
-        color: @color-syntax-keyword;
-      }
-    }
+  .storage.type.data {
+    color: @color-syntax-keyword;
   }
   /* +------------------------------------------------------------------------[8]-+ */
 
   /* +----------------------------------------------------------------------------+
      + String                                                                 [9] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.quoted {
-      &.single {
-        color: @color-syntax-string;
-      }
+  .string.quoted {
+    &.single,
+    &.double {
+      color: @color-syntax-string;
     }
   }
   /* +------------------------------------------------------------------------[9]-+ */

@@ -9,7 +9,7 @@ email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
 created   2015-03-15 20:17 UTC+0100                +
-modified  2016-01-31 16:21 UTC+0100                +
+modified  2016-01-31 22:59 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -61,22 +61,16 @@ LESSCSS
      + Comment                                                                [1] +
      +----------------------------------------------------------------------------+ */
   .comment {
-    &.block {
-      color: @color-syntax-comment;
-    }
+    color: @color-syntax-comment;
   }
   /* +------------------------------------------------------------------------[1]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.other {
-      &.inline-data {
-        color: @color-syntax-html-cdata;
-        font-style: italic;
-      }
-    }
+  .constant.other.inline-data {
+    color: @color-syntax-html-cdata;
+    font-style: italic;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
@@ -85,16 +79,17 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .entity {
     &.name.tag {
-      &.structure, &.script, &.style {
+      &.structure,
+      &.script,
+      &.style {
         color: @color-syntax-html-tag;
       }
     }
-    &.other {
-      &.attribute-name {
-        color: @color-syntax-class;
-      }
+    &.other.attribute-name {
+      color: @color-syntax-class;
     }
-    &.script, &.style {
+    &.script,
+    &.style {
       color: @color-syntax-function;
     }
   }
@@ -103,16 +98,18 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [4] +
      +----------------------------------------------------------------------------+ */
-  .meta.tag.any {
-    color: @color-syntax-keyword;
-  }
-
-  .meta.tag.sgml.doctype {
-    color: @color-syntax-doctype;
-  }
-
-  .meta.toc-list.id {
-    color: @color-syntax-string;
+  .meta {
+    &.tag {
+      &.any {
+        color: @color-syntax-keyword;
+      }
+      &.sgml.doctype {
+        color: @color-syntax-doctype;
+      }
+    }
+    &.toc-list.id {
+      color: @color-syntax-string;
+    }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
@@ -127,7 +124,8 @@ LESSCSS
       &.string {
         color: @color-syntax-string;
 
-        &.begin, &.end {
+        &.begin,
+        &.end {
           color: @color-syntax-symbol;
         }
       }
@@ -155,20 +153,12 @@ LESSCSS
   .string {
     color: @color-syntax-string;
 
-    .markup {
-      &.underline {
-        &.link {
-          &.https {
-            &.hyperlink {
-              color: @color-syntax-string;
-              text-decoration: none;
+    .markup.underline.link.https.hyperlink {
+      color: @color-syntax-string;
+      text-decoration: none;
 
-              &:hover {
-                text-decoration: underline;
-              }
-            }
-          }
-        }
+      &:hover {
+        text-decoration: underline;
       }
     }
   }

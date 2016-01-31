@@ -9,7 +9,7 @@ email     development@arcticicestudio.com       +
 website   http://arcticicestudio.com            +
 copyright Copyright (C) 2015-2016               +
 created   2015-08-14 14:23 UTC+0200             +
-modified  2016-01-31 11:38 UTC+0100             +
+modified  2016-01-31 18:34 UTC+0100             +
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -75,10 +75,8 @@ LESSCSS
     &.numeric {
       color: @color-syntax-number;
     }
-    &.character {
-      &.escape {
-        color: @color-syntax-escape;
-      }
+    &.character.escape {
+      color: @color-syntax-escape;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -86,15 +84,13 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-      &.class {
-        color: @color-syntax-class;
-        font-weight: bold;
-      }
+  .entity.name {
+    &.function {
+      color: @color-syntax-function;
+    }
+    &.class {
+      color: @color-syntax-class;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
@@ -104,34 +100,22 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .keyword {
     &.operator {
-      &.logical {
+      &.logical,
+      &.arithmetic,
+      &.assignment,
+      &.concatenation,
+      &.bitwise,
+      &.comparison {
         color: @color-syntax-operator;
       }
       &.dereference {
         color: @color-syntax-symbol;
       }
-      &.arithmetic {
-        color: @color-syntax-operator;
-      }
-      &.assignment {
-        color: @color-syntax-operator;
-      }
-      &.concatenation {
-        color: @color-syntax-operator;
-      }
-      &.bitwise {
-        color: @color-syntax-operator;
-      }
-      &.comparison {
-        color: @color-syntax-operator;
-      }
     }
     &.control {
       color: @color-syntax-keyword;
 
-      &.loop{
-        color: @color-syntax-keyword;
-      }
+      &.loop,
       &.branch {
         color: @color-syntax-keyword;
       }
@@ -150,24 +134,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.function {
-      &.parameters {
-        color: @color-syntax-variable;
-      }
-    }
-    /*
-    &.parentheses {
-      color: @color-syntax-other;
-    }
-    */
-    /*
-    &.class {
-      &.inheritance {
-        color: @color-syntax-other;
-      }
-    }
-    */
+  .meta.function.parameters {
+    color: @color-syntax-variable;
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
@@ -175,27 +143,18 @@ LESSCSS
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.separator {
+    &.separator, {
+    &.comma
       color: @color-syntax-symbol;
     }
     &.terminator {
       color: @color-syntax-keyword;
     }
-    &.comma {
-      color: @color-syntax-symbol;
-    }
-    &.section {
-      &.block {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
-    &.definition {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
+    &.section.block,
+    &.definition.string {
+      &.begin,
+      &.end {
+        color: @color-syntax-symbol;
       }
     }
   }
@@ -204,12 +163,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.other {
-      &.module {
-        color: @color-syntax-class;
-      }
-    }
+  .support.other.module {
+    color: @color-syntax-class;
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
@@ -218,12 +173,10 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .storage {
     &.type {
-      &.return{
+      &.return {
         color: @color-syntax-keyword;
       }
-      &.primitive {
-        color: @color-syntax-class;
-      }
+      &.primitive,
       &.class {
         color: @color-syntax-class;
       }

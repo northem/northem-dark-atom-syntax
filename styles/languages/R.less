@@ -9,7 +9,7 @@ email     development@arcticicestudio.com       +
 website   http://arcticicestudio.com            +
 copyright Copyright (C) 2015-2016               +
 created   2015-08-14 15:42 UTC+0200             +
-modified  2016-01-31 17:08 UTC+0100             +
+modified  2016-01-31 23:35 UTC+0100             +
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -75,10 +75,8 @@ LESSCSS
     &.language {
       color: @color-syntax-constant;
     }
-    &.character {
-      &.escape {
-        color: @color-syntax-regexp;
-      }
+    &.character.escape {
+      color: @color-syntax-regexp;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -86,12 +84,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
@@ -100,15 +94,9 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .keyword {
     &.operator {
-      &.assignment {
-        color: @color-syntax-operator;
-      }
-      &.arithmetic {
-        color: @color-syntax-operator;
-      }
-      &.logical {
-        color: @color-syntax-operator;
-      }
+      &.assignment,
+      &.arithmetic,
+      &.logical,
       &.comparison {
         color: @color-syntax-operator;
       }
@@ -126,16 +114,11 @@ LESSCSS
      + Punctuation                                                            [5] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.definition {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-string;
-        }
-      }
-    }
+    &.definition.string,
     &.section {
-      &.begin, &.end {
-        color: @color-syntax-symbol;
+      &.begin,
+      &.end {
+        color: @color-syntax-string;
       }
     }
   }
@@ -153,9 +136,7 @@ LESSCSS
      + Variable                                                               [7] +
      +----------------------------------------------------------------------------+ */
   .variable {
-    &.other {
-      color: @color-syntax-variable;
-    }
+    &.other,
     &.parameter {
       color: @color-syntax-variable;
     }

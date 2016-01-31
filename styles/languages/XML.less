@@ -9,7 +9,7 @@ email     development@arcticicestudio.com         +
 website   http://arcticicestudio.com              +
 copyright Copyright (C) 2015-2016                 +
 created   2015-03-19 08:14 UTC+0200               +
-modified  2016-01-31 17:22 UTC+0100               +
+modified  2016-01-31 23:42 UTC+0100               +
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -60,9 +60,7 @@ LESSCSS
      + Comment                                                                [1] +
      +----------------------------------------------------------------------------+ */
   .comment {
-    &.block {
-      color: @color-syntax-comment;
-    }
+    color: @color-syntax-comment;
   }
   /* +------------------------------------------------------------------------[1]-+ */
 
@@ -72,16 +70,16 @@ LESSCSS
   .entity {
     &.name.tag {
       color: @color-syntax-doctype;
+
       &.localname {
         color: @color-syntax-keyword;
       }
     }
-    &.other{
-      &.attribute-name {
+    &.other.attribute-name {
+      color: @color-syntax-xml-attribute;
+
+      &.localname {
         color: @color-syntax-xml-attribute;
-        &.localname {
-          color: @color-syntax-xml-attribute;
-        }
       }
     }
   }
@@ -96,7 +94,8 @@ LESSCSS
         color: @color-syntax-xml-tag;
       }
       &.string {
-        &.begin, &.end {
+        &.begin,
+        &.end {
           color: @color-syntax-symbol;
         }
       }
@@ -112,14 +111,13 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .string {
     &.quoted {
-      &.double {
+      &.double,
+      &.single {
         color: @color-syntax-string;
       }
     }
-    &.unquoted {
-      &.cdata {
-        color: @color-syntax-xml-cdata;
-      }
+    &.unquoted.cdata {
+      color: @color-syntax-xml-cdata;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */

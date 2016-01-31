@@ -9,7 +9,7 @@ email     development@arcticicestudio.com         +
 website   http://arcticicestudio.com              +
 copyright Copyright (C) 2015-2016                 +
 created   2015-03-15 20:17 UTC+0100               +
-modified  2016-01-31 11:35 UTC+0100               +
+modified  2016-01-31 18:30 UTC+0100               +
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -74,23 +74,14 @@ LESSCSS
     color: @color-syntax-constant;
     font-weight: bold;
 
-    &.numeric {
+    &.numeric,
+    &.other.color.rgb-value {
       color: @color-syntax-number;
       font-weight: normal;
     }
-    &.other {
-      &.color {
-        &.rgb-value {
-          color: @color-syntax-number;
-          font-weight: normal;
-        }
-      }
-    }
-    &.character {
-      &.escape {
-        color: @color-syntax-escape;
-        font-weight: normal;
-      }
+    &.character.escape {
+      color: @color-syntax-escape;
+      font-weight: normal;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -102,20 +93,19 @@ LESSCSS
     &.name.tag {
       color: @color-syntax-class;
     }
-    &.other {
-      &.attribute-name {
-        &.attribute {
-          color: @color-syntax-css-attribute;
-        }
-        &.pseudo-class, &.pseudo-element {
-          color: @color-syntax-css-class-pseudo;
-        }
-        &.class {
-          color: @color-syntax-class;
-        }
-        &.id {
-          color: @color-syntax-css-id;
-        }
+    &.other.attribute-name {
+      &.attribute {
+        color: @color-syntax-css-attribute;
+      }
+      &.pseudo-class,
+      &.pseudo-element {
+        color: @color-syntax-css-class-pseudo;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+      &.id {
+        color: @color-syntax-css-id;
       }
     }
   }
@@ -128,15 +118,17 @@ LESSCSS
     &.operator {
       color: @color-syntax-operator;
     }
-    &.control {
-      &.at-rule {
-        &.font-face, &.import, &.page, &.media {
-          color: @color-syntax-css-at-rule;
-        }
+    &.control.at-rule {
+      &.font-face,
+      &.import,
+      &.page,
+      &.media {
+        color: @color-syntax-css-at-rule;
       }
     }
     &.other {
       color: @color-syntax-keyword;
+
       &.unit {
         color: @color-syntax-keyword;
       }
@@ -154,10 +146,8 @@ LESSCSS
     &.selector {
       color: @color-syntax-css-selector;
     }
-    &.at-rule {
-      &.media {
-        color: @color-syntax-keyword;
-      }
+    &.at-rule.media {
+      color: @color-syntax-keyword;
     }
     &.property-value {
       color: @color-editor-text;
@@ -169,9 +159,7 @@ LESSCSS
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.terminator {
-      color: @color-syntax-symbol;
-    }
+    &.terminator,
     &.separator {
       color: @color-syntax-symbol;
     }
@@ -182,10 +170,7 @@ LESSCSS
       &.keyword {
         color: @color-syntax-keyword;
       }
-
-      &.entity {
-        color: @color-syntax-symbol;
-      }
+      &.entity,
       &.string {
         color: @color-syntax-symbol;
       }
@@ -208,10 +193,8 @@ LESSCSS
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
   .support {
-    &.type {
-      &.property-name {
-        color: @color-syntax-keyword;
-      }
+    &.type.property-name {
+      color: @color-syntax-keyword;
     }
     &.function {
       color: @color-syntax-function;

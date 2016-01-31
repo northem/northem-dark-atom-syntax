@@ -9,7 +9,7 @@ email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
 created   2015-05-21 09:18 UTC+0200                +
-modified  2016-01-31 16:28 UTC+0100                +
+modified  2016-01-31 23:04 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -65,16 +65,14 @@ LESSCSS
      + Comment                                                                [1] +
      +----------------------------------------------------------------------------+ */
   .comment {
-    &.other {
-      &.doctype {
-        color: @color-syntax-doctype;
-        font-weight: bold;
-      }
+    color: @color-syntax-comment;
+
+    &.other.doctype {
+      color: @color-syntax-doctype;
+      font-weight: bold;
     }
-    &.unbuffered {
-      &.block {
-        color: @color-syntax-comment;
-      }
+    &.unbuffered.block {
+      color: @color-syntax-comment;
     }
   }
   /* +------------------------------------------------------------------------[1]-+ */
@@ -83,20 +81,14 @@ LESSCSS
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
   .constant {
-    &.name {
-      &.attribute {
-        &.tag {
-          color: @color-syntax-symbol;
-        }
-      }
+    &.name.attribute.tag {
+      color: @color-syntax-symbol;
     }
     &.numeric {
       color: @color-syntax-number;
     }
-    &.language {
-      &.boolean {
-        color: @color-syntax-keyword;
-      }
+    &.language.boolean {
+      color: @color-syntax-keyword;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -121,12 +113,8 @@ LESSCSS
         color: @color-syntax-jade-keyword;
       }
     }
-    &.other {
-      &.attribute-name {
-        &.tag {
-          color: @color-syntax-attribute;
-        }
-      }
+    &.other.attribute-name.tag {
+      color: @color-syntax-attribute;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
@@ -149,17 +137,13 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .meta {
     &.brace {
-      &.round {
+      &.round,
+      &.curly {
         color: @color-syntax-symbol;
       }
     }
-    &.curly {
-      color: @color-syntax-symbol;
-    }
-    &.control {
-      &.flow {
-        color: @color-syntax-other;
-      }
+    &.control.flow {
+      color: @color-syntax-other;
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
@@ -168,13 +152,8 @@ LESSCSS
      + Punctuation                                                            [7] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.defintion {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
+    &.defintion.string.begin,
+    &.defintion.string.end,
     &.terminator {
       color: @color-syntax-symbol;
     }
@@ -194,11 +173,9 @@ LESSCSS
         color: @color-syntax-jade-keyword;
         font-style: italic;
       }
-      &.import {
-        &.include {
-          color: @color-syntax-jade-keyword;
-          font-weight: bold;
-        }
+      &.import.include {
+        color: @color-syntax-jade-keyword;
+        font-weight: bold;
       }
     }
   }
@@ -230,14 +207,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Variable                                                              [11] +
      +----------------------------------------------------------------------------+ */
-  .variable {
-    &.control {
-      &.import {
-        &.include {
-          color: @color-syntax-jade-variable-include;
-        }
-      }
-    }
+  .variable.control.import.include {
+    color: @color-syntax-jade-variable-include;
   }
   /* +-----------------------------------------------------------------------[11]-+ */
 }

@@ -9,7 +9,7 @@ email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
 created   2015-08-14 15:12 UTC+0200                +
-modified  2016-01-31 11:46 UTC+0100                +
+modified  2016-01-31 18:52 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -83,16 +83,14 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
+  .entity.name {
+    &.function {
+      color: @color-syntax-function;
 
-        &.preprocessor {
-          color: @color-syntax-constant;
-          font-weight: bold;
-          font-style: italic;
-        }
+      &.preprocessor {
+        color: @color-syntax-constant;
+        font-weight: bold;
+        font-style: italic;
       }
     }
   }
@@ -102,11 +100,9 @@ LESSCSS
      + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
   .keyword {
-    &.control {
-      &.import {
-        color: @color-syntax-import;
-        font-weight: bold;
-      }
+    &.control.import {
+      color: @color-syntax-import;
+      font-weight: bold;
     }
     &.operator {
       color: @color-syntax-operator;
@@ -117,11 +113,9 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.preprocessor {
-      color: @color-syntax-constant;
-      font-weight: bold;
-    }
+  .meta.preprocessor {
+    color: @color-syntax-constant;
+    font-weight: bold;
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
@@ -129,11 +123,7 @@ LESSCSS
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.definition {
-      &.parameters {
-        color: @color-syntax-symbol;
-      }
-    }
+    &.definition.parameters,
     &.section {
       color: @color-syntax-symbol;
     }
@@ -143,10 +133,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.function {
-      color: @color-syntax-function;
-    }
+  .support.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[7]-+ */
 

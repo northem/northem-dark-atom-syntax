@@ -9,7 +9,7 @@ email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
 created   2015-03-15 20:17 UTC+0100                +
-modified  2016-01-31 16:37 UTC+0100                +
+modified  2016-01-31 23:17 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -70,7 +70,6 @@ LESSCSS
      + Meta                                                                   [2] +
      +----------------------------------------------------------------------------+ */
   .meta.structure.dictionary.json {
-
     .string.quoted.json {
       color: @color-syntax-keyword;
 
@@ -78,17 +77,10 @@ LESSCSS
         color: @color-syntax-symbol;
       }
     }
-
-    .punctuation {
-      &.definition {
-        &.dictionary {
-          color: @color-syntax-symbol;
-        }
-      }
+    .punctuation.definition.dictionary {
+      color: @color-syntax-symbol;
     }
-
     .meta.structure.dictionary.value.json {
-
       .string.quoted.json {
         color: @color-syntax-string;
 
@@ -96,9 +88,7 @@ LESSCSS
           color: @color-syntax-symbol;
         }
       }
-
       .meta.structure.dictionary.json {
-
         .string.quoted.json {
           color: @color-syntax-keyword;
 
@@ -106,29 +96,22 @@ LESSCSS
             color: @color-syntax-symbol;
           }
         }
-
         .meta.structure.dictionary.value.json {
+          .string.quoted.json {
+            color: @color-syntax-string;
 
-            .string.quoted.json {
-              color: @color-syntax-string;
-
-              .punctuation.definition.string {
-                color: @color-syntax-symbol;
-              }
-            }
-        }
-      }
-    }
-
-    .meta.structure.array {
-
-      .punctuation {
-        &.definition {
-          &.array {
-            &.begin, &.end {
+            .punctuation.definition.string {
               color: @color-syntax-symbol;
             }
           }
+        }
+      }
+    }
+    .meta.structure.array {
+      .punctuation.definition.array {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
         }
       }
     }

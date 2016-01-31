@@ -9,7 +9,7 @@ email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
 created   2015-03-15 20:17 UTC+0100                +
-modified  2016-01-31 17:11 UTC+0100                +
+modified  2016-01-31 23:37 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -87,12 +87,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
@@ -100,17 +96,13 @@ LESSCSS
      + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
   .keyword {
-    &.control {
-      color: @color-syntax-keyword;
-    }
+    &.control,
     &.operator {
       color: @color-syntax-keyword;
     }
-    &.other {
-      &.special-method {
-        color: @color-syntax-ruby-special-method;
-        font-weight: bold;
-      }
+    &.other.special-method {
+      color: @color-syntax-ruby-special-method;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
@@ -130,9 +122,7 @@ LESSCSS
         color: @color-syntax-keyword;
       }
     }
-    &.seperator {
-      color: @color-syntax-symbol;
-    }
+    &.seperator,
     &.section {
       color: @color-syntax-symbol;
     }
@@ -146,10 +136,8 @@ LESSCSS
     &.class {
       color: @color-syntax-class;
     }
-    &.function {
-      &.kernel {
-        color: @color-syntax-function;
-      }
+    &.function.kernel {
+      color: @color-syntax-function;
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
@@ -157,10 +145,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + String                                                                 [7] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.quoted {
-      color: @color-syntax-string;
-    }
+  .string.quoted {
+    color: @color-syntax-string;
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
