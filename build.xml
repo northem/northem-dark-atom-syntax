@@ -1,14 +1,73 @@
 <?xml version="1.0"?>
-<project name="northem-dark-atom-syntax" basedir="." default="init" xmlns:if="ant:if" xmlns:unless="ant:unless">
-  <!--
-  +================+
-  + INITIALIZATION +
-  +================+
-  -->
-  <target name="init" description="Loads necessary properties to initialize this buildfile [default]">
-    <!-- Load external property files -->
+<!--
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Apache Ant Build Script +
+project   northem-dark-atom-syntax                           +
+file      build.xml                                          +
+version   0.13.0                                             +
+author    Arctic Ice Studio                                  +
+email     development@arcticicestudio.com                    +
+copyright Copyright (C) 2015-2016                            +
+created   2016-01-31 10:54 UTC+0100                          +
+modified  2016-01-31 10:55 UTC+0100                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+Apache Ant Build Script of the "Northem Dark Atom Syntax" project.
+Based on the Apache Ant Build Script skeleton of the "Glacier - Apache Ant" project (glacier-apache-ant@0.5.0).
+
+[Index]
+  (1) Initialization
+    (1.0) External Property Files
+    (1.1) Environment Property
+    (1.2) Project Information Splash
+  (2) Distribution
+    (2.0) dist
+      (2.0.0) Source Code Archive Generation
+      (2.0.1) MD5 Generation
+    (2.1) dist-latest
+  (3) Compiling
+    (3.0) compile-less
+  (4) Cleaning
+    (4.0) clean
+
+[Dependencies]
+  - "Apache Ant"
+    ant@>=1.9.5
+
+[Development Dependencies]
+  - "Glacier - Apache Ant"
+    glacier-apache-ant@0.5.0
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[References]
+Apache Ant Documentation
+  (https://ant.apache.org/manual/)
+Glacier Apache Ant Project
+  (https://github.com/arcticicestudio/glacier-apache-ant)
+-->
+<project name="northem-dark-atom-syntax" basedir="." default="init">
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+     + Initialization - init                                                  [1] +
+     +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
+  <target name="init" description="Loads necessary properties and definitions to initialize this buildfile [default]">
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+     + Initialization - init - External Property Files                      [1.0] +
+     +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
     <loadproperties srcFile="build.properties"/>
-    <!-- Show project informations -->
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [1.0]-+ -->
+
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+     + Initialization - init - Environment Property                         [1.1] +
+     +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
+    <property environment="env"/>
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [1.1]-+ -->
+
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+     + Initialization - init - Project Information Splash                   [1.2] +
+     +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
     <echo message="Project: ${project.name}" level="info"/>
     <echo message="Version: ${project.version}" level="info"/>
     <echo message="BuildFile: ${ant.file}" level="info"/>
@@ -17,46 +76,96 @@
     <echo message="Ant: ${ant.version} (${ant.home})" level="info"/>
     <echo message="InvokedTargets: ${ant.project.invoked-targets}" level="info"/>
   </target>
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [1.2]-+ -->
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [1]-+ -->
 
-  <!--
-  +================+
-  + DISTRIBUTATION +
-  +================+
-  -->
-  <target name="dist" depends="init" description="Distributes the latest version">
-    <!-- Check if output folder parameters is set -->
-    <fail unless:set="output.folder" message="Output folder parameter no set (ant -Doutput.folder=)"/>
-
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+     + Distribution - dist                                                  [2.0] +
+     +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
+  <target name="dist" depends="init,rebuild" description="Distributes the latest version">
     <echo message="Distributing ${project.name} ${project.version}"/>
-    <!-- Create folder -->
-    <mkdir dir="${output.folder}/${project.version}"/>
+    <!-- Create folders -->
+    <mkdir dir="${dist.dir}/${project.version}"/>
 
-    <!-- === Source Archive - Begin === -->
-    <echo message="Processing files for Source Archive..."/>
-    <tar destfile="${output.folder}/${project.version}/${project.name}-${project.version}-src.tar">
+    <!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+         + Distribution - dist - Source Code Archive Generation               [2.0.0] +
+         +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
+    <echo message="Processing files for Source Code Archive..."/>
+    <tar destfile="${dist.dir}/${project.version}/${project.name}-${project.version}-src.tar.gz" compression="gzip">
       <!-- Sources -->
-      <tarfileset dir="${src.dir}" prefix="styles"></tarfileset>
-      <filelist dir="${basedir}">
-        <file name="index.less"/>
-        <file name="package.json"/>
-      </filelist>
+      <tarfileset dir="${src.dir}" prefix="styles"/>
+      <!-- Documents -->
+      <tarfileset dir="${doc.dir}" prefix="doc"/>
+      <!-- Binaries -->
+      <tarfileset dir="${bin.dir}" prefix="bin"/>
       <!-- Resources -->
-      <tarfileset dir="${res.dir}" prefix="res"></tarfileset>
+      <tarfileset dir="${res.dir}" prefix="res"/>
       <!-- git -->
-      <tarfileset dir=".git" prefix=".git"></tarfileset>
-      <!-- Include project development and information files -->
+      <tarfileset dir=".git" prefix=".git"/>
       <filelist dir="${basedir}">
         <file name=".gitattributes"/>
         <file name=".gitignore"/>
         <file name="build.properties"/>
         <file name="build.xml"/>
         <file name="CHANGELOG.md"/>
-        <file name="LICENSE-GPL3.md"/>
+        <file name="index.less"/>
+        <file name="COPYRIGHT.md"/>
         <file name="LICENSE.md"/>
         <file name="odin.json"/>
+        <file name="package.json"/>
         <file name="README.md"/>
       </filelist>
     </tar>
-    <!-- === Source Archive - End === -->
+    <!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [2.0.0]-+ -->
+
+    <!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+         + Distribution - dist - MD5 Generation                               [2.0.1] +
+         +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
+    <echo message="Generating MD5 checkums..."/>
+    <checksum fileext="md5">
+      <filelist dir="${dist.dir}/${project.version}">
+        <file name="${project.name}-${project.version}-src.tar.gz"/>
+      </filelist>
+    </checksum>
+    <!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [2.0.1]-+ -->
   </target>
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [2.0]-+ -->
+
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+     + Distribution - dist-latest                                           [2.1] +
+     +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
+  <target name="dist-latest" depends="init,clean-latest" description="Creates a symlink to the latest version">
+    <echo message="Creating symlink for the latest version ${project.version}"/>
+    <symlink link="${dist.dir.latest}" resource="${project.version}"/>
+  </target>
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [2.1]-+ -->
+
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+     + Compiling - compile-less                                             [3.0] +
+     +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
+  <target name="compile-less" depends="init" description="Compiles all LESS stylesheets to CSS" >
+    <echo message="Compiling LESS files to CSS..."/>
+    <apply dir="${src.dir}" executable="lessc" parallel="false" failonerror="true">
+      <!-- Specify the input (source) files -->
+      <filelist dir="${src.dir}">
+        <file name="*.less"/>
+      </filelist>
+      <srcfile/>
+      <!-- Specify the output (build) files -->
+      <mapper type="glob" from="*.less" to="${build.dir}/*.css"/>
+      <targetfile/>
+    </apply>
+  </target>
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [3.0]-+ -->
+
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+     + Cleaning - clean                                                     [4.0] +
+     +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - + -->
+  <target name="clean" depends="init" description="Cleanes the main build folder">
+    <echo message="Cleaning build folder (${build.dir})"/>
+    <delete includeemptydirs="true">
+      <fileset dir="${build.dir}" includes="**/*"/>
+    </delete>
+  </target>
+<!-- +- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - [4.0]-+ -->
 </project>
