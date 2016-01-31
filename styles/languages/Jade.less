@@ -3,71 +3,85 @@
 title     Northem Dark Atom Syntax - Language Jade +
 project   northem-dark-atom-syntax                 +
 file      Jade.less                                +
-webiste   http://arcticicestudio.com/Northem       +
+version   0.13.0                                   +
 author    Arctic Ice Studio                        +
 email     development@arcticicestudio.com          +
-copyright Copyright (C) 2015                       +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
 created   2015-05-21 09:18 UTC+0200                +
-modified  2015-12-12 20:58 UTC+0100                +
+modified  2016-01-31 16:28 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
 This file defines all language specific syntax highlighting classes for Jade.
 
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Embedded JavaScript
+  (4) Entity
+  (5) Keyword
+  (6) Meta
+  (7) Punctuation
+  (8) Storage
+  (9) String
+  (10) Text
+  (11) Variable
+
 [Dependencies]
-Syntax Highlighting based on the following packages:
-  - "language-jade" (https://atom.io/packages/language-jade) by "devongovett" (https://atom.io/users/devongovett)
+  - language-foobar@^0.6.3 (https://atom.io/packages/language-foobar) by "devongovett" (https://atom.io/users/devongovett)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
 
 [License]
-Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
-
 Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
 */
 .source.jade {
   color: @color-syntax-other;
-  /*
-   * ==========
-   * = ENTITY =
-   * ==========
-   */
-  .entity {
-    &.name {
-      &.tag {
-        color: @color-syntax-tag;
-      }
-      &.function {
-        color: @color-syntax-jade-keyword;
-      }
-    }
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
     &.other {
-      &.attribute-name {
-        &.tag {
-          color: @color-syntax-attribute;
-        }
+      &.doctype {
+        color: @color-syntax-doctype;
+        font-weight: bold;
+      }
+    }
+    &.unbuffered {
+      &.block {
+        color: @color-syntax-comment;
       }
     }
   }
+  /* +------------------------------------------------------------------------[1]-+ */
 
-  /*
-   * ===========
-   * = KEYWORD =
-   * ===========
-   */
-  .keyword {
-    &.control {
-      color: @color-syntax-keyword;
-    }
-    &.operator {
-      color: @color-syntax-operator;
-    }
-  }
-
-  /*
-   * ============
-   * = CONSTANT =
-   * ============
-   */
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
   .constant {
     &.name {
       &.attribute {
@@ -85,12 +99,54 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
       }
     }
   }
+  /* +------------------------------------------------------------------------[2]-+ */
 
-  /*
-   * ========
-   * = META =
-   * ========
-   */
+  /* +----------------------------------------------------------------------------+
+     + Embedded JavaScript                                                    [3] +
+     +----------------------------------------------------------------------------+ */
+  .javascript.embedded {
+    color: @color-syntax-other;
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [4] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.tag {
+        color: @color-syntax-tag;
+      }
+      &.function {
+        color: @color-syntax-jade-keyword;
+      }
+    }
+    &.other {
+      &.attribute-name {
+        &.tag {
+          color: @color-syntax-attribute;
+        }
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [5] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [6] +
+     +----------------------------------------------------------------------------+ */
   .meta {
     &.brace {
       &.round {
@@ -106,12 +162,28 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
       }
     }
   }
+  /* +------------------------------------------------------------------------[6]-+ */
 
-  /*
-   * ===========
-   * = STORAGE =
-   * ===========
-   */
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [7] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.defintion {
+      &.string {
+        &.begin, &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.terminator {
+      color: @color-syntax-symbol;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
   .storage {
     &.modifier {
       color: @color-syntax-jade-keyword;
@@ -130,63 +202,11 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
       }
     }
   }
+  /* +------------------------------------------------------------------------[8]-+ */
 
-  /*
-   * ============
-   * = VARIABLE =
-   * ============
-   */
-  .variable {
-    &.control {
-      &.import {
-        &.include {
-          color: @color-syntax-jade-variable-include;
-        }
-      }
-    }
-  }
-
-  /*
-   * ========
-   * = TEXT =
-   * ========
-   */
-  .text {
-    color: @color-editor-text;
-  }
-
-  /*
-   * =======================
-   * = EMBEDDED JAVASCRIPT =
-   * =======================
-   */
-  .javascript.embedded {
-    color: @color-syntax-other;
-  }
-
-  /*
-   * ===============
-   * = PUNCTUATION =
-   * ===============
-   */
-  .punctuation {
-    &.defintion {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
-    &.terminator {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*
-   * ==========
-   * = STRING =
-   * ==========
-   */
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
   .string {
     color: @color-syntax-string;
 
@@ -197,23 +217,27 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
       color: @color-syntax-comment;
     }
   }
+  /* +------------------------------------------------------------------------[9]-+ */
 
-  /*
-   * ===========
-   * = COMMENT =
-   * ===========
-   */
-  .comment {
-    &.other {
-      &.doctype {
-        color: @color-syntax-doctype;
-        font-weight: bold;
-      }
-    }
-    &.unbuffered {
-      &.block {
-        color: @color-syntax-comment;
+  /* +----------------------------------------------------------------------------+
+     + Text                                                                   [10] +
+     +----------------------------------------------------------------------------+ */
+  .text {
+    color: @color-editor-text;
+  }
+  /* +-----------------------------------------------------------------------[10]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [11] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    &.control {
+      &.import {
+        &.include {
+          color: @color-syntax-jade-variable-include;
+        }
       }
     }
   }
+  /* +-----------------------------------------------------------------------[11]-+ */
 }

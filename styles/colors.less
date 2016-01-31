@@ -1,28 +1,29 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Colors  +
-project   northem-dark-atom-syntax           +
-file      colors.less                        +
-webiste   http://arcticicestudio.com/Northem +
-author    Arctic Ice Studio                  +
-email     development@arcticicestudio.com    +
-copyright Copyright (C) 2015                 +
-created   2015-03-16 18:21 UTC+0100          +
-modified  2015-12-12 20:50 UTC+0100          +
-++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Colors +
+project   northem-dark-atom-syntax          +
+file      colors.less                       +
+version   0.13.0                            +
+author    Arctic Ice Studio                 +
+email     development@arcticicestudio.com   +
+website   http://arcticicestudio.com        +
+copyright Copyright (C) 2015-2016           +
+created   2015-03-16 18:21 UTC+0100         +
+modified  2016-01-31 17:33 UTC+0100         +
++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all syntax, editor & language specific color variables.
+This file defines all syntax, editor, language & package specific color variables.
 
 [Index]
-  (1.0) Syntax
-  (2.0) Editor
-  (3.0) Gutter
-  (4.0) Marker
-  (5.0) Guide
-  (6) Language
+  (1) Syntax
+  (2) Editor
+  (3) Gutter
+  (4) Marker
+  (5) Guide
+  (6) Languages
     (6.0) C
-    (6.1) CS
+    (6.1) C# (CSharp)
     (6.2) CSS
     (6.3) diff
     (6.4) git
@@ -39,96 +40,121 @@ This file defines all syntax, editor & language specific color variables.
     (6.15) Ruby
     (6.16) XML
     (7) Package Support
-      (7.0) Markdown Preview
-      (7.1) Color Picker
+      (7.0) markdown-preview
+      (7.1) color-picker
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
 
 [License]
-Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
-
 Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
 */
-/*+----------------------------------------------------------------------------+
-  + Syntax                                                               [1.0] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-attribute:  @aqua;
-@color-syntax-character:  @white;
-@color-syntax-class:      @aqua;
-@color-syntax-comment:    @light-coal;
-@color-syntax-constant:   @aqua;
-@color-syntax-doctype:    @dark-blue;
-@color-syntax-error:      @red;
-@color-syntax-escape:     @yellow;
-@color-syntax-function:   @lime;
-@color-syntax-import:     @dark-blue;
-@color-syntax-include:    @dark-blue;
-@color-syntax-keyword:    @blue;
-@color-syntax-macro:      @dark-blue;
-@color-syntax-number:     @purple;
-@color-syntax-operator:   @blue;
-@color-syntax-other:      @white;
-@color-syntax-regexp:     @yellow;
-@color-syntax-require:    @dark-blue;
-@color-syntax-string:     @white;
-@color-syntax-symbol:     @white;
-@color-syntax-tag:        @blue;
-@color-syntax-type:       @aqua;
-@color-syntax-unit:       @blue;
-@color-syntax-variable:   @dirty-white;
-/*+----------------------------------------------------------------------[1.0]-+*/
+/* +----------------------------------------------------------------------------+
+   + Syntax                                                               [1.0] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-attribute: @aqua;
+@color-syntax-character: @white;
+@color-syntax-class:     @aqua;
+@color-syntax-comment:   @light-coal;
+@color-syntax-constant:  @aqua;
+@color-syntax-doctype:   @dark-blue;
+@color-syntax-error:     @red;
+@color-syntax-escape:    @yellow;
+@color-syntax-function:  @lime;
+@color-syntax-import:    @dark-blue;
+@color-syntax-include:   @dark-blue;
+@color-syntax-keyword:   @blue;
+@color-syntax-macro:     @dark-blue;
+@color-syntax-number:    @purple;
+@color-syntax-operator:  @blue;
+@color-syntax-other:     @white;
+@color-syntax-regexp:    @yellow;
+@color-syntax-require:   @dark-blue;
+@color-syntax-string:    @white;
+@color-syntax-symbol:    @white;
+@color-syntax-tag:       @blue;
+@color-syntax-type:      @aqua;
+@color-syntax-unit:      @blue;
+@color-syntax-variable:  @dirty-white;
+/* +----------------------------------------------------------------------[1.0]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Editor                                                               [2.0] +
-  +----------------------------------------------------------------------------+*/
-@color-editor-background:           @darkest-coal;
-@color-editor-background-selected:  @dark-blue;
-@color-editor-cursor:               @dirty-white;
-@color-editor-text:                 @dirty-white;
-/*+----------------------------------------------------------------------[2.0]-+*/
+/* +----------------------------------------------------------------------------+
+   + Editor                                                               [2.0] +
+   +----------------------------------------------------------------------------+ */
+@color-editor-background:          @darkest-coal;
+@color-editor-background-selected: @dark-blue;
+@color-editor-cursor:              @dirty-white;
+@color-editor-text:                @dirty-white;
+/* +----------------------------------------------------------------------[2.0]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Gutter                                                               [3.0] +
-  +----------------------------------------------------------------------------+*/
-@color-gutter-background:           @darkest-coal;
-@color-gutter-background-selected:  @coal;
-@color-gutter-text:                 @dirty-white;
-@color-gutter-text-selected:        @light-blue;
-@color-gutter-icon:                 @dirty-white;
-@color-gutter-icon-folded:          @blue;
-@color-gutter-icon-folded-hover:    @light-blue;
-/*+----------------------------------------------------------------------[3.0]-+*/
+/* +----------------------------------------------------------------------------+
+   + Gutter                                                               [3.0] +
+   +----------------------------------------------------------------------------+ */
+@color-gutter-background:          @darkest-coal;
+@color-gutter-background-selected: @coal;
+@color-gutter-text:                @dirty-white;
+@color-gutter-text-selected:       @light-blue;
+@color-gutter-icon:                @dirty-white;
+@color-gutter-icon-folded:         @blue;
+@color-gutter-icon-folded-hover:   @light-blue;
+/* +----------------------------------------------------------------------[3.0]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Marker                                                               [4.0] +
-  +----------------------------------------------------------------------------+*/
-@color-marker-result-border:    @light-blue;
-@color-marker-result-selected:  @dirty-white;
-/*+----------------------------------------------------------------------[4.0]-+*/
+/* +----------------------------------------------------------------------------+
+   + Marker                                                               [4.0] +
+   +----------------------------------------------------------------------------+ */
+@color-marker-result-border:   @light-blue;
+@color-marker-result-selected: @dirty-white;
+/* +----------------------------------------------------------------------[4.0]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Guides                                                               [5.0] +
-  +----------------------------------------------------------------------------+*/
-@color-guides-indent-line:  @light-coal;
-@color-guides-invisibles:   @light-coal;
-@color-guides-wrap:         @light-coal;
-/*+----------------------------------------------------------------------[5.0]-+*/
+/* +----------------------------------------------------------------------------+
+   + Guides                                                               [5.0] +
+   +----------------------------------------------------------------------------+ */
+@color-guides-indent-line: @light-coal;
+@color-guides-invisibles:  @light-coal;
+@color-guides-wrap:        @light-coal;
+/* +----------------------------------------------------------------------[5.0]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - C                                                         [6.0] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Languages                                                              [6] +
+   +----------------------------------------------------------------------------+ */
+/* +----------------------------------------------------------------------------+
+   + Language - C                                                         [6.0] +
+   +----------------------------------------------------------------------------+ */
 @color-syntax-c-preprocessor: @dark-blue;
-/*+----------------------------------------------------------------------[6.0]-+*/
+/* +----------------------------------------------------------------------[6.0]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - CS                                                        [6.1] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-cs-comment-tag:   @light-blue;
-@color-syntax-cs-preprocessor:  @dark-blue;
-/*+----------------------------------------------------------------------[6.1]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - C# (CSharp)                                               [6.1] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-cs-comment-tag:  @light-blue;
+@color-syntax-cs-preprocessor: @dark-blue;
+/* +----------------------------------------------------------------------[6.1]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - CSS                                                       [6.2] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Language - CSS                                                       [6.2] +
+   +----------------------------------------------------------------------------+ */
 @color-syntax-css-attribute:    @blue;
 @color-syntax-css-at-rule:      @dark-blue;
 @color-syntax-css-class-pseudo: @lime;
@@ -137,117 +163,120 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
 @color-syntax-css-media:        @yellow;
 @color-syntax-css-property:     @dirty-white;
 @color-syntax-css-selector:     @dirty-white;
-/*+----------------------------------------------------------------------[6.2]-+*/
+/* +----------------------------------------------------------------------[6.2]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - diff                                                      [6.3] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Language - diff                                                      [6.3] +
+   +----------------------------------------------------------------------------+ */
 @color-git-diff-renamed:  @yellow;
 @color-git-diff-added:    @lime;
 @color-git-diff-modified: @blue;
 @color-git-diff-removed:  @red;
-/*+----------------------------------------------------------------------[6.3]-+*/
+/* +----------------------------------------------------------------------[6.3]-+ */
 
-
-
-/*+----------------------------------------------------------------------------+
-  + Language - git                                                       [6.4] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Language - git                                                       [6.4] +
+   +----------------------------------------------------------------------------+ */
 @color-syntax-git-config-section: @dark-blue;
 @color-syntax-git-rebase-sha:     @blue;
-/*+----------------------------------------------------------------------[6.4]-+*/
+/* +----------------------------------------------------------------------[6.4]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - GLSL                                                      [6.5] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Language - GLSL                                                      [6.5] +
+   +----------------------------------------------------------------------------+ */
 @color-syntax-glsl-preprocessor: @dark-blue;
-/*+----------------------------------------------------------------------[6.5]-+*/
+/* +----------------------------------------------------------------------[6.5]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - Haskell                                                   [6.6] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Language - Haskell                                                   [6.6] +
+   +----------------------------------------------------------------------------+ */
 @color-syntax-haskell-preprocessor: @dark-blue;
-/*+----------------------------------------------------------------------[6.6]-+*/
+/* +----------------------------------------------------------------------[6.6]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - HTML                                                      [6.7] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-html-cdata:   @color-syntax-comment;
-@color-syntax-html-tag:     @blue;
-/*+----------------------------------------------------------------------[6.7]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - HTML                                                      [6.7] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-html-cdata: @color-syntax-comment;
+@color-syntax-html-tag:   @blue;
+/* +----------------------------------------------------------------------[6.7]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - Jade                                                      [6.8] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-jade-keyword:           @dark-blue;
-@color-syntax-jade-variable-include:  @aqua;
-/*+----------------------------------------------------------------------[6.8]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - Jade                                                      [6.8] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-jade-keyword:          @dark-blue;
+@color-syntax-jade-variable-include: @aqua;
+/* +----------------------------------------------------------------------[6.8]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - Java                                                      [6.9] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-java-annotation:  @orange;
-@color-syntax-java-package:     @dirty-white;
-/*+----------------------------------------------------------------------[6.9]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - Java                                                      [6.9] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-java-annotation: @orange;
+@color-syntax-java-package:    @dirty-white;
+/* +----------------------------------------------------------------------[6.9]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - JavaScript                                               [6.10] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-javascript-instance:  @aqua;
-/*+---------------------------------------------------------------------[6.10]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - JavaScript                                               [6.10] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-javascript-instance: @aqua;
+/* +---------------------------------------------------------------------[6.10]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - LESS                                                     [6.11] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-less-fontface:  @dark-blue;
-/*+---------------------------------------------------------------------[6.11]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - LESS                                                     [6.11] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-less-fontface: @dark-blue;
+/* +---------------------------------------------------------------------[6.11]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - Markdown                                                 [6.12] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-markdown-code:  @aqua;
-@color-syntax-markdown-link:  @dirty-white;
-/*+---------------------------------------------------------------------[6.12]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - Markdown                                                 [6.12] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-markdown-code: @aqua;
+@color-syntax-markdown-link: @dirty-white;
+/* +---------------------------------------------------------------------[6.12]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - Mustache                                                 [6.13] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Language - Mustache                                                 [6.13] +
+   +----------------------------------------------------------------------------+ */
 @color-syntax-mustache-tag: @dark-blue;
-/*+---------------------------------------------------------------------[6.13]-+*/
+/* +---------------------------------------------------------------------[6.13]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - PropertyList                                             [6.14] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-propertylist-base64: @aqua;
+/* +----------------------------------------------------------------------------+
+   + Language - PropertyList                                             [6.14] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-propertylist-base64:  @aqua;
 @color-syntax-propertylist-illegal: @red;
-/*+---------------------------------------------------------------------[6.14]-+*/
+/* +---------------------------------------------------------------------[6.14]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - Ruby                                                     [6.15] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-ruby-instance:        @aqua;
-@color-syntax-ruby-special-method:  @dark-blue;
-/*+---------------------------------------------------------------------[6.15]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - Ruby                                                     [6.15] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-ruby-instance:       @aqua;
+@color-syntax-ruby-special-method: @dark-blue;
+/* +---------------------------------------------------------------------[6.15]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Language - XML                                                      [6.16] +
-  +----------------------------------------------------------------------------+*/
-@color-syntax-xml-attribute:  @aqua;
-@color-syntax-xml-cdata:      @color-syntax-comment;
-@color-syntax-xml-tag:        @blue;
-/*+---------------------------------------------------------------------[6.16]-+*/
+/* +----------------------------------------------------------------------------+
+   + Language - XML                                                      [6.16] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-xml-attribute: @aqua;
+@color-syntax-xml-cdata:     @color-syntax-comment;
+@color-syntax-xml-tag:       @blue;
+/* +---------------------------------------------------------------------[6.16]-+ */
+/* +------------------------------------------------------------------------[6]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Package Support - Markdown Preview                                   [7.0] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Package Support                                                        [7] +
+   +----------------------------------------------------------------------------+ */
+/* +----------------------------------------------------------------------------+
+   + Package Support - markdown-preview                                    [7.0] +
+   +----------------------------------------------------------------------------+ */
 @color-packagesupport-markdown-preview-blockquote-border: @dirty-white;
 @color-packagesupport-markdown-preview-code:              @light-blue;
 @color-packagesupport-markdown-preview-code-hover:        @light-coal;
-/*+----------------------------------------------------------------------[7.0]-+*/
+/* +----------------------------------------------------------------------[7.0]-+ */
 
-/*+----------------------------------------------------------------------------+
-  + Package Support - Color Picker                                       [7.1] +
-  +----------------------------------------------------------------------------+*/
+/* +----------------------------------------------------------------------------+
+   + Package Support - color-picker                                       [7.1] +
+   +----------------------------------------------------------------------------+ */
 @color-packagesupport-color-picker-background:        @darkest-coal;
 @color-packagesupport-color-picker-background-button: @dark-blue;
-/*+----------------------------------------------------------------------[7.1]-+*/
+/* +----------------------------------------------------------------------[7.1]-+ */
+/* +------------------------------------------------------------------------[7]-+ */

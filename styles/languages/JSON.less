@@ -1,5 +1,60 @@
-.source.json {
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language JSON +
+project   northem-dark-atom-syntax                 +
+file      JSON.less                                +
+version   0.13.0                                   +
+author    Arctic Ice Studio                        +
+email     development@arcticicestudio.com          +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
+created   2015-03-15 20:17 UTC+0100                +
+modified  2016-01-31 16:37 UTC+0100                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+[Description]
+This file defines all language specific syntax highlighting classes for JSON.
+
+[Index]
+  (1) Constant
+  (2) Meta
+
+[Dependencies]
+  - language-json@^0.17.2 (https://atom.io/packages/language-json) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.source.json {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [1] +
+     +----------------------------------------------------------------------------+ */
   .constant {
     &.language {
       color: @color-syntax-constant;
@@ -9,7 +64,11 @@
       color: @color-syntax-number;
     }
   }
+  /* +------------------------------------------------------------------------[1]-+ */
 
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [2] +
+     +----------------------------------------------------------------------------+ */
   .meta.structure.dictionary.json {
 
     .string.quoted.json {
@@ -74,4 +133,5 @@
       }
     }
   }
+  /* +------------------------------------------------------------------------[2]-+ */
 }

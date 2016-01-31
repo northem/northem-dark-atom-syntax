@@ -12,11 +12,10 @@ This is a darker and more blue-tinged variation.
 ![Northem Preview Screenshot](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/res/image/preview-screenshot.png)
 
 ### Variations
-Also available as:
   - [Northem Atom Syntax](https://github.com/arcticicestudio/northem-atom-syntax)
   - [Northem Light Atom Syntax](https://github.com/arcticicestudio/northem-light-atom-syntax)
 
-__Make sure to check out [Northem Dark Atom UI](https://github.com/arcticicestudio/northem-dark-atom-ui)!__
+**Make sure to check out [Northem Dark Atom UI](https://github.com/arcticicestudio/northem-dark-atom-ui)!**
 
 ### Other Projects
   - <a href="https://github.com/arcticicestudio/northem-dark-eclipse-syntax"><img src="https://eclipse.org/favicon.ico" alt="Eclipse logo" width=16 height=16> Northem Dark Eclipse Syntax</a>
@@ -27,7 +26,6 @@ __Make sure to check out [Northem Dark Atom UI](https://github.com/arcticicestud
 Visit the [official homepage](http://arcticicestudio.com/Northem) (actually under construction) for more informations.
 
 ### Languages
-Syntax Highlighting actually includes:
   - [C](https://atom.io/packages/language-c)
   - [C++](https://atom.io/packages/language-c)
   - [Clojure](https://atom.io/packages/language-clojure)
@@ -55,28 +53,27 @@ Syntax Highlighting actually includes:
   - [R](https://atom.io/packages/language-r)
   - [Ruby](https://atom.io/packages/language-ruby)
   - [SASS](https://atom.io/packages/language-sass)
+  - [Shell](https://atom.io/packages/language-shellscript)
+  - [SQL](https://atom.io/packages/language-sql)
   - [XML](https://atom.io/packages/language-xml)
   - [YAML](https://atom.io/packages/language-yaml)
 
 ### Package Support
-  - [bracket-matcher](https://atom.io/packages/bracket-matcher) @ `^0.76.0`
-  - [color-picker](https://atom.io/packages/color-picker) @ `^2.0.12`
-  - [highlight-selected](https://atom.io/packages/highlight-selected) @ `^0.10.1`
-  - [markdown-preview](https://atom.io/packages/markdown-preview) @ `^0.150.0`
-  - [minimap-highlight-selected](https://atom.io/packages/minimap-highlight-selected) @ `^4.3.1`
+  - [`bracket-matcher@^0.79.0`](https://atom.io/packages/bracket-matcher)
+  - [`color-picker@^2.1.1`](https://atom.io/packages/color-picker)
+  - [`highlight-selected@^0.11.1`](https://atom.io/packages/highlight-selected)
+  - [`markdown-preview@^0.157.0`](https://atom.io/packages/markdown-preview)
+  - [`minimap-highlight-selected@^4.3.1`](https://atom.io/packages/minimap-highlight-selected)
 
 ### Version
-stable: [`0.13.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
-snapshot: `/`
-
-status: `ìndev`
+[`0.13.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
 
 ### Changelog
 [`0.13.0`](CHANGELOG.md)
 
-Check out the `CHANGELOG.md` file or open via _Settings > Packages_ and filter for `northem-dark-atom-syntax`.  
+Check out the `CHANGELOG.md` file or open via *Settings > Packages* and filter for `northem-dark-atom-syntax`.  
 All changelogs are available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
 
 ### Development
@@ -96,13 +93,14 @@ The colored file icons on the preview screenshot are provided by the [`file-icon
 Download and install the recommended font, read section [Recommendations](#Recommendations) for more informations.
 
 Install via [apm](https://github.com/atom/apm): `apm install northem-dark-atom-syntax`  
-Alternatively open _Settings > Install_, set the filter to _Themes_ and search for `northem-dark-atom-syntax`.
+Alternatively open *Settings > Install*, set the filter to *Themes* and search for `northem-dark-atom-syntax`.
 
-Activate it by going to the _Settings > Themes_ section and select `Northem Dark` from the _Syntax Theme_ drop-down menu.
+Activate it by going to the *Settings > Themes* section and select `Northem Dark` from the *Syntax Theme* drop-down menu.
+
+### Copyright
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
 
 ### License
-Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
-
 Northem code is licensed under [GPL3](http://www.gnu.org/licenses/gpl.txt).  
 Northem color palette itself is licensed under [CC BY-NC-SA 4.0](http://creativecommons.org/licenses/by-nc-sa/4.0).
 
@@ -112,4 +110,4 @@ Northem color palette itself is licensed under [CC BY-NC-SA 4.0](http://creative
 [Northem Dark](https://github.com/arcticicestudio/northem-dark)
 [Atom API-Documentation](https://atom.io/docs/api/latest/Atom)  
 [Atom Flight Manual](https://atom.io/docs)  
-[LESS](http://lesscss.org)
+[LESSCSS](http://lesscss.org)

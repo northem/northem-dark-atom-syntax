@@ -1,13 +1,86 @@
-.source.python {
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Python +
+project   northem-dark-atom-syntax                   +
+file      Python.less                                +
+version   0.13.0                                     +
+author    Arctic Ice Studio                          +
+email     development@arcticicestudio.com            +
+website   http://arcticicestudio.com                 +
+copyright Copyright (C) 2015-2016                    +
+created   2015-03-15 20:17 UTC+0100                  +
+modified  2016-01-31 17:05 UTC+0100                  +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-  .storage {
-    &.type {
-      &.function {
-        color: @color-syntax-keyword;
-      }
+[Description]
+This file defines all language specific syntax highlighting classes for Python.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) Storage
+  (9) String
+  (10) Variable
+
+[Dependencies]
+  - language-python@^0.42.1 (https://atom.io/packages/language-python) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.source.python {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
     }
   }
+  /* +------------------------------------------------------------------------[2]-+ */
 
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
   .entity {
     &.name {
       &.function {
@@ -15,7 +88,11 @@
       }
     }
   }
+  /* +------------------------------------------------------------------------[3]-+ */
 
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
   .keyword {
     &.other {
       color: @color-syntax-keyword;
@@ -30,15 +107,33 @@
     }
   }
 
-  .support {
-    &.type {
+  .keyword {
+    &.control {
       color: @color-syntax-keyword;
     }
-    &.function {
-      color: @color-syntax-function;
+    &.operator {
+      color: @color-syntax-operator;
     }
   }
+  /* +------------------------------------------------------------------------[4]-+ */
 
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.function-call {
+      color: @color-syntax-function;
+
+      &.arguments {
+        color: @color-syntax-variable;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
       &.string {
@@ -70,7 +165,46 @@
       color: @color-syntax-symbol;
     }
   }
+  /* +------------------------------------------------------------------------[6]-+ */
 
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
+  .support {
+    &.type {
+      color: @color-syntax-keyword;
+    }
+    &.function {
+      color: @color-syntax-function;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage {
+    &.type {
+      &.function {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    &.quoted {
+      color: @color-syntax-string;
+    }
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [10] +
+     +----------------------------------------------------------------------------+ */
   .variable {
     &.parameter {
       &.function {
@@ -78,39 +212,5 @@
       }
     }
   }
-
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-  }
-
-  .keyword {
-    &.control {
-      color: @color-syntax-keyword;
-    }
-    &.operator {
-      color: @color-syntax-operator;
-    }
-  }
-
-  .string {
-    &.quoted {
-      color: @color-syntax-string;
-    }
-  }
-
-  .meta {
-    &.function-call {
-      color: @color-syntax-function;
-
-      &.arguments {
-        color: @color-syntax-variable;
-      }
-    }
-  }
-
-  .comment {
-    color: @color-syntax-comment;
-  }
+  /* +-----------------------------------------------------------------------[10]-+ */
 }
