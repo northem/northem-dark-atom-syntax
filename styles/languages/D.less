@@ -3,35 +3,105 @@
 title     Northem Dark Atom Syntax - Language D +
 project   northem-dark-atom-syntax              +
 file      D.less                                +
-webiste   http://arcticicestudio.com/Northem    +
+version   0.13.0                                +
 author    Arctic Ice Studio                     +
 email     development@arcticicestudio.com       +
-copyright Copyright (C) 2015                    +
+website   http://arcticicestudio.com            +
+copyright Copyright (C) 2015-2016               +
 created   2015-08-14 14:23 UTC+0200             +
-modified  2015-12-12 20:53 UTC+0100             +
+modified  2016-01-31 11:38 UTC+0100             +
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
 This file defines all language specific syntax highlighting classes for D.
 
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) Storage
+  (9) String
+  (10) Variable
+
 [Dependencies]
-Syntax Highlighting based on the following packages:
-  - "language-d" (https://atom.io/packages/language-d) by "amehat" (https://atom.io/users/amehat)
+  - language-d@^3.2.3 (https://atom.io/packages/language-d) by "amehat" (https://atom.io/users/amehat)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
 
 [License]
-Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
-
 Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
 */
 .source.d {
   color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
 
-  /*
-   * ===========
-   * = KEYWORD =
-   * ===========
-   */
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character {
+      &.escape {
+        color: @color-syntax-escape;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+      &.class {
+        color: @color-syntax-class;
+        font-weight: bold;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
   .keyword {
     &.operator {
       &.logical {
@@ -75,100 +145,35 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
       }
     }
   }
+  /* +------------------------------------------------------------------------[4]-+ */
 
-  /*
-   * ===========
-   * = STORAGE =
-   * ===========
-   */
-  .storage {
-    &.type {
-      &.return{
-        color: @color-syntax-keyword;
-      }
-      &.primitive {
-        color: @color-syntax-class;
-      }
-      &.class {
-        color: @color-syntax-class;
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.function {
+      &.parameters {
+        color: @color-syntax-variable;
       }
     }
-    &.modifier {
-      color: @color-syntax-keyword;
-
-      &.protection {
-        color: @color-syntax-keyword;
+    /*
+    &.parentheses {
+      color: @color-syntax-other;
+    }
+    */
+    /*
+    &.class {
+      &.inheritance {
+        color: @color-syntax-other;
       }
     }
+    */
   }
+  /* +------------------------------------------------------------------------[5]-+ */
 
-  /*
-   * ============
-   * = CONSTANT =
-   * ============
-   */
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-    &.character {
-      &.escape {
-        color: @color-syntax-escape;
-      }
-    }
-  }
-
-  /*
-   * ==========
-   * = ENTITY =
-   * ==========
-   */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-      &.class {
-        color: @color-syntax-class;
-        font-weight: bold;
-      }
-    }
-  }
-
-  /*
-   * ============
-   * = VARIABLE =
-   * ============
-   */
-  .variable {
-    color: @color-syntax-variable;
-
-    &.language{
-      color: @color-syntax-keyword;
-    }
-    &.parameter {
-      color: @color-syntax-variable;
-    }
-  }
-
-  /*
-   * ===========
-   * = SUPPORT =
-   * ===========
-   */
-  .support {
-    &.other {
-      &.module {
-        color: @color-syntax-class;
-      }
-    }
-  }
-
-  /*
-   * ===============
-   * = PUNCTUATION =
-   * ===============
-   */
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
   .punctuation {
     &.separator {
       color: @color-syntax-symbol;
@@ -194,47 +199,65 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
       }
     }
   }
+  /* +------------------------------------------------------------------------[6]-+ */
 
-  /*
-   * ========
-   * = META =
-   * ========
-   */
-  .meta {
-    &.function {
-      &.parameters {
-        color: @color-syntax-variable;
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
+  .support {
+    &.other {
+      &.module {
+        color: @color-syntax-class;
       }
     }
-    /*
-    &.parentheses {
-      color: @color-syntax-other;
-    }
-    */
-    /*
-    &.class {
-      &.inheritance {
-        color: @color-syntax-other;
-      }
-    }
-    */
   }
+  /* +------------------------------------------------------------------------[7]-+ */
 
-  /*
-   * ==========
-   * = STRING =
-   * ==========
-   */
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage {
+    &.type {
+      &.return{
+        color: @color-syntax-keyword;
+      }
+      &.primitive {
+        color: @color-syntax-class;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+    }
+    &.modifier {
+      color: @color-syntax-keyword;
+
+      &.protection {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
   .string {
     color: @color-syntax-string;
   }
+  /* +------------------------------------------------------------------------[9]-+ */
 
-  /*
-   * ===========
-   * = COMMENT =
-   * ===========
-   */
-  .comment {
-    color: @color-syntax-comment;
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [10] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    color: @color-syntax-variable;
+
+    &.language{
+      color: @color-syntax-keyword;
+    }
+    &.parameter {
+      color: @color-syntax-variable;
+    }
   }
+  /* +-----------------------------------------------------------------------[10]-+ */
 }

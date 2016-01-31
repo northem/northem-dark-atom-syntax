@@ -7,32 +7,28 @@ version   0.13.0                                  +
 author    Arctic Ice Studio                       +
 email     development@arcticicestudio.com         +
 website   http://arcticicestudio.com              +
-copyright Copyright (C) 2016                      +
+copyright Copyright (C) 2015-2016                 +
 created   2016-01-27 15:36 UTC+0100               +
-modified  2016-01-27 15:37 UTC+0100               +
+modified  2016-01-31 17:19 UTC+0100               +
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
 This file defines all language specific syntax highlighting classes for SQL.
 
 [Index]
-  (1) Meta
-  (2) Keyword
+  (1) Comment
+  (2) Constant
   (3) Entity
-  (4) Support
-  (5) Variable
+  (4) Keyword
+  (5) Punctuation
   (6) Storage
-  (7) Constant
-  (8) punctuation
-  (9) Comment
-  (10) String
+  (7) String
 
 [Dependencies]
-Syntax Highlighting based on the following packages:
   - language-sql@0.20.0 (https://atom.io/packages/language-sql) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
-Copyright (C) 2016 Arctic Ice Studio <development@arcticicestudio.com>
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
 
 [License]
 Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
@@ -61,7 +57,39 @@ LESSCSS
 */
 .source.sql {
   color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
 
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
   .keyword {
     &.operator {
       &.comparison,
@@ -87,16 +115,11 @@ LESSCSS
       }
     }
   }
+  /* +------------------------------------------------------------------------[4]-+ */
 
-  &.string {
-    &.quoted {
-      &.single,
-      &.double {
-        color: @color-syntax-string;
-      }
-    }
-  }
-
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [5] +
+     +----------------------------------------------------------------------------+ */
   &.punctuation {
     &.definition {
       &.string {
@@ -106,15 +129,11 @@ LESSCSS
       }
     }
   }
+  /* +------------------------------------------------------------------------[5]-+ */
 
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-    }
-  }
-
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [6] +
+     +----------------------------------------------------------------------------+ */
   .storage {
     &.type {
       color: @color-syntax-class;
@@ -123,14 +142,18 @@ LESSCSS
       color: @color-syntax-keyword;
     }
   }
+  /* +------------------------------------------------------------------------[6]-+ */
 
-  .comment {
-    color: @color-syntax-comment;
-  }
-
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [7] +
+     +----------------------------------------------------------------------------+ */
+  &.string {
+    &.quoted {
+      &.single,
+      &.double {
+        color: @color-syntax-string;
+      }
     }
   }
+  /* +------------------------------------------------------------------------[7]-+ */
 }

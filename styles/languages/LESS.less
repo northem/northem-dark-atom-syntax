@@ -1,5 +1,75 @@
-.source.less {
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language LESSCSS +
+project   northem-dark-atom-syntax                    +
+file      LESSCSS.less                                +
+version   0.13.0                                      +
+author    Arctic Ice Studio                           +
+email     development@arcticicestudio.com             +
+website   http://arcticicestudio.com                  +
+copyright Copyright (C) 2015-2016                     +
+created   2015-03-15 20:17 UTC+0100                   +
+modified  2016-01-31 16:44 UTC+0100                   +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+[Description]
+This file defines all language specific syntax highlighting classes for LESSCSS.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) String
+  (9) Variable
+
+[Dependencies]
+  - language-less@^0.29.0 (https://atom.io/packages/language-less) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.source.less {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
   .constant {
     color: @color-syntax-constant;
     font-weight: bold;
@@ -15,7 +85,73 @@
       }
     }
   }
+  /* +------------------------------------------------------------------------[2]-+ */
 
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.other {
+      &.attribute-name {
+        &.class {
+          color: @color-syntax-class;
+        }
+        &.id {
+          color: @color-syntax-class;
+        }
+      }
+    }
+  }
+
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.operator {
+      color: @color-syntax-operator;
+    }
+    &.control {
+      color: @color-syntax-function;
+
+      &.at-rule {
+        &.fontface, &.import, &.page, &.media {
+          color: @color-syntax-css-at-rule;
+          font-weight: bold;
+        }
+      }
+      &.logical {
+        &.operator {
+          color: @color-syntax-operator;
+        }
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+      &.unit {
+        color: @color-syntax-unit;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.property-list {
+      color: @color-syntax-keyword;
+    }
+    &.brace {
+      color: @color-syntax-symbol;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
   .punctuation {
     &.terminator {
       color: @color-syntax-symbol;
@@ -45,47 +181,11 @@
       }
     }
   }
+  /* +------------------------------------------------------------------------[6]-+ */
 
-  .entity {
-    &.other {
-      &.attribute-name {
-        &.class {
-          color: @color-syntax-class;
-        }
-        &.id {
-          color: @color-syntax-class;
-        }
-      }
-    }
-  }
-
-  .keyword {
-    &.operator {
-      color: @color-syntax-operator;
-    }
-    &.control {
-      color: @color-syntax-function;
-
-      &.at-rule {
-        &.fontface, &.import, &.page, &.media {
-          color: @color-syntax-css-at-rule;
-          font-weight: bold;
-        }
-      }
-      &.logical {
-        &.operator {
-          color: @color-syntax-operator;
-        }
-      }
-    }
-    &.other {
-      color: @color-syntax-keyword;
-      &.unit {
-        color: @color-syntax-unit;
-      }
-    }
-  }
-
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
   .support {
     &.type {
       &.property-name {
@@ -110,20 +210,19 @@
       }
     }
   }
+  /* +------------------------------------------------------------------------[7]-+ */
 
-  .meta {
-    &.property-list {
-      color: @color-syntax-keyword;
-    }
-    &.brace {
-      color: @color-syntax-symbol;
-    }
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [8] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
   }
+  /* +------------------------------------------------------------------------[8]-+ */
 
-  .comment {
-    color: @color-syntax-comment;
-  }
-
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [9] +
+     +----------------------------------------------------------------------------+ */
   .variable {
     color: @color-syntax-variable;
 
@@ -131,8 +230,5 @@
       color: @color-syntax-variable;
     }
   }
-
-  .string {
-    color: @color-syntax-string;
-  }
+  /* +------------------------------------------------------------------------[9]-+ */
 }

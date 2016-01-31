@@ -1,5 +1,70 @@
-.mustache {
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Mustache +
+project   northem-dark-atom-syntax                     +
+file      Mustache.less                                +
+version   0.13.0                                       +
+author    Arctic Ice Studio                            +
+email     development@arcticicestudio.com              +
+website   http://arcticicestudio.com                   +
+copyright Copyright (C) 2015-2016                      +
+created   2015-03-15 20:17 UTC+0100                    +
+modified  2016-01-31 16:49 UTC+0100                    +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+[Description]
+This file defines all language specific syntax highlighting classes for Mustache.
+
+[Index]
+  (1) Comment
+  (2) Meta
+
+[Dependencies]
+  - language-mustache@^0.13.0 (https://atom.io/packages/language-mustache) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.text.html.mustache {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    &.block {
+      color: @color-syntax-comment;
+    }
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [2] +
+     +----------------------------------------------------------------------------+ */
   .meta.tag.template {
     color: @color-syntax-variable;
 
@@ -23,10 +88,5 @@
       }
     }
   }
-
-  .comment {
-    &.block {
-      color: @color-syntax-comment;
-    }
-  }
+  /* +------------------------------------------------------------------------[2]-+ */
 }

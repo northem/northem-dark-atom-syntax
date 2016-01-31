@@ -3,34 +3,131 @@
 title     Northem Dark Atom Syntax - Language HAML +
 project   northem-dark-atom-syntax                 +
 file      HAML.less                                +
-webiste   http://arcticicestudio.com/Northem       +
+version   0.13.0                                   +
 author    Arctic Ice Studio                        +
 email     development@arcticicestudio.com          +
-copyright Copyright (C) 2015                       +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
 created   2015-08-12 14:47 UTC+0200                +
-modified  2015-12-12 20:57 UTC+0100                +
+modified  2016-01-31 11:51 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
+
 [Description]
 This file defines all language specific syntax highlighting classes for HAML.
 
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) String
+
 [Dependencies]
-Syntax Highlighting based on the following packages:
-  - "language-haml" (https://atom.io/packages/language-haml) by "cannikin " (https://atom.io/users/cannikin)
+  - language-haml@^0.23.15 (https://atom.io/packages/language-haml) by "cannikin" (https://atom.io/users/cannikin)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
 
 [License]
-Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>
-
 Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
 */
 .text.haml,
 .source.ruby.embedded.haml {
   color: @color-syntax-other;
-  /*
-   * ===============
-   * = PUNCTUATION =
-   * ===============
-   */
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.other {
+      &.symbol {
+        color: @color-syntax-variable;
+
+        &.hashkey {
+          color: @color-syntax-constant;
+        }
+      }
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.tag {
+        color: @color-syntax-keyword;
+
+        &.class {
+          color: @color-syntax-class;
+        }
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.line {
+      color: @color-syntax-other;
+    }
+    &.section {
+      &.attributes {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
       &.tag {
@@ -61,23 +158,11 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
       }
     }
   }
+  /* +------------------------------------------------------------------------[6]-+ */
 
-  /*
-   * ===========
-   * = KEYWORD =
-   * ===========
-   */
-  .keyword {
-    &.control {
-      color: @color-syntax-keyword;
-    }
-  }
-
-  /*
-   * ===========
-   * = SUPPORT =
-   * ===========
-   */
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
   .support {
     &.function {
       color: @color-syntax-function;
@@ -87,66 +172,13 @@ Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativ
       }*/
     }
   }
+  /* +------------------------------------------------------------------------[7]-+ */
 
-  /*
-   * ==========
-   * = ENTITY =
-   * ==========
-   */
-  .entity {
-    &.name {
-      &.tag {
-        color: @color-syntax-keyword;
-
-        &.class {
-          color: @color-syntax-class;
-        }
-      }
-    }
-  }
-
-  /*
-   * ============
-   * = CONSTANT =
-   * ============
-   */
-  .constant {
-    &.other {
-      &.symbol {
-        color: @color-syntax-variable;
-
-        &.hashkey {
-          color: @color-syntax-constant;
-        }
-      }
-    }
-    &.numeric {
-      color: @color-syntax-number;
-    }
-  }
-
-  /*
-   * ==========
-   * = STRING =
-   * ==========
-   */
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [8] +
+     +----------------------------------------------------------------------------+ */
   .string {
     color: @color-syntax-string;
   }
-
-  /*
-   * ========
-   * = META =
-   * ========
-   */
-  .meta {
-    &.line {
-      color: @color-syntax-other;
-    }
-    &.section {
-      &.attributes {
-        color: @color-syntax-symbol;
-      }
-    }
-  }
+  /* +------------------------------------------------------------------------[8]-+ */
 }

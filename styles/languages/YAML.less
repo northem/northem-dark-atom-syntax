@@ -1,5 +1,93 @@
-.source.yaml {
+/*
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language YAML +
+project   northem-dark-atom-syntax                 +
+file      YAML.less                                +
+version   0.13.0                                   +
+author    Arctic Ice Studio                        +
+email     development@arcticicestudio.com          +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
+created   2015-03-15 20:17 UTC+0100                +
+modified  2016-01-31 17:25 UTC+0100                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
+[Description]
+This file defines all language specific syntax highlighting classes for YAML.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Punctuation
+  (5) String
+
+[Dependencies]
+  - language-yaml@^0.25.0 (https://atom.io/packages/language-yaml) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.source.yaml {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.tag {
+        color: @color-syntax-tag;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [4] +
+     +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
       &.comment {
@@ -18,28 +106,15 @@
       color: @color-syntax-symbol;
     }
   }
+  /* +------------------------------------------------------------------------[4]-+ */
 
-  .comment {
-    color: @color-syntax-comment;
-  }
-
-  .entity {
-    &.name {
-      &.tag {
-        color: @color-syntax-tag;
-      }
-    }
-  }
-
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-  }
-
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [5] +
+     +----------------------------------------------------------------------------+ */
   .string {
     &.unquoted {
       color: @color-syntax-string;
     }
   }
+  /* +------------------------------------------------------------------------[5]-+ */
 }
