@@ -9,7 +9,7 @@ email     development@arcticicestudio.com                 +
 website   http://arcticicestudio.com                      +
 copyright Copyright (C) 2015-2016                         +
 created   2015-03-15 20:17 UTC+0100                       +
-modified  2016-01-31 23:39 UTC+0100                       +
+modified  2016-02-01 20:20 UTC+0100                       +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -91,13 +91,10 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
-      &.string {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.subshell {
+      &.string.begin,
+      &.string.end,
+      &.subshell,
+      &.logical-expression {
         color: @color-syntax-symbol;
       }
       &.variable {
@@ -108,9 +105,6 @@ LESSCSS
       }
       &.arguments {
         color: @color-syntax-function;
-      }
-      &.logical-expression {
-        color: @color-syntax-symbol;
       }
     }
     &.terminator.case-clause,

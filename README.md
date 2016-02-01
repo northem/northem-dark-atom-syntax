@@ -25,7 +25,7 @@ This is a darker and more blue-tinged variation.
 
 Visit the [official homepage](http://arcticicestudio.com/Northem) (actually under construction) for more informations.
 
-### Languages
+### Languages / Syntax Highlighting
   - [C](https://atom.io/packages/language-c)
   - [C++](https://atom.io/packages/language-c)
   - [Clojure](https://atom.io/packages/language-clojure)
@@ -44,6 +44,7 @@ Visit the [official homepage](http://arcticicestudio.com/Northem) (actually unde
   - [Java](https://atom.io/packages/language-java)
   - [JavaScript](https://atom.io/packages/language-javascript)
   - [JSON](https://atom.io/packages/language-json)
+  - [Julia](https://atom.io/packages/language-julia)
   - [LESS](https://atom.io/packages/language-lesss)
   - [Markdown](https://atom.io/packages/language-gfm)
   - [Mustache](https://atom.io/packages/language-mustache)

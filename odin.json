@@ -43,7 +43,7 @@
   "contributors": [
     {"name": "Arctic Ice Studio","email": "development@arcticicestudio.com"}
   ],
-  "copyright": "Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>",
+  "copyright": "Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>",
   "license": [
     {"name": "GPL-3.0","file": "LICENSE.md"},
     {"name": "CC-BY-NC-SA-4.0","file": "res/image/CC-BY-NC-SA-4.0.svg"}

@@ -9,7 +9,7 @@ email     development@arcticicestudio.com       +
 website   http://arcticicestudio.com            +
 copyright Copyright (C) 2015-2016               +
 created   2015-08-14 14:23 UTC+0200             +
-modified  2016-01-31 18:34 UTC+0100             +
+modified  2016-02-01 19:48 UTC+0100             +
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -134,8 +134,17 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .meta.function.parameters {
-    color: @color-syntax-variable;
+  .meta {
+    &.function.parameters {
+      color: @color-syntax-variable;
+    }
+    &.parentheses {
+      color: @color-syntax-other;
+    }
+    &.class.inheritance {
+      color: @color-syntax-class;
+      text-decoration: underline;
+    }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
@@ -205,7 +214,7 @@ LESSCSS
   .variable {
     color: @color-syntax-variable;
 
-    &.language{
+    &.language {
       color: @color-syntax-keyword;
     }
     &.parameter {

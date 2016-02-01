@@ -9,7 +9,7 @@ email     development@arcticicestudio.com           +
 website   http://arcticicestudio.com                +
 copyright Copyright (C) 2015-2016                   +
 created   2015-03-15 20:17 UTC+0100                 +
-modified  2016-01-31 23:19 UTC+0100                 +
+modified  2016-02-01 20:13 UTC+0100                 +
 +++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -83,7 +83,7 @@ LESSCSS
       color: @color-syntax-number;
     }
     &.character.escape {
-    color: @color-syntax-escape;
+      color: @color-syntax-escape;
     }
     &.language {
       color: @color-syntax-constant;
@@ -125,8 +125,8 @@ LESSCSS
       color: @color-syntax-comment;
     }
     &.string {
-      &.begin
-       &.end {
+      &.begin,
+      &.end {
         color: @color-syntax-symbol;
       }
     }
@@ -157,8 +157,8 @@ LESSCSS
      + String                                                                 [9] +
      +----------------------------------------------------------------------------+ */
   .string.qouted {
-    &.Double,
-    &.single {
+    &.single,
+    &.double {
       color: @color-syntax-string;
     }
   }
