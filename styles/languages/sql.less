@@ -1,29 +1,31 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language YAML +
-project   northem-dark-atom-syntax                 +
-file      YAML.less                                +
-version   0.13.0                                   +
-author    Arctic Ice Studio                        +
-email     development@arcticicestudio.com          +
-website   http://arcticicestudio.com               +
-copyright Copyright (C) 2015-2016                  +
-created   2015-03-15 20:17 UTC+0100                +
-modified  2016-01-31 17:25 UTC+0100                +
-++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language SQL +
+project   northem-dark-atom-syntax                +
+file      sql.less                                +
+version   0.13.0                                  +
+author    Arctic Ice Studio                       +
+email     development@arcticicestudio.com         +
+website   http://arcticicestudio.com              +
+copyright Copyright (C) 2015-2016                 +
+created   2016-01-27 15:36 UTC+0100               +
+modified  2016-02-01 21:21 UTC+0100               +
++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for YAML.
+This file defines all language specific syntax highlighting classes for SQL.
 
 [Index]
   (1) Comment
   (2) Constant
   (3) Entity
-  (4) Punctuation
-  (5) String
+  (4) Keyword
+  (5) Punctuation
+  (6) Storage
+  (7) String
 
 [Dependencies]
-  - language-yaml@^0.25.0 (https://atom.io/packages/language-yaml) by "atom" (https://atom.io/users/atom)
+  - language-sql@0.20.0 (https://atom.io/packages/language-sql) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -53,7 +55,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.yaml {
+.source.sql {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -66,55 +68,77 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
+  .constant.numeric {
+    color: @color-syntax-number;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.tag {
-        color: @color-syntax-tag;
-      }
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [4] +
+     + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.comment {
-        color: @color-syntax-comment;
-      }
-      &.entry {
-        color: @color-syntax-keyword;
-      }
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
+  .keyword {
+    &.operator {
+      &.comparison,
+      &.math,
+      &.concatenator {
+        color: @color-syntax-operator;
       }
     }
-    &.separator {
-      color: @color-syntax-symbol;
+    &.other {
+      color: @color-syntax-keyword;
+
+      &.DML,
+      &.create {
+        color: @color-syntax-keyword;
+      }
+      &.DDL.create.II {
+        color: @color-syntax-keyword;
+        font-style: italic;
+      }
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [5] +
+     + Punctuation                                                            [5] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.unquoted {
-      color: @color-syntax-string;
+  .punctuation.definition.string {
+    &.begin,
+    &.end {
+      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [6] +
+     +----------------------------------------------------------------------------+ */
+  .storage {
+    &.type {
+      color: @color-syntax-class;
+    }
+    &.modifier {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [7] +
+     +----------------------------------------------------------------------------+ */
+  .string.quoted {
+    &.single,
+    &.double {
+      color: @color-syntax-string;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
 }

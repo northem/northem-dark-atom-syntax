@@ -1,33 +1,33 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language Julia +
-project   northem-dark-atom-syntax                  +
-file      Julia.less                                +
-version   0.13.0                                    +
-author    Arctic Ice Studio                         +
-email     development@arcticicestudio.com           +
-website   http://arcticicestudio.com                +
-copyright Copyright (C) 2015-2016                   +
-created   2015-03-15 20:17 UTC+0100                 +
-modified  2016-01-31 16:41 UTC+0100                 +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language LESSCSS +
+project   northem-dark-atom-syntax                    +
+file      lesscss.less                                +
+version   0.13.0                                      +
+author    Arctic Ice Studio                           +
+email     development@arcticicestudio.com             +
+website   http://arcticicestudio.com                  +
+copyright Copyright (C) 2015-2016                     +
+created   2015-03-15 20:17 UTC+0100                   +
+modified  2016-02-01 20:14 UTC+0100                   +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for Julia.
+This file defines all language specific syntax highlighting classes for LESSCSS.
 
 [Index]
-  (1) Bracket
-  (2) Comment
-  (3) Constant
-  (4) Entity
-  (5) Keyword
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
   (6) Punctuation
   (7) Support
-  (8) Storage
-  (9) String
+  (8) String
+  (9) Variable
 
 [Dependencies]
-  - language-julia@^0.5.0 (https://atom.io/packages/language-julia) by "JuliaLang" (https://atom.io/users/JuliaLang)
+  - language-less@^0.29.0 (https://atom.io/packages/language-less) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -57,74 +57,84 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.julia {
+.source.less {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
-     + Bracket                                                                [1] +
-     +----------------------------------------------------------------------------+ */
-  .bracket {
-    color: @color-syntax-symbol;
-  }
-  /* +------------------------------------------------------------------------[1]-+ */
-
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [2] +
+     + Comment                                                                [1] +
      +----------------------------------------------------------------------------+ */
   .comment {
     color: @color-syntax-comment;
   }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    color: @color-syntax-constant;
+    font-weight: bold;
+
+    &.numeric,
+    &.other.rgb-value {
+      color: @color-syntax-number;
+      font-weight: normal;
+    }
+  }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Constant                                                               [3] +
+     + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-    &.character {
-      &.escape {
-        color: @color-syntax-escape;
-      }
-    }
-    &.language {
-      color: @color-syntax-constant;
+  .entity.other.attribute-name {
+    &.class,
+    &.id {
+      color: @color-syntax-class;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [4] +
+     + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
+  .keyword {
+    &.operator {
+      color: @color-syntax-operator;
+    }
+    &.control {
+      color: @color-syntax-function;
+
+      &.at-rule {
+        &.fontface,
+        &.import,
+        &.page,
+        &.media {
+          color: @color-syntax-css-at-rule;
+          font-weight: bold;
+        }
+      }
+      &.logical.operator {
+        color: @color-syntax-operator;
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+
+      &.unit {
+        color: @color-syntax-unit;
       }
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [5] +
+     + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.other {
+  .meta {
+    &.property-list {
       color: @color-syntax-keyword;
     }
-    &.control {
-      color: @color-syntax-keyword;
-    }
-    &.operator {
-      &.ternary {
-        color: @color-syntax-operator;
-      }
-      &.arithmetic {
-        color: @color-syntax-operator;
-      }
-      &.update {
-        color: @color-syntax-operator;
-      }
+    &.brace {
+      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
@@ -133,14 +143,22 @@ LESSCSS
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
+    &.terminator,
+    &.seperator,
+    &.section.property-list {
+      color: @color-syntax-symbol;
+    }
     &.definition {
-      &.commment {
+      &.comment {
         color: @color-syntax-comment;
       }
+      &.keyword {
+        color: @color-syntax-keyword;
+        font-weight: normal;
+      }
+      &.entity,
       &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
+        color: @color-syntax-symbol;
       }
     }
   }
@@ -150,34 +168,39 @@ LESSCSS
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
   .support {
+    &.type.property-name {
+      color: @color-syntax-keyword;
+    }
     &.function {
       color: @color-syntax-function;
 
-      &.macro {
-        font-weight: bold;
+      &.any-method.builtin {
+        color: @color-syntax-function;
       }
+    }
+    &.constant.color.w3c-standard-color-name {
+      color: @color-syntax-constant;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Storage                                                                [8] +
+     + String                                                                 [8] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.type {
-      color: @color-syntax-type;
-    }
+  .string {
+    color: @color-syntax-string;
   }
   /* +------------------------------------------------------------------------[8]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [9] +
+     + Variable                                                               [9] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.qouted {
-      &.souble {
-        color: @color-syntax-string;
-      }
+  .variable {
+    color: @color-syntax-variable;
+
+    &.other {
+      color: @color-syntax-variable;
     }
   }
   /* +------------------------------------------------------------------------[9]-+ */

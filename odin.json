@@ -9,7 +9,7 @@
   "access": "public",
   "modularity": "subproject",
   "description": "A north-bluish dark theme based on the same named color palette designed by Arctic Ice Studio. This is a darker and more blue-tinged variation.",
-  "website": "http://arcticicestudio.com/Northem",
+  "website": "http://arcticicestudio.com/northem",
   "author": {
     "name": "Arctic Ice Studio",
     "email": "development@arcticicestudio.com",
@@ -43,7 +43,7 @@
   "contributors": [
     {"name": "Arctic Ice Studio","email": "development@arcticicestudio.com"}
   ],
-  "copyright": "Copyright (C) 2015 Arctic Ice Studio <development@arcticicestudio.com>",
+  "copyright": "Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>",
   "license": [
     {"name": "GPL-3.0","file": "LICENSE.md"},
     {"name": "CC-BY-NC-SA-4.0","file": "res/image/CC-BY-NC-SA-4.0.svg"}

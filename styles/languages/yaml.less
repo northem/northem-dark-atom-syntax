@@ -1,29 +1,29 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language XML +
-project   northem-dark-atom-syntax                +
-file      XML.less                                +
-version   0.13.0                                  +
-author    Arctic Ice Studio                       +
-email     development@arcticicestudio.com         +
-website   http://arcticicestudio.com              +
-copyright Copyright (C) 2015-2016                 +
-created   2015-03-19 08:14 UTC+0200               +
-modified  2016-01-31 17:22 UTC+0100               +
-+++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language YAML +
+project   northem-dark-atom-syntax                 +
+file      yaml.less                                +
+version   0.13.0                                   +
+author    Arctic Ice Studio                        +
+email     development@arcticicestudio.com          +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
+created   2015-03-15 20:17 UTC+0100                +
+modified  2016-02-01 20:23 UTC+0100                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for XML.
+This file defines all language specific syntax highlighting classes for YAML.
 
 [Index]
   (1) Comment
-  (2) Entity
-  (3) Punctuation
-  (4) String
-  (5) Text
+  (2) Constant
+  (3) Entity
+  (4) Punctuation
+  (5) String
 
 [Dependencies]
-  - language-xml@^0.34.2 (https://atom.io/packages/language-xml) by "atom" (https://atom.io/users/atom)
+  - language-yaml@^0.25.0 (https://atom.io/packages/language-yaml) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -53,82 +53,64 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.text.xml,
-.text.xml.plist {
+.source.yaml {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
      +----------------------------------------------------------------------------+ */
   .comment {
-    &.block {
-      color: @color-syntax-comment;
-    }
+    color: @color-syntax-comment;
   }
   /* +------------------------------------------------------------------------[1]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [2] +
+     + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name.tag {
-      color: @color-syntax-doctype;
-      &.localname {
-        color: @color-syntax-keyword;
-      }
-    }
-    &.other{
-      &.attribute-name {
-        color: @color-syntax-xml-attribute;
-        &.localname {
-          color: @color-syntax-xml-attribute;
-        }
-      }
-    }
+  .constant.numeric {
+    color: @color-syntax-number;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [3] +
+     + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.tag {
-        color: @color-syntax-xml-tag;
-      }
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.comment {
-        color: @color-syntax-comment;
-      }
-    }
+  .entity.name.tag {
+    color: @color-syntax-tag;
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [4] +
+     + Punctuation                                                            [4] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.quoted {
-      &.double {
-        color: @color-syntax-string;
+  .punctuation {
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.entry {
+        color: @color-syntax-keyword;
+      }
+      &.string {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
       }
     }
-    &.unquoted {
-      &.cdata {
-        color: @color-syntax-xml-cdata;
-      }
+    &.separator {
+      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Text                                                                   [5] +
+     + String                                                                 [5] +
      +----------------------------------------------------------------------------+ */
-  .text {
-    color: @color-editor-text;
+  .string {
+    &.quoted,
+    &.unquoted {
+      color: @color-syntax-string;
+    }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 }

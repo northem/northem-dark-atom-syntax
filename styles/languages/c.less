@@ -1,31 +1,34 @@
 /*
 +++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language R +
+title     Northem Dark Atom Syntax - Language C +
 project   northem-dark-atom-syntax              +
-file      R.less                                +
+file      c.less                                +
 version   0.13.0                                +
 author    Arctic Ice Studio                     +
 email     development@arcticicestudio.com       +
 website   http://arcticicestudio.com            +
 copyright Copyright (C) 2015-2016               +
-created   2015-08-14 15:42 UTC+0200             +
-modified  2016-01-31 17:08 UTC+0100             +
+created   2015-08-28 11:42 UTC+0200             +
+modified  2016-02-01 20:09 UTC+0100             +
 +++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for R.
+This file defines all language specific syntax highlighting classes for C.
 
 [Index]
   (1) Comment
   (2) Constant
   (3) Entity
   (4) Keyword
-  (5) Punctuation
-  (6) String
-  (7) Variable
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) Storage
+  (9) String
+  (10) Variable
 
 [Dependencies]
-  - language-foobar@^0.4.0 (https://atom.io/packages/language-foobar) by "lee-dohm " (https://atom.io/users/lee-dohm)
+  - language-c@^0.51.1 (https://atom.io/packages/language-c) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -55,7 +58,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.r {
+.source.c {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -72,93 +75,126 @@ LESSCSS
     &.numeric {
       color: @color-syntax-number;
     }
-    &.language {
-      color: @color-syntax-constant;
+    &.character.escape {
+      color: @color-syntax-escape;
     }
-    &.character {
-      &.escape {
-        color: @color-syntax-regexp;
-      }
+    &.language {
+      color: @color-syntax-keyword;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [3] +
+     + Entity                                                                 [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.operator {
-      &.assignment {
-        color: @color-syntax-operator;
+  .keyword.control {
+    color: @color-syntax-keyword;
+
+    &.import {
+      &.include,
+      &.define {
+        color: @color-syntax-c-preprocessor;
+        font-weight: bold;
       }
-      &.arithmetic {
-        color: @color-syntax-operator;
-      }
-      &.logical {
-        color: @color-syntax-operator;
-      }
-      &.comparison {
-        color: @color-syntax-operator;
-      }
-    }
-    &.control {
-      color: @color-syntax-keyword;
-    }
-    &.other {
-      color: @color-syntax-operator;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [5] +
+     + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-string;
-        }
+  .meta {
+    &.preprocessor {
+      &.macro {
+        color: @color-syntax-other;
+      }
+      &.c.include {
+        color: @color-syntax-keyword;
       }
     }
-    &.section {
-      &.begin, &.end {
-        color: @color-syntax-symbol;
-      }
+    &.block,
+    &.parens {
+      color: @color-syntax-other;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [6] +
+     + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    color: @color-syntax-string;
+  .punctuation {
+    &.definition {
+      &.string.begin,
+      &.string.end,
+      &.parameters {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.section {
+      &.block,
+      &.parens {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+    &.separator {
+      &.continuation {
+        color: @color-syntax-escape;
+      }
+      &.parameters {
+        color: @color-syntax-symbol;
+      }
+    }
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Variable                                                               [7] +
+     + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .variable {
-    &.other {
-      color: @color-syntax-variable;
+  .support {
+    &.type.sys-types {
+      color: @color-syntax-class;
     }
-    &.parameter {
-      color: @color-syntax-variable;
+    &.function {
+      &.any-method,
+      &.C99 {
+        color: @color-syntax-function;
+      }
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage.type {
+    color: @color-syntax-class;
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [10] +
+     +----------------------------------------------------------------------------+ */
+  .variable.parameter {
+    color: @color-syntax-variable;
+  }
+  /* +-----------------------------------------------------------------------[10]-+ */
 }

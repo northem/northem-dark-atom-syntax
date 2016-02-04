@@ -2,14 +2,14 @@
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 title     Northem Dark Atom Syntax - Language CoffeeScript +
 project   northem-dark-atom-syntax                         +
-file      CoffeeScript.less                                +
+file      coffeescript.less                                +
 version   0.13.0                                           +
 author    Arctic Ice Studio                                +
 email     development@arcticicestudio.com                  +
 website   http://arcticicestudio.com                       +
 copyright Copyright (C) 2015-2016                          +
 created   2015-03-15 20:17 UTC+0100                        +
-modified  2016-01-31 11:25 UTC+0100                        +
+modified  2016-02-01 20:08 UTC+0100                        +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -75,19 +75,9 @@ LESSCSS
     &.numeric {
       color: @color-syntax-number;
     }
-    &.character {
-      &.escape {
-        color: @color-syntax-regexp;
-      }
-    }
-    &.other {
-      &.character-class {
-        &.set {
-          &.regexp {
-            color: @color-syntax-regexp;
-          }
-        }
-      }
+    &.character.escape,
+    &.other.character-class.set.regexp {
+      color: @color-syntax-regexp;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -104,10 +94,8 @@ LESSCSS
         color: @color-syntax-class;
       }
     }
-    &.other {
-      &.inherited-class {
-        color: @color-syntax-class;
-      }
+    &.other.inherited-class {
+      color: @color-syntax-class;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
@@ -123,29 +111,19 @@ LESSCSS
       color: @color-syntax-operator;
     }
   }
-
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
   .meta {
-    &.brace {
-      &.round, &.curly {
-        color: @color-syntax-symbol;
-      }
+    &.brace.round,
+    &.brace.curly,
+    &.delimeter.object.comma {
+      color: @color-syntax-symbol;
     }
-    &.delimeter {
-      &.object {
-        &.comma {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
-    &.group {
-      &.regexp {
-        color: @color-syntax-regexp;
-      }
+    &.group.regexp {
+      color: @color-syntax-regexp;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
@@ -159,27 +137,19 @@ LESSCSS
         color: @color-syntax-comment;
       }
       &.string {
-        &.begin, &.end {
+        &.begin,
+        &.end {
           color: @color-syntax-symbol;
         }
       }
-      &.character-class {
-        &.regexp {
-          color: @color-syntax-keyword;
-        }
-      }
-      &.group {
-        &.regexp {
-          color: @color-syntax-keyword;
-        }
+      &.character-class.regexp,
+      &.group.regexp {
+        color: @color-syntax-keyword;
       }
     }
-    &.section {
-      &.embedded {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.terminator, &.seperator {
+    &.section.embedded,
+    &.terminator,
+    &.seperator {
       color: @color-syntax-symbol;
     }
   }
@@ -201,11 +171,10 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.type {
-      &.function, &.class {
-        color: @color-syntax-keyword;
-      }
+  .storage.type {
+    &.function,
+    &.class {
+      color: @color-syntax-keyword;
     }
   }
   /* +------------------------------------------------------------------------[8]-+ */
@@ -213,10 +182,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + String                                                                 [9] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.quoted {
-      color: @color-syntax-string;
-    }
+  .string.quoted {
+    color: @color-syntax-string;
   }
   /* +------------------------------------------------------------------------[9]-+ */
 
@@ -224,20 +191,12 @@ LESSCSS
      + Variable                                                              [10] +
      +----------------------------------------------------------------------------+ */
   .variable {
-    &.assignment {
+    &.assignment,
+    &.parameter.function {
       color: @color-syntax-variable;
     }
-    &.parameter {
-      &.function {
-        color: @color-syntax-variable;
-      }
-    }
-    &.other {
-      &.readwrite {
-        &.instance {
-          color: @color-syntax-javascript-instance;
-        }
-      }
+    &.other.readwrite.instance {
+      color: @color-syntax-javascript-instance;
     }
   }
   /* +-----------------------------------------------------------------------[10]-+ */

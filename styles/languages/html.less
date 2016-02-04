@@ -1,32 +1,31 @@
 /*
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language GLSL +
+title     Northem Dark Atom Syntax - Language HTML +
 project   northem-dark-atom-syntax                 +
-file      GLSL.less                                +
+file      html.less                                +
 version   0.13.0                                   +
 author    Arctic Ice Studio                        +
 email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
-created   2015-08-14 15:12 UTC+0200                +
-modified  2016-01-31 11:46 UTC+0100                +
+created   2015-03-15 20:17 UTC+0100                +
+modified  2016-01-31 22:59 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for GLSL.
+This file defines all language specific syntax highlighting classes for HTML.
 
 [Index]
   (1) Comment
   (2) Constant
   (3) Entity
-  (4) Keyword
-  (5) Meta
-  (6) Punctuation
-  (7) Support
-  (8) Storage
+  (4) Meta
+  (5) Punctuation
+  (6) Separator
+  (7) String
 
 [Dependencies]
-  - language-glsl@^2.0.1 (https://atom.io/packages/language-glsl) by "hughsk " (https://atom.io/users/hughsk)
+  - language-html@^0.43.1 (https://atom.io/packages/language-html) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -56,7 +55,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.glsl {
+.text.html.basic {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -69,14 +68,9 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-      font-weight: normal;
-    }
-    &.language {
-      color: @color-syntax-keyword;
-    }
+  .constant.other.inline-data {
+    color: @color-syntax-html-cdata;
+    font-style: italic;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
@@ -84,83 +78,89 @@ LESSCSS
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
   .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-
-        &.preprocessor {
-          color: @color-syntax-constant;
-          font-weight: bold;
-          font-style: italic;
-        }
+    &.name.tag {
+      &.structure,
+      &.script,
+      &.style {
+        color: @color-syntax-html-tag;
       }
+    }
+    &.other.attribute-name {
+      color: @color-syntax-class;
+    }
+    &.script,
+    &.style {
+      color: @color-syntax-function;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
+     + Meta                                                                   [4] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.control {
-      &.import {
-        color: @color-syntax-import;
-        font-weight: bold;
+  .meta {
+    &.tag {
+      &.any {
+        color: @color-syntax-keyword;
+      }
+      &.sgml.doctype {
+        color: @color-syntax-doctype;
       }
     }
-    &.operator {
-      color: @color-syntax-operator;
+    &.toc-list.id {
+      color: @color-syntax-string;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [5] +
+     + Punctuation                                                            [5] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.preprocessor {
-      /*color: @color-syntax-glsl-preprocessor;*/
-      color: @color-syntax-constant;
-      font-weight: bold;
+  .punctuation {
+    &.separator.key-value {
+      color: @color-syntax-symbol;
+    }
+    &.definition {
+      &.string {
+        color: @color-syntax-string;
+
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.tag {
+        color: @color-syntax-keyword;
+      }
+      &.comment {
+        color: @color-syntax-comment;
+      }
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [6] +
+     + Separator                                                              [6] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.parameters {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.section {
-      color: @color-syntax-symbol;
-    }
+  .separator.key-value.html {
+    color: @color-syntax-symbol;
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Support                                                                [7] +
+     + String                                                                 [7] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.function {
-      color: @color-syntax-function;
+  .string {
+    color: @color-syntax-string;
+
+    .markup.underline.link.https.hyperlink {
+      color: @color-syntax-string;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */
-
-  /* +----------------------------------------------------------------------------+
-     + Storage                                                                [8] +
-     +----------------------------------------------------------------------------+ */
-  .storage {
-    &.modifier {
-      color: @color-syntax-keyword;
-    }
-    &.type {
-      color: @color-syntax-class;
-    }
-  }
-  /* +------------------------------------------------------------------------[8]-+ */
 }

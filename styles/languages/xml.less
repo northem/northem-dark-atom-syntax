@@ -1,0 +1,130 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language XML +
+project   northem-dark-atom-syntax                +
+file      xml.less                                +
+version   0.13.0                                  +
+author    Arctic Ice Studio                       +
+email     development@arcticicestudio.com         +
+website   http://arcticicestudio.com              +
+copyright Copyright (C) 2015-2016                 +
+created   2015-03-19 08:14 UTC+0200               +
+modified  2016-02-01 20:22 UTC+0100               +
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for XML.
+
+[Index]
+  (1) Comment
+  (2) Entity
+  (3) Punctuation
+  (4) String
+  (5) Text
+
+[Dependencies]
+  - language-xml@^0.34.2 (https://atom.io/packages/language-xml) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL3" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-NC-SA 4.0" (http://creativecommons.org/licenses/by-nc-sa/4.0).
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.text.xml,
+.text.xml.plist {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [2] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name.tag {
+      color: @color-syntax-doctype;
+
+      &.localname {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.other.attribute-name {
+      color: @color-syntax-xml-attribute;
+
+      &.localname {
+        color: @color-syntax-xml-attribute;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [3] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation.definition {
+    &.tag {
+      color: @color-syntax-xml-tag;
+    }
+    &.string {
+      &.begin,
+      &.end {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.comment {
+      color: @color-syntax-comment;
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [4] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    &.quoted {
+      &.double,
+      &.single {
+        color: @color-syntax-string;
+      }
+    }
+    &.unquoted.cdata {
+      color: @color-syntax-xml-cdata;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Text                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .text {
+    color: @color-editor-text;
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+}

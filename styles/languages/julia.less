@@ -1,32 +1,33 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language HAML +
-project   northem-dark-atom-syntax                 +
-file      HAML.less                                +
-version   0.13.0                                   +
-author    Arctic Ice Studio                        +
-email     development@arcticicestudio.com          +
-website   http://arcticicestudio.com               +
-copyright Copyright (C) 2015-2016                  +
-created   2015-08-12 14:47 UTC+0200                +
-modified  2016-01-31 11:51 UTC+0100                +
-++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Julia +
+project   northem-dark-atom-syntax                  +
+file      julia.less                                +
+version   0.13.0                                    +
+author    Arctic Ice Studio                         +
+email     development@arcticicestudio.com           +
+website   http://arcticicestudio.com                +
+copyright Copyright (C) 2015-2016                   +
+created   2015-03-15 20:17 UTC+0100                 +
+modified  2016-02-01 20:13 UTC+0100                 +
++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for HAML.
+This file defines all language specific syntax highlighting classes for Julia.
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Entity
-  (4) Keyword
-  (5) Meta
+  (1) Bracket
+  (2) Comment
+  (3) Constant
+  (4) Entity
+  (5) Keyword
   (6) Punctuation
   (7) Support
-  (8) String
+  (8) Storage
+  (9) String
 
 [Dependencies]
-  - language-haml@^0.23.15 (https://atom.io/packages/language-haml) by "cannikin" (https://atom.io/users/cannikin)
+  - language-julia@^0.5.0 (https://atom.io/packages/language-julia) by "JuliaLang" (https://atom.io/users/JuliaLang)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -56,70 +57,61 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.text.haml,
-.source.ruby.embedded.haml {
+.source.julia {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
+     + Bracket                                                                [1] +
      +----------------------------------------------------------------------------+ */
-
+  .bracket {
+    color: @color-syntax-symbol;
+  }
   /* +------------------------------------------------------------------------[1]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
+     + Comment                                                                [2] +
      +----------------------------------------------------------------------------+ */
-  .constant {
-    &.other {
-      &.symbol {
-        color: @color-syntax-variable;
-
-        &.hashkey {
-          color: @color-syntax-constant;
-        }
-      }
-    }
-    &.numeric {
-      color: @color-syntax-number;
-    }
+  .comment {
+    color: @color-syntax-comment;
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [3] +
+     + Constant                                                               [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.tag {
-        color: @color-syntax-keyword;
-
-        &.class {
-          color: @color-syntax-class;
-        }
-      }
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character.escape {
+      color: @color-syntax-escape;
+    }
+    &.language {
+      color: @color-syntax-constant;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
+     + Enity                                                                  [4] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.control {
-      color: @color-syntax-keyword;
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [5] +
+     + Keyword                                                                [5] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.line {
-      color: @color-syntax-other;
+  .keyword {
+    &.other,
+    &.control {
+      color: @color-syntax-keyword;
     }
-    &.section {
-      &.attributes {
-        color: @color-syntax-symbol;
+    &.operator {
+      &.ternary,
+      &.arithmetic,
+      &.update {
+        color: @color-syntax-operator;
       }
     }
   }
@@ -128,32 +120,13 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.tag {
-        color: @color-syntax-keyword;
-      }
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.constant {
-        color: @color-syntax-operator;
-      }
-      &.prolog {
-        color: @color-syntax-doctype;
-        font-weight: bold;
-      }
+  .punctuation.definition {
+    &.commment {
+      color: @color-syntax-comment;
     }
-    &.separator {
-      &.key-value {
-        color: @color-syntax-operator;
-      }
-      &.other {
-        color: @color-syntax-operator;
-      }
-      &.object {
+    &.string {
+      &.begin,
+      &.end {
         color: @color-syntax-symbol;
       }
     }
@@ -163,22 +136,31 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.function {
-      color: @color-syntax-function;
+  .support.function {
+    color: @color-syntax-function;
 
-      /*&.viewhelpers {
-        color: @color-syntax-function;
-      }*/
+    &.macro {
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [8] +
+     + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    color: @color-syntax-string;
+  .storage.type {
+    color: @color-syntax-type;
   }
   /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
+  .string.qouted {
+    &.single,
+    &.double {
+      color: @color-syntax-string;
+    }
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
 }

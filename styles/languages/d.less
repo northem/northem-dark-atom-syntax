@@ -1,35 +1,34 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language Jade +
-project   northem-dark-atom-syntax                 +
-file      Jade.less                                +
-version   0.13.0                                   +
-author    Arctic Ice Studio                        +
-email     development@arcticicestudio.com          +
-website   http://arcticicestudio.com               +
-copyright Copyright (C) 2015-2016                  +
-created   2015-05-21 09:18 UTC+0200                +
-modified  2016-01-31 16:28 UTC+0100                +
-++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language D +
+project   northem-dark-atom-syntax              +
+file      d.less                                +
+version   0.13.0                                +
+author    Arctic Ice Studio                     +
+email     development@arcticicestudio.com       +
+website   http://arcticicestudio.com            +
+copyright Copyright (C) 2015-2016               +
+created   2015-08-14 14:23 UTC+0200             +
+modified  2016-02-01 19:48 UTC+0100             +
++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for Jade.
+This file defines all language specific syntax highlighting classes for D.
 
 [Index]
   (1) Comment
   (2) Constant
-  (3) Embedded JavaScript
-  (4) Entity
-  (5) Keyword
-  (6) Meta
-  (7) Punctuation
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
   (8) Storage
   (9) String
-  (10) Text
-  (11) Variable
+  (10) Variable
 
 [Dependencies]
-  - language-foobar@^0.6.3 (https://atom.io/packages/language-foobar) by "devongovett" (https://atom.io/users/devongovett)
+  - language-d@^3.2.3 (https://atom.io/packages/language-d) by "amehat" (https://atom.io/users/amehat)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -59,23 +58,13 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.jade {
+.source.d {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
      +----------------------------------------------------------------------------+ */
   .comment {
-    &.other {
-      &.doctype {
-        color: @color-syntax-doctype;
-        font-weight: bold;
-      }
-    }
-    &.unbuffered {
-      &.block {
-        color: @color-syntax-comment;
-      }
-    }
+    color: @color-syntax-comment;
   }
   /* +------------------------------------------------------------------------[1]-+ */
 
@@ -83,101 +72,108 @@ LESSCSS
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
   .constant {
-    &.name {
-      &.attribute {
-        &.tag {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
     &.numeric {
       color: @color-syntax-number;
     }
-    &.language {
-      &.boolean {
-        color: @color-syntax-keyword;
-      }
+    &.character.escape {
+      color: @color-syntax-escape;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Embedded JavaScript                                                    [3] +
+     + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .javascript.embedded {
-    color: @color-syntax-other;
+  .entity.name {
+    &.function {
+      color: @color-syntax-function;
+    }
+    &.class {
+      color: @color-syntax-class;
+      font-weight: bold;
+    }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [4] +
+     + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.tag {
-        color: @color-syntax-tag;
+  .keyword {
+    &.operator {
+      &.logical,
+      &.arithmetic,
+      &.assignment,
+      &.concatenation,
+      &.bitwise,
+      &.comparison {
+        color: @color-syntax-operator;
       }
-      &.function {
-        color: @color-syntax-jade-keyword;
+      &.dereference {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.control {
+      color: @color-syntax-keyword;
+
+      &.loop,
+      &.branch {
+        color: @color-syntax-keyword;
       }
     }
     &.other {
-      &.attribute-name {
-        &.tag {
-          color: @color-syntax-attribute;
-        }
+      color: @color-syntax-keyword;
+
+      &.import {
+        color: @color-syntax-import;
+        font-weight: bold;
       }
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [5] +
+     + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.control {
-      color: @color-syntax-keyword;
+  .meta {
+    &.function.parameters {
+      color: @color-syntax-variable;
     }
-    &.operator {
-      color: @color-syntax-operator;
+    &.parentheses {
+      color: @color-syntax-other;
+    }
+    &.class.inheritance {
+      color: @color-syntax-class;
+      text-decoration: underline;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [6] +
+     + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.brace {
-      &.round {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.curly {
+  .punctuation {
+    &.separator,
+    &.comma {
       color: @color-syntax-symbol;
     }
-    &.control {
-      &.flow {
-        color: @color-syntax-other;
+    &.terminator {
+      color: @color-syntax-keyword;
+    }
+    &.section.block,
+    &.definition.string {
+      &.begin,
+      &.end {
+        color: @color-syntax-symbol;
       }
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [7] +
+     + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.defintion {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
-    &.terminator {
-      color: @color-syntax-symbol;
-    }
+  .support.other.module {
+    color: @color-syntax-class;
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
@@ -185,20 +181,20 @@ LESSCSS
      + Storage                                                                [8] +
      +----------------------------------------------------------------------------+ */
   .storage {
-    &.modifier {
-      color: @color-syntax-jade-keyword;
-      font-style: italic;
-    }
     &.type {
-      &.function {
-        color: @color-syntax-jade-keyword;
-        font-style: italic;
+      &.return {
+        color: @color-syntax-keyword;
       }
-      &.import {
-        &.include {
-          color: @color-syntax-jade-keyword;
-          font-weight: bold;
-        }
+      &.primitive,
+      &.class {
+        color: @color-syntax-class;
+      }
+    }
+    &.modifier {
+      color: @color-syntax-keyword;
+
+      &.protection {
+        color: @color-syntax-keyword;
       }
     }
   }
@@ -209,35 +205,21 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .string {
     color: @color-syntax-string;
-
-    &.interpolated {
-      color: @color-syntax-jade-keyword;
-    }
-    &.comment {
-      color: @color-syntax-comment;
-    }
   }
   /* +------------------------------------------------------------------------[9]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Text                                                                   [10] +
-     +----------------------------------------------------------------------------+ */
-  .text {
-    color: @color-editor-text;
-  }
-  /* +-----------------------------------------------------------------------[10]-+ */
-
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                              [11] +
+     + Variable                                                              [10] +
      +----------------------------------------------------------------------------+ */
   .variable {
-    &.control {
-      &.import {
-        &.include {
-          color: @color-syntax-jade-variable-include;
-        }
-      }
+    color: @color-syntax-variable;
+
+    &.language {
+      color: @color-syntax-keyword;
+    }
+    &.parameter {
+      color: @color-syntax-variable;
     }
   }
-  /* +-----------------------------------------------------------------------[11]-+ */
+  /* +-----------------------------------------------------------------------[10]-+ */
 }

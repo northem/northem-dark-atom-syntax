@@ -1,31 +1,32 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language ShellScript +
-project   northem-dark-atom-syntax                        +
-file      Shell.less                                      +
-version   0.13.0                                          +
-author    Arctic Ice Studio                               +
-email     development@arcticicestudio.com                 +
-website   http://arcticicestudio.com                      +
-copyright Copyright (C) 2015-2016                         +
-created   2015-03-15 20:17 UTC+0100                       +
-modified  2016-01-31 17:16 UTC+0100                       +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Clojure +
+project   northem-dark-atom-syntax                    +
+file      clojure.less                                +
+version   0.13.0                                      +
+author    Arctic Ice Studio                           +
+email     development@arcticicestudio.com             +
+website   http://arcticicestudio.com                  +
+copyright Copyright (C) 2015-2016                     +
+created   2015-08-28 12:07 UTC+0200                   +
+modified  2016-02-01 20:08 UTC+0100                   +
++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for ShellScript.
+This file defines all language specific syntax highlighting classes for Clojure.
 
 [Index]
   (1) Comment
-  (2) Entity
-  (3) Keyword
-  (4) Punctuation
-  (5) Support
-  (6) String
-  (7) Variable
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Storage
+  (8) String
 
 [Dependencies]
-  - language-shellscript@^0.21.0 (https://atom.io/packages/language-shellscript) by "atom" (https://atom.io/users/atom)
+  - language-clojure@^0.19.0 (https://atom.io/packages/language-clojure) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -55,7 +56,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.shell {
+.source.clojure {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -66,116 +67,80 @@ LESSCSS
   /* +------------------------------------------------------------------------[1]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [2] +
+     + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
+  .constant {
+    &.keyword,
+    &.language {
+      color: @color-syntax-keyword;
+    }
+    &.numeric {
+      color: @color-syntax-number;
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [3] +
+     + Entity                                                                 [3] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.operator {
-      &.list {
-        color: @color-syntax-operator;
-      }
+  .entity {
+    &.name.function {
+      color: @color-syntax-function;
     }
-    &.control {
-      color: @color-syntax-keyword;
+    &.global {
+      color: @color-syntax-class;
     }
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [4] +
+     + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.subshell {
-        color: @color-syntax-symbol;
-      }
-      &.variable {
-        color: @color-syntax-type;
-      }
-      &.case-pattern {
-        color: @color-syntax-operator;
-      }
-      &.arguments {
-        color: @color-syntax-function;
-      }
-      &.logical-expression {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.terminator {
-      &.case-clause {
-        color: @color-syntax-operator;
-      }
-    }
-    &.separator {
-      &.pipe-sign {
-        color: @color-syntax-operator;
-      }
-    }
+  .keyword.control {
+    color: @color-syntax-keyword;
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Support                                                                [5] +
+     + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.function {
-      &.builtin {
-        color: @color-syntax-function;
-        font-style: italic;
-      }
+  .meta {
+    &.symbol {
+      color: @color-syntax-class;
+    }
+    &.vector {
+      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [6] +
+     + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.quoted {
-      &.double {
-        color: @color-syntax-string;
-      }
-      &.single {
-        color: @color-syntax-string;
-      }
-    }
-    &.interpolated {
-      &.dollar {
-        color: @color-syntax-function;
+  .punctuation {
+    &.definition.string,
+    &.section.expression {
+      &.begin,
+      &.end {
+        color: @color-syntax-symbol;
       }
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Variable                                                               [7] +
+     + Storage                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .variable {
-    &.other {
-      &.positional {
-        color: @color-syntax-type;
-      }
-    }
-  }
-  .variable {
-    color: @color-syntax-variable;
+  .storage.control {
+    color: @color-syntax-keyword;
   }
   /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [8] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
 }

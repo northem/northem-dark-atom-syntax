@@ -1,34 +1,33 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language Python +
-project   northem-dark-atom-syntax                   +
-file      Python.less                                +
-version   0.13.0                                     +
-author    Arctic Ice Studio                          +
-email     development@arcticicestudio.com            +
-website   http://arcticicestudio.com                 +
-copyright Copyright (C) 2015-2016                    +
-created   2015-03-15 20:17 UTC+0100                  +
-modified  2016-01-31 17:05 UTC+0100                  +
-++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language Ruby +
+project   northem-dark-atom-syntax                 +
+file      ruby.less                                +
+version   0.13.0                                   +
+author    Arctic Ice Studio                        +
+email     development@arcticicestudio.com          +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
+created   2015-03-15 20:17 UTC+0100                +
+modified  2016-02-01 20:17 UTC+0100                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for Python.
+This file defines all language specific syntax highlighting classes for Ruby.
 
 [Index]
   (1) Comment
   (2) Constant
   (3) Entity
   (4) Keyword
-  (5) Meta
-  (6) Punctuation
-  (7) Support
-  (8) Storage
-  (9) String
-  (10) Variable
+  (5) Punctuation
+  (6) Support
+  (7) String
+  (8) Symbol
+  (9) Variable
 
 [Dependencies]
-  - language-python@^0.42.1 (https://atom.io/packages/language-python) by "atom" (https://atom.io/users/atom)
+  - language-ruby@^0.65.0 (https://atom.io/packages/language-ruby) by "atom" (https://atom.io/users/atom)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -58,7 +57,7 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.python {
+.source.ruby {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -75,18 +74,20 @@ LESSCSS
     &.numeric {
       color: @color-syntax-number;
     }
+    &.escape {
+      color: @color-syntax-escape;
+    }
+    &.language {
+      color: @color-syntax-keyword;
+    }
   }
   /* +------------------------------------------------------------------------[2]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-    }
+  .entity.name.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[3]-+ */
 
@@ -94,123 +95,85 @@ LESSCSS
      + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
   .keyword {
-    &.other {
-      color: @color-syntax-keyword;
-    }
-    &.control {
-      &.import {
-        color: @color-syntax-import;
-      }
-      &.statement {
-        color: @color-syntax-keyword;
-      }
-    }
-  }
-
-  .keyword {
-    &.control {
-      color: @color-syntax-keyword;
-    }
+    &.control,
     &.operator {
-      color: @color-syntax-operator;
+      color: @color-syntax-keyword;
+    }
+    &.other.special-method {
+      color: @color-syntax-ruby-special-method;
+      font-weight: bold;
     }
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [5] +
+     + Punctuation                                                            [5] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.function-call {
-      color: @color-syntax-function;
-
-      &.arguments {
-        color: @color-syntax-variable;
+  .punctuation {
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
       }
+      &.string {
+        color: @color-syntax-symbol;
+      }
+      &.variable {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.seperator,
+    &.section {
+      color: @color-syntax-symbol;
     }
   }
   /* +------------------------------------------------------------------------[5]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [6] +
+     + Support                                                                [6] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.definition {
-      &.string {
-        color: @color-syntax-symbol;
-      }
-      &.parameters {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.arguments {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.list {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.comment {
-        color: @color-syntax-comment;
-      }
+  .support {
+    &.class {
+      color: @color-syntax-class;
     }
-    &.seperator {
-      color: @color-syntax-symbol;
-    }
-    &.section {
-      color: @color-syntax-symbol;
+    &.function.kernel {
+      color: @color-syntax-function;
     }
   }
   /* +------------------------------------------------------------------------[6]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Support                                                                [7] +
+     + String                                                                 [7] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.type {
-      color: @color-syntax-keyword;
-    }
-    &.function {
-      color: @color-syntax-function;
-    }
+  .string.quoted {
+    color: @color-syntax-string;
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Storage                                                                [8] +
+     + Symbol                                                                 [8] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.type {
-      &.function {
-        color: @color-syntax-keyword;
-      }
-    }
+  &.symbol > .punctuation {
+    color: inherit;
   }
   /* +------------------------------------------------------------------------[8]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + String                                                                 [9] +
+     + Variable                                                               [9] +
      +----------------------------------------------------------------------------+ */
-  .string {
-    &.quoted {
-      color: @color-syntax-string;
+  .variable {
+    color: @color-syntax-variable;
+
+    &.other {
+      &.constant {
+        color: @color-syntax-constant;
+      }
+      &.readwrite.instance {
+        color: @color-syntax-ruby-instance;
+      }
+    }
+    &.language {
+      color: @color-syntax-keyword;
     }
   }
   /* +------------------------------------------------------------------------[9]-+ */
-
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                              [10] +
-     +----------------------------------------------------------------------------+ */
-  .variable {
-    &.parameter {
-      &.function {
-        color: @color-syntax-variable;
-      }
-    }
-  }
-  /* +-----------------------------------------------------------------------[10]-+ */
 }

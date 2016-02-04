@@ -1,19 +1,19 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark Atom Syntax - Language LESSCSS +
-project   northem-dark-atom-syntax                    +
-file      LESSCSS.less                                +
-version   0.13.0                                      +
-author    Arctic Ice Studio                           +
-email     development@arcticicestudio.com             +
-website   http://arcticicestudio.com                  +
-copyright Copyright (C) 2015-2016                     +
-created   2015-03-15 20:17 UTC+0100                   +
-modified  2016-01-31 16:44 UTC+0100                   +
-+++++++++++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++
+title     Northem Dark Atom Syntax - Language HAML +
+project   northem-dark-atom-syntax                 +
+file      haml.less                                +
+version   0.13.0                                   +
+author    Arctic Ice Studio                        +
+email     development@arcticicestudio.com          +
+website   http://arcticicestudio.com               +
+copyright Copyright (C) 2015-2016                  +
+created   2015-08-12 14:47 UTC+0200                +
+modified  2016-02-01 19:53 UTC+0100                +
+++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for LESSCSS.
+This file defines all language specific syntax highlighting classes for HAML.
 
 [Index]
   (1) Comment
@@ -24,10 +24,9 @@ This file defines all language specific syntax highlighting classes for LESSCSS.
   (6) Punctuation
   (7) Support
   (8) String
-  (9) Variable
 
 [Dependencies]
-  - language-less@^0.29.0 (https://atom.io/packages/language-less) by "atom" (https://atom.io/users/atom)
+  - language-haml@^0.23.15 (https://atom.io/packages/language-haml) by "cannikin" (https://atom.io/users/cannikin)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -57,7 +56,8 @@ Atom Flight Manual
 LESSCSS
   (http://lesscss.org)
 */
-.source.less {
+.text.haml,
+.source.ruby.embedded.haml {
   color: @color-syntax-other;
   /* +----------------------------------------------------------------------------+
      + Comment                                                                [1] +
@@ -71,18 +71,17 @@ LESSCSS
      + Constant                                                               [2] +
      +----------------------------------------------------------------------------+ */
   .constant {
-    color: @color-syntax-constant;
-    font-weight: bold;
+    &.other {
+      &.symbol {
+        color: @color-syntax-variable;
 
+        &.hashkey {
+          color: @color-syntax-constant;
+        }
+      }
+    }
     &.numeric {
       color: @color-syntax-number;
-      font-weight: normal;
-    }
-    &.other {
-      &.rgb-value {
-        color: @color-syntax-number;
-        font-weight: normal;
-      }
     }
   }
   /* +------------------------------------------------------------------------[2]-+ */
@@ -90,49 +89,20 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Enity                                                                  [3] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.other {
-      &.attribute-name {
-        &.class {
-          color: @color-syntax-class;
-        }
-        &.id {
-          color: @color-syntax-class;
-        }
-      }
+  .entity.name.tag {
+    color: @color-syntax-keyword;
+
+    &.class {
+      color: @color-syntax-class;
     }
   }
-
   /* +------------------------------------------------------------------------[3]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Keyword                                                                [4] +
      +----------------------------------------------------------------------------+ */
-  .keyword {
-    &.operator {
-      color: @color-syntax-operator;
-    }
-    &.control {
-      color: @color-syntax-function;
-
-      &.at-rule {
-        &.fontface, &.import, &.page, &.media {
-          color: @color-syntax-css-at-rule;
-          font-weight: bold;
-        }
-      }
-      &.logical {
-        &.operator {
-          color: @color-syntax-operator;
-        }
-      }
-    }
-    &.other {
-      color: @color-syntax-keyword;
-      &.unit {
-        color: @color-syntax-unit;
-      }
-    }
+  .keyword.control {
+    color: @color-syntax-keyword;
   }
   /* +------------------------------------------------------------------------[4]-+ */
 
@@ -140,10 +110,10 @@ LESSCSS
      + Meta                                                                   [5] +
      +----------------------------------------------------------------------------+ */
   .meta {
-    &.property-list {
-      color: @color-syntax-keyword;
+    &.line {
+      color: @color-syntax-other;
     }
-    &.brace {
+    &.section.attributes {
       color: @color-syntax-symbol;
     }
   }
@@ -153,30 +123,30 @@ LESSCSS
      + Punctuation                                                            [6] +
      +----------------------------------------------------------------------------+ */
   .punctuation {
-    &.terminator {
-      color: @color-syntax-symbol;
-    }
-    &.seperator {
-      color: @color-syntax-symbol;
-    }
     &.definition {
-      &.comment {
-        color: @color-syntax-comment;
-      }
-      &.keyword {
+      &.tag {
         color: @color-syntax-keyword;
-        font-weight: normal;
-      }
-
-      &.entity {
-        color: @color-syntax-symbol;
       }
       &.string {
-        color: @color-syntax-symbol;
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.constant {
+        color: @color-syntax-operator;
+      }
+      &.prolog {
+        color: @color-syntax-doctype;
+        font-weight: bold;
       }
     }
-    &.section {
-      &.property-list {
+    &.separator {
+      &.key-value,
+      &.other {
+        color: @color-syntax-operator;
+      }
+      &.object {
         color: @color-syntax-symbol;
       }
     }
@@ -186,29 +156,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Support                                                                [7] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.type {
-      &.property-name {
-        color: @color-syntax-keyword;
-      }
-    }
-    &.function {
-      color: @color-syntax-function;
-
-      &.any-method {
-        &.builtin {
-          color: @color-syntax-function;
-        }
-      }
-    }
-    &.constant {
-      &.color {
-        &.w3c-standard-color-name {
-          color: @color-syntax-constant;
-          font-weight: bold;
-        }
-      }
-    }
+  .support.function {
+    color: @color-syntax-function;
   }
   /* +------------------------------------------------------------------------[7]-+ */
 
@@ -219,16 +168,4 @@ LESSCSS
     color: @color-syntax-string;
   }
   /* +------------------------------------------------------------------------[8]-+ */
-
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                              [9] +
-     +----------------------------------------------------------------------------+ */
-  .variable {
-    color: @color-syntax-variable;
-
-    &.other {
-      color: @color-syntax-variable;
-    }
-  }
-  /* +------------------------------------------------------------------------[9]-+ */
 }

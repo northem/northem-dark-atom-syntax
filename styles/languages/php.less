@@ -2,14 +2,14 @@
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 title     Northem Dark Atom Syntax - Language PHP +
 project   northem-dark-atom-syntax                +
-file      PHP.less                                +
+file      php.less                                +
 version   0.13.0                                  +
 author    Arctic Ice Studio                       +
 email     development@arcticicestudio.com         +
 website   http://arcticicestudio.com              +
 copyright Copyright (C) 2015-2016                 +
 created   2015-03-15 20:17 UTC+0100               +
-modified  2016-01-31 16:58 UTC+0100               +
+modified  2016-02-01 20:15 UTC+0100               +
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -67,13 +67,10 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Scope ".text.html.php" - Punctuation                                 [1.0] +
      +----------------------------------------------------------------------------+ */
-  .punctuation {
-    &.embedded {
-      &.section {
-        &.begin, &.end {
-          color: @color-syntax-doctype;
-        }
-      }
+  .punctuation.embedded.section {
+    &.begin,
+    &.end {
+      color: @color-syntax-doctype;
     }
   }
   /* +----------------------------------------------------------------------[1.0]-+ */
@@ -88,24 +85,20 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Scope ".source.php" - Comment                                        [2.0] +
      +----------------------------------------------------------------------------+ */
-    .comment {
-      color: @color-syntax-comment;
-    }
+  .comment {
+    color: @color-syntax-comment;
+  }
   /* +----------------------------------------------------------------------[2.0]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Scope ".source.php" - Enity                                          [2.1] +
      +----------------------------------------------------------------------------+ */
-  .entity {
-    &.name {
-      &.type {
-        &.class {
-          color: @color-syntax-class;
-        }
-      }
-      &.function {
-        color: @color-syntax-function;
-      }
+  .entity.name {
+    &.type.class {
+      color: @color-syntax-class;
+    }
+    &.function {
+      color: @color-syntax-function;
     }
   }
   /* +----------------------------------------------------------------------[2.1]-+ */
@@ -126,12 +119,8 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Scope ".source.php" - Meta                                           [2.3] +
      +----------------------------------------------------------------------------+ */
-  .meta {
-    &.string-contents {
-      &.quoted {
-        color: @color-syntax-string;
-      }
-    }
+  .meta.string-contents.quoted {
+    color: @color-syntax-string;
   }
   /* +----------------------------------------------------------------------[2.3]-+ */
 
@@ -140,18 +129,15 @@ LESSCSS
      +----------------------------------------------------------------------------+ */
   .punctuation {
     &.definition {
-      &.parameters {
-        &.begin, &.end {
+      &.parameters,
+      &.string {
+        &.begin,
+        &.end {
           color: @color-syntax-symbol;
         }
       }
       &.variable {
         color: @color-syntax-keyword;
-      }
-      &.string {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
       }
       &.commment {
         color: @color-syntax-comment;
@@ -161,13 +147,10 @@ LESSCSS
       color: @color-syntax-symbol;
     }
     &.section {
-      &.array {
-        &.begin, &.end {
-          color: @color-syntax-symbol;
-        }
-      }
+      &.array,
       &.scope {
-        &.begin, &.end {
+        &.begin,
+        &.end {
           color: @color-syntax-symbol;
         }
       }
@@ -178,28 +161,21 @@ LESSCSS
   /* +----------------------------------------------------------------------------+
      + Scope ".source.php" - Support                                        [2.5] +
      +----------------------------------------------------------------------------+ */
-  .support {
-    &.function {
-      color: @color-syntax-function;
-    }
+  .support.function {
+    color: @color-syntax-function;
   }
   /* +----------------------------------------------------------------------[2.5]-+ */
 
   /* +----------------------------------------------------------------------------+
      + Scope ".source.php" - Storage                                        [2.6] +
      +----------------------------------------------------------------------------+ */
-  .storage {
-    &.type {
-      &.class {
-        color: @color-syntax-keyword;
-      }
-      &.function {
-        color: @color-syntax-keyword;
-      }
+  .storage.type {
+    &.class,
+    &.function {
+      color: @color-syntax-keyword;
     }
   }
   /* +----------------------------------------------------------------------[2.6]-+ */
-
 
   /* +----------------------------------------------------------------------------+
      + Scope ".source.php" - Variable                                       [2.7] +
@@ -207,14 +183,10 @@ LESSCSS
   .variable {
     color: @color-syntax-variable;
 
-    &.other {
-      &.global {
-        &.safer {
-          color: @color-syntax-keyword;
-          font-weight: bold;
-          font-style: italic;
-        }
-      }
+    &.other.global.safer {
+      color: @color-syntax-keyword;
+      font-weight: bold;
+      font-style: italic;
     }
   }
   /* +----------------------------------------------------------------------[2.7]-+ */
