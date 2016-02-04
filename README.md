@@ -12,13 +12,15 @@ This is a darker and more blue-tinged variation.
 ![Northem Preview Screenshot](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/res/image/preview-screenshot.png)
 
 ### Variations
-  - [Northem Atom Syntax](https://github.com/arcticicestudio/northem-atom-syntax)
-  - [Northem Light Atom Syntax](https://github.com/arcticicestudio/northem-light-atom-syntax)
+  - <a href="https://github.com/arcticicestudio/northem-atom-syntax"><img src="https://atom.io/favicon.ico" alt="JetBrain logo" width=16 height=16> Northem Atom Syntax</a>
+  - <a href="https://github.com/arcticicestudio/northem-light-atom-syntax"><img src="https://atom.io/favicon.ico" alt="JetBrain logo" width=16 height=16> Northem Light Atom Syntax</a>
 
-**Make sure to check out [Northem Dark Atom UI](https://github.com/arcticicestudio/northem-dark-atom-ui)!**
+**Make sure to check out <a href="https://github.com/arcticicestudio/northem-light-atom-ui"><img src="https://atom.io/favicon.ico" alt="JetBrain logo" width=16 height=16> Northem Dark Atom UI</a>!**
 
 ### Other Projects
+  - <a href="https://github.com/arcticicestudio/northem-dark-intellij-idea-syntax"><img src="https://www.jetbrains.com/_assets//shared/favicons/jetbrains.ico" alt="JetBrain logo" width=16 height=16> Northem Dark IntelliJ IDEA Syntax</a>
   - <a href="https://github.com/arcticicestudio/northem-dark-eclipse-syntax"><img src="https://eclipse.org/favicon.ico" alt="Eclipse logo" width=16 height=16> Northem Dark Eclipse Syntax</a>
+  - <a href="https://github.com/arcticicestudio/northem-dark-java"><img src="https://www.java.com/favicon.ico" alt="Java logo" width=16 height=16> Northem Dark Java</a>
   - <a href="https://github.com/arcticicestudio/northem-dark-gedit"><img src="https://static.gnome.org/wiki.gnome.org/gnome/css/favicon.png" alt="gedit logo" width=16 height=16> Northem Dark gedit</a>
   - <a href="#"><img src="http://www.gtk.org/images/gtk-logo.ico" alt="GTK logo"> Northem Dark GTK (in drafting)</a>
   - <a href="https://github.com/arcticicestudio/northem-dark-notepadplusplus"><img src="http://notepad-plus-plus.org/assets/images/favicon.ico" alt="Notepadd++ logo" width=16 height=16> Northem Dark Notepad++ (Windows only)</a>
