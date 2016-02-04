@@ -1,7 +1,7 @@
 Northem Dark Atom Syntax
 ========================
 
-[![Northem Logo](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/res/image/northem-logo.png)](http://arcticicestudio.com/Northem)
+[![Northem Logo](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/res/image/northem-logo.png)](http://arcticicestudio.com/northem)
 
 ### Description
 A north-bluish dark theme based on the same named [color palette](https://github.com/arcticicestudio/northem) designed by [Arctic Ice Studio](http://arcticicestudio.com).  
@@ -25,7 +25,7 @@ This is a darker and more blue-tinged variation.
   - <a href="#"><img src="http://www.gtk.org/images/gtk-logo.ico" alt="GTK logo"> Northem Dark GTK (in drafting)</a>
   - <a href="https://github.com/arcticicestudio/northem-dark-notepadplusplus"><img src="http://notepad-plus-plus.org/assets/images/favicon.ico" alt="Notepadd++ logo" width=16 height=16> Northem Dark Notepad++ (Windows only)</a>
 
-Visit the [official homepage](http://arcticicestudio.com/Northem) (actually under construction) for more informations.
+Visit the [official homepage](http://arcticicestudio.com/northem) (actually under construction) for more informations.
 
 ### Languages / Syntax Highlighting
   - [C](https://atom.io/packages/language-c)
@@ -71,13 +71,13 @@ Visit the [official homepage](http://arcticicestudio.com/Northem) (actually unde
 ### Version
 [`0.13.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 
-For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
+For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/northem) (actually under construction).
 
 ### Changelog
 [`0.13.0`](CHANGELOG.md)
 
 Check out the `CHANGELOG.md` file or open via *Settings > Packages* and filter for `northem-dark-atom-syntax`.  
-All changelogs are available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official homepage](http://arcticicestudio.com/Northem) (actually under construction).
+All changelogs are available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official homepage](http://arcticicestudio.com/northem) (actually under construction).
 
 ### Development
 Please report bugs and suggestions for improvement/language support [here](https://github.com/arcticicestudio/northem-dark-atom-syntax/issues).
