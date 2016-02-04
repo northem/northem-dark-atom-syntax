@@ -1,6 +1,25 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.14.0 (2016-02-04) - Refactoring & Performance
+### Refactoring
+  - Refactored all package files for performance by removing redundancy and improving nesting (~`10ms`/`11ms` to ~ `9ms`/`8ms` startup time)
+
+### Bug Fixes
+  - Fixed all file modes/permissions (linux *umask*)
+
+### Documentation
+  - Updated all *Comment Header Documentations* (*CHD*) and *README* to adhere the *Arctic Flora Specification* format
+  - Edited license file to valid markdown
+
+### Dependencies
+  - Updated odin dependency [`arcver@0.8.0`](https://github.com/arcticicestudio/arcver)
+  - Migrated to odin dependency [`glacier-git@0.8.0`](https://github.com/arcticicestudio/glacier-git)
+  - Updated odin dependency [`northem-dark@1.0.1`](https://github.com/arcticicestudio/northem-light)
+
+### ToolBox
+  - Migrated to [`glacier-apache-ant@0.5.0`](https://github.com/arcticicestudio/glacier-apache-ant)
+
 ## 0.13.0 (2016-01-27)
 ### Features
   - Implemented language support for [SQL](https://atom.io/packages/language-sql)
