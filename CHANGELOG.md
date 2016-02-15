@@ -1,6 +1,10 @@
 Northem Dark Atom Syntax
 ========================
 
+## 0.15.0 (2016-02-15)
+### Features
+  - [[#2](https://github.com/arcticicestudio/northem-dark-atom-syntax/issues/2)] Implemented language support for the [HTML](https://atom.io/packages/language-html) responsive-email preprocessor [MJML](https://atom.io/packages/language-mjml)
+
 ## 0.14.0 (2016-02-04) - Refactoring & Performance
 ### Refactoring
   - Refactored all package files for performance by removing redundancy and improving nesting (~`10ms`/`11ms` to ~ `9ms`/`8ms` startup time)

@@ -70,12 +70,12 @@ Visit the [official homepage](http://arcticicestudio.com/northem) (actually unde
   - [`minimap-highlight-selected@^4.3.1`](https://atom.io/packages/minimap-highlight-selected)
 
 ### Version
-[`0.14.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
+[`0.15.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official homepage](http://arcticicestudio.com/northem) (actually under construction).
 
 ### Changelog
-[`0.14.0`](CHANGELOG.md)
+[`0.15.0`](CHANGELOG.md)
 
 Check out the `CHANGELOG.md` file or open via *Settings > Packages* and filter for `northem-dark-atom-syntax`.  
 All changelogs are available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official homepage](http://arcticicestudio.com/northem) (actually under construction).
