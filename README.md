@@ -15,7 +15,7 @@ This is a darker and more blue-tinged variation.
   - <a href="https://github.com/arcticicestudio/northem-atom-syntax"><img src="https://atom.io/favicon.ico" alt="JetBrain logo" width=16 height=16> Northem Atom Syntax</a>
   - <a href="https://github.com/arcticicestudio/northem-light-atom-syntax"><img src="https://atom.io/favicon.ico" alt="JetBrain logo" width=16 height=16> Northem Light Atom Syntax</a>
 
-**Make sure to check out <a href="https://github.com/arcticicestudio/northem-light-atom-ui"><img src="https://atom.io/favicon.ico" alt="JetBrain logo" width=16 height=16> Northem Dark Atom UI</a>!**
+**Make sure to check out <a href="https://github.com/arcticicestudio/northem-dark-atom-ui"><img src="https://atom.io/favicon.ico" alt="JetBrain logo" width=16 height=16> Northem Dark Atom UI</a>!**
 
 ### Other Projects
   - <a href="https://github.com/arcticicestudio/northem-dark-intellij-idea-syntax"><img src="https://www.jetbrains.com/_assets//shared/favicons/jetbrains.ico" alt="JetBrain logo" width=16 height=16> Northem Dark IntelliJ IDEA Syntax</a>
