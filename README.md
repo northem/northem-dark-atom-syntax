@@ -49,6 +49,7 @@ Visit the [official homepage](http://arcticicestudio.com/northem) (actually unde
   - [Julia](https://atom.io/packages/language-julia)
   - [LESS](https://atom.io/packages/language-lesss)
   - [Markdown](https://atom.io/packages/language-gfm)
+  - [MJML](https://atom.io/packages/language-mjml)
   - [Mustache](https://atom.io/packages/language-mustache)
   - [PHP](https://atom.io/packages/language-php)
   - [PropertyList](https://atom.io/packages/language-property-list)
