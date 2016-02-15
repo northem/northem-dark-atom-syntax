@@ -111,7 +111,7 @@ Northem color palette itself is licensed under [CC BY-NC-SA 4.0](http://creative
 ---
 
 ### References
-[Northem Dark](https://github.com/arcticicestudio/northem-dark)
+[Northem Dark](https://github.com/arcticicestudio/northem-dark)  
 [Atom API-Documentation](https://atom.io/docs/api/latest/Atom)  
 [Atom Flight Manual](https://atom.io/docs)  
 [LESSCSS](http://lesscss.org)
