@@ -79,6 +79,8 @@ LESSCSS
     color: @color-gutter-text;
 
     .line-number {
+        text-align: left;
+
       &.cursor-line {
         background-color: @color-gutter-background-selected;
         color: @color-gutter-text-selected;
@@ -109,6 +111,11 @@ LESSCSS
 
       .icon-right {
         color: @color-gutter-icon;
+        padding: 0 0.4em;
+        &:before {
+            padding: 0 0.5em 0 0.2em;
+            margin-right: 1em;
+        }
       }
     }
 
