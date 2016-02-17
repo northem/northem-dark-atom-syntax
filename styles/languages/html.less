@@ -9,7 +9,7 @@ email     development@arcticicestudio.com          +
 website   http://arcticicestudio.com               +
 copyright Copyright (C) 2015-2016                  +
 created   2015-03-15 20:17 UTC+0100                +
-modified  2016-02-15 21:42 UTC+0100                +
+modified  2016-02-17 11:57 UTC+0100                +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -90,7 +90,7 @@ MJML
       }
     }
     &.other.attribute-name {
-      color: @color-syntax-class;
+      color: @color-syntax-html-attribute-name;
     }
     &.script,
     &.style {
@@ -131,7 +131,7 @@ MJML
 
         &.begin,
         &.end {
-          color: @color-syntax-symbol;
+          color: @color-syntax-html-attribute-value-symbol;
         }
       }
       &.tag {
@@ -157,6 +157,10 @@ MJML
      +----------------------------------------------------------------------------+ */
   .string {
     color: @color-syntax-string;
+
+    &.quoted {
+      color: @color-syntax-html-attribute-value;
+    }
 
     .markup.underline.link.https.hyperlink {
       color: @color-syntax-string;
