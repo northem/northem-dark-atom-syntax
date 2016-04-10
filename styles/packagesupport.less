@@ -1,0 +1,156 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Package Support                 +
+project   northem-dark-atom-syntax        +
+file      packagesupport.less             +
+version                                   +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-03-17 14:36 UTC+0100       +
+modified  2016-03-25 21:58 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines package specific styles based on the matching custom classes.
+
+[Index]
+  (1) bracket-matcher
+  (2) color-picker
+  (3) hightlight-selected
+  (4) markdown-preview
+    (4.0) Atom Editor
+    (4.1) Blockquote
+    (4.2) Code
+  (5) minimap-highlight-selected
+  (6) minimap-git-diff
+
+[Packages]
+  - bracket-matcher@^0.79.0            (https://atom.io/packages/bracket-matcher)
+  - color-picker@^2.1.0                (https://atom.io/packages/color-picker)
+  - highlight-selected@^0.11.0         (https://atom.io/packages/highlight-selected)
+  - markdown-preview@^0.157.0          (https://atom.io/packages/markdown-preview)
+  - minimap-highlight-selected@^4.3.1  (https://atom.io/packages/minimap-highlight-selected)
+  - minimap-git-diff@^4.2.0            (https://atom.io/packages/minimap-git-diff)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+/* +----------------------------------------------------------------------------+
+   + bracket-matcher                                                        [1] +
+   +----------------------------------------------------------------------------+ */
+.bracket-matcher.region {
+  border-bottom: @size-packagesupport-bracket-matcher-border-bottom solid @color-marker-result-border;
+  border-radius: @size-packagesupport-bracket-matcher-border-radius;
+}
+/* +------------------------------------------------------------------------[1]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + color-picker                                                           [2] +
+   +----------------------------------------------------------------------------+ */
+.ColorPicker {
+  .ColorPicker-body {
+    background-color: @color-packagesupport-color-picker-background;
+  }
+  .ColorPicker-color-text {
+    font-size: @size-packagesupport-color-picker-color-font;
+    color: @color-editor-text;
+  }
+  .ColorPicker-format {
+    background-color: @color-packagesupport-color-picker-background;
+
+    .ColorPicker-format-button {
+      background-color: @color-packagesupport-color-picker-background-button;
+      color: @color-editor-text;
+      text-shadow: none;
+      font-size: @size-base-text;
+
+      &.is--active {
+        background-color: lighten(@color-packagesupport-color-picker-background-button, 5%);
+        font-weight: bold;
+      }
+    }
+  }
+}
+/* +------------------------------------------------------------------------[2]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + hightlight-selected                                                    [3] +
+   +----------------------------------------------------------------------------+ */
+.highlight-selected .region {
+  border-color: @color-marker-result-border !important;
+}
+/* +------------------------------------------------------------------------[3]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + markdown-preview                                                       [4] +
+   +----------------------------------------------------------------------------+ */
+.markdown-preview {
+  /* +----------------------------------------------------------------------------+
+     + markdown-preview - Atom Editor                                       [4.0] +
+     +----------------------------------------------------------------------------+ */
+  atom-text-editor {
+    background-color: @color-editor-background;
+  }
+  /* +----------------------------------------------------------------------[4.0]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + markdown-preview - Blockquote                                        [4.1] +
+     +----------------------------------------------------------------------------+ */
+  blockquote {
+    border-left-color: @color-packagesupport-markdown-preview-blockquote-border;
+  }
+  /* +----------------------------------------------------------------------[4.1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + markdown-preview - Code                                              [4.2] +
+     +----------------------------------------------------------------------------+ */
+  code {
+    color: @color-packagesupport-markdown-preview-code;
+
+    &:hover {
+      background-color: @color-packagesupport-markdown-preview-code-hover;
+    }
+  }
+  /* +----------------------------------------------------------------------[4.2]-+ */
+}
+/* +------------------------------------------------------------------------[4]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + minimap-highlight-selected                                             [5] +
+   +----------------------------------------------------------------------------+ */
+.minimap .highlight-selected {
+  background: @color-marker-result-border;
+}
+/* +------------------------------------------------------------------------[5]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + minimap-git-diff                                                       [6] +
+   +----------------------------------------------------------------------------+ */
+.minimap {
+  .git-line-modified {
+    background: fadeOut(@color-packagesupport-minimap-git-diff-modified, 70%);
+  }
+  .git-line-added {
+    background: fadeOut(@color-packagesupport-minimap-git-diff-added, 70%);
+  }
+  .git-line-removed {
+    background: fadeOut(@color-packagesupport-minimap-git-diff-removed, 70%);
+  }
+}
+/* +------------------------------------------------------------------------[6]-+ */
