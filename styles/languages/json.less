@@ -1,0 +1,109 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "JSON"                 +
+project   northem-dark-atom-syntax        +
+file      json.less                       +
+version                                   +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-03-15 20:17 UTC+0100       +
+modified  2016-01-31 23:17 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for JSON.
+
+[Index]
+  (1) Constant
+  (2) Meta
+
+[Dependencies]
+  - language-json@^0.17.2 (https://atom.io/packages/language-json) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.json {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [1] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.language {
+      color: @color-syntax-constant;
+      font-weight: bold;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [2] +
+     +----------------------------------------------------------------------------+ */
+  .meta.structure.dictionary.json {
+    .string.quoted.json {
+      color: @color-syntax-keyword;
+
+      .punctuation.definition.string {
+        color: @color-syntax-symbol;
+      }
+    }
+    .punctuation.definition.dictionary {
+      color: @color-syntax-symbol;
+    }
+    .meta.structure.dictionary.value.json {
+      .string.quoted.json {
+        color: @color-syntax-string;
+
+        .punctuation.definition.string {
+          color: @color-syntax-symbol;
+        }
+      }
+      .meta.structure.dictionary.json {
+        .string.quoted.json {
+          color: @color-syntax-keyword;
+
+          .punctuation.definition.string {
+            color: @color-syntax-symbol;
+          }
+        }
+        .meta.structure.dictionary.value.json {
+          .string.quoted.json {
+            color: @color-syntax-string;
+
+            .punctuation.definition.string {
+              color: @color-syntax-symbol;
+            }
+          }
+        }
+      }
+    }
+    .meta.structure.array {
+      .punctuation.definition.array {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+}
