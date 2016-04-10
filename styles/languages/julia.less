@@ -1,0 +1,155 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "Julia"                +
+project   northem-dark-atom-syntax        +
+file      julia.less                      +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-03-15 20:17 UTC+0100       +
+modified  2016-02-01 20:13 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for Julia.
+
+[Index]
+  (1) Bracket
+  (2) Comment
+  (3) Constant
+  (4) Entity
+  (5) Keyword
+  (6) Punctuation
+  (7) Support
+  (8) Storage
+  (9) String
+
+[Dependencies]
+  - language-julia@^0.5.0 (https://atom.io/packages/language-julia) by "JuliaLang" (https://atom.io/users/JuliaLang)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.julia {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Bracket                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .bracket {
+    color: @color-syntax-symbol;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [2] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [3] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character.escape {
+      color: @color-syntax-escape;
+    }
+    &.language {
+      color: @color-syntax-constant;
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [4] +
+     +----------------------------------------------------------------------------+ */
+  .entity.name.function {
+    color: @color-syntax-function;
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [5] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.other,
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      &.ternary,
+      &.arithmetic,
+      &.update {
+        color: @color-syntax-operator;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation.definition {
+    &.commment {
+      color: @color-syntax-comment;
+    }
+    &.string {
+      &.begin,
+      &.end {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
+  .support.function {
+    color: @color-syntax-function;
+
+    &.macro {
+      font-weight: bold;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage.type {
+    color: @color-syntax-type;
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
+  .string.qouted {
+    &.single,
+    &.double {
+      color: @color-syntax-string;
+    }
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+}

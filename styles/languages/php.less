@@ -1,0 +1,183 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "PHP"                  +
+project   northem-dark-atom-syntax        +
+file      php.less                        +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-03-15 20:17 UTC+0100       +
+modified  2016-02-01 20:15 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for PHP.
+
+[Index]
+  (1) Scope ".text.html.php"
+    (1.0) Punctuation
+  (2) Scope ".source.php"
+    (2.0) Comment
+    (2.1) Entity
+    (2.2) Keyword
+    (2.3) Meta
+    (2.4) Punctuation
+    (2.5) Support
+    (2.6) Storage
+    (2.7) Variable
+
+[Dependencies]
+  - language-php@^0.34.0 (https://atom.io/packages/language-php) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+/* +----------------------------------------------------------------------------+
+   + Scope ".text.html.php"                                                 [1] +
+   +----------------------------------------------------------------------------+ */
+.text.html.php {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Scope ".text.html.php" - Punctuation                                 [1.0] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation.embedded.section {
+    &.begin,
+    &.end {
+      color: @color-syntax-doctype;
+    }
+  }
+  /* +----------------------------------------------------------------------[1.0]-+ */
+}
+/* +------------------------------------------------------------------------[1]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + Scope ".source.php"                                                    [2] +
+   +----------------------------------------------------------------------------+ */
+.source.php {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Scope ".source.php" - Comment                                        [2.0] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +----------------------------------------------------------------------[2.0]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Scope ".source.php" - Enity                                          [2.1] +
+     +----------------------------------------------------------------------------+ */
+  .entity.name {
+    &.type.class {
+      color: @color-syntax-class;
+    }
+    &.function {
+      color: @color-syntax-function;
+    }
+  }
+  /* +----------------------------------------------------------------------[2.1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Scope ".source.php" - Keyword                                        [2.2] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+  /* +----------------------------------------------------------------------[2.2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Scope ".source.php" - Meta                                           [2.3] +
+     +----------------------------------------------------------------------------+ */
+  .meta.string-contents.quoted {
+    color: @color-syntax-string;
+  }
+  /* +----------------------------------------------------------------------[2.3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Scope ".source.php" - Punctuation                                    [2.4] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.definition {
+      &.parameters,
+      &.string {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.variable {
+        color: @color-syntax-keyword;
+      }
+      &.commment {
+        color: @color-syntax-comment;
+      }
+    }
+    &.terminator {
+      color: @color-syntax-symbol;
+    }
+    &.section {
+      &.array,
+      &.scope {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+    }
+  }
+  /* +----------------------------------------------------------------------[2.4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Scope ".source.php" - Support                                        [2.5] +
+     +----------------------------------------------------------------------------+ */
+  .support.function {
+    color: @color-syntax-function;
+  }
+  /* +----------------------------------------------------------------------[2.5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Scope ".source.php" - Storage                                        [2.6] +
+     +----------------------------------------------------------------------------+ */
+  .storage.type {
+    &.class,
+    &.function {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +----------------------------------------------------------------------[2.6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Scope ".source.php" - Variable                                       [2.7] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    color: @color-syntax-variable;
+
+    &.other.global.safer {
+      color: @color-syntax-keyword;
+      font-weight: bold;
+      font-style: italic;
+    }
+  }
+  /* +----------------------------------------------------------------------[2.7]-+ */
+}
+/* +------------------------------------------------------------------------[2]-+ */

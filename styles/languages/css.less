@@ -1,0 +1,222 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "CSS"                  +
+project   northem-dark-atom-syntax        +
+file      css.less                        +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-03-15 20:17 UTC+0100       +
+modified  2016-01-31 18:30 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for CSS.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) String
+  (9) Variable
+
+[Dependencies]
+  - language-css@^0.36.0 (https://atom.io/packages/language-css) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.css {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    color: @color-syntax-constant;
+    font-weight: bold;
+
+    &.numeric,
+    &.other.color.rgb-value {
+      color: @color-syntax-number;
+      font-weight: normal;
+    }
+    &.character.escape {
+      color: @color-syntax-escape;
+      font-weight: normal;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name.tag {
+      color: @color-syntax-class;
+    }
+    &.other.attribute-name {
+      &.attribute {
+        color: @color-syntax-css-attribute;
+      }
+      &.pseudo-class,
+      &.pseudo-element {
+        color: @color-syntax-css-class-pseudo;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+      &.id {
+        color: @color-syntax-css-id;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.operator {
+      color: @color-syntax-operator;
+    }
+    &.control.at-rule {
+      &.font-face,
+      &.import,
+      &.page,
+      &.media {
+        color: @color-syntax-css-at-rule;
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+
+      &.unit {
+        color: @color-syntax-keyword;
+      }
+      &.important {
+        color: @color-syntax-css-important;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.selector {
+      color: @color-syntax-css-selector;
+    }
+    &.at-rule.media {
+      color: @color-syntax-keyword;
+    }
+    &.property-value {
+      color: @color-editor-text;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.terminator,
+    &.separator {
+      color: @color-syntax-symbol;
+    }
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.keyword {
+        color: @color-syntax-keyword;
+      }
+      &.entity,
+      &.string {
+        color: @color-syntax-symbol;
+      }
+      &.constant {
+        color: @color-syntax-number;
+        font-weight: normal;
+      }
+    }
+    &.section {
+      color: @color-syntax-symbol;
+
+      &.property-list {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
+  .support {
+    &.type.property-name {
+      color: @color-syntax-keyword;
+    }
+    &.function {
+      color: @color-syntax-function;
+    }
+    &.constant {
+      &.property-value {
+        color: @color-syntax-css-property;
+        font-weight: normal;
+      }
+      &.media {
+        color: @color-syntax-css-media;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [8] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                               [9] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    color: @color-syntax-variable;
+
+    &.parameter.misc {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+}

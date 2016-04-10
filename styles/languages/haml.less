@@ -1,0 +1,160 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "HAML"                 +
+project   northem-dark-atom-syntax        +
+file      haml.less                       +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-08-12 14:47 UTC+0200       +
+modified  2016-02-01 19:53 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for HAML.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) String
+
+[Dependencies]
+  - language-haml@^0.23.15 (https://atom.io/packages/language-haml) by "cannikin" (https://atom.io/users/cannikin)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.text.haml,
+.source.ruby.embedded.haml {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.other {
+      &.symbol {
+        color: @color-syntax-variable;
+
+        &.hashkey {
+          color: @color-syntax-constant;
+        }
+      }
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity.name.tag {
+    color: @color-syntax-keyword;
+
+    &.class {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
+  .keyword.control {
+    color: @color-syntax-keyword;
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.line {
+      color: @color-syntax-other;
+    }
+    &.section.attributes {
+      color: @color-syntax-symbol;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.definition {
+      &.tag {
+        color: @color-syntax-keyword;
+      }
+      &.string {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.constant {
+        color: @color-syntax-operator;
+      }
+      &.prolog {
+        color: @color-syntax-doctype;
+        font-weight: bold;
+      }
+    }
+    &.separator {
+      &.key-value,
+      &.other {
+        color: @color-syntax-operator;
+      }
+      &.object {
+        color: @color-syntax-symbol;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
+  .support.function {
+    color: @color-syntax-function;
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [8] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+}

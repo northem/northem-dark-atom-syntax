@@ -1,0 +1,133 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "SQL"                  +
+project   northem-dark-atom-syntax        +
+file      sql.less                        +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2016-01-27 15:36 UTC+0100       +
+modified  2016-02-01 21:21 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for SQL.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Punctuation
+  (6) Storage
+  (7) String
+
+[Dependencies]
+  - language-sql@0.20.0 (https://atom.io/packages/language-sql) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.sql {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant.numeric {
+    color: @color-syntax-number;
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity.name.function {
+    color: @color-syntax-function;
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.operator {
+      &.comparison,
+      &.math,
+      &.concatenator {
+        color: @color-syntax-operator;
+      }
+    }
+    &.other {
+      color: @color-syntax-keyword;
+
+      &.DML,
+      &.create {
+        color: @color-syntax-keyword;
+      }
+      &.DDL.create.II {
+        color: @color-syntax-keyword;
+        font-style: italic;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [5] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation.definition.string {
+    &.begin,
+    &.end {
+      color: @color-syntax-symbol;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [6] +
+     +----------------------------------------------------------------------------+ */
+  .storage {
+    &.type {
+      color: @color-syntax-class;
+    }
+    &.modifier {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [7] +
+     +----------------------------------------------------------------------------+ */
+  .string.quoted {
+    &.single,
+    &.double {
+      color: @color-syntax-string;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+}

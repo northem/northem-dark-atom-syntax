@@ -1,0 +1,54 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "Sass"                 +
+project   northem-dark-atom-syntax        +
+file      sass.less                       +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-03-15 20:17 UTC+0100       +
+modified  2016-01-31 23:37 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for Sass.
+
+[Index]
+  (1) Keyword
+
+[Dependencies]
+  - language-sass@^0.45.0 (https://atom.io/packages/language-sass) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.css.scss {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .keyword.control.at-rule {
+    &.import,
+    &.include {
+      color: @color-syntax-css-at-rule;
+      font-weight: bold;
+    }
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+}

@@ -1,0 +1,166 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "HTML"                 +
+project   northem-dark-atom-syntax        +
+file      html.less                       +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-03-15 20:17 UTC+0100       +
+modified  2016-03-01 11:44 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for HTML and the MJML preprocessor.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Meta
+  (5) Punctuation
+  (6) Separator
+  (7) String
+
+[Dependencies]
+  - language-html@^0.43.1 (https://atom.io/packages/language-html) by "atom" (https://atom.io/users/atom)
+  - language-mjml@^1.2.0 (https://atom.io/packages/language-mjml) by "mjmlio" (https://atom.io/users/mjmlio)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+MJML
+  (https://mjml.io)
+*/
+.text.html.basic,
+.text.mjml.basic {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant.other.inline-data {
+    color: @color-syntax-html-cdata;
+    font-style: italic;
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name.tag {
+
+      &.structure,
+      &.script,
+      &.style {
+        color: @color-syntax-html-tag;
+      }
+    }
+    &.other.attribute-name {
+      color: @color-syntax-class;
+      text-decoration: underline;
+    }
+    &.script,
+    &.style {
+      color: @color-syntax-function;
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [4] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.tag {
+      &.any,
+      &.other {
+        color: @color-syntax-keyword;
+      }
+      &.sgml.doctype {
+        color: @color-syntax-doctype;
+      }
+    }
+    &.toc-list.id {
+      color: @color-syntax-string;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [5] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.separator.key-value {
+      color: @color-syntax-symbol;
+    }
+    &.definition {
+      &.string {
+        color: @color-syntax-string;
+
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.tag {
+        color: @color-syntax-keyword;
+      }
+      &.comment {
+        color: @color-syntax-comment;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Separator                                                              [6] +
+     +----------------------------------------------------------------------------+ */
+  .separator.key-value.html {
+    color: @color-syntax-symbol;
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [7] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+
+    &.quoted {
+      color: @color-syntax-html-attribute-value;
+    }
+
+    .markup.underline.link.https.hyperlink {
+      color: @color-syntax-string;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+}

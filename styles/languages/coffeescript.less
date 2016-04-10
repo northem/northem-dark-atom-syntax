@@ -1,0 +1,192 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "CoffeeScript"         +
+project   northem-dark-atom-syntax        +
+file      coffeescript.less               +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-03-15 20:17 UTC+0100       +
+modified  2016-02-01 20:08 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for CoffeeScript.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) Storage
+  (9) String
+  (10) Variable
+
+[Dependencies]
+  - language-coffee-script@^0.46.0 (https://atom.io/packages/language-coffee-script) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.coffee {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.character.escape,
+    &.other.character-class.set.regexp {
+      color: @color-syntax-regexp;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.function {
+        color: @color-syntax-function;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+    }
+    &.other.inherited-class {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.brace.round,
+    &.brace.curly,
+    &.delimeter.object.comma {
+      color: @color-syntax-symbol;
+    }
+    &.group.regexp {
+      color: @color-syntax-regexp;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.definition {
+      &.comment {
+        color: @color-syntax-comment;
+      }
+      &.string {
+        &.begin,
+        &.end {
+          color: @color-syntax-symbol;
+        }
+      }
+      &.character-class.regexp,
+      &.group.regexp {
+        color: @color-syntax-keyword;
+      }
+    }
+    &.section.embedded,
+    &.terminator,
+    &.seperator {
+      color: @color-syntax-symbol;
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
+  .support {
+    &.class {
+      color: @color-syntax-class;
+    }
+    &.function {
+      color: @color-syntax-function;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage.type {
+    &.function,
+    &.class {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
+  .string.quoted {
+    color: @color-syntax-string;
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [10] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    &.assignment,
+    &.parameter.function {
+      color: @color-syntax-variable;
+    }
+    &.other.readwrite.instance {
+      color: @color-syntax-javascript-instance;
+    }
+  }
+  /* +-----------------------------------------------------------------------[10]-+ */
+}

@@ -1,0 +1,137 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++
+title     Language "GitHub Flavored Markdown" +
+project   northem-dark-atom-syntax            +
+file      gfm.less                            +
+version   0.18.0                              +
+author    Arctic Ice Studio                   +
+email     development@arcticicestudio.com     +
+website   http://arcticicestudio.com          +
+copyright Copyright (C) 2015-2016             +
+created   2015-03-15 20:17 UTC+0100           +
+modified  2016-02-01 19:48 UTC+0100           +
++++++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for GitHub Flavored Markdown.
+
+[Index]
+  (1) Comment
+  (2) Entity
+  (3) Markup
+  (4) Punctuation
+  (5) Support
+  (6) Variable
+
+[Dependencies]
+  - language-gfm@^0.82.0 (https://atom.io/packages/language-gfm) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.gfm {
+  color: @color-editor-text;
+  -webkit-font-smoothing: auto;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    &.quote {
+      color: @color-editor-text;
+      font-style: italic;
+    }
+    &.hr {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [2] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    color: @color-syntax-keyword;
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Markup                                                                 [3] +
+     +----------------------------------------------------------------------------+ */
+  .markup {
+    &.heading {
+      color: @color-syntax-keyword;
+      font-weight: bold;
+    }
+    &.underline {
+      text-decoration: underline;
+
+      &.link {
+        color: @color-syntax-markdown-link;
+      }
+    }
+    &.bold,
+    &.italic {
+      color: @color-syntax-string;
+    }
+    &.raw {
+      color: @color-syntax-keyword;
+      font-style: italic;
+    }
+    &.changed {
+      color: @color-git-diff-modified;
+    }
+    &.deleted {
+      color: @color-git-diff-removed;
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [4] +
+     +----------------------------------------------------------------------------+ */
+  .punctation {
+    &.definition.begin,
+    &.definition.end,
+    &.seperator {
+      color: @color-syntax-symbol;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [5] +
+     +----------------------------------------------------------------------------+ */
+  .support {
+    color: @color-syntax-markdown-code;
+
+    &.quote {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                               [6] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    &.unordered.list,
+    &.ordered.list {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+}

@@ -1,0 +1,203 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "Jade"                 +
+project   northem-dark-atom-syntax        +
+file      jade.less                       +
+version   0.18.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2015-05-21 09:18 UTC+0200       +
+modified  2016-02-01 20:10 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for Jade.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Embedded JavaScript
+  (4) Entity
+  (5) Keyword
+  (6) Meta
+  (7) Punctuation
+  (8) Storage
+  (9) String
+  (10) Text
+  (11) Variable
+
+[Dependencies]
+  - language-foobar@^0.6.3 (https://atom.io/packages/language-foobar) by "devongovett" (https://atom.io/users/devongovett)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.jade {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+
+    &.other.doctype {
+      color: @color-syntax-doctype;
+      font-weight: bold;
+    }
+    &.unbuffered.block {
+      color: @color-syntax-comment;
+    }
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.name.attribute.tag {
+      color: @color-syntax-symbol;
+    }
+    &.numeric {
+      color: @color-syntax-number;
+    }
+    &.language.boolean {
+      color: @color-syntax-keyword;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Embedded JavaScript                                                    [3] +
+     +----------------------------------------------------------------------------+ */
+  .javascript.embedded {
+    color: @color-syntax-other;
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Enity                                                                  [4] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.tag {
+        color: @color-syntax-tag;
+      }
+      &.function {
+        color: @color-syntax-jade-keyword;
+      }
+    }
+    &.other.attribute-name.tag {
+      color: @color-syntax-attribute;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [5] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.control {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [6] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.brace {
+      &.round,
+      &.curly {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.control.flow {
+      color: @color-syntax-other;
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [7] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.defintion.string.begin,
+    &.defintion.string.end,
+    &.terminator {
+      color: @color-syntax-symbol;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage {
+    &.modifier {
+      color: @color-syntax-jade-keyword;
+      font-style: italic;
+    }
+    &.type {
+      &.function {
+        color: @color-syntax-jade-keyword;
+        font-style: italic;
+      }
+      &.import.include {
+        color: @color-syntax-jade-keyword;
+        font-weight: bold;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+
+    &.interpolated {
+      color: @color-syntax-jade-keyword;
+    }
+    &.comment {
+      color: @color-syntax-comment;
+    }
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Text                                                                  [10] +
+     +----------------------------------------------------------------------------+ */
+  .text {
+    color: @color-editor-text;
+  }
+  /* +-----------------------------------------------------------------------[10]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [11] +
+     +----------------------------------------------------------------------------+ */
+  .variable.control.import.include {
+    color: @color-syntax-jade-variable-include;
+  }
+  /* +-----------------------------------------------------------------------[11]-+ */
+}
