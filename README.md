@@ -70,12 +70,12 @@ Visit the [official website](http://arcticicestudio.com/northem) (actually under
   - <a href="https://atom.io/packages/minimap-git-diff"><img src="https://avatars3.githubusercontent.com/u/7209979" width=16 height=16/> `minimap-git-diff@^4.2.0`</a>
 
 ### Version
-[`-`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
+[`0.0.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official website](http://arcticicestudio.com/northem) (actually under construction).
 
 ### Changelog
-[`-`](CHANGELOG.md)
+[`0.0.0`](CHANGELOG.md)
 
 The changelog can be viewed in the Atom package view via *Settings > Packages* by filtering for `northem-dark-atom-syntax`.
 The full changelog is available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official website](http://arcticicestudio.com/northem) (actually under construction).
