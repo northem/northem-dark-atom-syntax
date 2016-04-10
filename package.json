@@ -1,0 +1,29 @@
+{
+  "name": "northem-dark-atom-syntax",
+  "theme": "syntax",
+  "version": "0.17.0",
+  "description": "North-bluish dark theme based on the same named color palette \"Northem Dark\".",
+  "author": {
+    "name": "Arctic Ice Studio",
+    "email": "development@arcticicestudio.com"
+  },
+  "homepage": "http://arcticicestudio.com/northem",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/arcticicestudio/northem-dark-atom-syntax"
+  },
+  "bugs": {
+    "url": "https://github.com/arcticicestudio/northem-dark-atom-syntax/issues"
+  },
+  "readmeFilename": "README.md",
+  "keywords": [
+    "northem",
+    "bluish",
+    "dark",
+    "syntax"
+  ],
+  "license": "MIT",
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  }
+}
