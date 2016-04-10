@@ -1,0 +1,86 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "Java Properties"      +
+project   northem-dark-atom-syntax        +
+file      java-properties.less            +
+version                                   +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2016-03-05 10:41 UTC+0100       +
+modified  2016-03-05 11:00 UTC+0100       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for Java Properties.
+
+[Index]
+  (1) Comment
+  (2) Punctuation
+  (3) Support
+  (4) String
+
+[Dependencies]
+  - language-java@^0.17.0 (https://atom.io/packages/language-java) by "atom" (https://atom.io/users/atom)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.source.java-properties {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [2] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation {
+    &.separator {
+      &.key-value {
+        color: @color-syntax-operator;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [3] +
+     +----------------------------------------------------------------------------+ */
+  .support {
+    &.constant {
+      color: @color-syntax-variable;
+    }
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [4] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    &.quoted,
+    &.unquoted {
+      color: @color-syntax-string;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+}
