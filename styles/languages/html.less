@@ -9,11 +9,12 @@ email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
 copyright Copyright (C) 2015-2016         +
 created   2015-03-15 20:17 UTC+0100       +
-modified  2016-03-01 11:44 UTC+0100       +
+modified  2016-04-12 12:30 UTC+0200       +
 +++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for HTML and the MJML preprocessor.
+This file defines all language specific syntax highlighting classes for HTML, the MJML preprocessor,
+JavaScript and React JSX templates.
 
 [Index]
   (1) Comment
@@ -74,6 +75,7 @@ MJML
      +----------------------------------------------------------------------------+ */
   .entity {
     &.name.tag {
+      color: @color-syntax-html-tag;
 
       &.structure,
       &.script,
