@@ -1,6 +1,18 @@
 Northem Dark - Atom Syntax
 ==========================
 
+## 0.19.0 (2016-04-12)
+### Features
+#### Language Support
+  - Implemented language support for the [React JSX](https://atom.io/packages/react) syntax extension (@Pszek, [GHI #3][ghi-northem-light-atom-syntax-3])
+
+#### Package Support
+  - Implemented package support for the <img src="https://avatars3.githubusercontent.com/u/7209979" width=16 height=16/> [minimap-git-diff](https://atom.io/packages/minimap-git-diff) package (@Pszek, [GHI #4][ghi-northem-light-atom-syntax-4])
+
+### [backlog][backlog-language-library-framework-support]
+This version completes the backlog items
+  - [x] <img src="https://facebook.github.io/react/favicon.ico" width=16 height=16/> [React.js](https://atom.io/packages/react) (@Pszek, [GHI #3][ghi-northem-light-atom-syntax-3])
+
 ## 0.18.0 (2016-04-10) - `apm` package reconstruction and reinitialization
 The project repository has been reconstructed and reinitialized for a clean migration to [gitflow](http://nvie.com/posts/a-successful-git-branching-model).  
 This is only relevant for the git history and does **NOT** impact the source code!
@@ -174,9 +186,13 @@ Better differentiation for `HTML` tags:
 
 ## 0.0.0 (2016-04-10) - Repository Reinitialization
 
+[backlog-language-library-framework-support]: https://github.com/arcticicestudio/northem-light-atom-syntax/issues/5
+
 [ghi-2]: https://github.com/arcticicestudio/northem-dark-atom-syntax/issues/2
 
 [ghi-northem-atom-syntax-1]: https://github.com/arcticicestudio/northem-atom-syntax/issues/1
 
 [ghi-northem-light-atom-syntax-1]: https://github.com/arcticicestudio/northem-light-atom-syntax/issues/1
 [ghi-northem-light-atom-syntax-2]: https://github.com/arcticicestudio/northem-light-atom-syntax/issues/2
+[ghi-northem-light-atom-syntax-3]: https://github.com/arcticicestudio/northem-light-atom-syntax/issues/3
+[ghi-northem-light-atom-syntax-4]: https://github.com/arcticicestudio/northem-light-atom-syntax/issues/4
