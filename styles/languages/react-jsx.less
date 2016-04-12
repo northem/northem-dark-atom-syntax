@@ -1,26 +1,28 @@
 /*
 +++++++++++++++++++++++++++++++++++++++++++
-title     Language "Mustache"             +
+title     Language "React JSX"            +
 project   northem-dark-atom-syntax        +
-file      mustache.less                   +
+file      react-jsx.less                  +
 version   0.19.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
 copyright Copyright (C) 2015-2016         +
-created   2015-03-15 20:17 UTC+0100       +
-modified  2016-01-31 23:25 UTC+0100       +
+created   2016-04-12 12:52 UTC+0200       +
+modified  2016-04-12 12:53 UTC+0200       +
 +++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
-This file defines all language specific syntax highlighting classes for Mustache.
+This file defines all language specific syntax highlighting classes for "React JSX".
+JSX is a JavaScript syntax extension that looks similar to XML.
+You can use a simple JSX syntactic transform with React.
 
 [Index]
-  (1) Comment
-  (2) Meta
+  (1) Punctuation
+  (2) String
 
 [Dependencies]
-  - language-mustache@^0.13.0 (https://atom.io/packages/language-mustache) by "atom" (https://atom.io/users/atom)
+  - react@0.15.0 (https://atom.io/packages/react) by "orktes" (https://atom.io/users/orktes)
 
 [Copyright]
 Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
@@ -30,6 +32,8 @@ Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
 Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
 
 [References]
+React JSX Specification
+  (https://facebook.github.io/jsx/#syntax)
 Atom API-Documentation
   (https://atom.io/docs/api/latest/Atom)
 Atom Flight Manual
@@ -39,36 +43,27 @@ LESSCSS
 Arctic Versioning Specification (ArcVer)
   (http://specs.arcticicestudio.com/arcver)
 */
-.text.html.mustache {
+.source.js.jsx {
   color: @color-syntax-other;
+
   /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
+     + Punctuation                                                            [1] +
      +----------------------------------------------------------------------------+ */
-  .comment {
-    color: @color-syntax-comment;
+  .punctuation.definition.string {
+    &.begin,
+    &.end {
+      color: @color-syntax-react-jsx-embedded-template;
+    }
   }
   /* +------------------------------------------------------------------------[1]-+ */
 
   /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [2] +
+     + String                                                                 [2] +
      +----------------------------------------------------------------------------+ */
-  .meta.tag.template {
-    color: @color-syntax-variable;
-
-    .entity.name {
-      &.tag {
-        color: @color-syntax-mustache-tag;
-        font-weight: bold;
-      }
-      &.function {
-        color: @color-syntax-variable;
-      }
-    }
-
-    .punctuation.definition.block {
-      &.begin,
-      &.end {
-        color: @color-syntax-operator;
+  .string.quoted.template {
+    .embedded.source {
+      .punctuation.section.embedded {
+        color: @color-syntax-react-jsx-embedded-template;
       }
     }
   }

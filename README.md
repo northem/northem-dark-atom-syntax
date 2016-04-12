@@ -54,6 +54,7 @@ Visit the [official website](http://arcticicestudio.com/northem) (actually under
   - <a href="https://atom.io/packages/language-property-list"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> PropertyList</a>
   - <a href="https://atom.io/packages/language-python"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Python</a>
   - <a href="https://atom.io/packages/language-r"><img src="https://avatars1.githubusercontent.com/u/1038121" width=16 height=16/> R</a>
+  - <a href="https://atom.io/packages/react"><img src="https://avatars2.githubusercontent.com/u/606347" width=16 height=16/> React JSX</a>
   - <a href="https://atom.io/packages/language-ruby"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Ruby</a>
   - <a href="https://atom.io/packages/language-sass"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> SASS</a>
   - <a href="https://atom.io/packages/language-shellscript"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Shell</a>
@@ -70,12 +71,12 @@ Visit the [official website](http://arcticicestudio.com/northem) (actually under
   - <a href="https://atom.io/packages/minimap-git-diff"><img src="https://avatars3.githubusercontent.com/u/7209979" width=16 height=16/> `minimap-git-diff@^4.2.0`</a>
 
 ### Version
-[`0.18.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
+[`0.19.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official website](http://arcticicestudio.com/northem) (actually under construction).
 
 ### Changelog
-[`0.18.0`](CHANGELOG.md)
+[`0.19.0`](CHANGELOG.md)
 
 The changelog can be viewed in the Atom package view via *Settings > Packages* by filtering for `northem-dark-atom-syntax`.
 The full changelog is available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official website](http://arcticicestudio.com/northem) (actually under construction).
