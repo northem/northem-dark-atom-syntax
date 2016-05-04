@@ -46,6 +46,7 @@ Visit the [official website](http://arcticicestudio.com/northem) (actually under
   - <a href="https://atom.io/packages/language-javascript"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> JavaScript</a>
   - <a href="https://atom.io/packages/language-json"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> JSON</a>
   - <a href="https://atom.io/packages/language-julia"><img src="https://avatars2.githubusercontent.com/u/743164" width=16 height=16/> Julia</a>
+  - <a href="https://atom.io/packages/language-latex"><img src="https://avatars1.githubusercontent.com/u/311812" width=16 height=16/> LaTeX</a>
   - <a href="https://atom.io/packages/language-lesss"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> LESSCSS</a>
   - <a href="https://atom.io/packages/language-gfm"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Markdown</a>
   - <a href="https://atom.io/packages/language-mjml"><img src="https://avatars0.githubusercontent.com/u/16115896" width=16 height=16/> MJML</a>
