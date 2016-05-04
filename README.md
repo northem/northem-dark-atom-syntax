@@ -46,6 +46,7 @@ Visit the [official website](http://arcticicestudio.com/northem) (actually under
   - <a href="https://atom.io/packages/language-javascript"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> JavaScript</a>
   - <a href="https://atom.io/packages/language-json"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> JSON</a>
   - <a href="https://atom.io/packages/language-julia"><img src="https://avatars2.githubusercontent.com/u/743164" width=16 height=16/> Julia</a>
+  - <a href="https://atom.io/packages/language-latex"><img src="https://avatars1.githubusercontent.com/u/311812" width=16 height=16/> LaTeX</a>
   - <a href="https://atom.io/packages/language-lesss"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> LESSCSS</a>
   - <a href="https://atom.io/packages/language-gfm"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Markdown</a>
   - <a href="https://atom.io/packages/language-mjml"><img src="https://avatars0.githubusercontent.com/u/16115896" width=16 height=16/> MJML</a>
@@ -71,12 +72,12 @@ Visit the [official website](http://arcticicestudio.com/northem) (actually under
   - <a href="https://atom.io/packages/minimap-git-diff"><img src="https://avatars3.githubusercontent.com/u/7209979" width=16 height=16/> `minimap-git-diff@^4.2.0`</a>
 
 ### Version
-[`0.19.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
+[`0.20.0`](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest)  
 
 For older versions check out the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) or the [official website](http://arcticicestudio.com/northem) (actually under construction).
 
 ### Changelog
-[`0.19.0`](CHANGELOG.md)
+[`0.20.0`](CHANGELOG.md)
 
 The changelog can be viewed in the Atom package view via *Settings > Packages* by filtering for `northem-dark-atom-syntax`.
 The full changelog is available at the [GitHub Repository](https://github.com/arcticicestudio/northem-dark-atom-syntax) and [official website](http://arcticicestudio.com/northem) (actually under construction).
@@ -108,7 +109,7 @@ This project follows the [Arctic Versioning Specification (ArcVer)](https://gith
   - [`atom@1.*.*`](https://atom.io)
 
 #### Development
-  - [`northem-dark@1.0.1`](https://github.com/arcticicestudio/northem-dark)
+  - [`northem-dark@1.0.0`](https://github.com/arcticicestudio/northem-dark)
 
 **Engines**
   - [`git@2.8.*`](https://git-scm.com)

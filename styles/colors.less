@@ -3,13 +3,13 @@
 title     Colors                          +
 project   northem-dark-atom-syntax        +
 file      colors.less                     +
-version   0.19.0                          +
+version   0.20.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
 copyright Copyright (C) 2015-2016         +
 created   2015-03-16 18:21 UTC+0100       +
-modified  2016-04-12 12:55 UTC+0200       +
+modified  2016-05-04 10:07 UTC+0200       +
 +++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -200,57 +200,66 @@ Arctic Versioning Specification (ArcVer)
 /* +----------------------------------------------------------------------[6.8]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - JavaScript                                               [6.9] +
+   + Language - JavaScript                                                [6.9] +
    +----------------------------------------------------------------------------+ */
 @color-syntax-javascript-instance: @aqua;
 /* +----------------------------------------------------------------------[6.9]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - LESS                                                     [6.10] +
+   + Languages - LaTeX                                                   [6.10] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-less-fontface: @dark-blue;
+@color-syntax-latex-command-definition: @blue;
+@color-syntax-latex-markup-code:        @blue;
+@color-syntax-latex-markup:             @light-blue;
+@color-syntax-latex-preamble:           @dark-blue;
 /* +---------------------------------------------------------------------[6.10]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - Markdown                                                 [6.11] +
+   + Language - LESS                                                     [6.11] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-markdown-code: @aqua;
-@color-syntax-markdown-link: @dirty-white;
+@color-syntax-less-fontface: @dark-blue;
 /* +---------------------------------------------------------------------[6.11]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - Mustache                                                 [6.12] +
+   + Language - Markdown                                                 [6.12] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-mustache-tag: @dark-blue;
+@color-syntax-markdown-code: @aqua;
+@color-syntax-markdown-link: @dirty-white;
 /* +---------------------------------------------------------------------[6.12]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - PropertyList                                             [6.13] +
+   + Language - Mustache                                                 [6.13] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-propertylist-base64:  @aqua;
-@color-syntax-propertylist-illegal: @red;
+@color-syntax-mustache-tag: @dark-blue;
 /* +---------------------------------------------------------------------[6.13]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Languages - React JSX                                               [6.14] +
+   + Language - PropertyList                                             [6.14] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-react-jsx-embedded-template: @dark-blue;
+@color-syntax-propertylist-base64:  @aqua;
+@color-syntax-propertylist-illegal: @red;
 /* +---------------------------------------------------------------------[6.14]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - Ruby                                                     [6.15] +
+   + Languages - React JSX                                               [6.15] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-ruby-instance:       @aqua;
-@color-syntax-ruby-special-method: @dark-blue;
+@color-syntax-react-jsx-embedded-template: @dark-blue;
 /* +---------------------------------------------------------------------[6.15]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - XML                                                      [6.16] +
+   + Language - Ruby                                                     [6.16] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-ruby-instance:       @aqua;
+@color-syntax-ruby-special-method: @dark-blue;
+/* +---------------------------------------------------------------------[6.16]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + Language - XML                                                      [6.17] +
    +----------------------------------------------------------------------------+ */
 @color-syntax-xml-attribute: @aqua;
 @color-syntax-xml-cdata:     @color-syntax-comment;
 @color-syntax-xml-tag:       @blue;
-/* +---------------------------------------------------------------------[6.16]-+ */
+/* +---------------------------------------------------------------------[6.17]-+ */
 /* +------------------------------------------------------------------------[6]-+ */
 
 /* +----------------------------------------------------------------------------+
