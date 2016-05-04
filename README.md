@@ -108,7 +108,7 @@ This project follows the [Arctic Versioning Specification (ArcVer)](https://gith
   - [`atom@1.*.*`](https://atom.io)
 
 #### Development
-  - [`northem-dark@1.0.1`](https://github.com/arcticicestudio/northem-dark)
+  - [`northem-dark@1.0.0`](https://github.com/arcticicestudio/northem-dark)
 
 **Engines**
   - [`git@2.8.*`](https://git-scm.com)

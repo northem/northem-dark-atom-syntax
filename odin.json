@@ -37,7 +37,7 @@
     {"id": "arcver","version": "0.8.0","manager": "odin"}
   ],
   "dependencies": [
-    {"id": "northem-dark","version": "1.0.1","manager": "odin"}
+    {"id": "northem-dark","version": "1.0.0","manager": "odin"}
   ],
   "devDependencies": [
     {"id": "glacier-git","version": "0.21.0","manager": "odin"}
