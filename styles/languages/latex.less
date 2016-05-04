@@ -1,0 +1,234 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "LaTeX"                +
+project   northem-dark-atom-syntax        +
+file      latex.less                      +
+version                                   +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2015-2016         +
+created   2016-05-04 10:04 UTC+0200       +
+modified  2016-05-04 10:05 UTC+0200       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for LaTeX.
+
+[Index]
+  (1) Comment
+  (2) Constant
+  (3) Entity
+  (4) Keyword
+  (5) Meta
+  (6) Punctuation
+  (7) Support
+  (8) Storage
+  (9) String
+  (10) Variable
+
+[Dependencies]
+  - language-latex@0.6.1 (https://atom.io/packages/language-latex) by "area" (https://atom.io/users/area)
+
+[Copyright]
+Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+Arctic Versioning Specification (ArcVer)
+  (http://specs.arcticicestudio.com/arcver)
+*/
+.text.tex,
+.text.tex.latex,
+.text.tex.latex.beamer,
+.text.log.latex,
+.text.tex.latex.memoir {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [2] +
+     +----------------------------------------------------------------------------+ */
+  .constant {
+    &.other {
+      &.reference {
+        color: @color-syntax-constant;
+        font-weight: bold;
+      }
+      &.general.math {
+        color: @color-syntax-escape;
+      }
+    }
+
+    &.character.newline {
+      color: @color-syntax-escape;
+    }
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Entity                                                                 [3] +
+     +----------------------------------------------------------------------------+ */
+  .entity.name.section {
+    color: @color-syntax-string;
+    text-decoration: underline;
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [4] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.control.preamble,
+    &.other.item {
+      color: @color-syntax-latex-preamble;
+    }
+    &.include {
+      color: @color-syntax-latex-preamble;
+      font-weight: bold;
+    }
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [5] +
+     +----------------------------------------------------------------------------+ */
+  .meta {
+    &.group.braces {
+      color: @color-syntax-string;
+    }
+
+    &.function {
+      &.environment.general {
+        color: @color-syntax-string;
+      }
+      &.verb {
+        .markup.raw.verb {
+          color: @color-syntax-latex-markup;
+        }
+      }
+      &.link.url {
+        .markup.underline.link {
+          color: @color-syntax-latex-markup;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+      &.emph {
+        .markup.italic.emph {
+          color: @color-syntax-latex-markup;
+          font-style: italic;
+        }
+      }
+      &.verbatim {
+        .markup.raw.verbatim {
+          color: @color-syntax-latex-markup-code;
+          text-decoration: underline;
+        }
+      }
+      &.textbf {
+        .markup.bold.textbf {
+          color: @color-syntax-latex-markup-code;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [6] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation.definition {
+    &.arguments {
+      &.begin,
+      &.end {
+        color: @color-syntax-operator;
+      }
+    }
+    &.section.group {
+      &.begin,
+      &.end {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.verb {
+      color: @color-syntax-operator;
+    }
+    &.string {
+      &.begin,
+      &.end {
+        color: @color-syntax-keyword;
+      }
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Support                                                                [7] +
+     +----------------------------------------------------------------------------+ */
+  .support {
+    &.function {
+      &.general {
+        color: @color-syntax-keyword;
+      }
+      &.be,
+      &.textbf,
+      &.verb,
+      &.url,
+      &.emph {
+        color: @color-syntax-function;
+      }
+      &.section {
+        color: @color-syntax-keyword;
+        text-decoration: underline;
+      }
+    }
+    &.class {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [8] +
+     +----------------------------------------------------------------------------+ */
+  .storage.type.function {
+    color: @color-syntax-latex-command-definition;
+    font-weight: bold;
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                 [9] +
+     +----------------------------------------------------------------------------+ */
+  .string {
+    color: @color-syntax-string;
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [10] +
+     +----------------------------------------------------------------------------+ */
+  .variable {
+    color: @color-syntax-variable;
+  }
+  /* +-----------------------------------------------------------------------[10]-+ */
+}
