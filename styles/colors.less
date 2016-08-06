@@ -7,9 +7,9 @@ version   0.20.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
+copyright Copyright (C) 2016              +
 created   2015-03-16 18:21 UTC+0100       +
-modified  2016-08-06 11:46 UTC+0200       +
+modified  2016-08-06 12:00 UTC+0200       +
 +++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -23,7 +23,7 @@ This file defines all syntax, editor, language & package specific color variable
   (5) Guide
   (6) Languages
     (6.0) C
-    (6.1) C# (CSharp)
+    (6.1) C#
     (6.2) CSS
     (6.3) diff
     (6.4) git
@@ -33,13 +33,15 @@ This file defines all syntax, editor, language & package specific color variable
     (6.7) Jade
     (6.8) Java
     (6.9) JavaScript
-    (6.10) LESS
-    (6.11) Markdown
-    (6.12) Mustache
-    (6.13) PropertyList
-    (6.14) React JSX
-    (6.15) Ruby
-    (6.16) XML
+    (6.10) LaTeX
+    (6.11) LESS
+    (6.12) Markdown
+    (6.13) Mustache
+    (6.14) Nunjucks
+    (6.15) PropertyList
+    (6.16) React JSX
+    (6.17) Ruby
+    (6.18) XML
     (7) Package Support
       (7.0) markdown-preview
       (7.1) color-picker
@@ -188,6 +190,7 @@ LESSCSS
 @color-syntax-html-cdata:           @color-syntax-comment;
 @color-syntax-html-tag:             @blue;
 @color-syntax-html-attribute-value: @light-blue;
+@color-syntax-html-entity:          @orange;
 /* +----------------------------------------------------------------------[6.6]-+ */
 
 /* +----------------------------------------------------------------------------+
@@ -239,32 +242,38 @@ LESSCSS
 /* +---------------------------------------------------------------------[6.13]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - PropertyList                                             [6.14] +
+   + Languages - Nunjucks                                                [6.14] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-propertylist-base64:  @aqua;
-@color-syntax-propertylist-illegal: @red;
+@color-syntax-nunjucks-tag: @dark-blue;
 /* +---------------------------------------------------------------------[6.14]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Languages - React JSX                                               [6.15] +
+   + Language - PropertyList                                             [6.15] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-react-jsx-embedded-template: @dark-blue;
+@color-syntax-propertylist-base64:  @aqua;
+@color-syntax-propertylist-illegal: @red;
 /* +---------------------------------------------------------------------[6.15]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - Ruby                                                     [6.16] +
+   + Languages - React JSX                                               [6.16] +
    +----------------------------------------------------------------------------+ */
-@color-syntax-ruby-instance:       @aqua;
-@color-syntax-ruby-special-method: @dark-blue;
+@color-syntax-react-jsx-embedded-template: @dark-blue;
 /* +---------------------------------------------------------------------[6.16]-+ */
 
 /* +----------------------------------------------------------------------------+
-   + Language - XML                                                      [6.17] +
+   + Language - Ruby                                                     [6.17] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-ruby-instance:       @aqua;
+@color-syntax-ruby-special-method: @dark-blue;
+/* +---------------------------------------------------------------------[6.17]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + Language - XML                                                      [6.18] +
    +----------------------------------------------------------------------------+ */
 @color-syntax-xml-attribute: @aqua;
 @color-syntax-xml-cdata:     @color-syntax-comment;
 @color-syntax-xml-tag:       @blue;
-/* +---------------------------------------------------------------------[6.17]-+ */
+/* +---------------------------------------------------------------------[6.18]-+ */
 /* +------------------------------------------------------------------------[6]-+ */
 
 /* +----------------------------------------------------------------------------+
