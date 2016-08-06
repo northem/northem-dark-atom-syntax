@@ -85,7 +85,7 @@ apm install northem-dark-atom-syntax
   - <a href="https://github.com/arcticicestudio/northem-dark-notepadplusplus"><img src="http://notepad-plus-plus.org/assets/images/favicon.ico" width=16 height=16> Northem Dark Notepad++</a> <img src="https://www.microsoft.com/en-us/windows/favicon.ico" width=16 height=16 />
 
 ## Development
-[![](https://img.shields.io/badge/Changelog-v0.20.0-blue.svg)](https://github.com/arcticicestudio/northem-dark-atom-syntax/blob/v0.20.0/CHANGELOG.md)
+[![](https://img.shields.io/badge/Changelog-v0.21.0-blue.svg)](https://github.com/arcticicestudio/northem-dark-atom-syntax/blob/v0.21.0/CHANGELOG.md)
 
 ### Workflow
 This project follows the [gitflow](http://nvie.com/posts/a-successful-git-branching-model) branching model.
