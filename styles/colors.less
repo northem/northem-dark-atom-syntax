@@ -9,7 +9,7 @@ email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
 copyright Copyright (C) 2015-2016         +
 created   2015-03-16 18:21 UTC+0100       +
-modified  2016-05-04 10:07 UTC+0200       +
+modified  2016-08-06 11:46 UTC+0200       +
 +++++++++++++++++++++++++++++++++++++++++++
 
 [Description]
@@ -27,6 +27,7 @@ This file defines all syntax, editor, language & package specific color variable
     (6.2) CSS
     (6.3) diff
     (6.4) git
+    (6.5) Go
     (6.5) Haskell
     (6.6) HTML
     (6.7) Jade
@@ -45,7 +46,7 @@ This file defines all syntax, editor, language & package specific color variable
       (7.2) minimap-git-diff
 
 [Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
+Copyright (C) 2016 Arctic Ice Studio <development@arcticicestudio.com>
 
 [License]
 Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
@@ -58,8 +59,6 @@ Atom Flight Manual
   (https://atom.io/docs)
 LESSCSS
   (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
 */
 /* +----------------------------------------------------------------------------+
    + Syntax                                                                 [1] +
@@ -170,6 +169,12 @@ Arctic Versioning Specification (ArcVer)
 @color-syntax-git-config-section: @dark-blue;
 @color-syntax-git-rebase-sha:     @blue;
 /* +----------------------------------------------------------------------[6.4]-+ */
+
+/* +----------------------------------------------------------------------------+
+   + Language - Go                                                        [6.5] +
+   +----------------------------------------------------------------------------+ */
+@color-syntax-go-todo: @yellow;
+/* +----------------------------------------------------------------------[6.5]-+ */
 
 /* +----------------------------------------------------------------------------+
    + Language - Haskell                                                   [6.5] +
