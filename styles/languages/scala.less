@@ -1,0 +1,179 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++
+title     Language Scala                  +
+project   northem-dark-atom-syntax        +
+file      scala.less                      +
+version   0.21.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2016              +
+created   2016-08-06 12:06 UTC+0200       +
+modified  2016-08-06 12:07 UTC+0200       +
++++++++++++++++++++++++++++++++++++++++++++
+
+[Description]
+This file defines all language specific syntax highlighting classes for Scala.
+
+[Index]
+  (1) bracket
+  (2) Class
+  (3) Comment
+  (4) Constant
+  (5) Entity
+  (6) Keyword
+  (7) Meta
+  (8) Punctuation
+  (9) Storage
+  (10) String
+  (11) Variable
+
+[Dependencies]
+  - language-scala@1.1.6 (https://atom.io/packages/language-scala) by "atom-community" (https://atom.io/users/atom-community)
+
+[Copyright]
+Copyright (C) 2016 Arctic Ice Studio <development@arcticicestudio.com>
+
+[License]
+Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
+Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+
+[References]
+Atom API-Documentation
+  (https://atom.io/docs/api/latest/Atom)
+Atom Flight Manual
+  (https://atom.io/docs)
+LESSCSS
+  (http://lesscss.org)
+*/
+.source.scala {
+  color: @color-syntax-other;
+  /* +----------------------------------------------------------------------------+
+     + Bracket                                                                [1] +
+     +----------------------------------------------------------------------------+ */
+  .bracket.type {
+    color: @color-syntax-symbol;
+  }
+  /* +------------------------------------------------------------------------[1]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Class                                                                  [2] +
+     +----------------------------------------------------------------------------+ */
+  .class {
+    color: @color-syntax-class;
+  }
+  /* +------------------------------------------------------------------------[2]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Comment                                                                [3] +
+     +----------------------------------------------------------------------------+ */
+  .comment {
+    color: @color-syntax-comment;
+  }
+  /* +------------------------------------------------------------------------[3]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Constant                                                               [4] +
+     +----------------------------------------------------------------------------+ */
+  .constant.numeric {
+    color: @color-syntax-number;
+  }
+  /* +------------------------------------------------------------------------[4]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Entity                                                                 [5] +
+     +----------------------------------------------------------------------------+ */
+  .entity {
+    &.name {
+      &.package {
+        color: @color-syntax-java-package;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+      &.function.declaration {
+        color: @color-syntax-function;
+      }
+      &.declaration {
+        color: @color-syntax-constant;
+        font-weight: bold;
+      }
+    }
+    &.other.inherited-class {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[5]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Keyword                                                                [6] +
+     +----------------------------------------------------------------------------+ */
+  .keyword {
+    &.other {
+      &.import,
+      &.scoping {
+        color: @color-syntax-import;
+        font-weight: bold;
+      }
+      &.documentation.scaladoc {
+        color: @color-syntax-scala-scaladoc-tag;
+        font-weight: bold;
+      }
+    }
+    &.declaration {
+      color: @color-syntax-keyword;
+    }
+    &.operator {
+      color: @color-syntax-operator;
+    }
+  }
+  /* +------------------------------------------------------------------------[6]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Meta                                                                   [7] +
+     +----------------------------------------------------------------------------+ */
+  .meta.colon {
+    color: @color-syntax-operator;
+  }
+  /* +------------------------------------------------------------------------[7]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Punctuation                                                            [8] +
+     +----------------------------------------------------------------------------+ */
+  .punctuation.definition.string {
+    &.begin,
+    &.end {
+      color: @color-syntax-symbol;
+    }
+  }
+  /* +------------------------------------------------------------------------[8]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Storage                                                                [9] +
+     +----------------------------------------------------------------------------+ */
+  .storage {
+    &.modifier.other {
+      color: @color-syntax-java-annotation;
+    }
+    &.type.primitive {
+      color: @color-syntax-class;
+    }
+  }
+  /* +------------------------------------------------------------------------[9]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + String                                                                [10] +
+     +----------------------------------------------------------------------------+ */
+  .stirng {
+    color: @color-syntax-string;
+  }
+  /* +-----------------------------------------------------------------------[10]-+ */
+
+  /* +----------------------------------------------------------------------------+
+     + Variable                                                              [11] +
+     +----------------------------------------------------------------------------+ */
+  .variable.parameter {
+    color: @color-syntax-variable;
+  }
+  /* +-----------------------------------------------------------------------[11]-+ */
+}
