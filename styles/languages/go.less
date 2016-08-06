@@ -8,55 +8,37 @@ author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
 copyright Copyright (C) 2016              +
-created   2016-08-06 11:42 UTC+0200       +
-modified  2016-08-06 11:43 UTC+0200       +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for Go.
+Defines all language specific syntax highlighting classes for "Go".
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Entity
-  (4) Keyword
-  (5) Punctuation
-  (6) Support
-  (7) Storage
-  (8) String
-  (9) Variable
+  > Comment
+  > Constant
+  > Entity
+  > Keyword
+  > Punctuation
+  > Support
+  > Storage
+  > String
+  > Variable
 
 [Dependencies]
-  - language-go@0.42.1 (https://atom.io/packages/language-go) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
+  > language-go
+      https://atom.io/packages/language-go
 */
 .source.go {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Constant +
+    +----------+*/
   .constant {
     &.character.escape {
       color: @color-syntax-escape;
@@ -72,19 +54,17 @@ LESSCSS
       color: @color-syntax-number;
     }
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Entity                                                                 [3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + Entity +
+    +--------+*/
   .entity.name.function {
     color: @color-syntax-function;
   }
-  /* +------------------------------------------------------------------------[3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Keyword +
+    +---------+*/
   .keyword {
     color: @color-syntax-keyword;
 
@@ -97,11 +77,10 @@ LESSCSS
       color: @color-syntax-operator;
     }
   }
-  /* +------------------------------------------------------------------------[4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [5] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +------------+*/
   .punctuation {
     &.definition.string {
       &.begin,
@@ -117,19 +96,17 @@ LESSCSS
       }
     }
   }
-  /* +------------------------------------------------------------------------[5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Support                                                                [6] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Support +
+    +---------+*/
   .support.function {
     color: @color-syntax-function;
   }
-  /* +------------------------------------------------------------------------[6]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Storage                                                                [7] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Storage +
+    +---------+*/
   .storage.type {
     color: @color-syntax-class;
 
@@ -137,21 +114,18 @@ LESSCSS
       color: @color-syntax-go-todo;
     }
   }
-  /* +------------------------------------------------------------------------[7]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [8] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Storage +
+    +---------+*/
   .string.quoted {
     color: @color-syntax-string;
   }
-  /* +------------------------------------------------------------------------[8]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                               [9] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Variable +
+    +----------+*/
   .variable.other {
     color: @color-syntax-variable;
   }
-  /* +------------------------------------------------------------------------[9]-+ */
 }

@@ -7,59 +7,39 @@ version   0.20.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2015-08-28 11:42 UTC+0200       +
-modified  2016-02-01 20:09 UTC+0100       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for C.
+Defines all language specific syntax highlighting classes for the "C".
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Entity
-  (4) Keyword
-  (5) Meta
-  (6) Punctuation
-  (7) Support
-  (8) Storage
-  (9) String
-  (10) Variable
+  > Comment
+  > Constant
+  > Entity
+  > Keyword
+  > Meta
+  > Punctuation
+  > Support
+  > Storage
+  > String
+  > Variable
 
-[Dependencies]
-  - language-c@^0.51.1 (https://atom.io/packages/language-c) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+[Atom Package Dependencies]
+  > language-c
+      https://atom.io/packages/language-c
 */
 .source.c {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Constant +
+    +----------+*/
   .constant {
     &.numeric {
       color: @color-syntax-number;
@@ -71,19 +51,17 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-keyword;
     }
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Entity                                                                 [3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + Entity +
+    +--------+*/
   .entity.name.function {
     color: @color-syntax-function;
   }
-  /* +------------------------------------------------------------------------[3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Keyword +
+    +---------+*/
   .keyword.control {
     color: @color-syntax-keyword;
 
@@ -95,11 +73,10 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [5] +
-     +----------------------------------------------------------------------------+ */
+  /*+------+
+    + Meta +
+    +------+*/
   .meta {
     &.preprocessor {
       &.macro {
@@ -114,11 +91,10 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-other;
     }
   }
-  /* +------------------------------------------------------------------------[5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [6] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation {
     &.definition {
       &.string.begin,
@@ -145,11 +121,10 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[6]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Support                                                                [7] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Support +
+    +---------+*/
   .support {
     &.type.sys-types {
       color: @color-syntax-class;
@@ -161,29 +136,25 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[7]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Storage                                                                [8] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Storage +
+    +---------+*/
   .storage.type {
     color: @color-syntax-class;
   }
-  /* +------------------------------------------------------------------------[8]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [9] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + String +
+    +--------+*/
   .string {
     color: @color-syntax-string;
   }
-  /* +------------------------------------------------------------------------[9]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                              [10] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Variable +
+    +----------+*/
   .variable.parameter {
     color: @color-syntax-variable;
   }
-  /* +-----------------------------------------------------------------------[10]-+ */
 }

@@ -7,62 +7,37 @@ version   0.20.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2015-03-15 20:17 UTC+0100       +
-modified  2016-02-19 21:20 UTC+0100       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all editor specific classes.
+Defines all editor specific classes.
 
 [Index]
-  (1) Atom Text Editor (:host)
-    (1.0) Cursor
-    (1.1) Gutter
-    (1.2) Indent Guide
-    (1.3) Invisibles
-    (1.4) Line
-    (1.5) Selection
-    (1.6) Wrap Guide
-  (2) Atom Text Editor (:shadow)
-    (2.0) Gutter
-    (2.1) Result Marker
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+  > Atom Text Editor (:host)
+      Cursor
+      Gutter
+      Indent Guide
+      Invisibles
+      Line
+      Selection
+      Wrap Guide
+  > Atom Text Editor (:shadow)
+      Gutter
+      Result Marker
 */
-/* +----------------------------------------------------------------------------+
-   + Atom Text Editor (:host)                                               [1] +
-   +----------------------------------------------------------------------------+ */
+/*+--------------------------+
+  + Atom Text Editor (:host) +
+  +--------------------------+*/
 .atom-text-editor,
 :host {
   background-color: @color-editor-background;
   color: @color-editor-text;
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:host) - Cursor                                    [1.0] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Cursor ---+*/
   .cursor {
     color: @color-editor-cursor;
   }
-  /* +----------------------------------------------------------------------[1.0]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:host) - Gutter                                    [1.1] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Gutter ---+*/
   .gutter {
     background-color: @color-gutter-background;
     color: @color-gutter-text;
@@ -109,68 +84,47 @@ Arctic Versioning Specification (ArcVer)
       color: @color-gutter-text;
     }
   }
-  /* +----------------------------------------------------------------------[1.1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:host) - Indent Guide                              [1.2] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Indent Guide ---+*/
   .indent-guide {
     color: @color-guides-indent-line;
   }
-  /* +----------------------------------------------------------------------[1.2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:host) - Invisibles                                [1.3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Invisibles ---+*/
   .invisible,
   .invisible-character {
     color: @color-guides-invisibles;
   }
-  /* +----------------------------------------------------------------------[1.3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:host) - Line                                      [1.4] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Line ---+*/
   .line.cursor-line {
     background: @color-gutter-background-selected;
   }
-  /* +----------------------------------------------------------------------[1.4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:host) - Selection                                 [1.5] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Selection ---+*/
   .selection .region {
     background-color: @color-editor-background-selected;
     color: @color-editor-text;
   }
   /* +----------------------------------------------------------------------[1.5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:host) - Wrap Guide                                [1.6] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Wrap Guide ---+*/
   .wrap-guide {
     background-color: @color-guides-wrap;
   }
-  /* +----------------------------------------------------------------------[1.6]-+ */
 }
-/* +------------------------------------------------------------------------[1]-+ */
 
-/* +----------------------------------------------------------------------------+
-   + Atom Text Editor (:shadow)                                             [2] +
-   +----------------------------------------------------------------------------+ */
+/*+----------------------------+
+  + Atom Text Editor (:shadow) +
+  +----------------------------+*/
 atom-text-editor,
 atom-text-editor::shadow {
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:shadow) - Gutter                                  [2.0] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Gutter ---+*/
   .gutter.drop-shadow {
     -webkit-box-shadow: -2px 0 10px 2px @color-gutter-background;
   }
-  /* +----------------------------------------------------------------------[2.0]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Atom Text Editor (:shadow) - Result Marker                           [2.1] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Result Marker ---+*/
   .find-result .region {
     border: 1px solid @color-marker-result-border !important;
   }
@@ -179,6 +133,4 @@ atom-text-editor::shadow {
     border: 1px solid @color-marker-result-border !important;
     background-color: transparent;
   }
-  /* +----------------------------------------------------------------------[2.1]-+ */
 }
-/* +------------------------------------------------------------------------[2]-+ */
