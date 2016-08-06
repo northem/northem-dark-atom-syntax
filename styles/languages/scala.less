@@ -1,8 +1,8 @@
 /*
 +++++++++++++++++++++++++++++++++++++++++++
-title     Language "Java"                 +
+title     Language Scala                  +
 project   northem-dark-atom-syntax        +
-file      java.less                       +
+file      scala.less                      +
 version   0.21.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
@@ -10,9 +10,11 @@ website   http://arcticicestudio.com      +
 copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "Java".
+Defines all language specific syntax highlighting classes for "Scala".
 
 [Index]
+  > bracket
+  > Class
   > Comment
   > Constant
   > Entity
@@ -24,11 +26,25 @@ Defines all language specific syntax highlighting classes for "Java".
   > Variable
 
 [Atom Package Dependencies]
-  > language-java
-      https://atom.io/packages/language-java
+  > language-scala
+      https://atom.io/packages/language-scala
 */
-.source.java {
+.source.scala {
   color: @color-syntax-other;
+  /*+---------+
+    + Bracket +
+    +---------+*/
+  .bracket.type {
+    color: @color-syntax-symbol;
+  }
+
+  /*+-------+
+    + Class +
+    +-------+*/
+  .class {
+    color: @color-syntax-class;
+  }
+
   /*+---------+
     + Comment +
     +---------+*/
@@ -39,28 +55,31 @@ Defines all language specific syntax highlighting classes for "Java".
   /*+----------+
     + Constant +
     +----------+*/
-  .constant {
-    &.variable,
-    &.other {
-      color: @color-syntax-constant;
-      font-weight: bold;
-      font-style: italic;
-    }
-    &.numeric {
-      color: @color-syntax-number;
-    }
+  .constant.numeric {
+    color: @color-syntax-number;
   }
 
   /*+--------+
     + Entity +
     +--------+*/
-  .entity.name {
-    &.function {
-      color: @color-syntax-function;
+  .entity {
+    &.name {
+      &.package {
+        color: @color-syntax-java-package;
+      }
+      &.class {
+        color: @color-syntax-class;
+      }
+      &.function.declaration {
+        color: @color-syntax-function;
+      }
+      &.declaration {
+        color: @color-syntax-constant;
+        font-weight: bold;
+      }
     }
-    &.class {
+    &.other.inherited-class {
       color: @color-syntax-class;
-      font-weight: bold;
     }
   }
 
@@ -69,45 +88,37 @@ Defines all language specific syntax highlighting classes for "Java".
     +---------+*/
   .keyword {
     &.other {
-      &.package,
-      &.import {
+      &.import,
+      &.scoping {
         color: @color-syntax-import;
         font-weight: bold;
       }
+      &.documentation.scaladoc {
+        color: @color-syntax-scala-scaladoc-tag;
+        font-weight: bold;
+      }
+    }
+    &.declaration {
+      color: @color-syntax-keyword;
     }
     &.operator {
       color: @color-syntax-operator;
-    }
-    &.control {
-      color: @color-syntax-keyword;
     }
   }
 
   /*+------+
     + Meta +
     +------+*/
-  .meta.method-call {
-    .meta.method {
-      color: @color-syntax-function;
-    }
+  .meta.colon {
+    color: @color-syntax-operator;
   }
 
   /*+-------------+
     + Punctuation +
     +-------------+*/
-  .punctuation {
-    &.definition {
-      &.string {
-        color: @color-syntax-symbol;
-      }
-      &.method-parameters {
-        color: @color-syntax-variable;
-      }
-    }
-    &.terminator {
-      color: @color-syntax-keyword;
-    }
-    &.section {
+  .punctuation.definition.string {
+    &.begin,
+    &.end {
       color: @color-syntax-symbol;
     }
   }
@@ -116,34 +127,25 @@ Defines all language specific syntax highlighting classes for "Java".
     + Storage +
     +---------+*/
   .storage {
-    &.modifier {
-      color: @color-syntax-keyword;
-
-      &.package,
-      &.import {
-        color: @color-syntax-java-package;
-      }
+    &.modifier.other {
+      color: @color-syntax-java-annotation;
     }
-    &.type {
+    &.type.primitive {
       color: @color-syntax-class;
-
-      &.annotation {
-        color: @color-syntax-java-annotation;
-      }
     }
   }
 
   /*+--------+
     + String +
     +--------+*/
-  .string {
+  .stirng {
     color: @color-syntax-string;
   }
 
   /*+----------+
     + Variable +
     +----------+*/
-  .variable.language {
-    color: @color-syntax-keyword;
+  .variable.parameter {
+    color: @color-syntax-variable;
   }
 }

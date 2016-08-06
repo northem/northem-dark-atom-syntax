@@ -1,8 +1,8 @@
 /*
 +++++++++++++++++++++++++++++++++++++++++++
-title     Language "R"                    +
+title     Language "Make"                 +
 project   northem-dark-atom-syntax        +
-file      r.less                          +
+file      make.less                       +
 version   0.21.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
@@ -10,22 +10,22 @@ website   http://arcticicestudio.com      +
 copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "R".
+Defines all language specific syntax highlighting classes for "Make".
 
 [Index]
   > Comment
   > Constant
-  > Entity
   > Keyword
   > Punctuation
+  > Support
   > String
   > Variable
 
 [Atom Package Dependencies]
-  > language-r
-      https://atom.io/packages/language-r
+  > language-make
+      https://atom.io/packages/language-make
 */
-.source.r {
+.source.makefile {
   color: @color-syntax-other;
   /*+---------+
     + Comment +
@@ -34,58 +34,43 @@ Defines all language specific syntax highlighting classes for "R".
     color: @color-syntax-comment;
   }
 
-  /*+----------+
+  /*+---------+
     + Constant +
-    +----------+*/
+    +---------+*/
   .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-    &.language {
-      color: @color-syntax-constant;
+    &.other.placeholder {
+      color: @color-syntax-operator;
     }
     &.character.escape {
-      color: @color-syntax-regexp;
+      color: @color-syntax-escape;
     }
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity.name.function {
-    color: @color-syntax-function;
   }
 
   /*+---------+
     + Keyword +
     +---------+*/
-  .keyword {
-    &.operator {
-      &.assignment,
-      &.arithmetic,
-      &.logical,
-      &.comparison {
-        color: @color-syntax-operator;
-      }
-    }
-    &.control {
-      color: @color-syntax-keyword;
-    }
-    &.other {
-      color: @color-syntax-operator;
-    }
+  .keyword.control {
+    color: @color-syntax-keyword;
   }
 
   /*+-------------+
     + Punctuation +
     +-------------+*/
   .punctuation {
-    &.definition.string,
-    &.section {
-      &.begin,
-      &.end {
-        color: @color-syntax-string;
-      }
+    &.separator.key-value,
+    &.definition.variable {
+      color: @color-syntax-operator;
+    }
+  }
+
+  /*+---------+
+    + Support +
+    +---------+*/
+  .support.function {
+    color: @color-syntax-function;
+
+    &.builtin.shell {
+      font-style: italic;
     }
   }
 
@@ -100,9 +85,11 @@ Defines all language specific syntax highlighting classes for "R".
     + Variable +
     +----------+*/
   .variable {
-    &.other,
-    &.parameter {
+    &.other {
       color: @color-syntax-variable;
+    }
+    &.language {
+      color: @color-syntax-constant;
     }
   }
 }

@@ -1,8 +1,8 @@
 /*
 +++++++++++++++++++++++++++++++++++++++++++
-title     Language "Julia"                +
+title     Language Go                     +
 project   northem-dark-atom-syntax        +
-file      julia.less                      +
+file      go.less                         +
 version   0.21.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
@@ -10,10 +10,9 @@ website   http://arcticicestudio.com      +
 copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "Julia".
+Defines all language specific syntax highlighting classes for "Go".
 
 [Index]
-  > Bracket
   > Comment
   > Constant
   > Entity
@@ -22,20 +21,14 @@ Defines all language specific syntax highlighting classes for "Julia".
   > Support
   > Storage
   > String
+  > Variable
 
-[Atom Package Dependencies]
-  > language-julia
-      https://atom.io/packages/language-julia
+[Dependencies]
+  > language-go
+      https://atom.io/packages/language-go
 */
-.source.julia {
+.source.go {
   color: @color-syntax-other;
-  /*+---------+
-    + Bracket +
-    +---------+*/
-  .bracket {
-    color: @color-syntax-symbol;
-  }
-
   /*+---------+
     + Comment +
     +---------+*/
@@ -47,14 +40,18 @@ Defines all language specific syntax highlighting classes for "Julia".
     + Constant +
     +----------+*/
   .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
     &.character.escape {
       color: @color-syntax-escape;
     }
+    &.other.placeholder {
+      color: @color-syntax-string;
+      font-style: italic;
+    }
     &.language {
-      color: @color-syntax-constant;
+      color: @color-syntax-keyword;
+    }
+    &.numeric {
+      color: @color-syntax-number;
     }
   }
 
@@ -69,29 +66,32 @@ Defines all language specific syntax highlighting classes for "Julia".
     + Keyword +
     +---------+*/
   .keyword {
-    &.other,
-    &.control {
-      color: @color-syntax-keyword;
+    color: @color-syntax-keyword;
+
+    &.package,
+    &.import {
+      color: @color-syntax-import;
+      font-weight: bold;
     }
     &.operator {
-      &.ternary,
-      &.arithmetic,
-      &.update {
-        color: @color-syntax-operator;
-      }
+      color: @color-syntax-operator;
     }
   }
 
   /*+-------------+
     + Punctuation +
-    +-------------+*/
-  .punctuation.definition {
-    &.commment {
-      color: @color-syntax-comment;
-    }
-    &.string {
+    +------------+*/
+  .punctuation {
+    &.definition.string {
       &.begin,
       &.end {
+        color: @color-syntax-symbol;
+      }
+    }
+    &.other {
+      &.bracket,
+      &.comma,
+      &.period {
         color: @color-syntax-symbol;
       }
     }
@@ -102,26 +102,30 @@ Defines all language specific syntax highlighting classes for "Julia".
     +---------+*/
   .support.function {
     color: @color-syntax-function;
-
-    &.macro {
-      font-weight: bold;
-    }
   }
 
   /*+---------+
     + Storage +
     +---------+*/
   .storage.type {
-    color: @color-syntax-type;
+    color: @color-syntax-class;
+
+    &.class.todo {
+      color: @color-syntax-go-todo;
+    }
   }
 
-  /*+--------+
-    + String +
-    +--------+*/
-  .string.qouted {
-    &.single,
-    &.double {
-      color: @color-syntax-string;
-    }
+  /*+---------+
+    + Storage +
+    +---------+*/
+  .string.quoted {
+    color: @color-syntax-string;
+  }
+
+  /*+----------+
+    + Variable +
+    +----------+*/
+  .variable.other {
+    color: @color-syntax-variable;
   }
 }

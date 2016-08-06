@@ -3,55 +3,35 @@
 title     Language "Mustache"             +
 project   northem-dark-atom-syntax        +
 file      mustache.less                   +
-version   0.20.0                          +
+version   0.21.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2015-03-15 20:17 UTC+0100       +
-modified  2016-01-31 23:25 UTC+0100       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for Mustache.
+Defines all language specific syntax highlighting classes for "Mustache".
 
 [Index]
-  (1) Comment
-  (2) Meta
+  > Comment
+  > Meta
 
-[Dependencies]
-  - language-mustache@^0.13.0 (https://atom.io/packages/language-mustache) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+[Atom Package Dependencies]
+  > language-mustache
+      https://atom.io/packages/language-mustache
 */
 .text.html.mustache {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+------+
+    + Meta +
+    +------+*/
   .meta.tag.template {
     color: @color-syntax-variable;
 
@@ -72,5 +52,4 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 }

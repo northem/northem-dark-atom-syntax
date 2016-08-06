@@ -3,62 +3,42 @@
 title     Language "CSS"                  +
 project   northem-dark-atom-syntax        +
 file      css.less                        +
-version   0.20.0                          +
+version   0.21.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2015-03-15 20:17 UTC+0100       +
-modified  2016-01-31 18:30 UTC+0100       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for CSS.
+Defines all language specific syntax highlighting classes for "CSS".
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Entity
-  (4) Keyword
-  (5) Meta
-  (6) Punctuation
-  (7) Support
-  (8) String
-  (9) Variable
+  > Comment
+  > Constant
+  > Entity
+  > Keyword
+  > Meta
+  > Punctuation
+  > Support
+  > String
+  > Variable
 
-[Dependencies]
-  - language-css@^0.36.0 (https://atom.io/packages/language-css) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+[Atom Package Dependencies]
+  > language-css
+      https://atom.io/packages/language-css
 */
 .source.css {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Constant +
+    +----------+*/
   .constant {
     color: @color-syntax-constant;
     font-weight: bold;
@@ -73,11 +53,10 @@ Arctic Versioning Specification (ArcVer)
       font-weight: normal;
     }
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + Entity +
+    +--------+*/
   .entity {
     &.name.tag {
       color: @color-syntax-class;
@@ -98,11 +77,10 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Keyword +
+    +---------+*/
   .keyword {
     &.operator {
       color: @color-syntax-operator;
@@ -126,11 +104,10 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [5] +
-     +----------------------------------------------------------------------------+ */
+  /*+------+
+    + Meta +
+    +------+*/
   .meta {
     &.selector {
       color: @color-syntax-css-selector;
@@ -142,11 +119,10 @@ Arctic Versioning Specification (ArcVer)
       color: @color-editor-text;
     }
   }
-  /* +------------------------------------------------------------------------[5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [6] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation {
     &.terminator,
     &.separator {
@@ -176,11 +152,10 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[6]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Support                                                                [7] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Support +
+    +---------+*/
   .support {
     &.type.property-name {
       color: @color-syntax-keyword;
@@ -198,19 +173,17 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[7]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [8] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + String +
+    +--------+*/
   .string {
     color: @color-syntax-string;
   }
-  /* +------------------------------------------------------------------------[8]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                               [9] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Variable +
+    +----------+*/
   .variable {
     color: @color-syntax-variable;
 
@@ -218,5 +191,4 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-class;
     }
   }
-  /* +------------------------------------------------------------------------[9]-+ */
 }

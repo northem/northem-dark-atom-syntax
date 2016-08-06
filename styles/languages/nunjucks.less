@@ -1,8 +1,8 @@
 /*
 +++++++++++++++++++++++++++++++++++++++++++
-title     Language "SQL"                  +
+title     Language Nunjucks               +
 project   northem-dark-atom-syntax        +
-file      sql.less                        +
+file      nunjucks.less                   +
 version   0.21.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
@@ -10,7 +10,7 @@ website   http://arcticicestudio.com      +
 copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "SQL".
+Defines all language specific syntax highlighting classes for "Nunjucks".
 
 [Index]
   > Comment
@@ -18,14 +18,15 @@ Defines all language specific syntax highlighting classes for "SQL".
   > Entity
   > Keyword
   > Punctuation
-  > Storage
   > String
+  > Variable
 
 [Atom Package Dependencies]
-  > language-sql
-      https://atom.io/packages/language-sql
+  > language-nunjucks
+      https://atom.io/packages/language-nunjucks
 */
-.source.sql {
+.source.nunjucks,
+.text.html.nunjucks {
   color: @color-syntax-other;
   /*+---------+
     + Comment +
@@ -37,38 +38,34 @@ Defines all language specific syntax highlighting classes for "SQL".
   /*+----------+
     + Constant +
     +----------+*/
-  .constant.numeric {
-    color: @color-syntax-number;
+  .constant.character.entity {
+    color: @color-syntax-html-entity;
   }
 
   /*+--------+
     + Entity +
     +--------+*/
-  .entity.name.function {
-    color: @color-syntax-function;
+  .entity.other.nunjucks.delimiter {
+    &.tag {
+      color: @color-syntax-nunjucks-tag;
+      font-weight: bold;
+    }
+    &.variable {
+      font-weight: bold;
+    }
   }
 
   /*+---------+
     + Keyword +
     +---------+*/
   .keyword {
-    &.operator {
-      &.comparison,
-      &.math,
-      &.concatenator {
-        color: @color-syntax-operator;
-      }
-    }
-    &.other {
+    &.control {
       color: @color-syntax-keyword;
-
-      &.DML,
-      &.create {
-        color: @color-syntax-keyword;
-      }
-      &.DDL.create.II {
-        color: @color-syntax-keyword;
-        font-style: italic;
+    }
+    &.operator {
+      &.arithmetic,
+      &.comparison {
+        color: @color-syntax-operator;
       }
     }
   }
@@ -76,21 +73,11 @@ Defines all language specific syntax highlighting classes for "SQL".
   /*+-------------+
     + Punctuation +
     +-------------+*/
-  .punctuation.definition.string {
-    &.begin,
-    &.end {
+  .punctuation {
+    &.other {
       color: @color-syntax-symbol;
     }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage {
-    &.type {
-      color: @color-syntax-class;
-    }
-    &.modifier {
+    &.definition.entity {
       color: @color-syntax-keyword;
     }
   }
@@ -99,9 +86,13 @@ Defines all language specific syntax highlighting classes for "SQL".
     + String +
     +--------+*/
   .string.quoted {
-    &.single,
-    &.double {
-      color: @color-syntax-string;
-    }
+    color: @color-syntax-string;
+  }
+
+  /*+----------+
+    + Variable +
+    +----------+*/
+  .variable {
+    color: @color-syntax-variable;
   }
 }

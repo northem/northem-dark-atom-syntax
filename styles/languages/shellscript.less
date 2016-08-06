@@ -3,68 +3,47 @@
 title     Language "ShellScript"          +
 project   northem-dark-atom-syntax        +
 file      shellscript.less                +
-version   0.20.0                          +
+version   0.21.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2015-03-15 20:17 UTC+0100       +
-modified  2016-02-01 20:20 UTC+0100       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for ShellScript.
+Defines all language specific syntax highlighting classes for "ShellScript".
 
 [Index]
-  (1) Comment
-  (2) Entity
-  (3) Keyword
-  (4) Punctuation
-  (5) Support
-  (6) String
-  (7) Variable
+  > Comment
+  > Entity
+  > Keyword
+  > Punctuation
+  > Support
+  > String
+  > Variable
 
-[Dependencies]
-  - language-shellscript@^0.21.0 (https://atom.io/packages/language-shellscript) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+[Atom Package Dependencies]
+  > language-shellscript
+      https://atom.io/packages/language-shellscript
 */
 .source.shell {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + Entity +
+    +--------+*/
   .entity.name.function {
     color: @color-syntax-function;
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [3] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Keyword +
+    +---------+*/
   .keyword {
     &.operator.list {
       color: @color-syntax-operator;
@@ -73,11 +52,10 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-keyword;
     }
   }
-  /* +------------------------------------------------------------------------[3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [4] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation {
     &.definition {
       &.string.begin,
@@ -101,20 +79,18 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-operator;
     }
   }
-  /* +------------------------------------------------------------------------[4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Support                                                                [5] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Support +
+    +---------+*/
   .support.function.builtin {
     color: @color-syntax-function;
     font-style: italic;
   }
-  /* +------------------------------------------------------------------------[5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [6] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + String +
+    +--------+*/
   .string {
     &.quoted {
       &.double,
@@ -126,11 +102,10 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-function;
     }
   }
-  /* +------------------------------------------------------------------------[6]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                               [7] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Variable +
+    +----------+*/
   .variable {
     color: @color-syntax-variable;
 
@@ -138,5 +113,4 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-type;
     }
   }
-  /* +------------------------------------------------------------------------[7]-+ */
 }

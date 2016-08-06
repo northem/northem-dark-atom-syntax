@@ -3,76 +3,59 @@
 title     Language "HTML"                 +
 project   northem-dark-atom-syntax        +
 file      html.less                       +
-version   0.20.0                          +
+version   0.21.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2015-03-15 20:17 UTC+0100       +
-modified  2016-04-12 12:30 UTC+0200       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for HTML, the MJML preprocessor,
-JavaScript and React JSX templates.
+Defines all language specific syntax highlighting classes for "HTML", the "MJML" preprocessor,
+"JavaScript "and "React JSX" templates.
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Entity
-  (4) Meta
-  (5) Punctuation
-  (6) Separator
-  (7) String
+  > Comment
+  > Constant
+  > Entity
+  > Meta
+  > Punctuation
+  > Separator
+  > String
 
-[Dependencies]
-  - language-html@^0.43.1 (https://atom.io/packages/language-html) by "atom" (https://atom.io/users/atom)
-  - language-mjml@^1.2.0 (https://atom.io/packages/language-mjml) by "mjmlio" (https://atom.io/users/mjmlio)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+[Atom Package Dependencies]
+  > language-html
+      https://atom.io/packages/language-html
+  > language-mjml
+      https://atom.io/packages/language-mjml
 
 [References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
 MJML
   (https://mjml.io)
 */
 .text.html.basic,
+.text.html.nunjucks,
 .text.mjml.basic,
 .source.js,
 .source.js.jsx {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Constant +
+    +----------+*/
   .constant.other.inline-data {
     color: @color-syntax-html-cdata;
     font-style: italic;
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + Entity +
+    +--------+*/
   .entity {
     &.name.tag {
       color: @color-syntax-html-tag;
@@ -92,11 +75,10 @@ MJML
       color: @color-syntax-function;
     }
   }
-  /* +------------------------------------------------------------------------[3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [4] +
-     +----------------------------------------------------------------------------+ */
+  /*+------+
+    + Meta +
+    +------+*/
   .meta {
     &.tag {
       &.any,
@@ -111,11 +93,10 @@ MJML
       color: @color-syntax-string;
     }
   }
-  /* +------------------------------------------------------------------------[4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [5] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation {
     &.separator.key-value {
       color: @color-syntax-symbol;
@@ -137,19 +118,17 @@ MJML
       }
     }
   }
-  /* +------------------------------------------------------------------------[5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Separator                                                              [6] +
-     +----------------------------------------------------------------------------+ */
+  /*+-----------+
+    + Separator +
+    +-----------+*/
   .separator.key-value.html {
     color: @color-syntax-symbol;
   }
-  /* +------------------------------------------------------------------------[6]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [7] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + String +
+    +--------+*/
   .string {
     color: @color-syntax-string;
 
@@ -166,5 +145,4 @@ MJML
       }
     }
   }
-  /* +------------------------------------------------------------------------[7]-+ */
 }
