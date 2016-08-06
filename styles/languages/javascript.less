@@ -8,56 +8,38 @@ author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
 copyright Copyright (C) 2016              +
-created   2015-03-15 20:17 UTC+0100       +
-modified  2016-08-06 12:14 UTC+0100       +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for JavaScript.
+Defines all language specific syntax highlighting classes for "JavaScript".
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Entity
-  (4) Keyword
-  (5) Meta
-  (6) Punctuation
-  (7) Support
-  (8) Storage
-  (9) String
-  (10) Variable
+  > Comment
+  > Constant
+  > Entity
+  > Keyword
+  > Meta
+  > Punctuation
+  > Support
+  > Storage
+  > String
+  > Variable
 
-[Dependencies]
-  - language-javascript@^0.104.0 (https://atom.io/packages/language-javascript) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
+[Atom Package Dependencies]
+  > language-javascript
+      https://atom.io/packages/language-javascript
 */
 .source.js {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Constant +
+    +----------+*/
   .constant {
     &.numeric {
       color: @color-syntax-number;
@@ -77,11 +59,10 @@ LESSCSS
       color: @color-syntax-escape;
     }
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + Entity +
+    +--------+*/
   .entity.name {
     &.type {
       &.object {
@@ -99,11 +80,10 @@ LESSCSS
       color: @color-syntax-function;
     }
   }
-  /* +------------------------------------------------------------------------[3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Keyword +
+    +---------+*/
   .keyword {
     &.operator {
       color: @color-syntax-operator;
@@ -120,11 +100,10 @@ LESSCSS
       }
     }
   }
-  /* +------------------------------------------------------------------------[4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [5] +
-     +----------------------------------------------------------------------------+ */
+  /*+------+
+    + Meta +
+    +------+*/
   .meta {
     &.delimiter {
       &.method.period,
@@ -136,11 +115,10 @@ LESSCSS
       color: @color-syntax-symbol;
     }
   }
-  /* +------------------------------------------------------------------------[5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [6] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation.definition {
     &.comment {
       color: @color-syntax-comment;
@@ -156,11 +134,10 @@ LESSCSS
       color: @color-syntax-symbol;
     }
   }
-  /* +------------------------------------------------------------------------[6]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Support                                                                [7] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Support +
+    +---------+*/
   .support {
     &.function {
       color: @color-syntax-function;
@@ -182,35 +159,31 @@ LESSCSS
       color: @color-syntax-class;
     }
   }
-  /* +------------------------------------------------------------------------[7]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Storage                                                                [8] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Storage +
+    +---------+*/
   .storage {
     &.modifier,
     &.type {
       color: @color-syntax-keyword;
     }
   }
-  /* +------------------------------------------------------------------------[8]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [9] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + String +
+    +--------+*/
   .string.quoted {
     &.single,
     &.double {
       color: @color-syntax-string;
     }
   }
-  /* +------------------------------------------------------------------------[9]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Variable                                                              [10] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Variable +
+    +----------+*/
   .variable.language {
     color: @color-syntax-keyword;
   }
-  /* +-----------------------------------------------------------------------[10]-+ */
 }

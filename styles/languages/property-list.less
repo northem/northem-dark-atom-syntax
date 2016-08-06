@@ -7,55 +7,35 @@ version   0.20.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2015-09-24 15:18 UTC+0200       +
-modified  2016-01-31 23:30 UTC+0100       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for Property Lists.
+Defines all language specific syntax highlighting classes for "Property Lists".
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Invalid
-  (4) Meta
-  (5) Punctuation
-  (6) String
+  > Comment
+  > Constant
+  > Invalid
+  > Meta
+  > Punctuation
+  > String
 
-[Dependencies]
-  - language-property-list@^0.8.0 (https://atom.io/packages/language-property-list) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+[Atom Package Dependencies]
+  > language-property-list
+      https://atom.io/packages/language-property-list
 */
 .source.plist {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Constant +
+    +----------+*/
   .constant {
     &.other.key {
       color: @color-syntax-variable;
@@ -72,30 +52,27 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-escape;
     }
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Invalid                                                                [3] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Invalid +
+    +---------+*/
   .invalid.illegal.character-not-allowed-here {
     color: @color-syntax-propertylist-illegal;
   }
-  /* +------------------------------------------------------------------------[3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Meta                                                                   [4] +
-     +----------------------------------------------------------------------------+ */
+  /*+------+
+    + Meta +
+    +------+*/
   .meta {
     &.binary-data,
     &.scope.dictionary-item {
       color: @color-syntax-keyword;
     }
   }
-  /* +------------------------------------------------------------------------[4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [5] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation {
     &.definition {
       &.dictionary,
@@ -125,13 +102,11 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [6] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + String +
+    +--------+*/
   .string {
     color: @color-syntax-string;
   }
-  /* +------------------------------------------------------------------------[6]-+ */
 }

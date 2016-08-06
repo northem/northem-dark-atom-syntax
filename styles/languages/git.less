@@ -7,108 +7,74 @@ version   0.20.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2015-09-23 12:19 UTC+0200       +
-modified  2016-01-31 11:43 UTC+0100       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines basic syntax highlighting for all Git specifc classes which acually includes
+Defines basic syntax highlighting for all Git specifc classes which acually includes
   1. Git Commit Messages
-    - "COMMIT_EDITMSG"
-    - "MERGE_MSG"
+    > "COMMIT_EDITMSG"
+    > "MERGE_MSG"
   2. Git Configurations
-    - ".gitconfig"
-    - ".gitmodules"
-    - ".git/config"
-    - "/etc/gitconfig"
+    > ".gitconfig"
+    > ".gitmodules"
+    > ".git/config"
+    > "/etc/gitconfig"
   3. Git Rebase Messages
-  - "git-rebase-todo"
+    > "git-rebase-todo"
 
 [Index]
-  (1) Git Commit Message
-    (1.0) Meta
-  (2) Git Configurations
-    (2.0) Comment
-    (2.1) Constant
-    (2.2) Entity
-    (2.3) Meta
-    (2.4) Punctuation
-    (2.5) Support
-  (3) Git Rebase Message
-    (3.0) Comment
-    (3.2) Constant
-    (3.2) Meta
-    (3.3) Punctuation
-    (3.4) Support
+  > Git Commit Message
+      Meta
+  > Git Configurations
+      Comment
+      Constant
+      Entity
+      Meta
+      Punctuation
+      Support
+  > Git Rebase Message
+      Comment
+      Constant
+      Meta
+      Punctuation
+      Support
 
-[Dependencies]
-  - language-git@^0.11.0 (https://atom.io/packages/language-git) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+[Atom Package Dependencies]
+  > language-git
+      https://atom.io/packages/language-git
 */
-/* +----------------------------------------------------------------------------+
-   + Git Commit Message                                                     [1] +
-   +----------------------------------------------------------------------------+ */
+/*+--------------------+
+  + Git Commit Message +
+  +--------------------+*/
 .text.git-commit  {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Git Commit Message - Meta                                            [1.0] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Meta ---+*/
   .meta.scope.message {
     color: @color-syntax-string;
   }
-  /* +----------------------------------------------------------------------[1.0]-+ */
 }
-/* +------------------------------------------------------------------------[1]-+ */
 
-/* +----------------------------------------------------------------------------+
-   + Git Configurations                                                     [2] +
-   +----------------------------------------------------------------------------+ */
+/*+--------------------+
+  + Git Configurations +
+  +--------------------+*/
 .source.git-config {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Git Configurations - Comment                                         [2.0] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Comment ---+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +----------------------------------------------------------------------[2.0]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Configurations - Constant                                        [2.1] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Constant ---+*/
   .constant.language.boolean {
     color: @color-syntax-keyword;
   }
-  /* +----------------------------------------------------------------------[2.1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Configurations - Enity                                           [2.2] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Entity ---+*/
   .entity.name.section {
     color: @color-syntax-git-config-section;
   }
-  /* +----------------------------------------------------------------------[2.2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Configurations - Meta                                            [2.3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Meta ---+*/
   .meta {
     &.section {
       color: @color-syntax-git-config-section;
@@ -117,11 +83,8 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-string;
     }
   }
-  /* +----------------------------------------------------------------------[2.3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Configurations - Punctuation                                     [2.4] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Punctuation ---+*/
   .punctuation {
     &.definition.comment {
       color: @color-syntax-comment;
@@ -130,61 +93,40 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-operator;
     }
   }
-  /* +----------------------------------------------------------------------[2.4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Configurations - Support                                         [2.5] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Support ---+*/
   .support.constant {
     color: @color-syntax-attribute;
   }
-  /* +----------------------------------------------------------------------[2.5]-+ */
 }
-/* +------------------------------------------------------------------------[2]-+ */
 
-/* +----------------------------------------------------------------------------+
-   + Git Rebase Messages                                                    [3] +
-   +----------------------------------------------------------------------------+ */
+/*+---------------------+
+  + Git Rebase Messages +
+  +---------------------+*/
 .text.git-rebase {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Git Rebase Messages - Comment                                        [3.0] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Comment ---+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +----------------------------------------------------------------------[3.0]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Rebase Messages - Constant                                       [3.1] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Constant ---+*/
   .constant.sha {
     color: @color-syntax-git-rebase-sha;
   }
-  /* +----------------------------------------------------------------------[3.1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Rebase Messages - Meta                                           [3.2] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Meta ---+*/
   .meta.commit-message {
     color: @color-syntax-string;
   }
-  /* +----------------------------------------------------------------------[3.2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Rebase Messages - Punctuation                                    [3.3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Punctuation ---+*/
   .punctuation.definition.comment {
     color: @color-syntax-comment;
   }
-  /* +----------------------------------------------------------------------[3.3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Git Rebase Messages - Support                                        [3.4] +
-     +----------------------------------------------------------------------------+ */
+  /*+--- Support ---+*/
   .support.function {
     color: @color-syntax-function;
   }
-  /* +----------------------------------------------------------------------[3.4]-+ */
 }
-/* +------------------------------------------------------------------------[3]-+ */

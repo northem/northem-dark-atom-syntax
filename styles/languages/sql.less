@@ -7,72 +7,50 @@ version   0.20.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2016-01-27 15:36 UTC+0100       +
-modified  2016-02-01 21:21 UTC+0100       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for SQL.
+Defines all language specific syntax highlighting classes for "SQL".
 
 [Index]
-  (1) Comment
-  (2) Constant
-  (3) Entity
-  (4) Keyword
-  (5) Punctuation
-  (6) Storage
-  (7) String
+  > Comment
+  > Constant
+  > Entity
+  > Keyword
+  > Punctuation
+  > Storage
+  > String
 
-[Dependencies]
-  - language-sql@0.20.0 (https://atom.io/packages/language-sql) by "atom" (https://atom.io/users/atom)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+[Atom Package Dependencies]
+  > language-sql
+      https://atom.io/packages/language-sql
 */
 .source.sql {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Constant                                                               [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+----------+
+    + Constant +
+    +----------+*/
   .constant.numeric {
     color: @color-syntax-number;
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Enity                                                                  [3] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + Entity +
+    +--------+*/
   .entity.name.function {
     color: @color-syntax-function;
   }
-  /* +------------------------------------------------------------------------[3]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Keyword                                                                [4] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Keyword +
+    +---------+*/
   .keyword {
     &.operator {
       &.comparison,
@@ -94,22 +72,20 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[4]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [5] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation.definition.string {
     &.begin,
     &.end {
       color: @color-syntax-symbol;
     }
   }
-  /* +------------------------------------------------------------------------[5]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Storage                                                                [6] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Storage +
+    +---------+*/
   .storage {
     &.type {
       color: @color-syntax-class;
@@ -118,16 +94,14 @@ Arctic Versioning Specification (ArcVer)
       color: @color-syntax-keyword;
     }
   }
-  /* +------------------------------------------------------------------------[6]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [7] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + String +
+    +--------+*/
   .string.quoted {
     &.single,
     &.double {
       color: @color-syntax-string;
     }
   }
-  /* +------------------------------------------------------------------------[7]-+ */
 }

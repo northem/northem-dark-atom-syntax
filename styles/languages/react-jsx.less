@@ -7,59 +7,39 @@ version   0.20.0                          +
 author    Arctic Ice Studio               +
 email     development@arcticicestudio.com +
 website   http://arcticicestudio.com      +
-copyright Copyright (C) 2015-2016         +
-created   2016-04-12 12:52 UTC+0200       +
-modified  2016-04-12 12:53 UTC+0200       +
+copyright Copyright (C) 2016              +
 +++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines all language specific syntax highlighting classes for "React JSX".
-JSX is a JavaScript syntax extension that looks similar to XML.
-You can use a simple JSX syntactic transform with React.
+Defines all language specific syntax highlighting classes for "React JSX".
 
 [Index]
-  (1) Punctuation
-  (2) String
+  > Punctuation
+  > String
 
-[Dependencies]
-  - react@0.15.0 (https://atom.io/packages/react) by "orktes" (https://atom.io/users/orktes)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
+[Atom Package Dependencies]
+  > react
+      https://atom.io/packages/react
 
 [References]
 React JSX Specification
   (https://facebook.github.io/jsx/#syntax)
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
 */
 .source.js.jsx {
   color: @color-syntax-other;
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation.definition.string {
     &.begin,
     &.end {
       color: @color-syntax-react-jsx-embedded-template;
     }
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + String                                                                 [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+--------+
+    + String +
+    +--------+*/
   .string.quoted.template {
     .embedded.source {
       .punctuation.section.embedded {
@@ -67,5 +47,4 @@ Arctic Versioning Specification (ArcVer)
       }
     }
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 }

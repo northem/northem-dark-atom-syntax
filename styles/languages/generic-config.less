@@ -1,66 +1,45 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++++
-title     Language "Generic Config" (dotfiles) +
-project   northem-dark-atom-syntax             +
-file      generic-config.less                  +
-version   0.20.0                               +
-author    Arctic Ice Studio                    +
-email     development@arcticicestudio.com      +
-website   http://arcticicestudio.com           +
-copyright Copyright (C) 2015-2016              +
-created   2015-09-23 12:19 UTC+0200            +
-modified  2016-01-31 11:41 UTC+0100            +
-++++++++++++++++++++++++++++++++++++++++++++++++
++++++++++++++++++++++++++++++++++++++++++++
+title     Language "Generic Config"       +
+project   northem-dark-atom-syntax        +
+file      generic-config.less             +
+version   0.20.0                          +
+author    Arctic Ice Studio               +
+email     development@arcticicestudio.com +
+website   http://arcticicestudio.com      +
+copyright Copyright (C) 2016              +
++++++++++++++++++++++++++++++++++++++++++++
 
-[Description]
-This file defines basic syntax highlighting classes for configuration files (dotfiles) containing
+Defines basic syntax highlighting classes for configuration files (dotfiles) containing
 comments and/or non-comments  without a particular structure like
-  - ".gitignore"
-  - ".gitconfig"
-  - ".env"
+  > ".gitignore"
+  > ".gitconfig"
+  > ".env"
 
 Supported comment symbols are based on the package this theme depends on.
-Actually highlights lines that begin with a '#' or ';'.
+Highlights lines that begin with a "#" or ";".
 
 [Index]
-  (1) Comment
-  (2) Punctuation
+  > Comment
+  > Punctuation
 
-[Dependencies]
-  - language-generic-config@1.2.3 (https://atom.io/packages/language-generic-config) by "lee-dohm " (https://atom.io/users/lee-dohm)
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0/).
-
-[References]
-Atom API-Documentation
-  (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
-  (https://atom.io/docs)
-LESSCSS
-  (http://lesscss.org)
-Arctic Versioning Specification (ArcVer)
-  (http://specs.arcticicestudio.com/arcver)
+[Atom Package Dependencies]
+  > language-generic-confi
+      https://atom.io/packages/language-generic-config
 */
 .text.generic-config {
   color: @color-syntax-other;
-  /* +----------------------------------------------------------------------------+
-     + Comment                                                                [1] +
-     +----------------------------------------------------------------------------+ */
+  /*+---------+
+    + Comment +
+    +---------+*/
   .comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[1]-+ */
 
-  /* +----------------------------------------------------------------------------+
-     + Punctuation                                                            [2] +
-     +----------------------------------------------------------------------------+ */
+  /*+-------------+
+    + Punctuation +
+    +-------------+*/
   .punctuation.definition.comment {
     color: @color-syntax-comment;
   }
-  /* +------------------------------------------------------------------------[2]-+ */
 }
