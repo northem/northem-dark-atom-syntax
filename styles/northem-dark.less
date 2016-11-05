@@ -1,194 +1,234 @@
 /*
-++++++++++++++++++++++++++++++++++++++++++++++
-title     Northem Dark                       +
-project   northem-dark                       +
-file      northem-dark.less                  +
-version   1.0.0                              +
-author    Arctic Ice Studio                  +
-email     development@arcticicestudio.com    +
-website   http://arcticicestudio.com/northem +
-copyright Copyright (C) 2015-2016            +
-created   2015-03-13 19:24 UTC+0100          +
-modified  2016-04-16 12:50 UTC+0200          +
-++++++++++++++++++++++++++++++++++++++++++++++
-
-[Description]
-Northem is a north-bluish dark color palette designed by Arctic Ice Studio.
-Optimized for syntax highlighting and UI projects.
-This is a darker and more blue-tinged variation of the "Northem" color palette.
-
-[Index]
-  (1) HEX
-  (2) RGB
-  (3) X11
-
-[Variations]
-  - "Northem"        (https://github.com/arcticicestudio/northem)
-  - "Northem Light"  (https://github.com/arcticicestudio/northem-light)
-
-[Projects]
-Based on this the following projects are available:
-
-Syntax
-  - "Northem Dark - IntelliJ IDEA Syntax" (https://github.com/arcticicestudio/northem-dark-intellij-idea-syntax)
-  - "Northem Dark - Atom Syntax"          (https://github.com/arcticicestudio/northem-dark-atom-syntax)
-  - "Northem Dark - Eclipse Syntax"       (https://github.com/arcticicestudio/northem-dark-eclipse-syntax)
-  - "Northem Dark - Gedit Syntax"         (https://github.com/arcticicestudio/northem-dark-gedit-syntax)
-  - "Northem Dark - Notepad++ Syntax"     (https://github.com/arcticicestudio/northem-dark-notepadplusplus-syntax)
-
-UI
-  - "Northem Dark - Atom UI"  (https://github.com/arcticicestudio/northem-dark-atom-ui)
-  - "Northem Dark - GTK"      (in drafting)
-
-Libraries
-  - "Northem Dark - Java" (https://github.com/arcticicestudio/northem-dark-java)
-
-Visit the official website http://arcticicestudio.com/northem for more information.
-
-[File Formats]
-Non-Native
-  - Sass    (.scss)
-  - LESSCSS (.less)
-  - JSON    (.json)
-  - XML     (.xml)
-
-Native
-  - GIMP/Inkscape Palette    (.gcl)
-  - Adobe Swatch Exchange    (.ase)
-  - Alias/WaveFront Material (.mtl)
-  - Gpick Palette            (.gpa)
-
-[Version]
-1.0.0 (https://github.com/arcticicestudio/northem-dark/releases/latest)
-
-For older versions check out the GitHub Repository (https://github.com/arcticicestudio/northem-dark)
-and http://arcticicestudio.com/northem.
-
-[Changelog]
-Check out the "CHANGELOG.md" or visit the GitHub Repository (https://github.com/arcticicestudio/northem-dark)
-and http://arcticicestudio.com/northem.
-
-[Development]
-Workflow
-This project follows the [gitflow](http://nvie.com/posts/a-successful-git-branching-model) branching model.
-
-Specifications
-This project follows the [Arctic Versioning Specification (ArcVer)](https://github.com/arcticicestudio/arcver).
-
-[Dependencies]
-Development
-  - northem@1.0.0 (https://github.com/arcticicestudio/northem)
-
-  Engines
-    - git@2.8.* (https://git-scm.com)
-
-  Specifications
-    - arcver@0.8.0 (https://github.com/arcticicestudio/arcver)
-
-  Skeletons
-    - glacier-git@0.23.0 (https://github.com/arcticicestudio/glacier-git)
-
-[Recommendations]
-Fonts
-  Syntax
-    This theme matches the Open Source font "Source Code Pro" (https://typekit.com/fonts/source-code-pro).
-    Visit the GitHub Repository (https://github.com/adobe-fonts/source-code-pro) for more information.
-
-  UI
-    This theme matches the Open Source font "Roboto" (http://www.google.com/fonts/specimen/Roboto).
-    Visit the GitHub Repository (https://github.com/google/fonts/tree/master/apache/roboto) for more information.
-
-[Contribution]
-Please report issues/bugs, suggestions for improvements and feature requests to the issuetracker
-at https://github.com/arcticicestudio/northem-dark/issues.
-
-[Author]
-The "Northem" project is developed and authored by Arctic Ice Studio.
-
-[Copyright]
-Copyright (C) 2015-2016 Arctic Ice Studio <development@arcticicestudio.com>
-
-[License]
-Northem code is licensed under "GPL 3.0" (http://www.gnu.org/licenses/gpl.txt).
-Northem color palette itself is licensed under "CC BY-SA 4.0" (http://creativecommons.org/licenses/by-sa/4.0).
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Northem Dark                                    +
+project    northem-dark                                    +
+version    2.0.0                                           +
+repository https://github.com/arcticicestudio/northem-dark +
+author     Arctic Ice Studio                               +
+email      development@arcticicestudio.com                 +
+copyright  Copyright (C) 2016                              +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [References]
-Sass
-  (http://sass-lang.com)
-LESSCSS
-  (http://lesscss.org)
-X Window System Documentation
-  (http://www.x.org/releases/X11R7.7/doc)
-Arctic Versioning Specification
-  (http://specs.arcticicestudio.com/arcver) (ArcVer)
-gitflow
-  (http://nvie.com/posts/a-successful-git-branching-model)
-Glacier - Git
-  (https://github.com/arcticicestudio/glacier-git)
+KSS
+  (http://warpspire.com/kss)
+kss-node
+  (https://github.com/kss-node/kss-node)
+Northem
+  (https://github.com/arcticicestudio/northem)
 */
 
-/* +----------------------------------------------------------------------------+
-   + HEX                                                                    [1] +
-   +----------------------------------------------------------------------------+ */
-@darkest-coal: #1F1F23;
-@dark-coal:    #242429;
-@coal:         #29292E;
-@light-coal:   #4F4F59;
-@dirty-white:  #DEDEDE;
-@white:        #ECEEEF;
+// A north-bluish, dark color palette.
+// Created for the clean- and minimal flat design pattern to achieve a optimal focus and readability for code syntax
+// highlighting and UI.
+// It consists of a total of sixteen, carefully selected, dimmed pastel colors for a eye-comfortable, but yet colorful
+// ambiance.
+//
+// This project is a more blue-tinged variation of the origin project "Northem".
+//
+// Styleguide Northem Dark
 
-@aqua:         #8FCEC8;
-@light-blue:   #85C1D3;
-@blue:         #87B2CE;
-@dark-blue:    #5B81AF;
+// Base component color of "Dark Water".
+//
+// Used for texts, backgrounds, carets and structuring characters like curly- and square brackets.
+//
+// The X11 color scheme name is "Black Russian". 
+//
+// Markup:
+// <div style="background-color:#1F1F23; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Dark Water
+@northem-dark0: #1F1F23;
 
-@red:          #E07473;
-@yellow:       #FDCE84;
-@orange:       #F0A06F;
-@lime:         #C9CC78;
-@purple:       #C2A1CA;
-/* +------------------------------------------------------------------------[1]-+ */
+// Lighter shade color of the base component color.
+//
+// Used as a lighter background color for UI elements like status bars.
+//
+// The X11 color scheme name is "Dark Jaguar".
+//
+// Markup:
+// <div style="background-color:#242429; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Dark Water
+@northem-dark1: #242429;
 
-/* +----------------------------------------------------------------------------+
-   + RGB                                                                    [2] +
-   +----------------------------------------------------------------------------+ */
-@rgb-darkest-coal: rgb(31,31,35);
-@rgb-dark-coal:    rgb(36,36,41);
-@rgb-coal:         rgb(41,41,46);
-@rgb-light-coal:   rgb(79,79,89);
-@rgb-dirty-white:  rgb(222,222,222);
-@rgb-white:        rgb(236,238,239);
+// Lighter shade color of the base component color.
+//
+// Used as line highlighting in the editor.  
+// In the UI scope it may be used as selection- and hightlight color.
+//
+// The X11 color scheme name is "Jaguar".
+//
+// Markup:
+// <div style="background-color:#29292E; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Dark Water
+@northem-dark2: #29292E;
 
-@rgb-aqua:         rgb(143,206,200);
-@rgb-light-blue:   rgb(133,193,211);
-@rgb-blue:         rgb(135,178,206);
-@rgb-dark-blue:    rgb(91,129,175);
+// Lighter shade color of the base component color.
+//
+// Used for comments, invisibles, indent- and wrap guide marker.  
+// In the UI scope used as pseudoclass color for disabled elements.
+//
+// The X11 color scheme name is "Gun Powder".
+//
+// Markup:
+// <div style="background-color:#4F4F59; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Dark Water
+@northem-dark3: #4F4F59;
 
-@rgb-red:          rgb(224,116,115);
-@rgb-yellow:       rgb(253,206,132);
-@rgb-orange:       rgb(240,160,111);
-@rgb-lime:         rgb(201,204,120);
-@rgb-purple:       rgb(194,161,202);
-/* +------------------------------------------------------------------------[2]-+ */
+// Base component color of "Light Wind".
+//
+// Main color for text, variables, constants and attributes.
+// In the UI scope used as semi-light background depending on the theme shading design.
+//
+// The X11 color scheme name is "French Grey".
+//
+// Markup:
+// <div style="background-color:#CBC9C9; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Light Wind
+@northem-dark4: #CBC9C9;
 
-/* +----------------------------------------------------------------------------+
-   + X11                                                                    [3] +
-   +----------------------------------------------------------------------------+ */
-@x11-black_russian: #1F1F23;
-@x11-dark_jaguar:   #242429;
-@x11-jaguar:        #29292E;
-@x11-gun_powder:    #4F4F59;
-@x11-gainsboro:     #DEDEDE;
-@x11-white_smoke:   #ECEEEF;
+// Lighter shade color of the base component color.
+//
+// Used as a lighter background color for UI elements like status bars.  
+// Used as semi-light background depending on the theme shading design.
+//
+// The X11 color scheme name is "Gainsboro".
+//
+// Markup:
+// <div style="background-color:#DEDEDE; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Light Wind
+@northem-dark5: #DEDEDE;
 
-@x11-aqua:          #8FCEC8;
-@x11-glacier:       #85C1D3;
-@x11-sail:          #87B2CE;
-@x11-san_marino:    #5B81AF;
+// Lighter shade color of the base component color.
+//
+// Used for punctuations, carets and structuring characters like curly- and square brackets.  
+// In the UI scope used as background, selection- and hightlight color depending on the theme shading design.
+//
+// The X11 color scheme name is "White Smoke".
+//
+// Markup:
+// <div style="background-color:#ECEEEF; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Light Wind
+@northem-dark6: #ECEEEF;
 
-@x11-geraldine:     #E07473;
-@x11-cherokee:      #FDCE84;
-@x11-tacao:         #F0A06F;
-@x11-deco:          #C9CC78;
-@x11-french_lilac:  #C2A1CA;
-/* +------------------------------------------------------------------------[3]-+ */
+// Bluish core color of the "Ice" component.
+//
+// Used for classes, types and documentation tags.
+//
+// The X11 color scheme name is "Aqua".
+//
+// Markup:
+// <div style="background-color:#8FCEC8; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Ice
+@northem-dark7: #8FCEC8;
+
+// Bluish core color.
+//
+// Represents the accent color of the color palette.  
+// Main color for primary UI elements and methods/functions.  
+//
+// Can be used for
+//   - Markup quotes
+//   - Markup link URLs
+//
+// The X11 color scheme name is "Glacier".
+//
+// Markup:
+// <div style="background-color:#85C1D3; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Ice
+@northem-dark8: #85C1D3;
+
+// Bluish core color of the "Ice" component.
+//
+// Used for language-specific syntactic/reserved support characters and keywords, operators, tags, units and
+// punctuations like (semi)colons,commas and braces.
+//
+// The X11 color scheme name is "Sail".
+//
+// Markup:
+// <div style="background-color:#87B2CE; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Ice
+@northem-dark9: #87B2CE;
+
+// Bluish core color of the "Ice" component.
+//
+// Used for markup doctypes, import/include/require statements, pre-processor statements and at-rules (`@`).
+//
+// The X11 color scheme name is "San Marino".
+//
+// Markup:
+// <div style="background-color:#5B81AF; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Ice
+@northem-dark10: #5B81AF;
+
+// Colorful color of the "Rainbow" component.
+//
+// Used for errors, git/diff deletion and linter marker.
+//
+// The X11 color scheme name is "Geraldine".
+//
+// Markup:
+// <div style="background-color:#E07473; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Rainbow
+@northem-dark11: #E07473;
+
+// Colorful color of the "Rainbow" component.
+//
+// Used for annotations.
+//
+// The X11 color scheme name is "Tacao".
+//
+// Markup:
+// <div style="background-color:#F0A06F; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Rainbow
+@northem-dark12: #F0A06F;
+
+// Colorful color of the "Rainbow" component.
+//
+// Used for escape characters, regular expressions and markup entities.  
+// In the UI scope used for warnings and git/diff renamings.
+//
+// The X11 color scheme name is "Cherokee".
+//
+// Markup:
+// <div style="background-color:#FDCE84; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Rainbow
+@northem-dark13: #FDCE84;
+
+// Colorful color of the "Rainbow" component.
+//
+// Main color for strings and attribute values.  
+// In the UI scope used for git/diff additions and success visualizations.
+//
+// The X11 color scheme name is "Deco".
+//
+// Markup:
+// <div style="background-color:#C9CC78; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Rainbow
+@northem-dark14: #C9CC78;
+
+// Colorful color of the "Rainbow" component.
+//
+// Used for numbers.
+//
+// The X11 color scheme name is "French Lilac".
+//
+// Markup:
+// <div style="background-color:#C2A1CA; width=60; height=60"></div>
+//
+// Styleguide Northem Dark - Rainbow
+@northem-dark15: #C2A1CA;
