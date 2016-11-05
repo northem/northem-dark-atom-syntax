@@ -1,6 +1,6 @@
 /*
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
-title      Language PHP Styles                                         +
+title      Language ShellScript Styles                                 +
 project    northem-dark-atom-syntax                                    +
 repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
 author     Arctic Ice Studio                                           +
@@ -9,32 +9,10 @@ copyright  Copyright (C) 2016                                          +
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [Language Packages]
-  > language-php (https://atom.io/packages/language-php)
-
-[References]
-PHP
-  (https://secure.php.net)
+  > language-shellscript (https://atom.io/packages/language-shellscript)
 */
-.source.php {
-  .meta {
-    &.function-call {
-      color: @syntax-color-function;
-
-      &.static {
-        font-style: italic;
-      }
-    }
-
-    &.string-contents {
-      color: @syntax-color-string;
-    }
-  }
-
+.source.shell {
   .punctuation.definition.variable {
     color: @syntax-color-keyword;
-  }
-
-  .support.other.namespace.use {
-    color: @syntax-color-class;
   }
 }

@@ -1,113 +1,26 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "GLSL"                 +
-project   northem-dark-atom-syntax        +
-file      glsl.less                       +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language GLSL Styles                                        +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "GLSL".
+[Language Packages]
+  > language-glsl (https://atom.io/packages/language-glsl)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Support
-  > Storage
-
-[Atom Package Dependencies]
-  > language-glsl
-      https://atom.io/packages/language-glsl
+[References]
+OpenGL
+  (https://www.opengl.org/documentation/glsl)
 */
 .source.glsl {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
+  .punctuation.definition.directive {
+    color: @syntax-color-keyword;
   }
 
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-      font-weight: normal;
-    }
-    &.language {
-      color: @color-syntax-keyword;
-    }
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity.name.function {
-    color: @color-syntax-function;
-
-    &.preprocessor {
-      color: @color-syntax-constant;
-      font-weight: bold;
-      font-style: italic;
-    }
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword {
-    &.control.import {
-      color: @color-syntax-import;
-      font-weight: bold;
-    }
-    &.operator {
-      color: @color-syntax-operator;
-    }
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta.preprocessor {
-    color: @color-syntax-constant;
-    font-weight: bold;
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.definition.parameters,
-    &.section {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*+---------+
-    + Support +
-    +---------+*/
-  .support.function {
-    color: @color-syntax-function;
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage {
-    &.modifier {
-      color: @color-syntax-keyword;
-    }
-    &.type {
-      color: @color-syntax-class;
-    }
+  .string.include {
+    color: @syntax-color-class;
   }
 }

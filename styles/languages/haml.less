@@ -1,133 +1,43 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "HAML"                 +
-project   northem-dark-atom-syntax        +
-file      haml.less                       +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language HAML Styles                                        +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "HAML".
+[Language Packages]
+  > language-haml (https://atom.io/packages/language-haml)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Support
-  > String
-
-[Atom Package Dependencies]
-  > language-haml
-      https://atom.io/packages/language-haml
+[References]
+HAML
+  (http://haml.info)
 */
-.text.haml,
-.source.ruby.embedded.haml {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
-  }
-
-  /*+----------+
-    + Constant +
-    +---------+*/
-  .constant {
-    &.other {
-      &.symbol {
-        color: @color-syntax-variable;
-
-        &.hashkey {
-          color: @color-syntax-constant;
-        }
-      }
-    }
-    &.numeric {
-      color: @color-syntax-number;
-    }
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity.name.tag {
-    color: @color-syntax-keyword;
-
-    &.class {
-      color: @color-syntax-class;
-    }
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword.control {
-    color: @color-syntax-keyword;
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
+.text.haml {
   .meta {
-    &.line {
-      color: @color-syntax-other;
+    &.prolog {
+      color: @syntax-color-preprocessor;
     }
-    &.section.attributes {
-      color: @color-syntax-symbol;
+
+    &.section.object {
+      color: @syntax-color-class;
     }
   }
 
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.definition {
-      &.tag {
-        color: @color-syntax-keyword;
-      }
-      &.string {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.constant {
-        color: @color-syntax-operator;
-      }
-      &.prolog {
-        color: @color-syntax-doctype;
-        font-weight: bold;
-      }
+  .punctuation.definition {
+    &.prolog {
+      color: @syntax-color-keyword;
     }
-    &.separator {
-      &.key-value,
-      &.other {
-        color: @color-syntax-operator;
-      }
-      &.object {
-        color: @color-syntax-symbol;
-      }
+
+    &.tag {
+      color: @syntax-color-tag;
     }
   }
 
-  /*+---------+
-    + Support +
-    +---------+*/
-  .support.function {
-    color: @color-syntax-function;
-  }
-
-  /*+---------+
-    + String +
-    +---------+*/
-  .string {
-    color: @color-syntax-string;
+  .variable.other.instance {
+    color: @syntax-color-variable;
+    font-style: italic;
   }
 }
