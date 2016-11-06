@@ -1,8 +1,8 @@
 {
   "name": "northem-dark-atom-syntax",
   "theme": "syntax",
-  "version": "0.20.0",
-  "description": "North-bluish dark theme based on the same named color palette \"Northem Dark\".",
+  "version": "0.21.0",
+  "description": "A north-bluish, dark clean and elegant Atom syntax theme.",
   "author": {
     "name": "Arctic Ice Studio",
     "email": "development@arcticicestudio.com"
@@ -18,8 +18,11 @@
   "readmeFilename": "README.md",
   "keywords": [
     "northem",
+    "north",
     "bluish",
     "dark",
+    "clean",
+    "elegant",
     "syntax"
   ],
   "license": "MIT",
