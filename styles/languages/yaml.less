@@ -1,81 +1,22 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "YAML"                 +
-project   northem-dark-atom-syntax        +
-file      yaml.less                       +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language YAML Styles                                        +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "YAML".
+[Language Packages]
+  > language-yaml (https://atom.io/packages/language-yaml)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Punctuation
-  > String
-
-[Atom Package Dependencies]
-  > language-yaml
-      https://atom.io/packages/language-yaml
+[References]
+YAML
+  (http://yaml.org)
 */
 .source.yaml {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
-  }
-
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant.numeric {
-    color: @color-syntax-number;
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
   .entity.name.tag {
-    color: @color-syntax-tag;
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.definition {
-      &.comment {
-        color: @color-syntax-comment;
-      }
-      &.entry {
-        color: @color-syntax-keyword;
-      }
-      &.string {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
-    &.separator {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string {
-    &.quoted,
-    &.unquoted {
-      color: @color-syntax-string;
-    }
+    color: @syntax-color-attribute;
   }
 }

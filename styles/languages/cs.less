@@ -1,181 +1,28 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "C#"                   +
-project   northem-dark-atom-syntax        +
-file      cs.less                         +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language C# Styles                                          +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for C# .
+[Language Packages]
+  > language-csharp (https://atom.io/packages/language-csharp)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Storage
-  > String
-  > Variable
-
-[Atom Package Dependencies]
-  > language-csharp
-      https://atom.io/packages/language-csharp
+[References]
+Microsoft .NET Framework
+  (https://www.microsoft.com/net)
 */
 .source.cs {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
-  }
-
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    &.language {
-      color: @color-syntax-keyword;
-    }
-    &.numeric {
-      color: @color-syntax-number;
-    }
-    &.character.escape {
-      color: @color-syntax-escape;
-    }
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity {
-    &.name {
-      &.type.class {
-        color: @color-syntax-class;
-        font-weight: bold;
-      }
-      &.function {
-        color: @color-syntax-function;
-      }
-      &.tag.localname {
-        color: @color-syntax-cs-comment-tag;
-        font-style: italic;
-      }
-    }
-    &.other.attribute-name.localname {
-      color: @color-syntax-class;
-      font-style: italic;
-    }
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword {
-    &.operator,
-    &.control,
-    &.other {
-      color: @color-syntax-keyword;
-    }
-    &.other.namespace {
-      color: @color-syntax-cs-preprocessor;
-      font-weight: bold;
-    }
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
   .meta {
-    &.method {
-      color: @color-syntax-function;
+    &.method.annotation {
+      color: @syntax-color-annotation;
+    }
 
-      &.body {
-        color: @color-syntax-other;
-      }
-      &.return-type {
-        color: @color-syntax-class;
-      }
-      &.identifier {
-        color: @color-syntax-symbol;
-      }
+    &.namespace.body {
+      color: @syntax-color-class;
     }
-    &.method-call,
-    &.class.body,
-    &.preprocessor {
-      color: @color-syntax-other;
-    }
-    &.toc-list.region {
-      color: @color-syntax-cs-preprocessor;
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.definition {
-      &.comment {
-        color: @color-syntax-comment;
-      }
-      &.tag {
-        color: @color-syntax-keyword;
-      }
-      &.method-parameters,
-      &.string.begin,
-      &.string.end,
-      &.seperator,
-      &.separator {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.section {
-      &.class,
-      &.namespace,
-      &.method,
-      &.block {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage {
-    &.modifier {
-      color: @color-syntax-keyword;
-    }
-    &.type {
-      color: @color-syntax-class;
-
-      &.generic {
-        color: @color-syntax-class;
-        font-weight: bold;
-      }
-    }
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string {
-    color: @color-syntax-string;
-  }
-
-  /*+----------+
-    + Variable +
-    +----------+*/
-  .variable.parameter.function {
-    color: @color-syntax-variable;
   }
 }

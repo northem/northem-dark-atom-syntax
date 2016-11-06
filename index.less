@@ -1,87 +1,50 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Index                           +
-project   northem-dark-atom-syntax        +
-file      index.less                      +
-version   0.21.0                          +
-webiste   http://arcticicestudio.com      +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
-
-Main LESSCSS stylesheet which imports all modularized project files.
-
-[Index]
-  > Core
-  > Package Support
-  > Languages
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Index                                                       +
+project    northem-dark-atom-syntax                                    +
+version    0.22.0                                                      +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
 [References]
 Northem Dark
   (https://github.com/arcticicestudio/northem-dark)
-Northem
-  (https://github.com/arcticicestudio/northem)
-Atom API-Documentation
+Atom Documentation
   (https://atom.io/docs/api/latest/Atom)
-Atom Flight Manual
   (https://atom.io/docs)
+  (https://github.com/atom/atom/blob/master/static/variables/syntax-variables.less)
 LESSCSS
   (http://lesscss.org)
-Modular Scale
-  (http://www.modularscale.com)
 */
-/* +------+
-   + Core +
-   +------+ */
-@import (reference) "styles/northem-dark.less";
-@import (reference) "styles/colors.less";
-@import (reference) "styles/sizes.less";
-@import "./styles/editor.less";
+/*+---------+
+  + Imports +
+  +---------+*/
+/*+--- Core ---+*/
+@import (reference) "styles/syntax-variables";
+@import "styles/editor";
+@import "styles/syntax";
 
-/* +------------------+
-   + Package SUpport  +
-   +------------------+ */
-@import "./styles/packagesupport.less";
-
-/* +-----------+
-   + Languages +
-   +-----------+ */
-@import "./styles/languages/c.less";
-@import "./styles/languages/clojure.less";
-@import "./styles/languages/coffeescript.less";
-@import "./styles/languages/cpp.less";
-@import "./styles/languages/cs.less";
-@import "./styles/languages/css.less";
-@import "./styles/languages/d.less";
-@import "./styles/languages/generic-config.less";
-@import "./styles/languages/gfm.less";
-@import "./styles/languages/git.less";
-@import "./styles/languages/glsl.less";
-@import "./styles/languages/go.less";
-@import "./styles/languages/haml.less";
-@import "./styles/languages/haskell.less";
-@import "./styles/languages/html.less";
-@import "./styles/languages/jade.less";
-@import "./styles/languages/java.less";
-@import "./styles/languages/java-properties.less";
-@import "./styles/languages/javascript.less";
-@import "./styles/languages/json.less";
-@import "./styles/languages/julia.less";
-@import "./styles/languages/latex.less";
-@import "./styles/languages/lesscss.less";
-@import "./styles/languages/make.less";
-@import "./styles/languages/mustache.less";
-@import "./styles/languages/nunjucks.less";
-@import "./styles/languages/php.less";
-@import "./styles/languages/property-list.less";
-@import "./styles/languages/python.less";
-@import "./styles/languages/r.less";
-@import "./styles/languages/react-jsx.less";
-@import "./styles/languages/ruby.less";
-@import "./styles/languages/sass.less";
-@import "./styles/languages/scala.less";
-@import "./styles/languages/shellscript.less";
-@import "./styles/languages/sql.less";
-@import "./styles/languages/xml.less";
-@import "./styles/languages/yaml.less";
+/*+--- Languages ---+*/
+@import "styles/languages/c";
+@import "styles/languages/clojure";
+@import "styles/languages/coffeescript";
+@import "styles/languages/cs";
+@import "styles/languages/css";
+@import "styles/languages/gfm";
+@import "styles/languages/glsl";
+@import "styles/languages/go";
+@import "styles/languages/haml";
+@import "styles/languages/haskell";
+@import "styles/languages/java";
+@import "styles/languages/javascript";
+@import "styles/languages/json";
+@import "styles/languages/julia";
+@import "styles/languages/lesscss";
+@import "styles/languages/php";
+@import "styles/languages/python";
+@import "styles/languages/ruby";
+@import "styles/languages/shell";
+@import "styles/languages/yaml";
