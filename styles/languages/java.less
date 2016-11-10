@@ -1,149 +1,96 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "Java"                 +
-project   northem-dark-atom-syntax        +
-file      java.less                       +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language Java Styles                                        +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "Java".
+Supports Java, Scala and Java Properties.
 
 [Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Storage
-  > String
-  > Variable
+  > Java
+  > Scala
+  > Java Properties
 
-[Atom Package Dependencies]
-  > language-java
-      https://atom.io/packages/language-java
+[Language Packages]
+  > language-java (https://atom.io/packages/language-java)
+  > language-scala (https://atom.io/packages/language-scala)
+
+[References]
+Java
+  (https://java.com)
+  (http://openjdk.java.net)
+Scala
+  (http://scala-lang.org)
 */
+/*+------+
+  + Java +
+  +------+*/
 .source.java {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
+  .keyword.operator.instanceof {
+    color: @syntax-color-keyword;
   }
 
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    &.variable,
-    &.other {
-      color: @color-syntax-constant;
-      font-weight: bold;
-      font-style: italic;
-    }
-    &.numeric {
-      color: @color-syntax-number;
-    }
+  .punctuation.bracket.angle {
+    color: @syntax-color-java-bracket-angle;
   }
 
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity.name {
-    &.function {
-      color: @color-syntax-function;
-    }
-    &.class {
-      color: @color-syntax-class;
-      font-weight: bold;
-    }
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword {
-    &.other {
-      &.package,
-      &.import {
-        color: @color-syntax-import;
-        font-weight: bold;
-      }
-    }
-    &.operator {
-      color: @color-syntax-operator;
-    }
-    &.control {
-      color: @color-syntax-keyword;
-    }
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta.method-call {
-    .meta.method {
-      color: @color-syntax-function;
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.definition {
-      &.string {
-        color: @color-syntax-symbol;
-      }
-      &.method-parameters {
-        color: @color-syntax-variable;
-      }
-    }
-    &.terminator {
-      color: @color-syntax-keyword;
-    }
-    &.section {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
   .storage {
-    &.modifier {
-      color: @color-syntax-keyword;
-
-      &.package,
-      &.import {
-        color: @color-syntax-java-package;
-      }
+    &.modifier.import {
+      color: @syntax-color-import;
     }
+
     &.type {
-      color: @color-syntax-class;
+      color: @syntax-color-class;
 
       &.annotation {
-        color: @color-syntax-java-annotation;
+        color: @syntax-color-annotation;
+      }
+
+      &.primitive {
+        color: @syntax-color-keyword;
       }
     }
   }
+}
 
-  /*+--------+
-    + String +
-    +--------+*/
-  .string {
-    color: @color-syntax-string;
+/*+-------+
+  + Scala +
+  +-------+*/
+.source.scala {
+  .entity.name.package {
+    color: @syntax-color-class;
   }
 
-  /*+----------+
-    + Variable +
-    +----------+*/
-  .variable.language {
-    color: @color-syntax-keyword;
+  .meta.import {
+    color: @syntax-color-class;
+
+    .variable {
+      color: @syntax-color-class;
+    }
+  }
+
+  .scala.type {
+    color: @syntax-color-class;
+
+    .class {
+      color: @syntax-color-class;
+    }
+  }
+}
+
+/*+-----------------+
+  + Java Properties +
+  +-----------------+*/
+.source.java-properties {
+  .meta.key-pair {
+    color: @syntax-color-keyword;
+
+    & > .punctuation {
+      color: @syntax-color-punctuation;
+    }
   }
 }

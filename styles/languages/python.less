@@ -1,147 +1,30 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "Python"               +
-project   northem-dark-atom-syntax        +
-file      python.less                     +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language Python Styles                                      +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "Python".
+[Language Packages]
+  > language-python (https://atom.io/packages/language-python)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Support
-  > Storage
-  > String
-  > Variable
-
-[Atom Package Dependencies]
-  > language-python
-      https://atom.io/packages/language-python
+[References]
+Ruby
+  (https://www.python.org)
 */
 .source.python {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
+  .variable.parameter {
+    color: @syntax-color-variable;
   }
 
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant.numeric {
-    color: @color-syntax-number;
-  }
+  .meta.function-call {
+    color: @syntax-color-function;
 
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity.name.function {
-    color: @color-syntax-function;
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword {
-    &.other {
-      color: @color-syntax-keyword;
+    &.arguments {
+      color: @syntax-color-variable;
     }
-    &.control {
-      color: @color-syntax-keyword;
-
-      &.import {
-        color: @color-syntax-import;
-      }
-      &.statement {
-        color: @color-syntax-keyword;
-      }
-    }
-    &.operator {
-      color: @color-syntax-operator;
-    }
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta {
-    &.function-call {
-      color: @color-syntax-function;
-
-      &.arguments {
-        color: @color-syntax-variable;
-      }
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.definition {
-      &.string {
-        color: @color-syntax-symbol;
-      }
-      &.parameters,
-      &.arguments,
-      &.list {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.comment {
-        color: @color-syntax-comment;
-      }
-    }
-    &.seperator,
-    &.section {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*+---------+
-    + Support +
-    +---------+*/
-  .support {
-    &.type {
-      color: @color-syntax-keyword;
-    }
-    &.function {
-      color: @color-syntax-function;
-    }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage.type.function {
-    color: @color-syntax-keyword;
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string.quoted {
-    color: @color-syntax-string;
-  }
-
-  /*+----------+
-    + Variable +
-    +----------+*/
-  .variable.parameter.function {
-    color: @color-syntax-variable;
   }
 }

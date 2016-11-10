@@ -1,108 +1,26 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "Clojure"              +
-project   northem-dark-atom-syntax        +
-file      clojure.less                    +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language Clojure Styles                                     +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-This file defines all language specific syntax highlighting classes for "Clojure".
+[Language Packages]
+  > language-clojure (https://atom.io/packages/language-clojure)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Storage
-  > String
-
-[Atom Package Dependencies]
-  > language-clojure
-      https://atom.io/packages/language-clojure
+[References]
+Clojure
+  (https://clojure.org)
 */
 .source.clojure {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
+  .entity.global {
+    color: @syntax-color-class;
   }
 
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    &.keyword,
-    &.language {
-      color: @color-syntax-keyword;
-    }
-    &.numeric {
-      color: @color-syntax-number;
-    }
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity {
-    &.name.function {
-      color: @color-syntax-function;
-    }
-    &.global {
-      color: @color-syntax-class;
-    }
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword.control {
-    color: @color-syntax-keyword;
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta {
-    &.symbol {
-      color: @color-syntax-class;
-    }
-    &.vector {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.definition.string,
-    &.section.expression {
-      &.begin,
-      &.end {
-        color: @color-syntax-symbol;
-      }
-    }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage.control {
-    color: @color-syntax-keyword;
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string {
-    color: @color-syntax-string;
+  .meta.symbol {
+    color: @syntax-color-variable;
   }
 }

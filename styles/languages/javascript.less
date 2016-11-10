@@ -1,189 +1,37 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "JavaScript"           +
-project   northem-dark-atom-syntax        +
-file      javascript.less                 +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language JavaScript Styles                                  +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "JavaScript".
+Support for
+  - ES2016
+  - ESNext
+  - Atom's Etch
+  - Facebook's React, Flow and GraphQL
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Support
-  > Storage
-  > String
-  > Variable
+[Language Packages]
+  > language-babel (https://atom.io/packages/language-babel)
+  > language-javascript (https://atom.io/packages/language-javascript)
 
-[Atom Package Dependencies]
-  > language-javascript
-      https://atom.io/packages/language-javascript
+[References]
+Babel
+  (https://babeljs.io)
+ESNext
+  (https://github.com/esnext/esnext)
+Atom
+  (https://github.com/atom/etch)
+Facebook
+  (https://facebook.github.io/react)
+  (https://flowtype.org)
+  (http://graphql.org)
 */
-.source.js {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
-  }
-
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-    &.language {
-      color: @color-syntax-constant;
-      font-weight: normal;
-
-      &.boolean {
-        &.true,
-        &.false {
-          color: @color-syntax-keyword;
-        }
-      }
-    }
-    &.character.escape {
-      color: @color-syntax-escape;
-    }
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity.name {
-    &.type {
-      &.object {
-        color: @color-syntax-class;
-
-        &.firebug {
-          font-style: italic;
-        }
-      }
-      &.instance {
-        color: @color-syntax-javascript-instance;
-      }
-    }
-    &.function {
-      color: @color-syntax-function;
-    }
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword {
-    &.operator {
-      color: @color-syntax-operator;
-
-      &.new {
-        color: @color-syntax-keyword;
-      }
-    }
-    &.control {
-      color: @color-syntax-keyword;
-
-      &.anchor.regexp {
-        color: @color-syntax-regexp;
-      }
-    }
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta {
-    &.delimiter {
-      &.method.period,
-      &.object.comma {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.brace {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation.definition {
-    &.comment {
-      color: @color-syntax-comment;
-    }
-    &.parameters,
-    &.string {
-      &.begin,
-      &.end {
-        color: @color-syntax-symbol;
-      }
-    }
-    &.terminator.statement {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*+---------+
-    + Support +
-    +---------+*/
-  .support {
-    &.function {
-      color: @color-syntax-function;
-
-      &.firebug {
-        font-style: italic;
-      }
-    }
-    &.constant {
-      color: @color-syntax-constant;
-      font-weight: normal;
-
-      &.dom {
-        color: @color-syntax-class;
-        font-style: italic;
-      }
-    }
-    &.class {
-      color: @color-syntax-class;
-    }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage {
-    &.modifier,
-    &.type {
-      color: @color-syntax-keyword;
-    }
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string.quoted {
-    &.single,
-    &.double {
-      color: @color-syntax-string;
-    }
-  }
-
-  /*+----------+
-    + Variable +
-    +----------+*/
-  .variable.language {
-    color: @color-syntax-keyword;
+.source.js.jsx {
+  .variable.other.class {
+    color: @syntax-color-class;
   }
 }
