@@ -1,160 +1,41 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "C"                    +
-project   northem-dark-atom-syntax        +
-file      c.less                          +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language C/C++ Styles                                       +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for the "C".
+[Language Packages]
+  > language-c (https://atom.io/packages/language-c)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Support
-  > Storage
-  > String
-  > Variable
-
-[Atom Package Dependencies]
-  > language-c
-      https://atom.io/packages/language-c
+[References]
+Standard C++
+  (https://isocpp.org)
 */
-.source.c {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
+.source.c,
+.source.cpp {
+  .keyword.operator {
+    color: @syntax-color-keyword;
   }
 
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-    &.character.escape {
-      color: @color-syntax-escape;
-    }
-    &.language {
-      color: @color-syntax-keyword;
-    }
+  .meta.preprocessor {
+    color: @syntax-color-preprocessor;
   }
 
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity.name.function {
-    color: @color-syntax-function;
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword.control {
-    color: @color-syntax-keyword;
-
-    &.import {
-      &.include,
-      &.define {
-        color: @color-syntax-c-preprocessor;
-        font-weight: bold;
-      }
-    }
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta {
-    &.preprocessor {
-      &.macro {
-        color: @color-syntax-other;
-      }
-      &.c.include {
-        color: @color-syntax-keyword;
-      }
-    }
-    &.block,
-    &.parens {
-      color: @color-syntax-other;
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
   .punctuation {
-    &.definition {
-      &.string.begin,
-      &.string.end,
-      &.parameters {
-        color: @color-syntax-symbol;
-      }
+    &.definition.directive {
+      color: @syntax-color-keyword;
     }
-    &.section {
-      &.block,
-      &.parens {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-    }
-    &.separator {
-      &.continuation {
-        color: @color-syntax-escape;
-      }
-      &.parameters {
-        color: @color-syntax-symbol;
-      }
+
+    &.separator.pointer-access {
+      color: @syntax-color-operator;
     }
   }
 
-  /*+---------+
-    + Support +
-    +---------+*/
-  .support {
-    &.type.sys-types {
-      color: @color-syntax-class;
-    }
-    &.function {
-      &.any-method,
-      &.C99 {
-        color: @color-syntax-function;
-      }
-    }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage.type {
-    color: @color-syntax-class;
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string {
-    color: @color-syntax-string;
-  }
-
-  /*+----------+
-    + Variable +
-    +----------+*/
-  .variable.parameter {
-    color: @color-syntax-variable;
+  .string.include {
+    color: @syntax-color-class;
   }
 }

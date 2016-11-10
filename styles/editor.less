@@ -1,136 +1,158 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Editor                          +
-project   northem-dark-atom-syntax        +
-file      editor.less                     +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
-
-Defines all editor specific classes.
-
-[Index]
-  > Atom Text Editor (:host)
-      Cursor
-      Gutter
-      Indent Guide
-      Invisibles
-      Line
-      Selection
-      Wrap Guide
-  > Atom Text Editor (:shadow)
-      Gutter
-      Result Marker
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Editor Styles                                               +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
-/*+--------------------------+
-  + Atom Text Editor (:host) +
-  +--------------------------+*/
-.atom-text-editor,
+atom-text-editor,
+atom-text-editor::shadow,
 :host {
-  background-color: @color-editor-background;
-  color: @color-editor-text;
-  /*+--- Cursor ---+*/
-  .cursor {
-    color: @color-editor-cursor;
+  background-color: @syntax-background-color;
+  color: @syntax-text-color;
+
+  /*+----------+
+    + Elements +
+    +----------+*/
+  .bracket-matcher .region {
+    border: 1px solid @syntax-bracket-matcher-color;;
+    box-sizing: border-box;
   }
 
-  /*+--- Gutter ---+*/
+  .cursor {
+    border-left: 2px solid @syntax-cursor-color;
+  }
+
+  .indent-guide {
+    color: @syntax-indent-guide-color;
+  }
+
+  .invisible {
+    color: @syntax-invisible-character-color;
+  }
+
+  .invisible-character {
+    color: @syntax-invisible-character-color;
+  }
+
+  .line.cursor-line {
+    background-color: @syntax-cursor-line;
+  }
+
+  .selection .region {
+    background-color: @syntax-selection-color;
+  }
+
+  .wrap-guide {
+    background-color: @syntax-wrap-guide-color;
+  }
+
+  /*+------------------+
+    + find-and-replace +
+    +------------------+*/
+  .find-result .region.region.region,
+  .current-result .region.region.region {
+    background-color: @syntax-result-marker-color;
+    transition: border-color @syntax-transition-time;
+  }
+
+  .current-result .region.region.region {
+    background-color: fadein(@syntax-result-marker-color, 8%);
+    border: 2px solid @syntax-result-marker-color-selected;
+    transition-duration: @syntax-transition-time;
+  }
+
+  .find-result .region.region.region {
+    border: 2px solid transparent;
+  }
+
+  /*+--------+
+    + Gutter +
+    +--------+*/
   .gutter {
-    background-color: @color-gutter-background;
-    color: @color-gutter-text;
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    background-color: @syntax-gutter-background-color;
+    margin-right: 0;
+    border-right: 0;
+    padding-right: 0;
+
+    .line-numbers {
+      background: transparent !important;
+    }
 
     .line-number {
-      text-align: left;
+      background: transparent;
+      color: @syntax-gutter-text-color;
+      padding-right: 0;
 
-      &.cursor-line {
-        background-color: @color-gutter-background-selected;
-        color: @color-gutter-text-selected;
+      &.git-line-added {
+        color: @syntax-color-added;
+        border-left-color: @syntax-color-added;
+
+        &.cursor-line,
+        &.cursor-line-no-selection {
+          color: @syntax-color-added;
+          border-left-color: @syntax-color-added;
+        }
       }
+
+      &.git-line-modified {
+        color: @syntax-color-modified;
+        border-left-color: @syntax-color-modified;
+
+        &.cursor-line,
+        &.cursor-line-no-selection {
+          color: @syntax-color-modified;
+          border-left-color: @syntax-color-modified;
+        }
+      }
+
+      &.git-line-removed {
+        color: @syntax-color-removed;
+        border-left-color: @syntax-color-removed;
+
+        &.cursor-line,
+        &.cursor-line-no-selection {
+          color: @syntax-color-removed;
+          border-left-color: @syntax-color-removed;
+        }
+      }
+
+      &.cursor-line,
       &.cursor-line-no-selection {
-        color: @color-gutter-text-selected;
-      }
-      &.git-line-removed:before {
-        bottom: -3px;
-      }
-      &.git-line-removed:after {
-        content: "";
-        position: absolute;
-        left: 0px;
-        bottom: 0px;
-        width: 25px;
-        border-bottom: 2px dotted fade(@color-git-diff-removed, 50%);
-        pointer-events: none;
-      }
-      &.folded {
-        .icon-right {
-          color: @color-gutter-icon-folded;
-        }
-        .icon-right:hover {
-          color: @color-gutter-icon-folded-hover;
-        }
+        color: @syntax-gutter-text-color-selected;
+        font-weight: 600;
       }
 
       .icon-right {
-        color: @color-gutter-icon;
+        opacity: 1.0;
+        color: @syntax-gutter-text-color;
+        transition: all @syntax-transition-time ease;
+      }
+
+      .icon-right:hover {
+        color: @syntax-gutter-text-color-selected;
       }
     }
+  }
 
-    .gutter .line-number.folded,
-    .gutter .line-number:after,
-    .fold-marker:after {
-      color: @color-gutter-text;
+  .gutter .line-number.folded,
+  .gutter .line-number:after,
+  .fold-marker:after {
+    color: @syntax-gutter-text-color-selected;
+
+    .icon-right {
+      opacity: 0.5;
+      color: @syntax-gutter-icon-color-folded;
+      transition: all @syntax-transition-time ease;
+
+      &:hover {
+        opacity: 1.0;
+      }
     }
-  }
-
-  /*+--- Indent Guide ---+*/
-  .indent-guide {
-    color: @color-guides-indent-line;
-  }
-
-  /*+--- Invisibles ---+*/
-  .invisible,
-  .invisible-character {
-    color: @color-guides-invisibles;
-  }
-
-  /*+--- Line ---+*/
-  .line.cursor-line {
-    background: @color-gutter-background-selected;
-  }
-
-  /*+--- Selection ---+*/
-  .selection .region {
-    background-color: @color-editor-background-selected;
-    color: @color-editor-text;
-  }
-  /* +----------------------------------------------------------------------[1.5]-+ */
-
-  /*+--- Wrap Guide ---+*/
-  .wrap-guide {
-    background-color: @color-guides-wrap;
-  }
-}
-
-/*+----------------------------+
-  + Atom Text Editor (:shadow) +
-  +----------------------------+*/
-atom-text-editor,
-atom-text-editor::shadow {
-  /*+--- Gutter ---+*/
-  .gutter.drop-shadow {
-    -webkit-box-shadow: -2px 0 10px 2px @color-gutter-background;
-  }
-
-  /*+--- Result Marker ---+*/
-  .find-result .region {
-    border: 1px solid @color-marker-result-border !important;
-  }
-
-  .current-result .region {
-    border: 1px solid @color-marker-result-border !important;
-    background-color: transparent;
   }
 }

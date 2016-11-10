@@ -1,112 +1,37 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++++++
-title     Language "GitHub Flavored Markdown" +
-project   northem-dark-atom-syntax            +
-file      gfm.less                            +
-version   0.21.0                              +
-author    Arctic Ice Studio                   +
-email     development@arcticicestudio.com     +
-website   http://arcticicestudio.com          +
-copyright Copyright (C) 2016                  +
-+++++++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language GitHub Flavored Markdown Styles                    +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for GitHub Flavored Markdown.
+[Language Packages]
+  > language-gfm (https://atom.io/packages/language-gfm)
 
-[Index]
-  > Comment
-  > Entity
-  > Markup
-  > Punctuation
-  > Support
-  > Variable
-
-[Atom Package Dependencies]
-  > language-gfm
-      https://atom.io/packages/language-gfm
+[References]
+GitHub
+  (https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet)
 */
 .source.gfm {
-  color: @color-editor-text;
-  -webkit-font-smoothing: auto;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    &.quote {
-      color: @color-editor-text;
-      font-style: italic;
-    }
-    &.hr {
-      color: @color-syntax-class;
-    }
+  .comment.hr {
+    color: @syntax-color-gfm-hr;
   }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity {
-    color: @color-syntax-keyword;
+  .link .entity {
+    color: @syntax-color-gfm-link;
   }
-
-  /*+--------+
-    + Markup +
-    +--------+*/
-  .markup {
-    &.heading {
-      color: @color-syntax-keyword;
-      font-weight: bold;
-    }
-    &.underline {
-      text-decoration: underline;
-
-      &.link {
-        color: @color-syntax-markdown-link;
-      }
-    }
-    &.bold,
-    &.italic {
-      color: @color-syntax-string;
-    }
-    &.raw {
-      color: @color-syntax-keyword;
-      font-style: italic;
-    }
-    &.changed {
-      color: @color-git-diff-modified;
-    }
-    &.deleted {
-      color: @color-git-diff-removed;
-    }
+  
+  .punctuation.definition {
+    color: @syntax-color-gfm-punctuation;
   }
-
-  /*+------------+
-    + Punctation +
-    +------------+*/
-  .punctation {
-    &.definition.begin,
-    &.definition.end,
-    &.seperator {
-      color: @color-syntax-symbol;
-    }
+  
+  .variable.unordered.list {
+    color: @syntax-color-gfm-punctuation;
   }
-
-  /*+---------+
-    + Support +
-    +---------+*/
+  
   .support {
-    color: @color-syntax-markdown-code;
-
-    &.quote {
-      color: @color-syntax-class;
-    }
-  }
-
-  /*+----------+
-    + Variable +
-    +----------+*/
-  .variable {
-    &.unordered.list,
-    &.ordered.list {
-      color: @color-syntax-class;
-    }
+    color: @syntax-color-markup-code;
   }
 }

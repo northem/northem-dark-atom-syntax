@@ -1,194 +1,55 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "CSS"                  +
-project   northem-dark-atom-syntax        +
-file      css.less                        +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language CSS Styles                                         +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "CSS".
+Supports LESSCSS and Sass.
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Support
-  > String
-  > Variable
+[Language Packages]
+  > language-css (https://atom.io/packages/language-css)
 
-[Atom Package Dependencies]
-  > language-css
-      https://atom.io/packages/language-css
+[References]
+LESSCSS
+  (http://lesscss.org)
+Sass
+  (http://sass-lang.com)
+W3C
+  (https://www.w3.org/TR/css3-roadmap)
 */
-.source.css {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
-  }
-
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    color: @color-syntax-constant;
-    font-weight: bold;
-
-    &.numeric,
-    &.other.color.rgb-value {
-      color: @color-syntax-number;
-      font-weight: normal;
-    }
-    &.character.escape {
-      color: @color-syntax-escape;
-      font-weight: normal;
-    }
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity {
-    &.name.tag {
-      color: @color-syntax-class;
-    }
-    &.other.attribute-name {
-      &.attribute {
-        color: @color-syntax-css-attribute;
-      }
-      &.pseudo-class,
-      &.pseudo-element {
-        color: @color-syntax-css-class-pseudo;
-      }
-      &.class {
-        color: @color-syntax-class;
-      }
-      &.id {
-        color: @color-syntax-css-id;
-      }
-    }
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword {
-    &.operator {
-      color: @color-syntax-operator;
-    }
-    &.control.at-rule {
-      &.font-face,
-      &.import,
-      &.page,
-      &.media {
-        color: @color-syntax-css-at-rule;
-      }
-    }
-    &.other {
-      color: @color-syntax-keyword;
-
-      &.unit {
-        color: @color-syntax-keyword;
-      }
-      &.important {
-        color: @color-syntax-css-important;
-      }
-    }
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
+.source.css,
+.source.css.less,
+.source.css.scss,
+.source.css.sass {
   .meta {
-    &.selector {
-      color: @color-syntax-css-selector;
+    &.at-rule {
+      .punctuation.definition.keyword {
+        color: @syntax-color-keyword;
+      }
+
+      & > .string.quoted {
+        color: @syntax-color-class;
+      }
     }
-    &.at-rule.media {
-      color: @color-syntax-keyword;
-    }
+
     &.property-value {
-      color: @color-editor-text;
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.terminator,
-    &.separator {
-      color: @color-syntax-symbol;
-    }
-    &.definition {
-      &.comment {
-        color: @color-syntax-comment;
-      }
-      &.keyword {
-        color: @color-syntax-keyword;
-      }
-      &.entity,
-      &.string {
-        color: @color-syntax-symbol;
-      }
-      &.constant {
-        color: @color-syntax-number;
-        font-weight: normal;
-      }
-    }
-    &.section {
-      color: @color-syntax-symbol;
-
-      &.property-list {
-        color: @color-syntax-symbol;
+      .punctuation.definition.constant {
+        color: @syntax-color-keyword;
       }
     }
   }
 
-  /*+---------+
-    + Support +
-    +---------+*/
   .support {
+    &.constant.property-value {
+      color: @syntax-color-keyword;
+    }
+
     &.type.property-name {
-      color: @color-syntax-keyword;
-    }
-    &.function {
-      color: @color-syntax-function;
-    }
-    &.constant {
-      &.property-value {
-        color: @color-syntax-css-property;
-        font-weight: normal;
-      }
-      &.media {
-        color: @color-syntax-css-media;
-      }
-    }
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string {
-    color: @color-syntax-string;
-  }
-
-  /*+----------+
-    + Variable +
-    +----------+*/
-  .variable {
-    color: @color-syntax-variable;
-
-    &.parameter.misc {
-      color: @color-syntax-class;
+      color: @syntax-color-css-property;
     }
   }
 }

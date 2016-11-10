@@ -1,163 +1,23 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "CoffeeScript"         +
-project   northem-dark-atom-syntax        +
-file      coffeescript.less               +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language CoffeeScript Styles                                +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "CoffeeScript".
+[Language Packages]
+  > language-coffee-script (https://atom.io/packages/language-coffee-script)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Support
-  > Storage
-  > String
-  > Variable
-
-[Atom Package Dependencies]
-  > language-coffee-script
-      https://atom.io/packages/language-coffee-script
+[References]
+CoffeeScript
+  (http://coffeescript.org)
 */
 .source.coffee {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
-  }
-
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    &.numeric {
-      color: @color-syntax-number;
-    }
-    &.character.escape,
-    &.other.character-class.set.regexp {
-      color: @color-syntax-regexp;
-    }
-  }
-
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity {
-    &.name {
-      &.function {
-        color: @color-syntax-function;
-      }
-      &.class {
-        color: @color-syntax-class;
-      }
-    }
-    &.other.inherited-class {
-      color: @color-syntax-class;
-    }
-  }
-
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword {
-    &.control {
-      color: @color-syntax-keyword;
-    }
-    &.operator {
-      color: @color-syntax-operator;
-    }
-  }
-
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta {
-    &.brace.round,
-    &.brace.curly,
-    &.delimeter.object.comma {
-      color: @color-syntax-symbol;
-    }
-    &.group.regexp {
-      color: @color-syntax-regexp;
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.definition {
-      &.comment {
-        color: @color-syntax-comment;
-      }
-      &.string {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
-      &.character-class.regexp,
-      &.group.regexp {
-        color: @color-syntax-keyword;
-      }
-    }
-    &.section.embedded,
-    &.terminator,
-    &.seperator {
-      color: @color-syntax-symbol;
-    }
-  }
-
-  /*+---------+
-    + Support +
-    +---------+*/
-  .support {
-    &.class {
-      color: @color-syntax-class;
-    }
-    &.function {
-      color: @color-syntax-function;
-    }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage.type {
-    &.function,
-    &.class {
-      color: @color-syntax-keyword;
-    }
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string.quoted {
-    color: @color-syntax-string;
-  }
-
-  /*+----------+
-    + Variable +
-    +----------+*/
-  .variable {
-    &.assignment,
-    &.parameter.function {
-      color: @color-syntax-variable;
-    }
-    &.other.readwrite.instance {
-      color: @color-syntax-javascript-instance;
-    }
+  .variable.other.instance {
+    color: @syntax-color-variable;
+    font-style: italic;
   }
 }

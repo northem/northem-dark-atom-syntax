@@ -1,10 +1,20 @@
-<img src="https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/assets/media/northem-dark-atom-syntax-banner.png" alt="Northem Dark Atom Syntax"/>
+<p align="center"><img src="https://cdn.rawgit.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/northem-dark-atom-syntax-banner.svg"/></p>
 
-<img src="https://assets-cdn.github.com/favicon.ico" width=24 height=24/> [![release](https://img.shields.io/github/release/arcticicestudio/northem-dark-atom-syntax.svg)](https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest) <img src="https://atom.io/favicon.ico" width=24 height=24/> [![apm](https://img.shields.io/apm/v/northem-dark-atom-syntax.svg)](https://atom.io/themes/northem-dark-atom-syntax) [![apm downloads](https://img.shields.io/apm/dm/northem-dark-atom-syntax.svg)](https://atom.io/themes/northem-dark-atom-syntax)
+<p align="center"><img src="https://cdn.travis-ci.org/images/favicon-c566132d45ab1a9bcae64d8d90e4378a.svg" width=24 height=24/> <a href="https://travis-ci.org/arcticicestudio/northem-dark-atom-syntax"><img src="https://img.shields.io/travis/arcticicestudio/northem-dark-atom-syntax/develop.svg"/></a> <img src="https://circleci.com/favicon.ico" width=24 height=24/> <a href="https://circleci.com/gh/arcticicestudio/northem-dark-atom-syntax"><img src="https://circleci.com/gh/arcticicestudio/northem-dark-atom-syntax.svg?style=shield&circle-token=c224c82abbb79d32565eb0e3528e1b05f5f2046e"/></a> <img src="https://assets-cdn.github.com/favicon.ico" width=24 height=24/> <a href="https://github.com/arcticicestudio/northem-dark-atom-syntax/releases/latest"><img src="https://img.shields.io/github/release/arcticicestudio/northem-dark-atom-syntax.svg"/></a> <a href="https://github.com/arcticicestudio/northem-dark/releases/tag/v2.0.0"><img src="https://img.shields.io/badge/Northem_Dark-v2.0.0-blue.svg"/></a> <img src="https://atom.io/favicon.ico" width=24 height=24/> <a href="https://atom.io/themes/northem-dark-atom-syntax"><img src="https://img.shields.io/apm/v/northem-dark-atom-syntax.svg"/></a> <a href="https://atom.io/themes/northem-dark-atom-syntax"><img src="https://img.shields.io/apm/dm/northem-dark-atom-syntax.svg"/></a></p>
 
-North-bluish dark theme based on the same named color palette [Northem Dark](https://github.com/arcticicestudio/northem-dark).
+<p align="center">A north-bluish, dark clean and elegant Atom syntax theme.</p>
 
-![Preview Screenshot](https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/master/assets/media/preview-screenshot.png)
+<p align="center">Designed for a fluent and clear workflow.<br>
+Based on the <a href="https://github.com/arcticicestudio/northem-dark">Northem Dark</a> color palette.<br>
+Fits the <a href="https://atom.io/themes/northem-dark-atom-ui">northem-dark-atom-ui</a> theme.</p>
+
+<p align="center">This project is a more blue-tinged variation of the origin project <a href="https://github.com/arcticicestudio/northem-atom-syntax">Northem Atom Syntax</a>.</p>
+
+---
+
+![][scrot-top]
+> Icons provided by [file-icons](https://atom.io/packages/file-icons).  
+Font is [Source Code Pro](https://adobe-fonts.github.io/source-code-pro) 20px.
 
 ## Getting started
 ### Installation
@@ -22,82 +32,40 @@ apm install northem-dark-atom-syntax
   1. Open *Settings > Themes*
   2. Select `Northem Dark Atom` from the *Syntax Theme* drop-down menu
 
-## Language Support
-  - <a href="https://atom.io/packages/language-c"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> C/C++</a>
-  - <a href="https://atom.io/packages/language-clojure"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Clojure</a>
-  - <a href="https://atom.io/packages/language-coffee-script"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> CoffeeScript</a>
-  - <a href="https://atom.io/packages/language-csharp"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> CS (C#)</a>
-  - <a href="https://atom.io/packages/language-css"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> CSS</a>
-  - <a href="https://atom.io/packages/language-d"><img src="https://avatars0.githubusercontent.com/u/768741" width=16 height=16/> D</a>
-  - <a href="https://atom.io/packages/language-generic-config"><img src="https://avatars1.githubusercontent.com/u/1038121" width=16 height=16/> Generic Config (dotfiles)</a>
-  - <a href="https://atom.io/packages/language-git"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> git</a>
-  - <a href="https://atom.io/packages/language-glsl"><img src="https://avatars3.githubusercontent.com/u/569817" width=16 height=16/> GLSL</a>
-  - <a href="https://atom.io/packages/language-go"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Go</a>
-  - <a href="https://atom.io/packages/git-diff"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> diff</a>
-  - <a href="https://atom.io/packages/language-haml"><img src="https://avatars0.githubusercontent.com/u/6979737" width=16 height=16/> HAML</a>
-  - <a href="https://atom.io/packages/language-haskell"><img src="https://avatars3.githubusercontent.com/u/12533767" width=16 height=16/> Haskell</a>
-  - <a href="https://atom.io/packages/language-html"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> HTML</a>
-  - <a href="https://atom.io/packages/language-jade"><img src="https://avatars2.githubusercontent.com/u/19409" width=16 height=16/> Jade</a>
-  - <a href="https://atom.io/packages/language-java"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Java/Java Properties</a>
-  - <a href="https://atom.io/packages/language-javascript"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> JavaScript</a>
-  - <a href="https://atom.io/packages/language-json"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> JSON</a>
-  - <a href="https://atom.io/packages/language-julia"><img src="https://avatars2.githubusercontent.com/u/743164" width=16 height=16/> Julia</a>
-  - <a href="https://atom.io/packages/language-latex"><img src="https://avatars1.githubusercontent.com/u/311812" width=16 height=16/> LaTeX</a>
-  - <a href="https://atom.io/packages/language-lesss"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> LESSCSS</a>
-  - <a href="https://atom.io/packages/language-make"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Make</a>
-  - <a href="https://atom.io/packages/language-gfm"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Markdown</a>
-  - <a href="https://atom.io/packages/language-mjml"><img src="https://avatars0.githubusercontent.com/u/16115896" width=16 height=16/> MJML</a>
-  - <a href="https://atom.io/packages/language-mustache"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Mustache</a>
-  - <a href="https://atom.io/packages/language-nunjucks"><img src="https://avatars1.githubusercontent.com/u/4480279" width=16 height=16/> Nunjucks</a>
-  - <a href="https://atom.io/packages/language-php"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> PHP</a>
-  - <a href="https://atom.io/packages/language-property-list"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> PropertyList</a>
-  - <a href="https://atom.io/packages/language-python"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Python</a>
-  - <a href="https://atom.io/packages/language-r"><img src="https://avatars1.githubusercontent.com/u/1038121" width=16 height=16/> R</a>
-  - <a href="https://atom.io/packages/react"><img src="https://avatars2.githubusercontent.com/u/606347" width=16 height=16/> React JSX</a>
-  - <a href="https://atom.io/packages/language-ruby"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Ruby</a>
-  - <a href="https://atom.io/packages/language-sass"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> SASS</a>
-  - <a href="https://atom.io/packages/language-scala"><img src="https://avatars1.githubusercontent.com/u/9948688" width=16 height=16/> Scala</a>
-  - <a href="https://atom.io/packages/language-shellscript"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> Shell</a>
-  - <a href="https://atom.io/packages/language-sql"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> SQL</a>
-  - <a href="https://atom.io/packages/language-xml"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> XML</a>
-  - <a href="https://atom.io/packages/language-yaml"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> YAML</a>
+## Features
+<p align="center">Non-obtrusive bracket matching- and <code>find-and-replace</code> marker.<br>Unselected line numbers are hidden in order to keep the focus.<br><img src="https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-feature-bracketmarker.png"/><br><img src="https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-feature-findandreplace.png"/><br>Smooth transitions for gutter- and <code>find-and-replace</code> interactions.<br><img src="https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrcast-feature-smoothtransition.gif"/><br><img src="https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrcast-feature-findandreplace.gif"/><br>Colors of selected code can still be easily recognized.<br><img src="https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrcast-feature-selection.gif"/></p>
 
-## Package Support
-  - <a href="https://atom.io/packages/bracket-matcher"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> bracket-matcher</a>
-  - <a href="https://atom.io/packages/color-picker"><img src="https://avatars1.githubusercontent.com/u/2833514" width=16 height=16/> color-picker</a>
-  - <a href="https://atom.io/packages/highlight-selected"><img src="https://avatars2.githubusercontent.com/u/1273965" width=16 height=16/> highlight-selected</a>
-  - <a href="https://atom.io/packages/markdown-preview"><img src="https://avatars0.githubusercontent.com/u/1089146" width=16 height=16/> markdown-preview</a>
-  - <a href="https://atom.io/packages/minimap-highlight-selected"><img src="https://avatars3.githubusercontent.com/u/7209979" width=16 height=16/> minimap-highlight-selected</a>
-  - <a href="https://atom.io/packages/minimap-git-diff"><img src="https://avatars3.githubusercontent.com/u/7209979" width=16 height=16/> minimap-git-diff</a>
+## Languages
+This theme contains optimized styles to achieve a consistent and uniform coloring across languages.  
+Detailed descriptions for supported languages can be found in the [project wiki](https://github.com/arcticicestudio/northem-dark-atom-syntax/wiki/Optimized-Language-Styles).
 
-## Variations
-  - <a href="https://github.com/arcticicestudio/northem-atom-syntax"><img src="https://atom.io/favicon.ico" width=16 height=16> Northem Atom Syntax</a> <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16 /> <img src="https://developer.apple.com/favicon.ico" width=16 height=16 /> <img src="https://www.microsoft.com/en-us/windows/favicon.ico" width=16 height=16 />
-  - <a href="https://github.com/arcticicestudio/northem-light-atom-syntax"><img src="https://atom.io/favicon.ico" width=16 height=16> Northem Light Atom Syntax</a> <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16 /> <img src="https://developer.apple.com/favicon.ico" width=16 height=16 /> <img src="https://www.microsoft.com/en-us/windows/favicon.ico" width=16 height=16 />
-
-**Make sure to check out <a href="https://github.com/arcticicestudio/northem-dark-atom-ui"><img src="https://atom.io/favicon.ico" width=16 height=16> Northem Dark Atom UI</a>!**
-
-## Other Projects
-  - <a href="https://github.com/arcticicestudio/northem-dark-intellij-idea-syntax"><img src="https://www.jetbrains.com/_assets//shared/favicons/jetbrains.ico" width=16 height=16> Northem Dark IntelliJ IDEA Syntax</a> <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16 /> <img src="https://developer.apple.com/favicon.ico" width=16 height=16 /> <img src="https://www.microsoft.com/en-us/windows/favicon.ico" width=16 height=16 />
-  - <a href="https://github.com/arcticicestudio/northem-dark-eclipse-syntax"><img src="https://eclipse.org/favicon.ico" width=16 height=16> Northem Dark Eclipse Syntax</a> <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16 /> <img src="https://developer.apple.com/favicon.ico" width=16 height=16 /> <img src="https://www.microsoft.com/en-us/windows/favicon.ico" width=16 height=16 />
-  - <a href="https://github.com/arcticicestudio/northem-dark-java"><img src="https://www.java.com/favicon.ico" width=16 height=16> Northem Dark Java</a> <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16 /> <img src="https://developer.apple.com/favicon.ico" width=16 height=16 /> <img src="https://www.microsoft.com/en-us/windows/favicon.ico" width=16 height=16 />
-  - <a href="https://github.com/arcticicestudio/northem-dark-gedit"><img src="https://static.gnome.org/wiki.gnome.org/gnome/css/favicon.png" width=16 height=16> Northem Dark gedit</a> <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16 />
-  - <a href="#"><img src="http://www.gtk.org/images/gtk-logo.ico" width=16 height=16> Northem Dark GTK (in drafting)</a> <img src="https://www.kernel.org/theme/images/logos/favicon.png" width=16 height=16 />
-  - <a href="https://github.com/arcticicestudio/northem-dark-notepadplusplus"><img src="http://notepad-plus-plus.org/assets/images/favicon.ico" width=16 height=16> Northem Dark Notepad++</a> <img src="https://www.microsoft.com/en-us/windows/favicon.ico" width=16 height=16 />
+![][scrot-lang-c]
+![][scrot-lang-java]
+![][scrot-lang-javascript]
+![][scrot-lang-json]
+![][scrot-lang-markdown]
+![][scrot-lang-php]
+![][scrot-lang-python]
+![][scrot-lang-ruby]
 
 ## Development
-[![](https://img.shields.io/badge/Changelog-v0.21.0-blue.svg)](https://github.com/arcticicestudio/northem-dark-atom-syntax/blob/v0.21.0/CHANGELOG.md)
-
-### Workflow
-This project follows the [gitflow](http://nvie.com/posts/a-successful-git-branching-model) branching model.
-
-### Specifications
-This project follows the [Arctic Versioning Specification (ArcVer)](https://github.com/arcticicestudio/arcver).
+[![](https://img.shields.io/badge/Changelog-2.0.0-blue.svg)](https://github.com/arcticicestudio/northem-dark-atom-syntax/blob/v2.0.0/CHANGELOG.md) [![](https://img.shields.io/badge/Workflow-gitflow--branching--model-blue.svg)](http://nvie.com/posts/a-successful-git-branching-model) [![](https://img.shields.io/badge/Versioning-ArcVer_0.8.0-blue.svg)](https://github.com/arcticicestudio/arcver)
 
 ### Contribution
 Please report issues/bugs, feature requests and suggestions for improvements to the [issue tracker](https://github.com/arcticicestudio/northem-dark-atom-syntax/issues).
 
----
+<p align="center"><img src="https://cdn.rawgit.com/arcticicestudio/nord/develop/src/assets/banner-footer-mountains.svg" /></p>
 
-<img src="http://arcticicestudio.com/favicon.ico" width=16 height=16/> Copyright &copy; 2016 Arctic Ice Studio
+<p align="center"> <img src="http://arcticicestudio.com/favicon.ico" width=16 height=16/> Copyright &copy; 2016 Arctic Ice Studio</p>
 
-[![GPL-3.0](http://www.gnu.org/graphics/gplv3-88x31.png)](http://www.gnu.org/licenses/gpl.txt) [![CC BY-SA-4.0](http://mirrors.creativecommons.org/presskit/buttons/88x31/svg/by-sa.svg)](http://creativecommons.org/licenses/by-sa/4.0/)
+<p align="center"><a href="https://github.com/arcticicestudio/northem-dark-atom-syntax/develop/LICENSE.md"><img src="https://img.shields.io/badge/License-MIT-blue.svg"/></a></p>
+
+[scrot-lang-c]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-c.png
+[scrot-lang-java]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-java.png
+[scrot-lang-javascript]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-javascript.png
+[scrot-lang-json]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-json.png
+[scrot-lang-markdown]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-markdown.png
+[scrot-lang-php]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-php.png
+[scrot-lang-python]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-python.png
+[scrot-lang-ruby]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-lang-ruby.png
+[scrot-top]: https://raw.githubusercontent.com/arcticicestudio/northem-dark-atom-syntax/develop/assets/scrot-top.png

@@ -1,170 +1,38 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "Haskell"              +
-project   northem-dark-atom-syntax        +
-file      haskell.less                    +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language Haskell Styles                                     +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "Haskell".
+[Language Packages]
+  > language-haskell (https://atom.io/packages/language-haskell)
 
-[Index]
-  > Comment
-  > Constant
-  > Entity
-  > Keyword
-  > Meta
-  > Punctuation
-  > Support
-  > Storage
-  > String
-
-[Atom Package Dependencies]
-  > language-haskell
-      https://atom.io/packages/language-haskell
+[References]
+Haskell
+  (https://www.haskell.org)
 */
 .source.haskell {
-  color: @color-syntax-other;
-  /*+---------+
-    + Comment +
-    +---------+*/
-  .comment {
-    color: @color-syntax-comment;
-    font-weight: normal;
-
-    &.line.shebang {
-      color: @color-syntax-haskell-preprocessor;
-    }
+  .entity.name.function.infix {
+    color: @syntax-color-keyword;
   }
 
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant.numeric {
-    color: @color-syntax-number;
+  .identifier {
+    color: @syntax-color-variable;
   }
 
-  /*+--------+
-    + Entity +
-    +--------+*/
-  .entity.name {
-    &.type,
-    &.tag {
-      color: @color-syntax-class;
-    }
-    &.function {
-      color: @color-syntax-function;
-
-      &.infix {
-        color: @color-syntax-function;
-      }
-    }
+  .meta.preprocessor {
+    color: @syntax-color-preprocessor;
   }
 
-  /*+---------+
-    + Keyword +
-    +---------+*/
-  .keyword {
-    &.operator {
-      color: @color-syntax-operator;
-
-      &.assignment {
-        color: @color-syntax-operator;
-      }
-      &.function.infix {
-        color: @color-syntax-function;
-      }
-    }
-    &.other {
-      color: @color-syntax-keyword;
-
-      &.arrow,
-      &.double-colon {
-        color: @color-syntax-operator;
-      }
-    }
-
-    &.control.import {
-      color: @color-syntax-haskell-preprocessor;
-      font-weight: bold;
-    }
+  .punctuation.definition.directive {
+    color: @syntax-color-keyword;
   }
 
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta {
-    &.preprocessor {
-      color: @color-syntax-haskell-preprocessor;
-
-      .keyword.other {
-        color: @color-syntax-keyword;
-      }
-    }
-    &.declaration.exports {
-      color: @color-syntax-symbol;
-    }
-    &.type-signature {
-      .keyword.operator {
-        color: @color-syntax-operator;
-      }
-    }
-    &.other.constructor-list {
-      color: @color-syntax-variable;
-    }
-  }
-
-  /*+-------------+
-    + Punctuation +
-    +-------------+*/
-  .punctuation {
-    &.separator.comma,
-    &.definition {
-      &.entity,
-      &.string.begin,
-      &.string.end {
-        color: @color-syntax-symbol;
-      }
-    }
-  }
-
-  /*+---------+
-    + Support +
-    +---------+*/
-  .support {
-    &.other.module {
-      color: @color-syntax-class;
-      font-weight: bold;
-    }
-    &.class.prelude {
-      color: @color-syntax-class;
-    }
-    &.function.prelude {
-      color: @color-syntax-function;
-    }
-    &.tag {
-      color: @color-syntax-keyword;
-    }
-  }
-
-  /*+---------+
-    + Storage +
-    +---------+*/
-  .storage.type.data {
-    color: @color-syntax-keyword;
-  }
-
-  /*+--------+
-    + String +
-    +--------+*/
-  .string.quoted {
-    &.single,
-    &.double {
-      color: @color-syntax-string;
-    }
+  .support.other.module {
+    color: @syntax-color-class;
   }
 }

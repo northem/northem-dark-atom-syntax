@@ -1,88 +1,43 @@
 /*
-+++++++++++++++++++++++++++++++++++++++++++
-title     Language "JSON"                 +
-project   northem-dark-atom-syntax        +
-file      json.less                       +
-version   0.21.0                          +
-author    Arctic Ice Studio               +
-email     development@arcticicestudio.com +
-website   http://arcticicestudio.com      +
-copyright Copyright (C) 2016              +
-+++++++++++++++++++++++++++++++++++++++++++
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+title      Language JSON Styles                                        +
+project    northem-dark-atom-syntax                                    +
+repository https://github.com/arcticicestudio/northem-dark-atom-syntax +
+author     Arctic Ice Studio                                           +
+email      development@arcticicestudio.com                             +
+copyright  Copyright (C) 2016                                          +
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 
-Defines all language specific syntax highlighting classes for "JSON".
+[Language Packages]
+  > language-json (https://atom.io/packages/language-json)
 
-[Index]
-  > Constant
-  > Meta
-
-[Atom Package Dependencies]
-  > language-json
-      https://atom.io/packages/language-json
+[References]
+JSON
+  (http://www.json.org)
 */
 .source.json {
-  color: @color-syntax-other;
-  /*+----------+
-    + Constant +
-    +----------+*/
-  .constant {
-    &.language {
-      color: @color-syntax-constant;
-      font-weight: bold;
-    }
-    &.numeric {
-      color: @color-syntax-number;
+  .meta.structure.dictionary.json {
+    & > .string.quoted.json {
+      color: @syntax-color-attribute;
+
+      & > .punctuation.string {
+        color: @syntax-color-punctuation;
+      }
     }
   }
 
-  /*+------+
-    + Meta +
-    +------+*/
-  .meta.structure.dictionary.json {
-    .string.quoted.json {
-      color: @color-syntax-keyword;
-
-      .punctuation.definition.string {
-        color: @color-syntax-symbol;
-      }
+  .meta.structure.dictionary.json,
+  .meta.structure.array.json {
+    & > .constant.language.json {
+      color: @syntax-color-keyword;
     }
-    .punctuation.definition.dictionary {
-      color: @color-syntax-symbol;
+
+    & > .value.json > .string.quoted.json {
+      color: @syntax-color-string;
     }
-    .meta.structure.dictionary.value.json {
-      .string.quoted.json {
-        color: @color-syntax-string;
 
-        .punctuation.definition.string {
-          color: @color-syntax-symbol;
-        }
-      }
-      .meta.structure.dictionary.json {
-        .string.quoted.json {
-          color: @color-syntax-keyword;
-
-          .punctuation.definition.string {
-            color: @color-syntax-symbol;
-          }
-        }
-        .meta.structure.dictionary.value.json {
-          .string.quoted.json {
-            color: @color-syntax-string;
-
-            .punctuation.definition.string {
-              color: @color-syntax-symbol;
-            }
-          }
-        }
-      }
-    }
-    .meta.structure.array {
-      .punctuation.definition.array {
-        &.begin,
-        &.end {
-          color: @color-syntax-symbol;
-        }
-      }
+    & > .value.json > .string.quoted.json > .punctuation {
+      color: @syntax-color-punctuation;
     }
   }
 }
