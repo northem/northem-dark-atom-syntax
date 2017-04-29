@@ -4,6 +4,19 @@
 
 ---
 
+# 2.1.0
+*2017-04-29*
+
+**Please note that the minimal version for this theme is now `>=1.13.0` due to the Atom theme API change!**
+
+## Improvements
+❯ Migrated to the new Atom theme API.  
+Starting from Atom version 1.13, the contents of `atom-text-editor` [elements are no longer encapsulated within a shadow DOM boundary](http://blog.atom.io/2016/11/14/removing-shadow-dom-boundary-from-text-editor-elements.html).  
+This means the `:host` and `::shadow` pseudo-selectors should be completely removed and all syntax selectors should be prepended with `syntax--`.
+To prevent breakage with existing style sheets, Atom will automatically upgrade selectors for versions less or equal to 1.12. (@arcticicestudio, #14 PR #15, bf12b87b)
+
+![](http://blog.atom.io/img/posts/shadow-dom.png)
+
 # 2.0.0 (2016-11-10)
 **The whole project has been cleaned up and rewritten to adapt the codebase of the [Nord Atom Syntax](https://github.com/arcticicestudio/nord-atom-syntax) project!**
 *This closes the milestone [Version 2.0.0](https://github.com/arcticicestudio/northem-dark-atom-syntax/milestone/2) and the associated backlog ticket #8.*
